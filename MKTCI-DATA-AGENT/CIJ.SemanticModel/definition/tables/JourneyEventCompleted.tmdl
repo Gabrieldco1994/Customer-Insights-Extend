@@ -1,0 +1,247 @@
+table JourneyEventCompleted
+	lineageTag: f7768a58-0ab3-44bd-ad48-a2ed4b09124b
+	sourceLineageTag: [dbo].[JourneyEventCompleted]
+
+	column BusinessUnitId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d1d9d144-2bc7-4722-93ce-bd3ba2bdf430
+		sourceLineageTag: BusinessUnitId
+		summarizeBy: none
+		sourceColumn: BusinessUnitId
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerJourneyId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 38b83154-4976-4e77-a5f3-540ff26c5397
+		sourceLineageTag: CustomerJourneyId
+		summarizeBy: none
+		sourceColumn: CustomerJourneyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column DropoffId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e8a495d2-3691-4a0b-b898-23834bc918f2
+		sourceLineageTag: DropoffId
+		summarizeBy: none
+		sourceColumn: DropoffId
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdempotencyId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 980feee4-14c5-4613-b91a-2c5b8bc27899
+		sourceLineageTag: IdempotencyId
+		summarizeBy: none
+		sourceColumn: IdempotencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column InteractionType
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: cdc307f1-9145-4346-bc96-258370044a12
+		sourceLineageTag: InteractionType
+		summarizeBy: none
+		sourceColumn: InteractionType
+
+		annotation SummarizationSetBy = Automatic
+
+	column InternalMarketingInteractionId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a08d0689-2f5b-4fe9-b2fb-ab2c35cd6784
+		sourceLineageTag: InternalMarketingInteractionId
+		summarizeBy: none
+		sourceColumn: InternalMarketingInteractionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsUnresolvedProfile
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 2ca27a65-9596-4b3c-97d9-82bf824dd8d0
+		sourceLineageTag: IsUnresolvedProfile
+		summarizeBy: none
+		sourceColumn: IsUnresolvedProfile
+
+		annotation SummarizationSetBy = Automatic
+
+	column JourneyActionId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5a09029e-22f5-4099-9b5b-54eb3d6c7d31
+		sourceLineageTag: JourneyActionId
+		summarizeBy: none
+		sourceColumn: JourneyActionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column JourneyRunId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: dfcca394-ad4c-4649-aefa-64d647c80a86
+		sourceLineageTag: JourneyRunId
+		summarizeBy: none
+		sourceColumn: JourneyRunId
+
+		annotation SummarizationSetBy = Automatic
+
+	column JourneyStatus
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1b7332a9-e601-4ab0-b7ef-3d263d7ccfa1
+		sourceLineageTag: JourneyStatus
+		summarizeBy: none
+		sourceColumn: JourneyStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column JourneyVersion
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 223bf889-916e-4695-af83-86237cb1aecd
+		sourceLineageTag: JourneyVersion
+		summarizeBy: none
+		sourceColumn: JourneyVersion
+
+		annotation SummarizationSetBy = Automatic
+
+	column MessageId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 636f94cb-4df3-4dcf-b390-b0761d221a40
+		sourceLineageTag: MessageId
+		summarizeBy: none
+		sourceColumn: MessageId
+
+		annotation SummarizationSetBy = Automatic
+
+	column MessageTemplateVersion
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: fd42c8ce-15c2-4e81-a7af-b6dc174892a1
+		sourceLineageTag: MessageTemplateVersion
+		summarizeBy: none
+		sourceColumn: MessageTemplateVersion
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrganizationId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 58e98a5b-b5d0-488c-99cd-7aff28e47331
+		sourceLineageTag: OrganizationId
+		summarizeBy: none
+		sourceColumn: OrganizationId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProfileId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 29e2412e-5ebf-4c4b-96e9-d83337e9a37b
+		sourceLineageTag: ProfileId
+		summarizeBy: none
+		sourceColumn: ProfileId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProfileType
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 70039584-7ebb-49ea-8cf3-3782b5c92a4a
+		sourceLineageTag: ProfileType
+		summarizeBy: none
+		sourceColumn: ProfileType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reason
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3dbed011-5615-4490-9cac-94045d2fcb43
+		sourceLineageTag: Reason
+		summarizeBy: none
+		sourceColumn: Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReasonDetail
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1bf342b2-a7a3-43ab-b56d-11e5a448b0f9
+		sourceLineageTag: ReasonDetail
+		summarizeBy: none
+		sourceColumn: ReasonDetail
+
+		annotation SummarizationSetBy = Automatic
+
+	column SegmentId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 62a49c48-2989-4389-add4-3a1e711c954a
+		sourceLineageTag: SegmentId
+		summarizeBy: none
+		sourceColumn: SegmentId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SegmentName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d17e8514-5172-4776-af47-e9a21885ef0d
+		sourceLineageTag: SegmentName
+		summarizeBy: none
+		sourceColumn: SegmentName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SourceSystem
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 0f4d0d85-c4f2-4456-a9b0-671590d2e9a9
+		sourceLineageTag: SourceSystem
+		summarizeBy: sum
+		sourceColumn: SourceSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column Timestamp
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: c8573375-bca4-4d58-b7d9-934f2cbe0af2
+		sourceLineageTag: Timestamp
+		summarizeBy: none
+		sourceColumn: Timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1d72601e-5d46-49df-9109-e4808cd2226b
+		sourceLineageTag: Version
+		summarizeBy: sum
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	partition JourneyEventCompleted = entity
+		mode: directLake
+		source
+			entityName: JourneyEventCompleted
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

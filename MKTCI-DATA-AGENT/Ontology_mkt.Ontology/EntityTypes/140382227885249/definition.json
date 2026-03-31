@@ -1,0 +1,401 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/entityType/1.0.0/schema.json",
+  "id": "140382227885249",
+  "namespace": "usertypes",
+  "baseEntityTypeId": null,
+  "name": "crfc2_journeychannelcost",
+  "entityIdParts": [
+    "6196379519398998663"
+  ],
+  "displayNamePropertyId": null,
+  "namespaceType": "Imported",
+  "visibility": "Visible",
+  "properties": [
+    {
+      "id": "6196380263019291251",
+      "name": "Id",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196380239043349996",
+      "name": "SinkCreatedOn",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    },
+    {
+      "id": "6196380220148286327",
+      "name": "SinkModifiedOn",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    },
+    {
+      "id": "6196380196758940375",
+      "name": "statecode",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    },
+    {
+      "id": "6196380173389293888",
+      "name": "statuscode",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    },
+    {
+      "id": "6196380151994339333",
+      "name": "crfc2_new_channel",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    },
+    {
+      "id": "6196380127297913329",
+      "name": "createdby",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196380107948590123",
+      "name": "createdby_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196380080340031856",
+      "name": "createdonbehalfby",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196380061307591655",
+      "name": "createdonbehalfby_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196380036584826387",
+      "name": "crfc2_msdynmkt_journey",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196380014102587069",
+      "name": "crfc2_msdynmkt_journey_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379993511340853",
+      "name": "modifiedby",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379972533375013",
+      "name": "modifiedby_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379950021980399",
+      "name": "modifiedonbehalfby",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379930500549558",
+      "name": "modifiedonbehalfby_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379907358537339",
+      "name": "owningbusinessunit",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379886468189379",
+      "name": "owningbusinessunit_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379863749920217",
+      "name": "owningteam",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379844909872622",
+      "name": "owningteam_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379824965999582",
+      "name": "owninguser",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379801662517396",
+      "name": "owninguser_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379779591317808",
+      "name": "transactioncurrencyid",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379752260979541",
+      "name": "transactioncurrencyid_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379733062649282",
+      "name": "ownerid",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379709135546918",
+      "name": "ownerid_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379689219081065",
+      "name": "crfc2_new_cost",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "Double"
+    },
+    {
+      "id": "6196379670390687254",
+      "name": "crfc2_new_cost_base",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "Double"
+    },
+    {
+      "id": "6196379646975742122",
+      "name": "createdbyname",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379623566343688",
+      "name": "createdbyyominame",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379601902406584",
+      "name": "createdon",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    },
+    {
+      "id": "6196379582354554660",
+      "name": "createdonbehalfbyname",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379562452291715",
+      "name": "createdonbehalfbyyominame",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379540123716342",
+      "name": "crfc2_journeychannelcost1",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379519398998663",
+      "name": "crfc2_journeychannelcostid",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379493729356362",
+      "name": "crfc2_msdynmkt_journeyname",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379466965995771",
+      "name": "crfc2_new_period",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    },
+    {
+      "id": "6196379441951690110",
+      "name": "exchangerate",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "Double"
+    },
+    {
+      "id": "6196379418830968583",
+      "name": "importsequencenumber",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    },
+    {
+      "id": "6196379397092312506",
+      "name": "modifiedbyname",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379376589367845",
+      "name": "modifiedbyyominame",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379355166507126",
+      "name": "modifiedon",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    },
+    {
+      "id": "6196379335221138060",
+      "name": "modifiedonbehalfbyname",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379310822232872",
+      "name": "modifiedonbehalfbyyominame",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379285494966566",
+      "name": "overriddencreatedon",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    },
+    {
+      "id": "6196379262799865463",
+      "name": "owneridname",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379243953348185",
+      "name": "owneridtype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379220536995019",
+      "name": "owneridyominame",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379201256626775",
+      "name": "owningbusinessunitname",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379179013703631",
+      "name": "timezoneruleversionnumber",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    },
+    {
+      "id": "6196379159261429593",
+      "name": "transactioncurrencyidname",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196379133961798456",
+      "name": "utcconversiontimezonecode",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    },
+    {
+      "id": "6196379110368000888",
+      "name": "versionnumber",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    },
+    {
+      "id": "6196379087669338768",
+      "name": "IsDelete",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "Boolean"
+    },
+    {
+      "id": "6196379065147484672",
+      "name": "PartitionId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    }
+  ],
+  "timeseriesProperties": []
+}

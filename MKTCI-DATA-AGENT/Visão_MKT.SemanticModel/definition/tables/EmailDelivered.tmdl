@@ -1,0 +1,350 @@
+table EmailDelivered
+	lineageTag: a69c64e6-7ebf-4fba-9030-23176a0b7c8c
+	sourceLineageTag: [dbo].[EmailDelivered]
+
+	column AccountId
+		dataType: string
+		lineageTag: 76708394-e119-42c3-9780-86985546084e
+		sourceLineageTag: AccountId
+		summarizeBy: none
+		sourceColumn: AccountId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActivityExpiryTime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 31b08dc5-deff-42e4-93ed-92e437c6d9f9
+		sourceLineageTag: ActivityExpiryTime
+		summarizeBy: none
+		sourceColumn: ActivityExpiryTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActivityId
+		dataType: string
+		lineageTag: 25991365-8364-44e8-9366-a07555fc6f2f
+		sourceLineageTag: ActivityId
+		summarizeBy: none
+		sourceColumn: ActivityId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BounceCategory
+		dataType: string
+		lineageTag: 68fe91b4-4f96-46a1-ab37-f7ce9b62101f
+		sourceLineageTag: BounceCategory
+		summarizeBy: none
+		sourceColumn: BounceCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column BusinessUnitId
+		dataType: string
+		lineageTag: 3fe43dc7-80e3-46aa-ab68-0507847acfa4
+		sourceLineageTag: BusinessUnitId
+		summarizeBy: none
+		sourceColumn: BusinessUnitId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ChannelEventName
+		dataType: string
+		lineageTag: 695f0741-053b-4fc3-814d-e729d84c0c3e
+		sourceLineageTag: ChannelEventName
+		summarizeBy: none
+		sourceColumn: ChannelEventName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContactId
+		dataType: string
+		lineageTag: 55cef3f4-c7ea-44ea-a102-b0a32b93233e
+		sourceLineageTag: ContactId
+		summarizeBy: none
+		sourceColumn: ContactId
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerJourneyId
+		dataType: string
+		lineageTag: ac82f9cb-eadc-4ae0-a816-ee6d78c6944c
+		sourceLineageTag: CustomerJourneyId
+		summarizeBy: none
+		sourceColumn: CustomerJourneyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerJourneyIterationId
+		dataType: string
+		lineageTag: 4ca4813a-85dc-41a6-a87e-1f3df15cb77b
+		sourceLineageTag: CustomerJourneyIterationId
+		summarizeBy: none
+		sourceColumn: CustomerJourneyIterationId
+
+		annotation SummarizationSetBy = Automatic
+
+	column DeliveredCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 2fc0249c-8954-4202-94cb-ede3de0c6274
+		sourceLineageTag: DeliveredCount
+		summarizeBy: sum
+		sourceColumn: DeliveredCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column Details
+		dataType: string
+		lineageTag: 700f7cd8-586a-4774-bbdf-c9f733e20ba6
+		sourceLineageTag: Details
+		summarizeBy: none
+		sourceColumn: Details
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmailAddressUsed
+		dataType: string
+		lineageTag: 48cc1ff3-7cd2-410e-8f4e-a21f3773cc63
+		sourceLineageTag: EmailAddressUsed
+		summarizeBy: none
+		sourceColumn: EmailAddressUsed
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmailDomain
+		dataType: string
+		lineageTag: fa8c407a-c35d-4da0-82b3-0ee7e12aff27
+		sourceLineageTag: EmailDomain
+		summarizeBy: none
+		sourceColumn: EmailDomain
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdempotencyId
+		dataType: string
+		lineageTag: 820b8313-3735-4390-b9fa-3210b3b74486
+		sourceLineageTag: IdempotencyId
+		summarizeBy: none
+		sourceColumn: IdempotencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column InteractionType
+		dataType: string
+		lineageTag: a935a424-e6f4-42e3-85c8-15bfc6d6d586
+		sourceLineageTag: InteractionType
+		summarizeBy: none
+		sourceColumn: InteractionType
+
+		annotation SummarizationSetBy = Automatic
+
+	column InternalMarketingInteractionId
+		dataType: string
+		lineageTag: b716a7c2-55bc-493d-8cc5-f90000a6d65e
+		sourceLineageTag: InternalMarketingInteractionId
+		summarizeBy: none
+		sourceColumn: InternalMarketingInteractionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsSmartScheduled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 12b0e9fd-23d5-4da6-8ddc-d7448e921420
+		sourceLineageTag: IsSmartScheduled
+		summarizeBy: none
+		sourceColumn: IsSmartScheduled
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsUnresolvedProfile
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3fbb3317-e137-4131-a753-260bdd70b791
+		sourceLineageTag: IsUnresolvedProfile
+		summarizeBy: none
+		sourceColumn: IsUnresolvedProfile
+
+		annotation SummarizationSetBy = Automatic
+
+	column JourneyActionId
+		dataType: string
+		lineageTag: 831d64be-39d7-4418-8976-34ffb42bdb42
+		sourceLineageTag: JourneyActionId
+		summarizeBy: none
+		sourceColumn: JourneyActionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column JourneyRunId
+		dataType: string
+		lineageTag: 2fbe0f4f-a672-4f1b-b453-e4665963c4f4
+		sourceLineageTag: JourneyRunId
+		summarizeBy: none
+		sourceColumn: JourneyRunId
+
+		annotation SummarizationSetBy = Automatic
+
+	column JourneyVersion
+		dataType: string
+		lineageTag: a8a53c1a-b7be-4d09-b822-814cd933cfcd
+		sourceLineageTag: JourneyVersion
+		summarizeBy: none
+		sourceColumn: JourneyVersion
+
+		annotation SummarizationSetBy = Automatic
+
+	column LeadId
+		dataType: string
+		lineageTag: ae5c6b5c-c717-4aa6-b849-7416dc2c3ab1
+		sourceLineageTag: LeadId
+		summarizeBy: none
+		sourceColumn: LeadId
+
+		annotation SummarizationSetBy = Automatic
+
+	column MessageId
+		dataType: string
+		lineageTag: 99e32469-2473-4e97-a2b1-41fa8df877f7
+		sourceLineageTag: MessageId
+		summarizeBy: none
+		sourceColumn: MessageId
+
+		annotation SummarizationSetBy = Automatic
+
+	column MessageTemplateVersion
+		dataType: string
+		lineageTag: 2b9d21ce-c339-4243-969a-96ab52b8ee08
+		sourceLineageTag: MessageTemplateVersion
+		summarizeBy: none
+		sourceColumn: MessageTemplateVersion
+
+		annotation SummarizationSetBy = Automatic
+
+	column MessageVariationIndexes
+		dataType: string
+		lineageTag: 11d7c6dc-cdcd-4845-a036-44b5d8ce2940
+		sourceLineageTag: MessageVariationIndexes
+		summarizeBy: none
+		sourceColumn: MessageVariationIndexes
+
+		annotation SummarizationSetBy = Automatic
+
+	column MessageVariationName
+		dataType: string
+		lineageTag: 994f48ad-d12b-478f-8774-4bb132a90cbe
+		sourceLineageTag: MessageVariationName
+		summarizeBy: none
+		sourceColumn: MessageVariationName
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrganizationId
+		dataType: string
+		lineageTag: 585f8404-de69-44fb-8202-6dbe68344e07
+		sourceLineageTag: OrganizationId
+		summarizeBy: none
+		sourceColumn: OrganizationId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProfileId
+		dataType: string
+		lineageTag: e902ca6d-4223-4052-9912-6f55c5d05de8
+		sourceLineageTag: ProfileId
+		summarizeBy: none
+		sourceColumn: ProfileId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProfileType
+		dataType: string
+		lineageTag: 5ee55ae1-e6ac-41d7-84ab-745e1c739265
+		sourceLineageTag: ProfileType
+		summarizeBy: none
+		sourceColumn: ProfileType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reason
+		dataType: string
+		lineageTag: 85a05f2b-8623-4f4a-8413-0b0fb56c2f18
+		sourceLineageTag: Reason
+		summarizeBy: none
+		sourceColumn: Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column SchedulerId
+		dataType: string
+		lineageTag: 5e67606f-bf0a-47c7-b122-85855b0ef54f
+		sourceLineageTag: SchedulerId
+		summarizeBy: none
+		sourceColumn: SchedulerId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SendingId
+		dataType: string
+		lineageTag: 69208e63-b396-4650-8733-e2ffbc0feec1
+		sourceLineageTag: SendingId
+		summarizeBy: none
+		sourceColumn: SendingId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SourceSystem
+		dataType: int64
+		formatString: 0
+		lineageTag: 96a2dce5-41d9-4a3a-bbda-9a5e8a9059b9
+		sourceLineageTag: SourceSystem
+		summarizeBy: sum
+		sourceColumn: SourceSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column Timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 88633070-53d6-4549-8562-5db0ae7e088a
+		sourceLineageTag: Timestamp
+		summarizeBy: none
+		sourceColumn: Timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column UsageType
+		dataType: string
+		lineageTag: 19376172-867f-4a9c-8df8-331b5d8f4624
+		sourceLineageTag: UsageType
+		summarizeBy: none
+		sourceColumn: UsageType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: int64
+		formatString: 0
+		lineageTag: 7b0a1f9a-14e3-498f-a4bc-32ff3b7945c9
+		sourceLineageTag: Version
+		summarizeBy: sum
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column WasRemoteBounced
+		dataType: string
+		lineageTag: a9dc58f6-c520-4c0c-961d-da0e6ab775e7
+		sourceLineageTag: WasRemoteBounced
+		summarizeBy: none
+		sourceColumn: WasRemoteBounced
+
+		annotation SummarizationSetBy = Automatic
+
+	partition EmailDelivered = entity
+		mode: directLake
+		source
+			entityName: EmailDelivered
+			expressionSource: 'DirectLake - dataverse_fsiprincipal_cds2_workspace_unqcc8d8adf2841f011be52000d3a106'
+

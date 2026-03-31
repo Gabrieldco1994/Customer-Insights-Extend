@@ -1,0 +1,240 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/entityType/1.0.0/schema.json",
+  "id": "189934296502995",
+  "namespace": "usertypes",
+  "baseEntityTypeId": null,
+  "name": "EmailSent",
+  "entityIdParts": [
+    "6196387125290905564"
+  ],
+  "displayNamePropertyId": null,
+  "namespaceType": "Imported",
+  "visibility": "Visible",
+  "properties": [
+    {
+      "id": "6196387168800187407",
+      "name": "AccountId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196387145198309132",
+      "name": "ActivityExpiryTime",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    },
+    {
+      "id": "6196387125290905564",
+      "name": "ActivityId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196387104871684006",
+      "name": "BusinessUnitId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196387078001986303",
+      "name": "ChannelEventName",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196387053876595906",
+      "name": "ContactId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196387032464547677",
+      "name": "CustomerJourneyId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196387014245193184",
+      "name": "CustomerJourneyIterationId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196386991726694945",
+      "name": "Details",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196386970481779791",
+      "name": "EmailAddressUsed",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196386948543653359",
+      "name": "EmailDomain",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196386926528351525",
+      "name": "IdempotencyId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196386906936001167",
+      "name": "InteractionType",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196386881616146729",
+      "name": "InternalMarketingInteractionId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196386858864111015",
+      "name": "IsSmartScheduled",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "Boolean"
+    },
+    {
+      "id": "6196386834802416029",
+      "name": "IsUnresolvedProfile",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "Boolean"
+    },
+    {
+      "id": "6196386813466724524",
+      "name": "JourneyActionId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196386794222898514",
+      "name": "JourneyRunId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196386771929202122",
+      "name": "LeadId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196386750269788116",
+      "name": "MessageId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196386731126695948",
+      "name": "MessageTemplateVersion",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196386708597483385",
+      "name": "MessageVariationIndexes",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196386688137612166",
+      "name": "MessageVariationName",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196386660380441786",
+      "name": "OrganizationId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196386639935712069",
+      "name": "ProfileId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196386616844020968",
+      "name": "ProfileType",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196386594391223287",
+      "name": "SchedulerId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196386572871904748",
+      "name": "SendingId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196386552016288838",
+      "name": "SourceSystem",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    },
+    {
+      "id": "6196386531281666338",
+      "name": "Timestamp",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    },
+    {
+      "id": "6196386509852373002",
+      "name": "UsageType",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6196386486797878177",
+      "name": "Version",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    }
+  ],
+  "timeseriesProperties": []
+}

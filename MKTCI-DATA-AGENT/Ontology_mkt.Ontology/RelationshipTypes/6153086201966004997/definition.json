@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "6153086201966004997",
+  "name": "journey-has-costs",
+  "namespaceType": "Custom",
+  "source": {
+    "entityTypeId": "205078327245897"
+  },
+  "target": {
+    "entityTypeId": "140382227885249"
+  }
+}

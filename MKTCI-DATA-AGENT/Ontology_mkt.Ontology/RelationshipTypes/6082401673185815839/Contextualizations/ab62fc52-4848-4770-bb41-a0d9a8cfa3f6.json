@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/contextualization/1.0.0/schema.json",
+  "id": "ab62fc52-4848-4770-bb41-a0d9a8cfa3f6",
+  "dataBindingTable": {
+    "workspaceId": "00000000-0000-0000-0000-000000000000",
+    "itemId": "d889679a-b8d7-9fdf-491e-2e22e0542029",
+    "sourceTableName": "EmailDelivered",
+    "sourceSchema": null,
+    "sourceType": "LakehouseTable"
+  },
+  "sourceKeyRefBindings": [
+    {
+      "sourceColumnName": "CustomerJourneyId",
+      "targetPropertyId": "6180568890974327949"
+    }
+  ],
+  "targetKeyRefBindings": [
+    {
+      "sourceColumnName": "ActivityId",
+      "targetPropertyId": "6196404598021703047"
+    }
+  ]
+}

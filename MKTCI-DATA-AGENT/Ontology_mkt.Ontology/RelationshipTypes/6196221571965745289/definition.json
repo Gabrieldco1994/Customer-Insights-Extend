@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "6196221571965745289",
+  "name": "EmailOpened_has_contact",
+  "namespaceType": "Imported",
+  "source": {
+    "entityTypeId": "230361463275332"
+  },
+  "target": {
+    "entityTypeId": "203141898001668"
+  }
+}

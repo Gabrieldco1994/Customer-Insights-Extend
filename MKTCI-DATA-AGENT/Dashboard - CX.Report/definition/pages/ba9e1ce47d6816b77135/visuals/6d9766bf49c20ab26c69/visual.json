@@ -1,0 +1,308 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "6d9766bf49c20ab26c69",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 98.016806722689083,
+    "width": 1280.2689075630253,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "msdynmkt_journey"
+                    }
+                  },
+                  "Property": "Journey Total Cost"
+                }
+              },
+              "queryRef": "msdynmkt_journey.Journey Total Cost",
+              "nativeQueryRef": "Journey Total Cost"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "msdynmkt_journey"
+                    }
+                  },
+                  "Property": "ROI Value"
+                }
+              },
+              "queryRef": "msdynmkt_journey.ROI Value",
+              "nativeQueryRef": "ROI Value"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "opportunity"
+                    }
+                  },
+                  "Property": "Opp Count"
+                }
+              },
+              "queryRef": "opportunity.Opp Count",
+              "nativeQueryRef": "Opp Count"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "opportunity"
+                    }
+                  },
+                  "Property": "Won Revenue"
+                }
+              },
+              "queryRef": "opportunity.Won Revenue",
+              "nativeQueryRef": "Won Revenue"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "msdynmkt_journey"
+                    }
+                  },
+                  "Property": "ROI %"
+                }
+              },
+              "queryRef": "msdynmkt_journey.ROI %",
+              "nativeQueryRef": "ROI %"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "msdynmkt_journey"
+                  }
+                },
+                "Property": "Journey Total Cost"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "layout": [
+        {
+          "properties": {
+            "autoGrid": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "columnCount": {
+              "expr": {
+                "Literal": {
+                  "Value": "5L"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'middle'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "value": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "23D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "label": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'aboveValue'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "01ffc419e05005e08d10",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "msdynmkt_journey"
+                  }
+                },
+                "Property": "ROI Geral %"
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "msdynmkt_journey"
+                      }
+                    },
+                    "Property": "ROI Geral %"
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "f00d008e2018bcc75308",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "opportunity"
+                  }
+                },
+                "Property": "Opp Count"
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "opportunity"
+                      }
+                    },
+                    "Property": "Opp Count"
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Visão_MKT"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e6c0a9e7-0a0f-9199-4e0f-11543597b931"
+  }
+}

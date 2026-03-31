@@ -1,0 +1,448 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "30d65fd5-c728-48d8-9676-3bbc5e9351cd",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "Id",
+        "targetPropertyId": "6196385135694221627"
+      },
+      {
+        "sourceColumnName": "SinkCreatedOn",
+        "targetPropertyId": "6196385112893602798"
+      },
+      {
+        "sourceColumnName": "SinkModifiedOn",
+        "targetPropertyId": "6196385092616262491"
+      },
+      {
+        "sourceColumnName": "statecode",
+        "targetPropertyId": "6196385070960084603"
+      },
+      {
+        "sourceColumnName": "statuscode",
+        "targetPropertyId": "6196385048154931278"
+      },
+      {
+        "sourceColumnName": "componentstate",
+        "targetPropertyId": "6196385027373501423"
+      },
+      {
+        "sourceColumnName": "msdynmkt_emailcontentlanguage",
+        "targetPropertyId": "6196385007729647358"
+      },
+      {
+        "sourceColumnName": "msdynmkt_emailcontenttype",
+        "targetPropertyId": "6196384985144873612"
+      },
+      {
+        "sourceColumnName": "msdynmkt_intendeduse",
+        "targetPropertyId": "6196384965189284527"
+      },
+      {
+        "sourceColumnName": "msdynmkt_messagedesignation",
+        "targetPropertyId": "6196384943053698330"
+      },
+      {
+        "sourceColumnName": "ismanaged",
+        "targetPropertyId": "6196384919175623133"
+      },
+      {
+        "sourceColumnName": "msdynmkt_automaticallygeneratetextpart",
+        "targetPropertyId": "6196384897507646470"
+      },
+      {
+        "sourceColumnName": "msdynmkt_isteamswebinaremail",
+        "targetPropertyId": "6196384876859425868"
+      },
+      {
+        "sourceColumnName": "createdby",
+        "targetPropertyId": "6196384858257158495"
+      },
+      {
+        "sourceColumnName": "createdby_entitytype",
+        "targetPropertyId": "6196384835915815759"
+      },
+      {
+        "sourceColumnName": "createdonbehalfby",
+        "targetPropertyId": "6196384812419930958"
+      },
+      {
+        "sourceColumnName": "createdonbehalfby_entitytype",
+        "targetPropertyId": "6196384792809816072"
+      },
+      {
+        "sourceColumnName": "modifiedby",
+        "targetPropertyId": "6196384770014972876"
+      },
+      {
+        "sourceColumnName": "modifiedby_entitytype",
+        "targetPropertyId": "6196384750722126443"
+      },
+      {
+        "sourceColumnName": "modifiedonbehalfby",
+        "targetPropertyId": "6196384724472961947"
+      },
+      {
+        "sourceColumnName": "modifiedonbehalfby_entitytype",
+        "targetPropertyId": "6196384694775891192"
+      },
+      {
+        "sourceColumnName": "msdynmkt_brandprofileid",
+        "targetPropertyId": "6196384669184032969"
+      },
+      {
+        "sourceColumnName": "msdynmkt_brandprofileid_entitytype",
+        "targetPropertyId": "6196384642193857676"
+      },
+      {
+        "sourceColumnName": "msdynmkt_compliancesettings",
+        "targetPropertyId": "6196384619863825566"
+      },
+      {
+        "sourceColumnName": "msdynmkt_compliancesettings_entitytype",
+        "targetPropertyId": "6196384599343314954"
+      },
+      {
+        "sourceColumnName": "msdynmkt_compliancesettings3",
+        "targetPropertyId": "6196384575952028288"
+      },
+      {
+        "sourceColumnName": "msdynmkt_compliancesettings3_entitytype",
+        "targetPropertyId": "6196384557852691267"
+      },
+      {
+        "sourceColumnName": "msdynmkt_compliancesettings4",
+        "targetPropertyId": "6196384535028197356"
+      },
+      {
+        "sourceColumnName": "msdynmkt_compliancesettings4_entitytype",
+        "targetPropertyId": "6196384513110743252"
+      },
+      {
+        "sourceColumnName": "msdynmkt_purpose",
+        "targetPropertyId": "6196384488380463668"
+      },
+      {
+        "sourceColumnName": "msdynmkt_purpose_entitytype",
+        "targetPropertyId": "6196384468592123586"
+      },
+      {
+        "sourceColumnName": "msdynmkt_senderid",
+        "targetPropertyId": "6196384447028749843"
+      },
+      {
+        "sourceColumnName": "msdynmkt_senderid_entitytype",
+        "targetPropertyId": "6196384429128242019"
+      },
+      {
+        "sourceColumnName": "msdynmkt_templateid",
+        "targetPropertyId": "6196384405097258099"
+      },
+      {
+        "sourceColumnName": "msdynmkt_templateid_entitytype",
+        "targetPropertyId": "6196384385344756135"
+      },
+      {
+        "sourceColumnName": "msdynmkt_topic",
+        "targetPropertyId": "6196384361204180248"
+      },
+      {
+        "sourceColumnName": "msdynmkt_topic_entitytype",
+        "targetPropertyId": "6196384341400986019"
+      },
+      {
+        "sourceColumnName": "owningbusinessunit",
+        "targetPropertyId": "6196384318820807332"
+      },
+      {
+        "sourceColumnName": "owningbusinessunit_entitytype",
+        "targetPropertyId": "6196384298703254626"
+      },
+      {
+        "sourceColumnName": "owningteam",
+        "targetPropertyId": "6196384275723953529"
+      },
+      {
+        "sourceColumnName": "owningteam_entitytype",
+        "targetPropertyId": "6196384254948984835"
+      },
+      {
+        "sourceColumnName": "owninguser",
+        "targetPropertyId": "6196384233700871736"
+      },
+      {
+        "sourceColumnName": "owninguser_entitytype",
+        "targetPropertyId": "6196384212368231068"
+      },
+      {
+        "sourceColumnName": "ownerid",
+        "targetPropertyId": "6196384192205912265"
+      },
+      {
+        "sourceColumnName": "ownerid_entitytype",
+        "targetPropertyId": "6196384170198381768"
+      },
+      {
+        "sourceColumnName": "componentidunique",
+        "targetPropertyId": "6196384149427397459"
+      },
+      {
+        "sourceColumnName": "createdbyname",
+        "targetPropertyId": "6196384128374796147"
+      },
+      {
+        "sourceColumnName": "createdbyyominame",
+        "targetPropertyId": "6196384104884229543"
+      },
+      {
+        "sourceColumnName": "createdon",
+        "targetPropertyId": "6196384082285549217"
+      },
+      {
+        "sourceColumnName": "createdonbehalfbyname",
+        "targetPropertyId": "6196384062397035579"
+      },
+      {
+        "sourceColumnName": "createdonbehalfbyyominame",
+        "targetPropertyId": "6196384036567275154"
+      },
+      {
+        "sourceColumnName": "entityimage",
+        "targetPropertyId": "6196384015710164678"
+      },
+      {
+        "sourceColumnName": "entityimage_timestamp",
+        "targetPropertyId": "6196383993153209798"
+      },
+      {
+        "sourceColumnName": "entityimage_url",
+        "targetPropertyId": "6196383972171616137"
+      },
+      {
+        "sourceColumnName": "entityimageid",
+        "targetPropertyId": "6196383951295534897"
+      },
+      {
+        "sourceColumnName": "importsequencenumber",
+        "targetPropertyId": "6196383927064264704"
+      },
+      {
+        "sourceColumnName": "iscustomizable",
+        "targetPropertyId": "6196383907645653466"
+      },
+      {
+        "sourceColumnName": "modifiedbyname",
+        "targetPropertyId": "6196383885018913028"
+      },
+      {
+        "sourceColumnName": "modifiedbyyominame",
+        "targetPropertyId": "6196383865827085357"
+      },
+      {
+        "sourceColumnName": "modifiedon",
+        "targetPropertyId": "6196383843435940584"
+      },
+      {
+        "sourceColumnName": "modifiedonbehalfbyname",
+        "targetPropertyId": "6196383821562379711"
+      },
+      {
+        "sourceColumnName": "modifiedonbehalfbyyominame",
+        "targetPropertyId": "6196383800316698617"
+      },
+      {
+        "sourceColumnName": "msdynmkt_brandprofiledata",
+        "targetPropertyId": "6196383778958200815"
+      },
+      {
+        "sourceColumnName": "msdynmkt_brandprofileidname",
+        "targetPropertyId": "6196383759151480385"
+      },
+      {
+        "sourceColumnName": "msdynmkt_compliancesettings3name",
+        "targetPropertyId": "6196383733976527503"
+      },
+      {
+        "sourceColumnName": "msdynmkt_compliancesettings4name",
+        "targetPropertyId": "6196383716272024593"
+      },
+      {
+        "sourceColumnName": "msdynmkt_compliancesettingscompanyaddress",
+        "targetPropertyId": "6196383692912526045"
+      },
+      {
+        "sourceColumnName": "msdynmkt_compliancesettingsname",
+        "targetPropertyId": "6196383674780778088"
+      },
+      {
+        "sourceColumnName": "msdynmkt_conditionalcontent",
+        "targetPropertyId": "6196383653879414546"
+      },
+      {
+        "sourceColumnName": "msdynmkt_description",
+        "targetPropertyId": "6196383631436805832"
+      },
+      {
+        "sourceColumnName": "msdynmkt_designerhtml",
+        "targetPropertyId": "6196383612292720312"
+      },
+      {
+        "sourceColumnName": "msdynmkt_emailbody",
+        "targetPropertyId": "6196383590336772247"
+      },
+      {
+        "sourceColumnName": "msdynmkt_emailid",
+        "targetPropertyId": "6196383567504801788"
+      },
+      {
+        "sourceColumnName": "msdynmkt_eventtype",
+        "targetPropertyId": "6196383547785970614"
+      },
+      {
+        "sourceColumnName": "msdynmkt_fromemail",
+        "targetPropertyId": "6196383524922869750"
+      },
+      {
+        "sourceColumnName": "msdynmkt_fromname",
+        "targetPropertyId": "6196383503524985502"
+      },
+      {
+        "sourceColumnName": "msdynmkt_name",
+        "targetPropertyId": "6196383481451931147"
+      },
+      {
+        "sourceColumnName": "msdynmkt_obmmigrationinfo",
+        "targetPropertyId": "6196383456992364478"
+      },
+      {
+        "sourceColumnName": "msdynmkt_placeholders",
+        "targetPropertyId": "6196383433063762172"
+      },
+      {
+        "sourceColumnName": "msdynmkt_previewhtml",
+        "targetPropertyId": "6196383412954683111"
+      },
+      {
+        "sourceColumnName": "msdynmkt_previewtext",
+        "targetPropertyId": "6196383393875900032"
+      },
+      {
+        "sourceColumnName": "msdynmkt_profiletype",
+        "targetPropertyId": "6196383369345743581"
+      },
+      {
+        "sourceColumnName": "msdynmkt_purposename",
+        "targetPropertyId": "6196383349021688508"
+      },
+      {
+        "sourceColumnName": "msdynmkt_replytoemail",
+        "targetPropertyId": "6196383327233149198"
+      },
+      {
+        "sourceColumnName": "msdynmkt_senderidname",
+        "targetPropertyId": "6196383308010060938"
+      },
+      {
+        "sourceColumnName": "msdynmkt_subject",
+        "targetPropertyId": "6196383284277499609"
+      },
+      {
+        "sourceColumnName": "msdynmkt_templateidname",
+        "targetPropertyId": "6196383265136963963"
+      },
+      {
+        "sourceColumnName": "msdynmkt_testconfiguration",
+        "targetPropertyId": "6196383240662915561"
+      },
+      {
+        "sourceColumnName": "msdynmkt_textpart",
+        "targetPropertyId": "6196383221110926571"
+      },
+      {
+        "sourceColumnName": "msdynmkt_to",
+        "targetPropertyId": "6196383198279600801"
+      },
+      {
+        "sourceColumnName": "msdynmkt_topicname",
+        "targetPropertyId": "6196383179129463309"
+      },
+      {
+        "sourceColumnName": "msdynmkt_virtualeventid",
+        "targetPropertyId": "6196383156500399886"
+      },
+      {
+        "sourceColumnName": "msdynmkt_webinaremailtemplatetype",
+        "targetPropertyId": "6196383134551141290"
+      },
+      {
+        "sourceColumnName": "msdynmkt_webinarid",
+        "targetPropertyId": "6196383113563343969"
+      },
+      {
+        "sourceColumnName": "msdynmkt_webinartitle",
+        "targetPropertyId": "6196383090486854378"
+      },
+      {
+        "sourceColumnName": "overriddencreatedon",
+        "targetPropertyId": "6196383068764565781"
+      },
+      {
+        "sourceColumnName": "overwritetime",
+        "targetPropertyId": "6196383048409002019"
+      },
+      {
+        "sourceColumnName": "owneridname",
+        "targetPropertyId": "6196383028221403731"
+      },
+      {
+        "sourceColumnName": "owneridtype",
+        "targetPropertyId": "6196383003813361508"
+      },
+      {
+        "sourceColumnName": "owneridyominame",
+        "targetPropertyId": "6196382983362249549"
+      },
+      {
+        "sourceColumnName": "owningbusinessunitname",
+        "targetPropertyId": "6196382961924689284"
+      },
+      {
+        "sourceColumnName": "solutionid",
+        "targetPropertyId": "6196382939610317477"
+      },
+      {
+        "sourceColumnName": "supportingsolutionid",
+        "targetPropertyId": "6196382917982473672"
+      },
+      {
+        "sourceColumnName": "timezoneruleversionnumber",
+        "targetPropertyId": "6196382898793571143"
+      },
+      {
+        "sourceColumnName": "utcconversiontimezonecode",
+        "targetPropertyId": "6196382876395450603"
+      },
+      {
+        "sourceColumnName": "versionnumber",
+        "targetPropertyId": "6196382856824338859"
+      },
+      {
+        "sourceColumnName": "IsDelete",
+        "targetPropertyId": "6196382833868620169"
+      },
+      {
+        "sourceColumnName": "PartitionId",
+        "targetPropertyId": "6196382811151822478"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "d889679a-b8d7-9fdf-491e-2e22e0542029",
+      "sourceTableName": "msdynmkt_email",
+      "sourceSchema": null
+    }
+  }
+}

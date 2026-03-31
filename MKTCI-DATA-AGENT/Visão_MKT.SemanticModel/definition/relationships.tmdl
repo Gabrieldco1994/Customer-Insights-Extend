@@ -1,0 +1,42 @@
+relationship ade13ad8-06d5-8f77-3b40-ca8f854d60cc
+	fromColumn: EmailDelivered.CustomerJourneyId
+	toColumn: msdynmkt_journey.msdynmkt_journeyid
+
+relationship a7384e0f-89d7-c26b-ded9-de4c371d21f4
+	fromColumn: EmailDelivered.ContactId
+	toColumn: contact.contactid
+
+relationship 3705422a-b3dd-4a52-5d4e-1cd139a9b514
+	fromColumn: EmailOpened.ContactId
+	toColumn: contact.contactid
+
+relationship 27139226-072b-97c0-0c37-8c890c650c2c
+	fromColumn: EmailSent.ContactId
+	toColumn: contact.contactid
+
+relationship 6dd1118f-1ed4-7882-5c82-359232a2b90e
+	fromColumn: EmailOpened.CustomerJourneyId
+	toColumn: msdynmkt_journey.msdynmkt_journeyid
+
+relationship 5a16b583-3528-0db6-6004-2075da67f686
+	fromColumn: EmailSent.CustomerJourneyId
+	toColumn: msdynmkt_journey.msdynmkt_journeyid
+
+relationship f96fa22a-68ec-60dc-0225-7b2c3cdeb518
+	fromColumn: opportunity.msdynmkt_journeyid
+	toColumn: msdynmkt_journey.msdynmkt_journeyid
+
+relationship 8288960b-c0c3-f638-bf95-9f7b9fbf6614
+	fromColumn: crfc2_journeychannelcost.crfc2_msdynmkt_journey
+	toColumn: msdynmkt_journey.msdynmkt_journeyid
+
+relationship f88854a5-0900-71f6-2bbd-1998cead713b
+	fromColumn: opportunity.customerid
+	toColumn: contact.contactid
+
+relationship b4198ab0-6304-ac95-0f25-6cd15d850c47
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: crfc2_journeychannelcost.crfc2_new_channel
+	toColumn: DimChannel.crfc2_new_channel
+

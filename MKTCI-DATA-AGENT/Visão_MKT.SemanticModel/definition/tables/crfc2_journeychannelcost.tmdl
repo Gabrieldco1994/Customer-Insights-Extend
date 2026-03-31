@@ -1,0 +1,546 @@
+table crfc2_journeychannelcost
+	lineageTag: d1b0a394-e73a-4029-9daf-47428800d02a
+	sourceLineageTag: [dbo].[crfc2_journeychannelcost]
+
+	/// Canal tratado
+	measure 'Channel Name' = ```
+			
+			SWITCH(
+			    SELECTEDVALUE('crfc2_journeychannelcost'[crfc2_new_channel]),
+			    508510000, "Email",
+			    508510001, "SMS",
+			    508510002, "Whatsapp",
+			    508510003, "Social",
+			    508510004, "Push",
+			    508510005, "Voice",
+			    "Outro"
+			)
+			
+			```
+		lineageTag: 6d4575cf-2ed0-4a5f-a49d-40779c79894a
+
+		changedProperty = Name
+
+		changedProperty = Description
+
+	column Id
+		dataType: string
+		lineageTag: 284c20bd-c62f-4d7a-bd7c-05978fb5f1a7
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c83f6dd9-c085-4e0b-b53c-6ff06f1a168b
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c81e35e7-174f-4190-817b-ada2b96f1976
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column statecode
+		dataType: int64
+		formatString: 0
+		lineageTag: 5fe7c258-8531-4a3e-a9ac-5c9808dc6f25
+		sourceLineageTag: statecode
+		summarizeBy: sum
+		sourceColumn: statecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column statuscode
+		dataType: int64
+		formatString: 0
+		lineageTag: 258e6e20-3170-43bd-bc4e-20a8face9007
+		sourceLineageTag: statuscode
+		summarizeBy: sum
+		sourceColumn: statuscode
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_new_channel
+		dataType: int64
+		formatString: 0
+		lineageTag: 390d9936-3336-4a64-b50a-2857e2f2d0a7
+		sourceLineageTag: crfc2_new_channel
+		summarizeBy: none
+		sourceColumn: crfc2_new_channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby
+		dataType: string
+		lineageTag: e3366482-f142-4673-9bad-497320bdf3d9
+		sourceLineageTag: createdby
+		summarizeBy: none
+		sourceColumn: createdby
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby_entitytype
+		dataType: string
+		lineageTag: 84740a94-90a6-4288-b612-775020c64e7a
+		sourceLineageTag: createdby_entitytype
+		summarizeBy: none
+		sourceColumn: createdby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfby
+		dataType: string
+		lineageTag: 6f590bf6-d740-46b1-9931-a778a6988fa6
+		sourceLineageTag: createdonbehalfby
+		summarizeBy: none
+		sourceColumn: createdonbehalfby
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfby_entitytype
+		dataType: string
+		lineageTag: e3cfd51b-845a-465f-b836-749983ccdcb5
+		sourceLineageTag: createdonbehalfby_entitytype
+		summarizeBy: none
+		sourceColumn: createdonbehalfby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_msdynmkt_journey
+		dataType: string
+		lineageTag: c29b67d5-8643-4de2-a2e5-e4726317aa0e
+		sourceLineageTag: crfc2_msdynmkt_journey
+		summarizeBy: none
+		sourceColumn: crfc2_msdynmkt_journey
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_msdynmkt_journey_entitytype
+		dataType: string
+		lineageTag: 4fded585-0225-404b-a561-54e9b4c6c6dc
+		sourceLineageTag: crfc2_msdynmkt_journey_entitytype
+		summarizeBy: none
+		sourceColumn: crfc2_msdynmkt_journey_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedby
+		dataType: string
+		lineageTag: 0d7c9833-a852-47a7-b5e3-78b6580cc5e3
+		sourceLineageTag: modifiedby
+		summarizeBy: none
+		sourceColumn: modifiedby
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedby_entitytype
+		dataType: string
+		lineageTag: 55326fbb-2731-4a44-b83c-3bbfce6b98cf
+		sourceLineageTag: modifiedby_entitytype
+		summarizeBy: none
+		sourceColumn: modifiedby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfby
+		dataType: string
+		lineageTag: 60cc671e-2fc1-4fdb-8552-2689ee9451ec
+		sourceLineageTag: modifiedonbehalfby
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfby
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfby_entitytype
+		dataType: string
+		lineageTag: 9ba2cfe4-e51a-4141-8d19-00544d4965e4
+		sourceLineageTag: modifiedonbehalfby_entitytype
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningbusinessunit
+		dataType: string
+		lineageTag: 40fc8585-8965-4deb-9550-c07ce6d70f01
+		sourceLineageTag: owningbusinessunit
+		summarizeBy: none
+		sourceColumn: owningbusinessunit
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningbusinessunit_entitytype
+		dataType: string
+		lineageTag: 05763c47-79ca-4b0d-9ac0-944e2623d3d5
+		sourceLineageTag: owningbusinessunit_entitytype
+		summarizeBy: none
+		sourceColumn: owningbusinessunit_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningteam
+		dataType: string
+		lineageTag: f441e99d-8565-4e88-9c68-3dc6aab26969
+		sourceLineageTag: owningteam
+		summarizeBy: none
+		sourceColumn: owningteam
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningteam_entitytype
+		dataType: string
+		lineageTag: 8a941e8d-599a-4831-83fc-cba2785439b5
+		sourceLineageTag: owningteam_entitytype
+		summarizeBy: none
+		sourceColumn: owningteam_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column owninguser
+		dataType: string
+		lineageTag: 45ca2b04-07a2-465d-9f4b-0745b8e081a3
+		sourceLineageTag: owninguser
+		summarizeBy: none
+		sourceColumn: owninguser
+
+		annotation SummarizationSetBy = Automatic
+
+	column owninguser_entitytype
+		dataType: string
+		lineageTag: c5336bcf-df40-4783-9aab-1ba857069a05
+		sourceLineageTag: owninguser_entitytype
+		summarizeBy: none
+		sourceColumn: owninguser_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column transactioncurrencyid
+		dataType: string
+		lineageTag: c69122aa-9119-4fe0-a5bf-b865a877339a
+		sourceLineageTag: transactioncurrencyid
+		summarizeBy: none
+		sourceColumn: transactioncurrencyid
+
+		annotation SummarizationSetBy = Automatic
+
+	column transactioncurrencyid_entitytype
+		dataType: string
+		lineageTag: d5118173-2f6c-4552-b399-d505f69e7cbd
+		sourceLineageTag: transactioncurrencyid_entitytype
+		summarizeBy: none
+		sourceColumn: transactioncurrencyid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column ownerid
+		dataType: string
+		lineageTag: 6b0fb0d2-8179-4a04-ad86-41e02211c397
+		sourceLineageTag: ownerid
+		summarizeBy: none
+		sourceColumn: ownerid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ownerid_entitytype
+		dataType: string
+		lineageTag: c7252534-9151-4bfe-a91a-0a6b9634d78e
+		sourceLineageTag: ownerid_entitytype
+		summarizeBy: none
+		sourceColumn: ownerid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_new_cost
+		dataType: double
+		lineageTag: 416eec36-325b-4b4f-9525-9737cea6f201
+		sourceLineageTag: crfc2_new_cost
+		summarizeBy: sum
+		sourceColumn: crfc2_new_cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column crfc2_new_cost_base
+		dataType: double
+		lineageTag: f68ac62d-b6e8-42f6-bf12-98f422972787
+		sourceLineageTag: crfc2_new_cost_base
+		summarizeBy: sum
+		sourceColumn: crfc2_new_cost_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column createdbyname
+		dataType: string
+		lineageTag: 9c48d1eb-2f9e-469e-b87f-b357fbd6dc14
+		sourceLineageTag: createdbyname
+		summarizeBy: none
+		sourceColumn: createdbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdbyyominame
+		dataType: string
+		lineageTag: b3c35edb-7482-42dd-9f1d-67d7317736a8
+		sourceLineageTag: createdbyyominame
+		summarizeBy: none
+		sourceColumn: createdbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdon
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ac936431-2d26-4725-965b-6050e2987f08
+		sourceLineageTag: createdon
+		summarizeBy: none
+		sourceColumn: createdon
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfbyname
+		dataType: string
+		lineageTag: ebfb4d17-b52c-4ba2-9ae7-fa5899163d03
+		sourceLineageTag: createdonbehalfbyname
+		summarizeBy: none
+		sourceColumn: createdonbehalfbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfbyyominame
+		dataType: string
+		lineageTag: 4c5e7176-ae5a-409c-be62-0a320750c469
+		sourceLineageTag: createdonbehalfbyyominame
+		summarizeBy: none
+		sourceColumn: createdonbehalfbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_journeychannelcost1
+		dataType: string
+		lineageTag: c7013d32-4f68-4750-91af-b2ebdd65155e
+		sourceLineageTag: crfc2_journeychannelcost1
+		summarizeBy: none
+		sourceColumn: crfc2_journeychannelcost1
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_journeychannelcostid
+		dataType: string
+		lineageTag: 276328b9-ad42-4f9c-8bb9-2a5c898fe60b
+		sourceLineageTag: crfc2_journeychannelcostid
+		summarizeBy: none
+		sourceColumn: crfc2_journeychannelcostid
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_msdynmkt_journeyname
+		dataType: string
+		lineageTag: 58a53f06-7a1e-4413-9fe0-0871b86c7822
+		sourceLineageTag: crfc2_msdynmkt_journeyname
+		summarizeBy: none
+		sourceColumn: crfc2_msdynmkt_journeyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_new_period
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 27eb197e-dcd2-4695-a700-35c09e51e0ba
+		sourceLineageTag: crfc2_new_period
+		summarizeBy: none
+		sourceColumn: crfc2_new_period
+
+		annotation SummarizationSetBy = Automatic
+
+	column exchangerate
+		dataType: double
+		lineageTag: 89677667-d43e-489b-ad63-caa78e8ed422
+		sourceLineageTag: exchangerate
+		summarizeBy: sum
+		sourceColumn: exchangerate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column importsequencenumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 2c11e3e3-d14d-47bd-bd60-f04a298265af
+		sourceLineageTag: importsequencenumber
+		summarizeBy: sum
+		sourceColumn: importsequencenumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedbyname
+		dataType: string
+		lineageTag: bb975e5d-2cde-4fa5-ab8c-97fcff669af9
+		sourceLineageTag: modifiedbyname
+		summarizeBy: none
+		sourceColumn: modifiedbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedbyyominame
+		dataType: string
+		lineageTag: 066e38f0-e601-46b7-b743-f8cec50a2936
+		sourceLineageTag: modifiedbyyominame
+		summarizeBy: none
+		sourceColumn: modifiedbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedon
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bad4bc6e-a9fd-4921-a9b4-4a972d4c495f
+		sourceLineageTag: modifiedon
+		summarizeBy: none
+		sourceColumn: modifiedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfbyname
+		dataType: string
+		lineageTag: eea47d7f-be86-4460-bfc6-6488118d5ede
+		sourceLineageTag: modifiedonbehalfbyname
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfbyyominame
+		dataType: string
+		lineageTag: b4a92ee3-9bab-4c75-91a9-1429862e859b
+		sourceLineageTag: modifiedonbehalfbyyominame
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column overriddencreatedon
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 346ae4ab-85a0-4876-a573-d3f48672dfbf
+		sourceLineageTag: overriddencreatedon
+		summarizeBy: none
+		sourceColumn: overriddencreatedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column owneridname
+		dataType: string
+		lineageTag: 53b838a2-0b06-4392-8b5e-eccc287bac1c
+		sourceLineageTag: owneridname
+		summarizeBy: none
+		sourceColumn: owneridname
+
+		annotation SummarizationSetBy = Automatic
+
+	column owneridtype
+		dataType: string
+		lineageTag: 5f0c78e7-734c-4206-a566-451ad5dae046
+		sourceLineageTag: owneridtype
+		summarizeBy: none
+		sourceColumn: owneridtype
+
+		annotation SummarizationSetBy = Automatic
+
+	column owneridyominame
+		dataType: string
+		lineageTag: b4d4ae52-045b-4f09-b89d-7ba22591b229
+		sourceLineageTag: owneridyominame
+		summarizeBy: none
+		sourceColumn: owneridyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningbusinessunitname
+		dataType: string
+		lineageTag: e48fb7a4-bbf6-4f9a-a03e-1f96ce03bf50
+		sourceLineageTag: owningbusinessunitname
+		summarizeBy: none
+		sourceColumn: owningbusinessunitname
+
+		annotation SummarizationSetBy = Automatic
+
+	column timezoneruleversionnumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 31be200e-fb10-45ee-a1d0-567b7a7c7eba
+		sourceLineageTag: timezoneruleversionnumber
+		summarizeBy: sum
+		sourceColumn: timezoneruleversionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column transactioncurrencyidname
+		dataType: string
+		lineageTag: 594d93a2-2f10-42d7-9bbb-e0c3b93a8319
+		sourceLineageTag: transactioncurrencyidname
+		summarizeBy: none
+		sourceColumn: transactioncurrencyidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column utcconversiontimezonecode
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ada7fd4-8b4a-4328-8b07-e3831bcf5c5c
+		sourceLineageTag: utcconversiontimezonecode
+		summarizeBy: sum
+		sourceColumn: utcconversiontimezonecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 17ec5ae1-7d09-4926-904e-5c47bf6ea07e
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0a1cdaf6-a1cc-409a-9848-7b1355022418
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		lineageTag: bb12cf7c-04a1-4e05-bdc1-79295e247a95
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition crfc2_journeychannelcost = entity
+		mode: directLake
+		source
+			entityName: crfc2_journeychannelcost
+			expressionSource: 'DirectLake - dataverse_fsiprincipal_cds2_workspace_unqcc8d8adf2841f011be52000d3a106'
+

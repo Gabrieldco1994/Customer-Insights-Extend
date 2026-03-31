@@ -1,0 +1,81 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.2.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY26SU04",
+      "reportVersionAtImport": {
+        "visual": "2.8.0",
+        "report": "3.2.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "AccessibleDefault",
+      "reportVersionAtImport": {
+        "visual": "2.8.0",
+        "report": "3.2.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "sankey02300D1BE6F5427989F3DE31CCA9E0F32020"
+  ],
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "AccessibleDefault",
+          "path": "BuiltInThemes/AccessibleDefault.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "CY26SU04",
+          "path": "BaseThemes/CY26SU04.json",
+          "type": "BaseTheme"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "allowAutomatedInsightsNotification": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

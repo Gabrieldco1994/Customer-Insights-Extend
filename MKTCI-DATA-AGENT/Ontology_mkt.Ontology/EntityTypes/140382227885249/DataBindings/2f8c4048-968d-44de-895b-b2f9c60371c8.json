@@ -1,0 +1,236 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "2f8c4048-968d-44de-895b-b2f9c60371c8",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "Id",
+        "targetPropertyId": "6196380263019291251"
+      },
+      {
+        "sourceColumnName": "SinkCreatedOn",
+        "targetPropertyId": "6196380239043349996"
+      },
+      {
+        "sourceColumnName": "SinkModifiedOn",
+        "targetPropertyId": "6196380220148286327"
+      },
+      {
+        "sourceColumnName": "statecode",
+        "targetPropertyId": "6196380196758940375"
+      },
+      {
+        "sourceColumnName": "statuscode",
+        "targetPropertyId": "6196380173389293888"
+      },
+      {
+        "sourceColumnName": "crfc2_new_channel",
+        "targetPropertyId": "6196380151994339333"
+      },
+      {
+        "sourceColumnName": "createdby",
+        "targetPropertyId": "6196380127297913329"
+      },
+      {
+        "sourceColumnName": "createdby_entitytype",
+        "targetPropertyId": "6196380107948590123"
+      },
+      {
+        "sourceColumnName": "createdonbehalfby",
+        "targetPropertyId": "6196380080340031856"
+      },
+      {
+        "sourceColumnName": "createdonbehalfby_entitytype",
+        "targetPropertyId": "6196380061307591655"
+      },
+      {
+        "sourceColumnName": "crfc2_msdynmkt_journey",
+        "targetPropertyId": "6196380036584826387"
+      },
+      {
+        "sourceColumnName": "crfc2_msdynmkt_journey_entitytype",
+        "targetPropertyId": "6196380014102587069"
+      },
+      {
+        "sourceColumnName": "modifiedby",
+        "targetPropertyId": "6196379993511340853"
+      },
+      {
+        "sourceColumnName": "modifiedby_entitytype",
+        "targetPropertyId": "6196379972533375013"
+      },
+      {
+        "sourceColumnName": "modifiedonbehalfby",
+        "targetPropertyId": "6196379950021980399"
+      },
+      {
+        "sourceColumnName": "modifiedonbehalfby_entitytype",
+        "targetPropertyId": "6196379930500549558"
+      },
+      {
+        "sourceColumnName": "owningbusinessunit",
+        "targetPropertyId": "6196379907358537339"
+      },
+      {
+        "sourceColumnName": "owningbusinessunit_entitytype",
+        "targetPropertyId": "6196379886468189379"
+      },
+      {
+        "sourceColumnName": "owningteam",
+        "targetPropertyId": "6196379863749920217"
+      },
+      {
+        "sourceColumnName": "owningteam_entitytype",
+        "targetPropertyId": "6196379844909872622"
+      },
+      {
+        "sourceColumnName": "owninguser",
+        "targetPropertyId": "6196379824965999582"
+      },
+      {
+        "sourceColumnName": "owninguser_entitytype",
+        "targetPropertyId": "6196379801662517396"
+      },
+      {
+        "sourceColumnName": "transactioncurrencyid",
+        "targetPropertyId": "6196379779591317808"
+      },
+      {
+        "sourceColumnName": "transactioncurrencyid_entitytype",
+        "targetPropertyId": "6196379752260979541"
+      },
+      {
+        "sourceColumnName": "ownerid",
+        "targetPropertyId": "6196379733062649282"
+      },
+      {
+        "sourceColumnName": "ownerid_entitytype",
+        "targetPropertyId": "6196379709135546918"
+      },
+      {
+        "sourceColumnName": "crfc2_new_cost",
+        "targetPropertyId": "6196379689219081065"
+      },
+      {
+        "sourceColumnName": "crfc2_new_cost_base",
+        "targetPropertyId": "6196379670390687254"
+      },
+      {
+        "sourceColumnName": "createdbyname",
+        "targetPropertyId": "6196379646975742122"
+      },
+      {
+        "sourceColumnName": "createdbyyominame",
+        "targetPropertyId": "6196379623566343688"
+      },
+      {
+        "sourceColumnName": "createdon",
+        "targetPropertyId": "6196379601902406584"
+      },
+      {
+        "sourceColumnName": "createdonbehalfbyname",
+        "targetPropertyId": "6196379582354554660"
+      },
+      {
+        "sourceColumnName": "createdonbehalfbyyominame",
+        "targetPropertyId": "6196379562452291715"
+      },
+      {
+        "sourceColumnName": "crfc2_journeychannelcost1",
+        "targetPropertyId": "6196379540123716342"
+      },
+      {
+        "sourceColumnName": "crfc2_journeychannelcostid",
+        "targetPropertyId": "6196379519398998663"
+      },
+      {
+        "sourceColumnName": "crfc2_msdynmkt_journeyname",
+        "targetPropertyId": "6196379493729356362"
+      },
+      {
+        "sourceColumnName": "crfc2_new_period",
+        "targetPropertyId": "6196379466965995771"
+      },
+      {
+        "sourceColumnName": "exchangerate",
+        "targetPropertyId": "6196379441951690110"
+      },
+      {
+        "sourceColumnName": "importsequencenumber",
+        "targetPropertyId": "6196379418830968583"
+      },
+      {
+        "sourceColumnName": "modifiedbyname",
+        "targetPropertyId": "6196379397092312506"
+      },
+      {
+        "sourceColumnName": "modifiedbyyominame",
+        "targetPropertyId": "6196379376589367845"
+      },
+      {
+        "sourceColumnName": "modifiedon",
+        "targetPropertyId": "6196379355166507126"
+      },
+      {
+        "sourceColumnName": "modifiedonbehalfbyname",
+        "targetPropertyId": "6196379335221138060"
+      },
+      {
+        "sourceColumnName": "modifiedonbehalfbyyominame",
+        "targetPropertyId": "6196379310822232872"
+      },
+      {
+        "sourceColumnName": "overriddencreatedon",
+        "targetPropertyId": "6196379285494966566"
+      },
+      {
+        "sourceColumnName": "owneridname",
+        "targetPropertyId": "6196379262799865463"
+      },
+      {
+        "sourceColumnName": "owneridtype",
+        "targetPropertyId": "6196379243953348185"
+      },
+      {
+        "sourceColumnName": "owneridyominame",
+        "targetPropertyId": "6196379220536995019"
+      },
+      {
+        "sourceColumnName": "owningbusinessunitname",
+        "targetPropertyId": "6196379201256626775"
+      },
+      {
+        "sourceColumnName": "timezoneruleversionnumber",
+        "targetPropertyId": "6196379179013703631"
+      },
+      {
+        "sourceColumnName": "transactioncurrencyidname",
+        "targetPropertyId": "6196379159261429593"
+      },
+      {
+        "sourceColumnName": "utcconversiontimezonecode",
+        "targetPropertyId": "6196379133961798456"
+      },
+      {
+        "sourceColumnName": "versionnumber",
+        "targetPropertyId": "6196379110368000888"
+      },
+      {
+        "sourceColumnName": "IsDelete",
+        "targetPropertyId": "6196379087669338768"
+      },
+      {
+        "sourceColumnName": "PartitionId",
+        "targetPropertyId": "6196379065147484672"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "d889679a-b8d7-9fdf-491e-2e22e0542029",
+      "sourceTableName": "crfc2_journeychannelcost",
+      "sourceSchema": null
+    }
+  }
+}

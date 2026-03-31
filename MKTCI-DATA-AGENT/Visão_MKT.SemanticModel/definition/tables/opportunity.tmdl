@@ -1,0 +1,2187 @@
+table opportunity
+	lineageTag: 2c45c815-1987-45e4-a6f5-3240db5396c2
+	sourceLineageTag: [dbo].[opportunity]
+
+	measure 'Opp Count' = ```
+			
+			DISTINCTCOUNT(Opportunity[opportunityid]) 
+			```
+		formatString: 0
+		lineageTag: b3ba1c48-9abd-42b0-a2a0-59f0ec9337e8
+
+		changedProperty = Name
+
+	measure 'Estimated Revenue' =
+			
+			SUM(Opportunity[estimatedvalue])
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: f8c80ac6-1955-40e9-a308-bfc2310b569e
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Won Revenue' =
+			
+			CALCULATE(
+			    SUM(Opportunity[actualvalue]),
+			    Opportunity[statecode] = 1
+			)
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 21cadcdd-37b4-4b15-b22e-229adb527e8d
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column Id
+		dataType: string
+		lineageTag: cceeed7b-d929-4485-a237-3ee7906f01cf
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1c6fd971-f901-4b48-9612-31dd5f833e1c
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 147ae2c8-92ac-4f1d-9fd5-60be8856ab7e
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		annotation SummarizationSetBy = Automatic
+
+	column statecode
+		dataType: int64
+		formatString: 0
+		lineageTag: a1bc78f2-f24d-4ef2-8c5d-1581bc2d789b
+		sourceLineageTag: statecode
+		summarizeBy: sum
+		sourceColumn: statecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column statuscode
+		dataType: int64
+		formatString: 0
+		lineageTag: ec76bf5c-56b6-49da-9010-6c8402f69772
+		sourceLineageTag: statuscode
+		summarizeBy: sum
+		sourceColumn: statuscode
+
+		annotation SummarizationSetBy = Automatic
+
+	column budgetstatus
+		dataType: int64
+		formatString: 0
+		lineageTag: b161da0d-8b29-4c8b-89ba-54deb708e4de
+		sourceLineageTag: budgetstatus
+		summarizeBy: sum
+		sourceColumn: budgetstatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_tipodoconsorcio
+		dataType: int64
+		formatString: 0
+		lineageTag: 5ea0516a-90a4-4b2f-81f3-a3ad6cf80ef3
+		sourceLineageTag: crfc2_tipodoconsorcio
+		summarizeBy: sum
+		sourceColumn: crfc2_tipodoconsorcio
+
+		annotation SummarizationSetBy = Automatic
+
+	column initialcommunication
+		dataType: int64
+		formatString: 0
+		lineageTag: 2ca545e3-9cb8-43d5-8b17-edc10d12928b
+		sourceLineageTag: initialcommunication
+		summarizeBy: sum
+		sourceColumn: initialcommunication
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_forecastcategory
+		dataType: int64
+		formatString: 0
+		lineageTag: 138f6ef7-a678-4e80-b11b-fd8735c2acba
+		sourceLineageTag: msdyn_forecastcategory
+		summarizeBy: sum
+		sourceColumn: msdyn_forecastcategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_opportunitygrade
+		dataType: int64
+		formatString: 0
+		lineageTag: 53f69f83-eccb-4cd3-9410-00518e74f819
+		sourceLineageTag: msdyn_opportunitygrade
+		summarizeBy: sum
+		sourceColumn: msdyn_opportunitygrade
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_opportunityscoretrend
+		dataType: int64
+		formatString: 0
+		lineageTag: 3bbfb8b0-dcf1-4b2d-8a6e-fda5836c65dc
+		sourceLineageTag: msdyn_opportunityscoretrend
+		summarizeBy: sum
+		sourceColumn: msdyn_opportunityscoretrend
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_ordertype
+		dataType: int64
+		formatString: 0
+		lineageTag: a00a1b24-32b0-4e0c-8bf6-e913fc3dada2
+		sourceLineageTag: msdyn_ordertype
+		summarizeBy: sum
+		sourceColumn: msdyn_ordertype
+
+		annotation SummarizationSetBy = Automatic
+
+	column need
+		dataType: int64
+		formatString: 0
+		lineageTag: 1dd88115-368d-4174-8a1f-f9435138ec7a
+		sourceLineageTag: need
+		summarizeBy: sum
+		sourceColumn: need
+
+		annotation SummarizationSetBy = Automatic
+
+	column opportunityratingcode
+		dataType: int64
+		formatString: 0
+		lineageTag: 5161d7c2-7fb8-41ee-910d-54404b0971b4
+		sourceLineageTag: opportunityratingcode
+		summarizeBy: sum
+		sourceColumn: opportunityratingcode
+
+		annotation SummarizationSetBy = Automatic
+
+	column pricingerrorcode
+		dataType: int64
+		formatString: 0
+		lineageTag: bf6cd4b5-27d5-44d1-a898-f919552ce04e
+		sourceLineageTag: pricingerrorcode
+		summarizeBy: sum
+		sourceColumn: pricingerrorcode
+
+		annotation SummarizationSetBy = Automatic
+
+	column prioritycode
+		dataType: int64
+		formatString: 0
+		lineageTag: 4973b36b-4f11-4b29-bad4-05231face45c
+		sourceLineageTag: prioritycode
+		summarizeBy: sum
+		sourceColumn: prioritycode
+
+		annotation SummarizationSetBy = Automatic
+
+	column purchaseprocess
+		dataType: int64
+		formatString: 0
+		lineageTag: 1434fe0e-254f-4bfa-b7c7-84407d025be4
+		sourceLineageTag: purchaseprocess
+		summarizeBy: sum
+		sourceColumn: purchaseprocess
+
+		annotation SummarizationSetBy = Automatic
+
+	column purchasetimeframe
+		dataType: int64
+		formatString: 0
+		lineageTag: c77abbcf-1509-4eb5-ade9-84ba6bcb4980
+		sourceLineageTag: purchasetimeframe
+		summarizeBy: sum
+		sourceColumn: purchasetimeframe
+
+		annotation SummarizationSetBy = Automatic
+
+	column salesstage
+		dataType: int64
+		formatString: 0
+		lineageTag: 922a9f31-eb06-4795-86c1-ef1c8ce7f9e9
+		sourceLineageTag: salesstage
+		summarizeBy: sum
+		sourceColumn: salesstage
+
+		annotation SummarizationSetBy = Automatic
+
+	column salesstagecode
+		dataType: int64
+		formatString: 0
+		lineageTag: 652d5e74-d6c5-4cc9-8e9b-b765e6a88f9f
+		sourceLineageTag: salesstagecode
+		summarizeBy: sum
+		sourceColumn: salesstagecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column skippricecalculation
+		dataType: int64
+		formatString: 0
+		lineageTag: b69c7357-705b-4e42-b912-08c813c22108
+		sourceLineageTag: skippricecalculation
+		summarizeBy: sum
+		sourceColumn: skippricecalculation
+
+		annotation SummarizationSetBy = Automatic
+
+	column timeline
+		dataType: int64
+		formatString: 0
+		lineageTag: 8bd637b4-12f7-4d27-978a-b126c1733722
+		sourceLineageTag: timeline
+		summarizeBy: sum
+		sourceColumn: timeline
+
+		annotation SummarizationSetBy = Automatic
+
+	column captureproposalfeedback
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: bc82e01e-e294-4d50-822d-b7588ebd39fe
+		sourceLineageTag: captureproposalfeedback
+		summarizeBy: none
+		sourceColumn: captureproposalfeedback
+
+		annotation SummarizationSetBy = Automatic
+
+	column completefinalproposal
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c5b3740e-3051-4f59-91b3-314a572ff360
+		sourceLineageTag: completefinalproposal
+		summarizeBy: none
+		sourceColumn: completefinalproposal
+
+		annotation SummarizationSetBy = Automatic
+
+	column completeinternalreview
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6e4c25d6-8970-4796-9cb1-aae7f62e4986
+		sourceLineageTag: completeinternalreview
+		summarizeBy: none
+		sourceColumn: completeinternalreview
+
+		annotation SummarizationSetBy = Automatic
+
+	column confirminterest
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a5059b5e-5a13-4d03-803a-d9b13aea8e66
+		sourceLineageTag: confirminterest
+		summarizeBy: none
+		sourceColumn: confirminterest
+
+		annotation SummarizationSetBy = Automatic
+
+	column decisionmaker
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ee7a152b-3338-4cbf-865b-5dfe40190f9b
+		sourceLineageTag: decisionmaker
+		summarizeBy: none
+		sourceColumn: decisionmaker
+
+		annotation SummarizationSetBy = Automatic
+
+	column developproposal
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8ab4042c-0d76-46e3-bef1-477c5777ab2a
+		sourceLineageTag: developproposal
+		summarizeBy: none
+		sourceColumn: developproposal
+
+		annotation SummarizationSetBy = Automatic
+
+	column evaluatefit
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 24eabd04-a633-4ee7-a06d-4c4e8eaa709a
+		sourceLineageTag: evaluatefit
+		summarizeBy: none
+		sourceColumn: evaluatefit
+
+		annotation SummarizationSetBy = Automatic
+
+	column filedebrief
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 30fab5f3-3b0c-4d25-8dbb-496ad6e567e6
+		sourceLineageTag: filedebrief
+		summarizeBy: none
+		sourceColumn: filedebrief
+
+		annotation SummarizationSetBy = Automatic
+
+	column identifycompetitors
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8d63893e-c233-437f-8ceb-0f634ff19b68
+		sourceLineageTag: identifycompetitors
+		summarizeBy: none
+		sourceColumn: identifycompetitors
+
+		annotation SummarizationSetBy = Automatic
+
+	column identifycustomercontacts
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ace8b172-5ea3-4c76-aca2-44b607d52b60
+		sourceLineageTag: identifycustomercontacts
+		summarizeBy: none
+		sourceColumn: identifycustomercontacts
+
+		annotation SummarizationSetBy = Automatic
+
+	column identifypursuitteam
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a08a8192-e318-418c-8d48-5288ebaf4ca9
+		sourceLineageTag: identifypursuitteam
+		summarizeBy: none
+		sourceColumn: identifypursuitteam
+
+		annotation SummarizationSetBy = Automatic
+
+	column isprivate
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ba74a148-8ce1-4b27-a0e2-d13453fb6ef8
+		sourceLineageTag: isprivate
+		summarizeBy: none
+		sourceColumn: isprivate
+
+		annotation SummarizationSetBy = Automatic
+
+	column isrevenuesystemcalculated
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1489c4cb-650e-4f5f-8d64-08fa393c3bba
+		sourceLineageTag: isrevenuesystemcalculated
+		summarizeBy: none
+		sourceColumn: isrevenuesystemcalculated
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_gdproptout
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 847ae30e-c64a-4407-a75e-29d6985c2f1a
+		sourceLineageTag: msdyn_gdproptout
+		summarizeBy: none
+		sourceColumn: msdyn_gdproptout
+
+		annotation SummarizationSetBy = Automatic
+
+	column participatesinworkflow
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2add9049-8069-434b-9783-1f32ed373a60
+		sourceLineageTag: participatesinworkflow
+		summarizeBy: none
+		sourceColumn: participatesinworkflow
+
+		annotation SummarizationSetBy = Automatic
+
+	column presentfinalproposal
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f43610b3-e317-4158-890d-9a5ab96e7a60
+		sourceLineageTag: presentfinalproposal
+		summarizeBy: none
+		sourceColumn: presentfinalproposal
+
+		annotation SummarizationSetBy = Automatic
+
+	column presentproposal
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1277ea2d-9c30-4dbe-b439-56d15f7f0aaa
+		sourceLineageTag: presentproposal
+		summarizeBy: none
+		sourceColumn: presentproposal
+
+		annotation SummarizationSetBy = Automatic
+
+	column pursuitdecision
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2220762f-0740-42b3-b125-1ae3e672659e
+		sourceLineageTag: pursuitdecision
+		summarizeBy: none
+		sourceColumn: pursuitdecision
+
+		annotation SummarizationSetBy = Automatic
+
+	column resolvefeedback
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2e28ddc2-383e-459f-ab1f-6f98d02120ef
+		sourceLineageTag: resolvefeedback
+		summarizeBy: none
+		sourceColumn: resolvefeedback
+
+		annotation SummarizationSetBy = Automatic
+
+	column sendthankyounote
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e12e541c-441c-4bdc-b689-0f6be6b17872
+		sourceLineageTag: sendthankyounote
+		summarizeBy: none
+		sourceColumn: sendthankyounote
+
+		annotation SummarizationSetBy = Automatic
+
+	column accountid
+		dataType: string
+		lineageTag: 09c95830-dad6-421d-911a-e0d9c0d52f4f
+		sourceLineageTag: accountid
+		summarizeBy: none
+		sourceColumn: accountid
+
+		annotation SummarizationSetBy = Automatic
+
+	column accountid_entitytype
+		dataType: string
+		lineageTag: 9201a1c4-5a03-4f86-a85b-7bf763fc347a
+		sourceLineageTag: accountid_entitytype
+		summarizeBy: none
+		sourceColumn: accountid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column campaignid
+		dataType: string
+		lineageTag: 377da336-4e81-4523-9cee-5dab16573d3a
+		sourceLineageTag: campaignid
+		summarizeBy: none
+		sourceColumn: campaignid
+
+		annotation SummarizationSetBy = Automatic
+
+	column campaignid_entitytype
+		dataType: string
+		lineageTag: 7ad1d09c-5c9a-47ed-9010-9dcf71411c91
+		sourceLineageTag: campaignid_entitytype
+		summarizeBy: none
+		sourceColumn: campaignid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column contactid
+		dataType: string
+		lineageTag: a5949a0a-1181-480b-b5a9-5688f8f2357f
+		sourceLineageTag: contactid
+		summarizeBy: none
+		sourceColumn: contactid
+
+		annotation SummarizationSetBy = Automatic
+
+	column contactid_entitytype
+		dataType: string
+		lineageTag: 7dd41415-c6a5-4c49-9379-2418db465656
+		sourceLineageTag: contactid_entitytype
+		summarizeBy: none
+		sourceColumn: contactid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby
+		dataType: string
+		lineageTag: 71a618b7-0d86-489e-9bd0-745016eb4885
+		sourceLineageTag: createdby
+		summarizeBy: none
+		sourceColumn: createdby
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby_entitytype
+		dataType: string
+		lineageTag: b8910a1f-fe17-455b-a213-eee8bf7c145e
+		sourceLineageTag: createdby_entitytype
+		summarizeBy: none
+		sourceColumn: createdby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfby
+		dataType: string
+		lineageTag: 7384aabe-aab3-4ada-b52f-33e514cc1c3a
+		sourceLineageTag: createdonbehalfby
+		summarizeBy: none
+		sourceColumn: createdonbehalfby
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfby_entitytype
+		dataType: string
+		lineageTag: 9b1f5206-40df-4afd-9b57-7f6414976285
+		sourceLineageTag: createdonbehalfby_entitytype
+		summarizeBy: none
+		sourceColumn: createdonbehalfby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_contapessoal
+		dataType: string
+		lineageTag: 181495a9-99f3-42b8-aed8-90971a0fdc82
+		sourceLineageTag: crfc2_contapessoal
+		summarizeBy: none
+		sourceColumn: crfc2_contapessoal
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_contapessoal_entitytype
+		dataType: string
+		lineageTag: 238a5b30-6b5c-48d1-abbe-85ffba1d1e6e
+		sourceLineageTag: crfc2_contapessoal_entitytype
+		summarizeBy: none
+		sourceColumn: crfc2_contapessoal_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_contatoderelacionamento
+		dataType: string
+		lineageTag: 08882948-e584-490b-9d41-6da5b13f094b
+		sourceLineageTag: crfc2_contatoderelacionamento
+		summarizeBy: none
+		sourceColumn: crfc2_contatoderelacionamento
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_contatoderelacionamento_entitytype
+		dataType: string
+		lineageTag: 33c0bd2e-bae3-4064-9f7a-64e74fa648cb
+		sourceLineageTag: crfc2_contatoderelacionamento_entitytype
+		summarizeBy: none
+		sourceColumn: crfc2_contatoderelacionamento_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedby
+		dataType: string
+		lineageTag: 23052b57-1699-4eb4-81b7-2bc6bdce613c
+		sourceLineageTag: modifiedby
+		summarizeBy: none
+		sourceColumn: modifiedby
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedby_entitytype
+		dataType: string
+		lineageTag: 54fc3531-3c4f-43ee-a033-6f43e6949691
+		sourceLineageTag: modifiedby_entitytype
+		summarizeBy: none
+		sourceColumn: modifiedby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfby
+		dataType: string
+		lineageTag: 53fb663a-02a0-4cdb-b347-989e6dd6aa13
+		sourceLineageTag: modifiedonbehalfby
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfby
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfby_entitytype
+		dataType: string
+		lineageTag: 65a0022d-539a-4870-8057-ae9042f3fda0
+		sourceLineageTag: modifiedonbehalfby_entitytype
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfby_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column msa_partnerid
+		dataType: string
+		lineageTag: 8abc55b0-bf51-49fb-a819-1fb4da43c140
+		sourceLineageTag: msa_partnerid
+		summarizeBy: none
+		sourceColumn: msa_partnerid
+
+		annotation SummarizationSetBy = Automatic
+
+	column msa_partnerid_entitytype
+		dataType: string
+		lineageTag: b7afd725-6e47-472c-b182-58c85055f3cb
+		sourceLineageTag: msa_partnerid_entitytype
+		summarizeBy: none
+		sourceColumn: msa_partnerid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column msa_partneroppid
+		dataType: string
+		lineageTag: 1d38be81-37bf-45c9-8154-192c5ca3b299
+		sourceLineageTag: msa_partneroppid
+		summarizeBy: none
+		sourceColumn: msa_partneroppid
+
+		annotation SummarizationSetBy = Automatic
+
+	column msa_partneroppid_entitytype
+		dataType: string
+		lineageTag: e4005e73-b3a8-42cf-bba2-eb498d0ae763
+		sourceLineageTag: msa_partneroppid_entitytype
+		summarizeBy: none
+		sourceColumn: msa_partneroppid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_opportunitykpiid
+		dataType: string
+		lineageTag: dbf7110a-5c05-4357-89c6-e80aa7300d08
+		sourceLineageTag: msdyn_opportunitykpiid
+		summarizeBy: none
+		sourceColumn: msdyn_opportunitykpiid
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_opportunitykpiid_entitytype
+		dataType: string
+		lineageTag: e4651642-6cd6-4d91-997e-47026081933e
+		sourceLineageTag: msdyn_opportunitykpiid_entitytype
+		summarizeBy: none
+		sourceColumn: msdyn_opportunitykpiid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_predictivescoreid
+		dataType: string
+		lineageTag: 839aa543-6337-4f29-9ddb-f49869f6d401
+		sourceLineageTag: msdyn_predictivescoreid
+		summarizeBy: none
+		sourceColumn: msdyn_predictivescoreid
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_predictivescoreid_entitytype
+		dataType: string
+		lineageTag: ad69e8b7-88fe-448a-8293-305312207306
+		sourceLineageTag: msdyn_predictivescoreid_entitytype
+		summarizeBy: none
+		sourceColumn: msdyn_predictivescoreid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_segmentid
+		dataType: string
+		lineageTag: 2e69e63b-062b-4380-94fc-3d27200c5481
+		sourceLineageTag: msdyn_segmentid
+		summarizeBy: none
+		sourceColumn: msdyn_segmentid
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_segmentid_entitytype
+		dataType: string
+		lineageTag: 131940c6-8d46-458e-a65b-a93d03673620
+		sourceLineageTag: msdyn_segmentid_entitytype
+		summarizeBy: none
+		sourceColumn: msdyn_segmentid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_workordertype
+		dataType: string
+		lineageTag: 51310e17-8316-4f2f-8c82-b9ce7c3f9a08
+		sourceLineageTag: msdyn_workordertype
+		summarizeBy: none
+		sourceColumn: msdyn_workordertype
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_workordertype_entitytype
+		dataType: string
+		lineageTag: 7dcadaeb-897e-4285-b735-7a1a157f8e8d
+		sourceLineageTag: msdyn_workordertype_entitytype
+		summarizeBy: none
+		sourceColumn: msdyn_workordertype_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_journeyid
+		dataType: string
+		lineageTag: 39cd9d48-fdf2-47d4-be65-c198e0387ec8
+		sourceLineageTag: msdynmkt_journeyid
+		summarizeBy: none
+		sourceColumn: msdynmkt_journeyid
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_journeyid_entitytype
+		dataType: string
+		lineageTag: ec75ddcc-d4ee-4fec-896a-b4e00f35a51e
+		sourceLineageTag: msdynmkt_journeyid_entitytype
+		summarizeBy: none
+		sourceColumn: msdynmkt_journeyid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column originatingleadid
+		dataType: string
+		lineageTag: ba2a1bc0-6662-43e0-b4cf-fc45464ae002
+		sourceLineageTag: originatingleadid
+		summarizeBy: none
+		sourceColumn: originatingleadid
+
+		annotation SummarizationSetBy = Automatic
+
+	column originatingleadid_entitytype
+		dataType: string
+		lineageTag: a8784ce3-cb9d-44a2-b2ec-101ba9905ab4
+		sourceLineageTag: originatingleadid_entitytype
+		summarizeBy: none
+		sourceColumn: originatingleadid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningbusinessunit
+		dataType: string
+		lineageTag: 29c63415-b8bc-4805-973e-1c26df9508eb
+		sourceLineageTag: owningbusinessunit
+		summarizeBy: none
+		sourceColumn: owningbusinessunit
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningbusinessunit_entitytype
+		dataType: string
+		lineageTag: d59d37db-9af9-4ae2-8193-4bade4caab8f
+		sourceLineageTag: owningbusinessunit_entitytype
+		summarizeBy: none
+		sourceColumn: owningbusinessunit_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningteam
+		dataType: string
+		lineageTag: 0b292b7c-0954-4e1b-abaf-b8a732505624
+		sourceLineageTag: owningteam
+		summarizeBy: none
+		sourceColumn: owningteam
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningteam_entitytype
+		dataType: string
+		lineageTag: 7faa2919-92c8-4592-9a13-f3593632b577
+		sourceLineageTag: owningteam_entitytype
+		summarizeBy: none
+		sourceColumn: owningteam_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column owninguser
+		dataType: string
+		lineageTag: efcc281e-f9d4-4696-bc86-7af10bb99bc2
+		sourceLineageTag: owninguser
+		summarizeBy: none
+		sourceColumn: owninguser
+
+		annotation SummarizationSetBy = Automatic
+
+	column owninguser_entitytype
+		dataType: string
+		lineageTag: 935af7e6-ecc7-4015-be2c-fe7bbce5d908
+		sourceLineageTag: owninguser_entitytype
+		summarizeBy: none
+		sourceColumn: owninguser_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column parentaccountid
+		dataType: string
+		lineageTag: d65ecb95-2c05-412c-8496-d4fca5fdd479
+		sourceLineageTag: parentaccountid
+		summarizeBy: none
+		sourceColumn: parentaccountid
+
+		annotation SummarizationSetBy = Automatic
+
+	column parentaccountid_entitytype
+		dataType: string
+		lineageTag: b25bb602-661d-4bf4-b5a0-9921d58a6b92
+		sourceLineageTag: parentaccountid_entitytype
+		summarizeBy: none
+		sourceColumn: parentaccountid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column parentcontactid
+		dataType: string
+		lineageTag: 54306d06-3258-4fce-aab5-81956097f6ea
+		sourceLineageTag: parentcontactid
+		summarizeBy: none
+		sourceColumn: parentcontactid
+
+		annotation SummarizationSetBy = Automatic
+
+	column parentcontactid_entitytype
+		dataType: string
+		lineageTag: 7d65dca0-256f-463d-bfc3-979f770766ce
+		sourceLineageTag: parentcontactid_entitytype
+		summarizeBy: none
+		sourceColumn: parentcontactid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column pricelevelid
+		dataType: string
+		lineageTag: e5afcea1-dfa4-482b-bd6d-1d256ddb5610
+		sourceLineageTag: pricelevelid
+		summarizeBy: none
+		sourceColumn: pricelevelid
+
+		annotation SummarizationSetBy = Automatic
+
+	column pricelevelid_entitytype
+		dataType: string
+		lineageTag: 77b3c9a3-1825-4238-aa90-91b43346ee84
+		sourceLineageTag: pricelevelid_entitytype
+		summarizeBy: none
+		sourceColumn: pricelevelid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column slaid
+		dataType: string
+		lineageTag: 3900658f-f80b-486b-a36c-8bd6c0c49e43
+		sourceLineageTag: slaid
+		summarizeBy: none
+		sourceColumn: slaid
+
+		annotation SummarizationSetBy = Automatic
+
+	column slaid_entitytype
+		dataType: string
+		lineageTag: 0278d0c9-4312-4071-9a50-143b06f94ca6
+		sourceLineageTag: slaid_entitytype
+		summarizeBy: none
+		sourceColumn: slaid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column slainvokedid
+		dataType: string
+		lineageTag: d0d68d9a-5e50-46ca-bdb2-544ca64ab2d3
+		sourceLineageTag: slainvokedid
+		summarizeBy: none
+		sourceColumn: slainvokedid
+
+		annotation SummarizationSetBy = Automatic
+
+	column slainvokedid_entitytype
+		dataType: string
+		lineageTag: aeb5f8ed-a3b2-43bc-af54-195a9cf2b70a
+		sourceLineageTag: slainvokedid_entitytype
+		summarizeBy: none
+		sourceColumn: slainvokedid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column transactioncurrencyid
+		dataType: string
+		lineageTag: 7124ed9b-9e4e-4c16-93f5-4a6eafedfd66
+		sourceLineageTag: transactioncurrencyid
+		summarizeBy: none
+		sourceColumn: transactioncurrencyid
+
+		annotation SummarizationSetBy = Automatic
+
+	column transactioncurrencyid_entitytype
+		dataType: string
+		lineageTag: 2bffecd6-10f5-410e-ae30-b4583642a409
+		sourceLineageTag: transactioncurrencyid_entitytype
+		summarizeBy: none
+		sourceColumn: transactioncurrencyid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column ownerid
+		dataType: string
+		lineageTag: a4346881-fca4-4782-aceb-e6d61b14ea5d
+		sourceLineageTag: ownerid
+		summarizeBy: none
+		sourceColumn: ownerid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ownerid_entitytype
+		dataType: string
+		lineageTag: 8c143cc6-d472-499d-9216-e5e8ee7bc2a5
+		sourceLineageTag: ownerid_entitytype
+		summarizeBy: none
+		sourceColumn: ownerid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column customerid
+		dataType: string
+		lineageTag: 8fed1207-b765-4b5f-8161-b285e5889727
+		sourceLineageTag: customerid
+		summarizeBy: none
+		sourceColumn: customerid
+
+		annotation SummarizationSetBy = Automatic
+
+	column customerid_entitytype
+		dataType: string
+		lineageTag: d44e3384-371c-47a6-9ad5-78f73ad34490
+		sourceLineageTag: customerid_entitytype
+		summarizeBy: none
+		sourceColumn: customerid_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column actualvalue
+		dataType: double
+		lineageTag: 30109564-af39-4a19-8e7e-d407b8719795
+		sourceLineageTag: actualvalue
+		summarizeBy: sum
+		sourceColumn: actualvalue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column actualvalue_base
+		dataType: double
+		lineageTag: 3579a9df-d53e-4994-863a-dceaccebdf82
+		sourceLineageTag: actualvalue_base
+		summarizeBy: sum
+		sourceColumn: actualvalue_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column budgetamount
+		dataType: double
+		lineageTag: 97728bed-8ef3-4b80-b0cd-e65b43cea224
+		sourceLineageTag: budgetamount
+		summarizeBy: sum
+		sourceColumn: budgetamount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column budgetamount_base
+		dataType: double
+		lineageTag: fee770f1-e758-48ea-81c3-abf67fc02552
+		sourceLineageTag: budgetamount_base
+		summarizeBy: sum
+		sourceColumn: budgetamount_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column crfc2_calculado
+		dataType: double
+		lineageTag: 216d5673-59cd-495d-abb9-29ad8b82d1cc
+		sourceLineageTag: crfc2_calculado
+		summarizeBy: sum
+		sourceColumn: crfc2_calculado
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column crfc2_calculado_base
+		dataType: double
+		lineageTag: 00c82f8d-1c70-4d36-b0b0-6dac76bcd198
+		sourceLineageTag: crfc2_calculado_base
+		summarizeBy: sum
+		sourceColumn: crfc2_calculado_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column crfc2_valortaxaadesao
+		dataType: double
+		lineageTag: f0dbf8a6-c20b-44ee-ab96-4eb9775fb409
+		sourceLineageTag: crfc2_valortaxaadesao
+		summarizeBy: sum
+		sourceColumn: crfc2_valortaxaadesao
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column crfc2_valortaxaadesao_base
+		dataType: double
+		lineageTag: c641f008-ae2a-4844-9522-5a018d2ea238
+		sourceLineageTag: crfc2_valortaxaadesao_base
+		summarizeBy: sum
+		sourceColumn: crfc2_valortaxaadesao_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column discountamount
+		dataType: double
+		lineageTag: c62dc4c7-e2c3-4fc9-ab84-4c4eae1be26e
+		sourceLineageTag: discountamount
+		summarizeBy: sum
+		sourceColumn: discountamount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column discountamount_base
+		dataType: double
+		lineageTag: 72e458c5-4fcc-4d38-a83b-e900356b7f29
+		sourceLineageTag: discountamount_base
+		summarizeBy: sum
+		sourceColumn: discountamount_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column estimatedvalue
+		dataType: double
+		lineageTag: bf96ae9e-9812-417f-9b4c-3c1231ba62bd
+		sourceLineageTag: estimatedvalue
+		summarizeBy: sum
+		sourceColumn: estimatedvalue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column estimatedvalue_base
+		dataType: double
+		lineageTag: 054c2e8d-4d7a-43e2-ad03-78ac95922911
+		sourceLineageTag: estimatedvalue_base
+		summarizeBy: sum
+		sourceColumn: estimatedvalue_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column freightamount
+		dataType: double
+		lineageTag: 86040b6b-fa8c-4ee6-88f1-115e129376a1
+		sourceLineageTag: freightamount
+		summarizeBy: sum
+		sourceColumn: freightamount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column freightamount_base
+		dataType: double
+		lineageTag: bfa40547-74cb-44f0-bc01-a7759c477354
+		sourceLineageTag: freightamount_base
+		summarizeBy: sum
+		sourceColumn: freightamount_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column totalamount
+		dataType: double
+		lineageTag: 01f9dde8-fb88-4f8c-b5f5-7059394a088e
+		sourceLineageTag: totalamount
+		summarizeBy: sum
+		sourceColumn: totalamount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column totalamount_base
+		dataType: double
+		lineageTag: a6b1634b-98cf-4b87-9be7-0a7cdfcd0415
+		sourceLineageTag: totalamount_base
+		summarizeBy: sum
+		sourceColumn: totalamount_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column totalamountlessfreight
+		dataType: double
+		lineageTag: cf130f34-548d-4289-846a-1a7f373273f9
+		sourceLineageTag: totalamountlessfreight
+		summarizeBy: sum
+		sourceColumn: totalamountlessfreight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column totalamountlessfreight_base
+		dataType: double
+		lineageTag: 3eb6ff9b-0ece-4d98-bb1d-5c9722b23a8f
+		sourceLineageTag: totalamountlessfreight_base
+		summarizeBy: sum
+		sourceColumn: totalamountlessfreight_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column totaldiscountamount
+		dataType: double
+		lineageTag: 2488ec2b-3f42-45db-bfa2-a1095234ffdc
+		sourceLineageTag: totaldiscountamount
+		summarizeBy: sum
+		sourceColumn: totaldiscountamount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column totaldiscountamount_base
+		dataType: double
+		lineageTag: 955863e0-f8a0-4fd1-9741-a83fb84bcd65
+		sourceLineageTag: totaldiscountamount_base
+		summarizeBy: sum
+		sourceColumn: totaldiscountamount_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column totallineitemamount
+		dataType: double
+		lineageTag: edfe17e3-ff2b-45a8-bce7-95857e56c873
+		sourceLineageTag: totallineitemamount
+		summarizeBy: sum
+		sourceColumn: totallineitemamount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column totallineitemamount_base
+		dataType: double
+		lineageTag: 334e39a0-3e4b-4760-8bde-0e920fd404f8
+		sourceLineageTag: totallineitemamount_base
+		summarizeBy: sum
+		sourceColumn: totallineitemamount_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column totallineitemdiscountamount
+		dataType: double
+		lineageTag: 9140e4f4-67b6-479a-b55b-79580b57479f
+		sourceLineageTag: totallineitemdiscountamount
+		summarizeBy: sum
+		sourceColumn: totallineitemdiscountamount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column totallineitemdiscountamount_base
+		dataType: double
+		lineageTag: d3b52ca6-25a5-4d02-bdab-3f68f4b91227
+		sourceLineageTag: totallineitemdiscountamount_base
+		summarizeBy: sum
+		sourceColumn: totallineitemdiscountamount_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column totaltax
+		dataType: double
+		lineageTag: 5117f71b-d876-49b5-b890-c6c278ab7a89
+		sourceLineageTag: totaltax
+		summarizeBy: sum
+		sourceColumn: totaltax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column totaltax_base
+		dataType: double
+		lineageTag: 454f33ec-42f9-4464-b0d3-cc1f07b3aadc
+		sourceLineageTag: totaltax_base
+		summarizeBy: sum
+		sourceColumn: totaltax_base
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column accountidname
+		dataType: string
+		lineageTag: acadcad0-50ce-4248-bbd0-d08976bc0cd5
+		sourceLineageTag: accountidname
+		summarizeBy: none
+		sourceColumn: accountidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column accountidyominame
+		dataType: string
+		lineageTag: 38d0bfe5-936e-420a-a839-cd0b09514d61
+		sourceLineageTag: accountidyominame
+		summarizeBy: none
+		sourceColumn: accountidyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column actualclosedate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ca2fb846-81ee-4357-8d30-98dd0473bf67
+		sourceLineageTag: actualclosedate
+		summarizeBy: none
+		sourceColumn: actualclosedate
+
+		annotation SummarizationSetBy = Automatic
+
+	column campaignidname
+		dataType: string
+		lineageTag: 664bdc9a-3bdf-489f-bf35-ddc56863b59e
+		sourceLineageTag: campaignidname
+		summarizeBy: none
+		sourceColumn: campaignidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column closeprobability
+		dataType: int64
+		formatString: 0
+		lineageTag: f060914e-5611-4938-bdd2-f0989bc6974e
+		sourceLineageTag: closeprobability
+		summarizeBy: sum
+		sourceColumn: closeprobability
+
+		annotation SummarizationSetBy = Automatic
+
+	column contactidname
+		dataType: string
+		lineageTag: 142078ea-60a1-4b9b-a3a1-5860cd5cad57
+		sourceLineageTag: contactidname
+		summarizeBy: none
+		sourceColumn: contactidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column contactidyominame
+		dataType: string
+		lineageTag: dba24f28-54f5-46c2-8a9d-936b751e1d2f
+		sourceLineageTag: contactidyominame
+		summarizeBy: none
+		sourceColumn: contactidyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdbyname
+		dataType: string
+		lineageTag: 91f8a157-0440-4199-8553-7bf8ab46f665
+		sourceLineageTag: createdbyname
+		summarizeBy: none
+		sourceColumn: createdbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdbyyominame
+		dataType: string
+		lineageTag: cfc73d90-f5a7-4be0-8025-b3c7fb9e63a1
+		sourceLineageTag: createdbyyominame
+		summarizeBy: none
+		sourceColumn: createdbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdon
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 68d1bdc0-db3b-4f50-b087-be7212f99d84
+		sourceLineageTag: createdon
+		summarizeBy: none
+		sourceColumn: createdon
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfbyname
+		dataType: string
+		lineageTag: 322e908c-ec8f-4d2f-b357-192cbe5b0284
+		sourceLineageTag: createdonbehalfbyname
+		summarizeBy: none
+		sourceColumn: createdonbehalfbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfbyyominame
+		dataType: string
+		lineageTag: e2c06d9b-e09a-40f7-9324-240e40ab38af
+		sourceLineageTag: createdonbehalfbyyominame
+		summarizeBy: none
+		sourceColumn: createdonbehalfbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_calculado_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b698797d-385e-4eca-a625-e43cef690aae
+		sourceLineageTag: crfc2_calculado_date
+		summarizeBy: none
+		sourceColumn: crfc2_calculado_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_calculado_state
+		dataType: int64
+		formatString: 0
+		lineageTag: 4bc09ddb-ddb9-41bb-ab43-7a3e56fc2444
+		sourceLineageTag: crfc2_calculado_state
+		summarizeBy: sum
+		sourceColumn: crfc2_calculado_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_contapessoalname
+		dataType: string
+		lineageTag: 7bec0bc4-550a-498a-aa14-8bb2ec474c28
+		sourceLineageTag: crfc2_contapessoalname
+		summarizeBy: none
+		sourceColumn: crfc2_contapessoalname
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_contatoderelacionamentoname
+		dataType: string
+		lineageTag: 022aceba-0ebb-4871-8242-e895f646541c
+		sourceLineageTag: crfc2_contatoderelacionamentoname
+		summarizeBy: none
+		sourceColumn: crfc2_contatoderelacionamentoname
+
+		annotation SummarizationSetBy = Automatic
+
+	column currentsituation
+		dataType: string
+		lineageTag: 79fb9211-1526-416a-8a8f-616ca96a39f3
+		sourceLineageTag: currentsituation
+		summarizeBy: none
+		sourceColumn: currentsituation
+
+		annotation SummarizationSetBy = Automatic
+
+	column customeridname
+		dataType: string
+		lineageTag: dc2ea627-c93a-4ce3-87a4-5c6589075016
+		sourceLineageTag: customeridname
+		summarizeBy: none
+		sourceColumn: customeridname
+
+		annotation SummarizationSetBy = Automatic
+
+	column customeridtype
+		dataType: string
+		lineageTag: faae659a-8475-4f2f-b41c-a175ba34ef96
+		sourceLineageTag: customeridtype
+		summarizeBy: none
+		sourceColumn: customeridtype
+
+		annotation SummarizationSetBy = Automatic
+
+	column customeridyominame
+		dataType: string
+		lineageTag: bbe3e466-8854-4819-8300-5698e91629e7
+		sourceLineageTag: customeridyominame
+		summarizeBy: none
+		sourceColumn: customeridyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column customerneed
+		dataType: string
+		lineageTag: 7fd59f09-7af5-426c-9726-ec07d97403e6
+		sourceLineageTag: customerneed
+		summarizeBy: none
+		sourceColumn: customerneed
+
+		annotation SummarizationSetBy = Automatic
+
+	column customerpainpoints
+		dataType: string
+		lineageTag: 9c075ba5-0b06-4b04-9058-52295e30d3b9
+		sourceLineageTag: customerpainpoints
+		summarizeBy: none
+		sourceColumn: customerpainpoints
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: dee8b399-a4fb-4b44-9d58-5805ed931523
+		sourceLineageTag: description
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column discountpercentage
+		dataType: double
+		lineageTag: 70d46260-2354-43f7-9ec8-496965c134b4
+		sourceLineageTag: discountpercentage
+		summarizeBy: sum
+		sourceColumn: discountpercentage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column emailaddress
+		dataType: string
+		lineageTag: 76c07e18-a881-466a-9455-e7840008783e
+		sourceLineageTag: emailaddress
+		summarizeBy: none
+		sourceColumn: emailaddress
+
+		annotation SummarizationSetBy = Automatic
+
+	column estimatedclosedate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8e842294-63f6-4bcc-8149-07c1ac696a32
+		sourceLineageTag: estimatedclosedate
+		summarizeBy: none
+		sourceColumn: estimatedclosedate
+
+		annotation SummarizationSetBy = Automatic
+
+	column exchangerate
+		dataType: double
+		lineageTag: 849fb0cd-5061-4893-9528-f49d668d04e4
+		sourceLineageTag: exchangerate
+		summarizeBy: sum
+		sourceColumn: exchangerate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column finaldecisiondate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 59903ffc-bed3-4a39-ba82-3c990590c86c
+		sourceLineageTag: finaldecisiondate
+		summarizeBy: none
+		sourceColumn: finaldecisiondate
+
+		annotation SummarizationSetBy = Automatic
+
+	column importsequencenumber
+		dataType: int64
+		formatString: 0
+		lineageTag: c1a0cea5-073a-4641-b528-1dd32026b1b2
+		sourceLineageTag: importsequencenumber
+		summarizeBy: sum
+		sourceColumn: importsequencenumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastonholdtime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: cf8e4da4-8ae8-4390-a88c-82dffedd7a11
+		sourceLineageTag: lastonholdtime
+		summarizeBy: none
+		sourceColumn: lastonholdtime
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedbyname
+		dataType: string
+		lineageTag: d6e68d23-9142-42d9-9068-43a4772217c1
+		sourceLineageTag: modifiedbyname
+		summarizeBy: none
+		sourceColumn: modifiedbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedbyyominame
+		dataType: string
+		lineageTag: 8544b354-8ac4-4c2e-982e-96a83bd146e7
+		sourceLineageTag: modifiedbyyominame
+		summarizeBy: none
+		sourceColumn: modifiedbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedon
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 70f96c0f-9a04-4d57-a8df-e9275bcabdfc
+		sourceLineageTag: modifiedon
+		summarizeBy: none
+		sourceColumn: modifiedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfbyname
+		dataType: string
+		lineageTag: 6ff15b5e-d647-4ead-acd8-8bc1c2600fee
+		sourceLineageTag: modifiedonbehalfbyname
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfbyname
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfbyyominame
+		dataType: string
+		lineageTag: e2f7f9b0-2798-4045-b9b3-ac20edf43842
+		sourceLineageTag: modifiedonbehalfbyyominame
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfbyyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column msa_partneridname
+		dataType: string
+		lineageTag: ca4fb9fd-3c06-4fb2-9a10-38aa863c4831
+		sourceLineageTag: msa_partneridname
+		summarizeBy: none
+		sourceColumn: msa_partneridname
+
+		annotation SummarizationSetBy = Automatic
+
+	column msa_partneridyominame
+		dataType: string
+		lineageTag: c5a7df8d-c01b-4b3f-8d63-5a389057da7f
+		sourceLineageTag: msa_partneridyominame
+		summarizeBy: none
+		sourceColumn: msa_partneridyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column msa_partneroppidname
+		dataType: string
+		lineageTag: 613fc2ae-2305-497d-b9ba-456518d91b76
+		sourceLineageTag: msa_partneroppidname
+		summarizeBy: none
+		sourceColumn: msa_partneroppidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column msa_partneroppidyominame
+		dataType: string
+		lineageTag: a894b9ae-1e7b-4bf2-8fed-429340bf1860
+		sourceLineageTag: msa_partneroppidyominame
+		summarizeBy: none
+		sourceColumn: msa_partneroppidyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_opportunitykpiidname
+		dataType: string
+		lineageTag: ea45a6ce-b0aa-4a25-8618-74ce643bd508
+		sourceLineageTag: msdyn_opportunitykpiidname
+		summarizeBy: none
+		sourceColumn: msdyn_opportunitykpiidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_opportunityscore
+		dataType: int64
+		formatString: 0
+		lineageTag: 56b99fd3-5014-47a0-82de-f021f4830afe
+		sourceLineageTag: msdyn_opportunityscore
+		summarizeBy: sum
+		sourceColumn: msdyn_opportunityscore
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_predictivescoreidname
+		dataType: string
+		lineageTag: a57a7bee-778f-4694-9834-513d878e771a
+		sourceLineageTag: msdyn_predictivescoreidname
+		summarizeBy: none
+		sourceColumn: msdyn_predictivescoreidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_scorehistory
+		dataType: string
+		lineageTag: 194ddd6b-3a80-4d9b-98f2-84d3d8a041ca
+		sourceLineageTag: msdyn_scorehistory
+		summarizeBy: none
+		sourceColumn: msdyn_scorehistory
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_scorereasons
+		dataType: string
+		lineageTag: 7ac5deb9-8b82-4d56-b4a0-ff880144485c
+		sourceLineageTag: msdyn_scorereasons
+		summarizeBy: none
+		sourceColumn: msdyn_scorereasons
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_segmentidname
+		dataType: string
+		lineageTag: 5eb34c96-1d12-45dd-b0da-196be4680549
+		sourceLineageTag: msdyn_segmentidname
+		summarizeBy: none
+		sourceColumn: msdyn_segmentidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_similaropportunities
+		dataType: string
+		lineageTag: 31b031aa-5bdf-4ed1-9bd8-f89386ead333
+		sourceLineageTag: msdyn_similaropportunities
+		summarizeBy: none
+		sourceColumn: msdyn_similaropportunities
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdyn_workordertypename
+		dataType: string
+		lineageTag: 940a3ec5-6139-4a7f-bae2-5de288e30fc7
+		sourceLineageTag: msdyn_workordertypename
+		summarizeBy: none
+		sourceColumn: msdyn_workordertypename
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_journeyactionid
+		dataType: string
+		lineageTag: e0f8980b-54db-4338-be4d-63235969f651
+		sourceLineageTag: msdynmkt_journeyactionid
+		summarizeBy: none
+		sourceColumn: msdynmkt_journeyactionid
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_journeyidname
+		dataType: string
+		lineageTag: 8e836881-4301-4dee-955e-e1afb92f0f8f
+		sourceLineageTag: msdynmkt_journeyidname
+		summarizeBy: none
+		sourceColumn: msdynmkt_journeyidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: b34c3a17-9054-4aa0-a492-e839350eb2dc
+		sourceLineageTag: name
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column onholdtime
+		dataType: int64
+		formatString: 0
+		lineageTag: 9674be6f-f32c-49e6-ad80-ed4f196e627d
+		sourceLineageTag: onholdtime
+		summarizeBy: sum
+		sourceColumn: onholdtime
+
+		annotation SummarizationSetBy = Automatic
+
+	column opportunityid
+		dataType: string
+		lineageTag: 04a78431-da00-4b47-a823-1b3d89e79e94
+		sourceLineageTag: opportunityid
+		summarizeBy: none
+		sourceColumn: opportunityid
+
+		annotation SummarizationSetBy = Automatic
+
+	column originatingleadidname
+		dataType: string
+		lineageTag: ca78f413-d495-48a7-8be4-ff32f0678436
+		sourceLineageTag: originatingleadidname
+		summarizeBy: none
+		sourceColumn: originatingleadidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column originatingleadidyominame
+		dataType: string
+		lineageTag: 2d1ed278-0217-4e3a-a7c7-7d67b7374d30
+		sourceLineageTag: originatingleadidyominame
+		summarizeBy: none
+		sourceColumn: originatingleadidyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column overriddencreatedon
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4fc3f910-5805-4a70-979b-29f9c794f1c5
+		sourceLineageTag: overriddencreatedon
+		summarizeBy: none
+		sourceColumn: overriddencreatedon
+
+		annotation SummarizationSetBy = Automatic
+
+	column owneridname
+		dataType: string
+		lineageTag: 4a2b0a3e-d315-4b72-b755-5cec1df26cc0
+		sourceLineageTag: owneridname
+		summarizeBy: none
+		sourceColumn: owneridname
+
+		annotation SummarizationSetBy = Automatic
+
+	column owneridtype
+		dataType: string
+		lineageTag: a296453f-e1d5-4072-92c3-0279d06e7c26
+		sourceLineageTag: owneridtype
+		summarizeBy: none
+		sourceColumn: owneridtype
+
+		annotation SummarizationSetBy = Automatic
+
+	column owneridyominame
+		dataType: string
+		lineageTag: 05f53ebd-13ad-4e99-b717-7e32c23eb258
+		sourceLineageTag: owneridyominame
+		summarizeBy: none
+		sourceColumn: owneridyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningbusinessunitname
+		dataType: string
+		lineageTag: 3d680ff9-0fcd-44e8-a403-091fd8eaa624
+		sourceLineageTag: owningbusinessunitname
+		summarizeBy: none
+		sourceColumn: owningbusinessunitname
+
+		annotation SummarizationSetBy = Automatic
+
+	column parentaccountidname
+		dataType: string
+		lineageTag: 17696857-3635-45c3-9553-7420effb8bba
+		sourceLineageTag: parentaccountidname
+		summarizeBy: none
+		sourceColumn: parentaccountidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column parentaccountidyominame
+		dataType: string
+		lineageTag: f51fad30-31ba-4086-8c2f-9b725aad7cb8
+		sourceLineageTag: parentaccountidyominame
+		summarizeBy: none
+		sourceColumn: parentaccountidyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column parentcontactidname
+		dataType: string
+		lineageTag: 01933803-127e-4c60-9ec8-e9c7965ca28d
+		sourceLineageTag: parentcontactidname
+		summarizeBy: none
+		sourceColumn: parentcontactidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column parentcontactidyominame
+		dataType: string
+		lineageTag: f7805077-53d4-43a0-a46d-69dd852a84b4
+		sourceLineageTag: parentcontactidyominame
+		summarizeBy: none
+		sourceColumn: parentcontactidyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column pricelevelidname
+		dataType: string
+		lineageTag: 26cba890-96fd-4005-9647-0fbfdc019b3e
+		sourceLineageTag: pricelevelidname
+		summarizeBy: none
+		sourceColumn: pricelevelidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column processid
+		dataType: string
+		lineageTag: f0e73a1a-5483-4c02-8edd-7d8bcc8e6a88
+		sourceLineageTag: processid
+		summarizeBy: none
+		sourceColumn: processid
+
+		annotation SummarizationSetBy = Automatic
+
+	column proposedsolution
+		dataType: string
+		lineageTag: f2b1a058-ae9c-4a6c-b7a5-43dedbddcc9b
+		sourceLineageTag: proposedsolution
+		summarizeBy: none
+		sourceColumn: proposedsolution
+
+		annotation SummarizationSetBy = Automatic
+
+	column qualificationcomments
+		dataType: string
+		lineageTag: 702012b2-5e71-4ef6-a27b-2cad2274084e
+		sourceLineageTag: qualificationcomments
+		summarizeBy: none
+		sourceColumn: qualificationcomments
+
+		annotation SummarizationSetBy = Automatic
+
+	column quotecomments
+		dataType: string
+		lineageTag: 1bfbd889-3405-42b4-be63-8afd2d041389
+		sourceLineageTag: quotecomments
+		summarizeBy: none
+		sourceColumn: quotecomments
+
+		annotation SummarizationSetBy = Automatic
+
+	column schedulefollowup_prospect
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: abc060a7-92e9-47f1-bc6b-21697fe14eb8
+		sourceLineageTag: schedulefollowup_prospect
+		summarizeBy: none
+		sourceColumn: schedulefollowup_prospect
+
+		annotation SummarizationSetBy = Automatic
+
+	column schedulefollowup_qualify
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f4fc64b5-72ff-48ef-bf0c-922e11d226c8
+		sourceLineageTag: schedulefollowup_qualify
+		summarizeBy: none
+		sourceColumn: schedulefollowup_qualify
+
+		annotation SummarizationSetBy = Automatic
+
+	column scheduleproposalmeeting
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b930ffc5-2f79-471c-b2c5-68b7727f06ee
+		sourceLineageTag: scheduleproposalmeeting
+		summarizeBy: none
+		sourceColumn: scheduleproposalmeeting
+
+		annotation SummarizationSetBy = Automatic
+
+	column slainvokedidname
+		dataType: string
+		lineageTag: 5a4a150d-63c3-467d-b426-5980d9053a23
+		sourceLineageTag: slainvokedidname
+		summarizeBy: none
+		sourceColumn: slainvokedidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column slaname
+		dataType: string
+		lineageTag: b343a0ae-f44e-4308-84fb-335d29980d32
+		sourceLineageTag: slaname
+		summarizeBy: none
+		sourceColumn: slaname
+
+		annotation SummarizationSetBy = Automatic
+
+	column stageid
+		dataType: string
+		lineageTag: 7ee5f53a-a4e9-4790-a025-42aaf2652040
+		sourceLineageTag: stageid
+		summarizeBy: none
+		sourceColumn: stageid
+
+		annotation SummarizationSetBy = Automatic
+
+	column stepid
+		dataType: string
+		lineageTag: 3449ee2f-eb2a-4679-b5b5-0ffddc28b28e
+		sourceLineageTag: stepid
+		summarizeBy: none
+		sourceColumn: stepid
+
+		annotation SummarizationSetBy = Automatic
+
+	column stepname
+		dataType: string
+		lineageTag: dbd7395a-9173-4e24-99e3-2d36d7a1f2de
+		sourceLineageTag: stepname
+		summarizeBy: none
+		sourceColumn: stepname
+
+		annotation SummarizationSetBy = Automatic
+
+	column teamsfollowed
+		dataType: int64
+		formatString: 0
+		lineageTag: 7bef4f70-11b0-4662-b168-36e01832fc84
+		sourceLineageTag: teamsfollowed
+		summarizeBy: sum
+		sourceColumn: teamsfollowed
+
+		annotation SummarizationSetBy = Automatic
+
+	column timespentbymeonemailandmeetings
+		dataType: string
+		lineageTag: 5da67250-e194-42db-998f-75d9d89a94af
+		sourceLineageTag: timespentbymeonemailandmeetings
+		summarizeBy: none
+		sourceColumn: timespentbymeonemailandmeetings
+
+		annotation SummarizationSetBy = Automatic
+
+	column timezoneruleversionnumber
+		dataType: int64
+		formatString: 0
+		lineageTag: a1854476-9e9e-405f-a5f6-00027a8fdac6
+		sourceLineageTag: timezoneruleversionnumber
+		summarizeBy: sum
+		sourceColumn: timezoneruleversionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column transactioncurrencyidname
+		dataType: string
+		lineageTag: 4dc92eb9-6aa9-4a41-b84b-f1295b51d52f
+		sourceLineageTag: transactioncurrencyidname
+		summarizeBy: none
+		sourceColumn: transactioncurrencyidname
+
+		annotation SummarizationSetBy = Automatic
+
+	column traversedpath
+		dataType: string
+		lineageTag: 5693bab5-6edd-4d1b-b1d0-1a23a226e025
+		sourceLineageTag: traversedpath
+		summarizeBy: none
+		sourceColumn: traversedpath
+
+		annotation SummarizationSetBy = Automatic
+
+	column utcconversiontimezonecode
+		dataType: int64
+		formatString: 0
+		lineageTag: 83789429-25e7-402f-9410-536d1b303d0b
+		sourceLineageTag: utcconversiontimezonecode
+		summarizeBy: sum
+		sourceColumn: utcconversiontimezonecode
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 6859d3f4-98a3-4fcf-812d-1a4e58ea1c17
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6dfe1f7e-a03e-4bfc-b630-7ce6546abb07
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		lineageTag: ac73cc89-8f66-468f-a1e8-0e056413a6fc
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_nivelderelacionamento
+		dataType: int64
+		formatString: 0
+		lineageTag: e630062f-f411-47c8-b9da-fe2575ef437b
+		sourceLineageTag: crfc2_nivelderelacionamento
+		summarizeBy: sum
+		sourceColumn: crfc2_nivelderelacionamento
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_riscogeopolitico
+		dataType: int64
+		formatString: 0
+		lineageTag: f64484cd-3b75-40e7-ae73-ce81bfa78f1d
+		sourceLineageTag: crfc2_riscogeopolitico
+		summarizeBy: sum
+		sourceColumn: crfc2_riscogeopolitico
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_tipodecontrato
+		dataType: int64
+		formatString: 0
+		lineageTag: 1dcc3975-5839-46dc-a8ba-3dc04ce31d04
+		sourceLineageTag: crfc2_tipodecontrato
+		summarizeBy: sum
+		sourceColumn: crfc2_tipodecontrato
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_incoterm
+		dataType: int64
+		formatString: 0
+		lineageTag: ce16029d-fa04-4d4f-af00-ba07da611371
+		sourceLineageTag: crfc2_incoterm
+		summarizeBy: sum
+		sourceColumn: crfc2_incoterm
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_laycan
+		dataType: int64
+		formatString: 0
+		lineageTag: 7e4d946f-8eea-43e1-a110-8fd2cf563b8d
+		sourceLineageTag: crfc2_laycan
+		summarizeBy: sum
+		sourceColumn: crfc2_laycan
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_solicitaraprovacao
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: accde96a-464b-4659-a5b5-caf633cb9412
+		sourceLineageTag: crfc2_solicitaraprovacao
+		summarizeBy: none
+		sourceColumn: crfc2_solicitaraprovacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_solicitardesconto
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4402a5ab-a7ae-416e-a469-24523b8df6fa
+		sourceLineageTag: crfc2_solicitardesconto
+		summarizeBy: none
+		sourceColumn: crfc2_solicitardesconto
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_statusdaaprovacao
+		dataType: string
+		lineageTag: 1f055f21-3c61-40e0-9940-42000db03452
+		sourceLineageTag: crfc2_statusdaaprovacao
+		summarizeBy: none
+		sourceColumn: crfc2_statusdaaprovacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_parceirocomercial
+		dataType: string
+		lineageTag: fe5eea87-af01-48ef-9697-354c1f578998
+		sourceLineageTag: crfc2_parceirocomercial
+		summarizeBy: none
+		sourceColumn: crfc2_parceirocomercial
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_parceirocomercial_entitytype
+		dataType: string
+		lineageTag: 95e384f3-5b84-4fc2-b516-c55fb08b3aec
+		sourceLineageTag: crfc2_parceirocomercial_entitytype
+		summarizeBy: none
+		sourceColumn: crfc2_parceirocomercial_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_parceirocomercialname
+		dataType: string
+		lineageTag: 5610bace-f5ea-40c7-b59c-433c4860a97e
+		sourceLineageTag: crfc2_parceirocomercialname
+		summarizeBy: none
+		sourceColumn: crfc2_parceirocomercialname
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_parceirocomercialyominame
+		dataType: string
+		lineageTag: 15bae467-9ff0-4043-92de-175e396ba041
+		sourceLineageTag: crfc2_parceirocomercialyominame
+		summarizeBy: none
+		sourceColumn: crfc2_parceirocomercialyominame
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_produtoprincipal
+		dataType: string
+		lineageTag: 0f77868d-90f6-4eb5-8752-b05c558c1133
+		sourceLineageTag: crfc2_produtoprincipal
+		summarizeBy: none
+		sourceColumn: crfc2_produtoprincipal
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_produtoprincipal_entitytype
+		dataType: string
+		lineageTag: 5b180e98-34aa-4cea-96bf-de24a6d0e935
+		sourceLineageTag: crfc2_produtoprincipal_entitytype
+		summarizeBy: none
+		sourceColumn: crfc2_produtoprincipal_entitytype
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_produtoprincipalname
+		dataType: string
+		lineageTag: 160378fd-65aa-4ed1-9432-4a917f2d2ed7
+		sourceLineageTag: crfc2_produtoprincipalname
+		summarizeBy: none
+		sourceColumn: crfc2_produtoprincipalname
+
+		annotation SummarizationSetBy = Automatic
+
+	partition opportunity = entity
+		mode: directLake
+		source
+			entityName: opportunity
+			expressionSource: 'DirectLake - dataverse_fsiprincipal_cds2_workspace_unqcc8d8adf2841f011be52000d3a106'
+

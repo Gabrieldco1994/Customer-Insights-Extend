@@ -1,0 +1,1043 @@
+/// jornada de campanha
+table msdynmkt_journey
+	lineageTag: 131f1e5e-4313-4f9f-9063-bffb693c6491
+	sourceLineageTag: [dbo].[msdynmkt_journey]
+
+	measure 'Journey Total Cost' = ```
+			
+			SUM(msdynmkt_journey[crfc2_custototaldajornada])
+			
+			```
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: c4308c36-a479-4fb3-8b96-e38bfcec4ebb
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'ROI Value' =
+			
+			[Won Revenue] - [Journey Total Cost]
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 23c19f9f-3476-4529-8fba-06ad188f5e35
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'ROI %' =
+			
+			DIVIDE(
+			    [Won Revenue] - [Journey Total Cost],
+			    [Journey Total Cost]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 91746d4b-b0f7-4c15-ad3c-12627b346f05
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+	measure 'ROI Geral %' =
+			
+			DIVIDE(
+			    [Won Revenue] - [Journey Total Cost],
+			    [Journey Total Cost]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 38b5c189-d3dd-42f4-9bd9-b7fe7c485d10
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+	column Id
+		dataType: string
+		lineageTag: 63ef71a6-1872-456f-b0b5-74f7e377cb9f
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkCreatedOn
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a0e852c0-1a3f-40f6-af73-3c6c591343ca
+		sourceLineageTag: SinkCreatedOn
+		summarizeBy: none
+		sourceColumn: SinkCreatedOn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SinkModifiedOn
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c75b8bc9-f71f-4232-b353-471ba47f8fe0
+		sourceLineageTag: SinkModifiedOn
+		summarizeBy: none
+		sourceColumn: SinkModifiedOn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column statecode
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b2987a4-b804-4be7-a7c3-9476c65d8cd9
+		sourceLineageTag: statecode
+		summarizeBy: sum
+		sourceColumn: statecode
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column statuscode
+		dataType: int64
+		formatString: 0
+		lineageTag: 3e437a05-ad5c-47b9-b9d5-9de8c96553e7
+		sourceLineageTag: statuscode
+		summarizeBy: sum
+		sourceColumn: statuscode
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_frequencycaptype
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f905f8e-4993-4d73-bc72-89527f29a17c
+		sourceLineageTag: msdynmkt_frequencycaptype
+		summarizeBy: sum
+		sourceColumn: msdynmkt_frequencycaptype
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_purpose
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e19a417-eaf9-4940-b5db-8ba35f9c41ef
+		sourceLineageTag: msdynmkt_purpose
+		summarizeBy: sum
+		sourceColumn: msdynmkt_purpose
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_triggertype
+		dataType: int64
+		formatString: 0
+		lineageTag: 7a530011-e1e9-4be5-bc38-64f199456a06
+		sourceLineageTag: msdynmkt_triggertype
+		summarizeBy: sum
+		sourceColumn: msdynmkt_triggertype
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_issupersededbylaterversion
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5da862ed-dbff-43d4-8149-d575296218b1
+		sourceLineageTag: msdynmkt_issupersededbylaterversion
+		summarizeBy: none
+		sourceColumn: msdynmkt_issupersededbylaterversion
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_journeyinstancepartitionenabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c3aa3ff8-2de8-4261-95ec-27b5133416b2
+		sourceLineageTag: msdynmkt_journeyinstancepartitionenabled
+		summarizeBy: none
+		sourceColumn: msdynmkt_journeyinstancepartitionenabled
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_queueTriggers
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: cb7cefae-579b-4c4b-afc1-c066f51c3b34
+		sourceLineageTag: msdynmkt_queueTriggers
+		summarizeBy: none
+		sourceColumn: msdynmkt_queueTriggers
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_readytobetriggeredbysegmentrefresh
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5259c354-5645-46b2-aea7-7da5b5bef652
+		sourceLineageTag: msdynmkt_readytobetriggeredbysegmentrefresh
+		summarizeBy: none
+		sourceColumn: msdynmkt_readytobetriggeredbysegmentrefresh
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby
+		dataType: string
+		lineageTag: 18d126af-c721-4147-b5d0-cc686ee6aaa2
+		sourceLineageTag: createdby
+		summarizeBy: none
+		sourceColumn: createdby
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdby_entitytype
+		dataType: string
+		lineageTag: 8c646e9a-6cae-4edb-a672-4aa1b7a9cbc8
+		sourceLineageTag: createdby_entitytype
+		summarizeBy: none
+		sourceColumn: createdby_entitytype
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfby
+		dataType: string
+		lineageTag: 6dd9246c-a2a0-4e5f-b87c-b92d49652857
+		sourceLineageTag: createdonbehalfby
+		summarizeBy: none
+		sourceColumn: createdonbehalfby
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfby_entitytype
+		dataType: string
+		lineageTag: b4041d8c-f2aa-43f1-b2c1-cd1d4ce39225
+		sourceLineageTag: createdonbehalfby_entitytype
+		summarizeBy: none
+		sourceColumn: createdonbehalfby_entitytype
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedby
+		dataType: string
+		lineageTag: 857af010-a3b6-48b2-acd8-e6daa03d678c
+		sourceLineageTag: modifiedby
+		summarizeBy: none
+		sourceColumn: modifiedby
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedby_entitytype
+		dataType: string
+		lineageTag: 5fbc8428-1f5b-4651-b262-ac5f0ee8b982
+		sourceLineageTag: modifiedby_entitytype
+		summarizeBy: none
+		sourceColumn: modifiedby_entitytype
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfby
+		dataType: string
+		lineageTag: d5c32b95-537c-42ed-9ae6-6b7e20900f4f
+		sourceLineageTag: modifiedonbehalfby
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfby
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfby_entitytype
+		dataType: string
+		lineageTag: 17d56f85-eb61-425f-a830-5a0d97d6ce2c
+		sourceLineageTag: modifiedonbehalfby_entitytype
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfby_entitytype
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_doubleoptincompliance
+		dataType: string
+		lineageTag: afe9bf46-ca1c-4970-8b4c-afd4a53aad53
+		sourceLineageTag: msdynmkt_doubleoptincompliance
+		summarizeBy: none
+		sourceColumn: msdynmkt_doubleoptincompliance
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_doubleoptincompliance_entitytype
+		dataType: string
+		lineageTag: 50cfe900-d2ac-4a64-8c1e-42552564cd63
+		sourceLineageTag: msdynmkt_doubleoptincompliance_entitytype
+		summarizeBy: none
+		sourceColumn: msdynmkt_doubleoptincompliance_entitytype
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_templateid
+		dataType: string
+		lineageTag: d2b81fdc-e65f-481a-84ea-d5fd2a1965e9
+		sourceLineageTag: msdynmkt_templateid
+		summarizeBy: none
+		sourceColumn: msdynmkt_templateid
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_templateid_entitytype
+		dataType: string
+		lineageTag: eb4711d3-f817-4b9a-9653-932ab94adef5
+		sourceLineageTag: msdynmkt_templateid_entitytype
+		summarizeBy: none
+		sourceColumn: msdynmkt_templateid_entitytype
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningbusinessunit
+		dataType: string
+		lineageTag: 342dfa0d-33b8-492c-88b2-fec0a2960d70
+		sourceLineageTag: owningbusinessunit
+		summarizeBy: none
+		sourceColumn: owningbusinessunit
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningbusinessunit_entitytype
+		dataType: string
+		lineageTag: 2930c34a-2122-454b-9b55-f5bd771b3c01
+		sourceLineageTag: owningbusinessunit_entitytype
+		summarizeBy: none
+		sourceColumn: owningbusinessunit_entitytype
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningteam
+		dataType: string
+		lineageTag: c233ee0f-c756-430b-a577-4ed7c9073035
+		sourceLineageTag: owningteam
+		summarizeBy: none
+		sourceColumn: owningteam
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningteam_entitytype
+		dataType: string
+		lineageTag: e94df0bf-9bed-432d-9d8f-24e26409efb6
+		sourceLineageTag: owningteam_entitytype
+		summarizeBy: none
+		sourceColumn: owningteam_entitytype
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column owninguser
+		dataType: string
+		lineageTag: 863dc717-bb27-4f07-84f1-ef7aee181eb0
+		sourceLineageTag: owninguser
+		summarizeBy: none
+		sourceColumn: owninguser
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column owninguser_entitytype
+		dataType: string
+		lineageTag: 4730f748-7784-4e25-b640-edc71f73b1ed
+		sourceLineageTag: owninguser_entitytype
+		summarizeBy: none
+		sourceColumn: owninguser_entitytype
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ownerid
+		dataType: string
+		lineageTag: d0161279-eaf2-46c2-a57e-cd1db95f8a51
+		sourceLineageTag: ownerid
+		summarizeBy: none
+		sourceColumn: ownerid
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ownerid_entitytype
+		dataType: string
+		lineageTag: b5a8b764-ec59-4969-bb7d-db9149668547
+		sourceLineageTag: ownerid_entitytype
+		summarizeBy: none
+		sourceColumn: ownerid_entitytype
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdbyname
+		dataType: string
+		lineageTag: 0981448d-1b52-4f4d-9a5e-35605917c579
+		sourceLineageTag: createdbyname
+		summarizeBy: none
+		sourceColumn: createdbyname
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdbyyominame
+		dataType: string
+		lineageTag: 93b51952-2a5a-4cd5-a832-e1f4aed2d605
+		sourceLineageTag: createdbyyominame
+		summarizeBy: none
+		sourceColumn: createdbyyominame
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdon
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3e988535-d68a-428e-bc36-771b9fc5eeb3
+		sourceLineageTag: createdon
+		summarizeBy: none
+		sourceColumn: createdon
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfbyname
+		dataType: string
+		lineageTag: 09ff0dd2-5791-4b5a-a5cc-d7c802d9ed99
+		sourceLineageTag: createdonbehalfbyname
+		summarizeBy: none
+		sourceColumn: createdonbehalfbyname
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column createdonbehalfbyyominame
+		dataType: string
+		lineageTag: 28254fe0-5da0-4abf-8a9b-39a1ef32e4f1
+		sourceLineageTag: createdonbehalfbyyominame
+		summarizeBy: none
+		sourceColumn: createdonbehalfbyyominame
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column importsequencenumber
+		dataType: int64
+		formatString: 0
+		lineageTag: e9aacb77-7952-49f9-9f4d-412eb9db73db
+		sourceLineageTag: importsequencenumber
+		summarizeBy: sum
+		sourceColumn: importsequencenumber
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedbyname
+		dataType: string
+		lineageTag: e0a64fb0-9ca1-49a6-8432-b2bd3646dc50
+		sourceLineageTag: modifiedbyname
+		summarizeBy: none
+		sourceColumn: modifiedbyname
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedbyyominame
+		dataType: string
+		lineageTag: 3d892576-3c7b-4cbb-8275-c379f250adf2
+		sourceLineageTag: modifiedbyyominame
+		summarizeBy: none
+		sourceColumn: modifiedbyyominame
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedon
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 63bc6652-1b0d-4eba-b351-e8cc540e565d
+		sourceLineageTag: modifiedon
+		summarizeBy: none
+		sourceColumn: modifiedon
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfbyname
+		dataType: string
+		lineageTag: 43636f26-5689-4b6f-be04-93111519b551
+		sourceLineageTag: modifiedonbehalfbyname
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfbyname
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column modifiedonbehalfbyyominame
+		dataType: string
+		lineageTag: 23435ebf-450c-47d3-a05b-7169e2fc1adf
+		sourceLineageTag: modifiedonbehalfbyyominame
+		summarizeBy: none
+		sourceColumn: modifiedonbehalfbyyominame
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_automaticResumeTime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fd532c0c-4082-4ffb-be16-773dd9c46eec
+		sourceLineageTag: msdynmkt_automaticResumeTime
+		summarizeBy: none
+		sourceColumn: msdynmkt_automaticResumeTime
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_baseversionjourneyid
+		dataType: string
+		lineageTag: 554b918c-d3ca-4869-888b-6fa7fd3a6c26
+		sourceLineageTag: msdynmkt_baseversionjourneyid
+		summarizeBy: none
+		sourceColumn: msdynmkt_baseversionjourneyid
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_doubleoptincompliancename
+		dataType: string
+		lineageTag: 80d286a5-ff4c-48d0-a76c-e624cb32884b
+		sourceLineageTag: msdynmkt_doubleoptincompliancename
+		summarizeBy: none
+		sourceColumn: msdynmkt_doubleoptincompliancename
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_errorDetails
+		dataType: string
+		lineageTag: 80444bcc-60da-4839-ab5b-b53e28a489cf
+		sourceLineageTag: msdynmkt_errorDetails
+		summarizeBy: none
+		sourceColumn: msdynmkt_errorDetails
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_flags
+		dataType: string
+		lineageTag: 8b1a159d-db58-4aa4-9547-713d85f83c39
+		sourceLineageTag: msdynmkt_flags
+		summarizeBy: none
+		sourceColumn: msdynmkt_flags
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_journeyendtime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: dfd1bc43-1a39-49ff-9eba-d047ac2a2d92
+		sourceLineageTag: msdynmkt_journeyendtime
+		summarizeBy: none
+		sourceColumn: msdynmkt_journeyendtime
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_journeyfeatureversionnumber
+		dataType: int64
+		formatString: 0
+		lineageTag: dd836b12-b460-46a4-b318-fc99d0c89a99
+		sourceLineageTag: msdynmkt_journeyfeatureversionnumber
+		summarizeBy: sum
+		sourceColumn: msdynmkt_journeyfeatureversionnumber
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// ID da jornada
+	column msdynmkt_journeyid
+		dataType: string
+		lineageTag: 31ade701-dfbe-49e1-81f6-0e5dfd3523da
+		sourceLineageTag: msdynmkt_journeyid
+		summarizeBy: none
+		sourceColumn: msdynmkt_journeyid
+
+		changedProperty = IsHidden
+
+		changedProperty = Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_journeyjson
+		dataType: string
+		lineageTag: dd106a4c-2bb5-4d6a-b8c6-5aa606ecebab
+		sourceLineageTag: msdynmkt_journeyjson
+		summarizeBy: none
+		sourceColumn: msdynmkt_journeyjson
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_journeyjsonbackup
+		dataType: string
+		lineageTag: fdfc3ea6-9dcb-4787-b1b9-8576725622f4
+		sourceLineageTag: msdynmkt_journeyjsonbackup
+		summarizeBy: none
+		sourceColumn: msdynmkt_journeyjsonbackup
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_journeystarttime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a686bf96-3a42-4a52-b9e8-8dda6fe72fc1
+		sourceLineageTag: msdynmkt_journeystarttime
+		summarizeBy: none
+		sourceColumn: msdynmkt_journeystarttime
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_name
+		dataType: string
+		lineageTag: 55171078-148a-4aa1-86d5-eebd5c36506d
+		sourceLineageTag: msdynmkt_name
+		summarizeBy: none
+		sourceColumn: msdynmkt_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_pauseTime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 33c44cb7-0f1b-439b-a2ea-ebccacd474af
+		sourceLineageTag: msdynmkt_pauseTime
+		summarizeBy: none
+		sourceColumn: msdynmkt_pauseTime
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_templateidname
+		dataType: string
+		lineageTag: d377e713-e66d-426b-831e-99773796e268
+		sourceLineageTag: msdynmkt_templateidname
+		summarizeBy: none
+		sourceColumn: msdynmkt_templateidname
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_versiondescription
+		dataType: string
+		lineageTag: fc29bb62-a087-4726-924a-c54de56d927e
+		sourceLineageTag: msdynmkt_versiondescription
+		summarizeBy: none
+		sourceColumn: msdynmkt_versiondescription
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column msdynmkt_versionnumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 38f6a35a-439c-4b8a-a6da-f0ca7957fe32
+		sourceLineageTag: msdynmkt_versionnumber
+		summarizeBy: sum
+		sourceColumn: msdynmkt_versionnumber
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column overriddencreatedon
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8f8314ed-cdeb-48ea-95df-968d75358337
+		sourceLineageTag: overriddencreatedon
+		summarizeBy: none
+		sourceColumn: overriddencreatedon
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column owneridname
+		dataType: string
+		lineageTag: 393cd6c6-ee23-49c0-b5bd-6a5511e5c062
+		sourceLineageTag: owneridname
+		summarizeBy: none
+		sourceColumn: owneridname
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column owneridtype
+		dataType: string
+		lineageTag: 090c6f43-69cd-4529-a083-fd030bc5f2de
+		sourceLineageTag: owneridtype
+		summarizeBy: none
+		sourceColumn: owneridtype
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column owneridyominame
+		dataType: string
+		lineageTag: 3e2b142a-616b-4b59-8b8c-8759a36fe353
+		sourceLineageTag: owneridyominame
+		summarizeBy: none
+		sourceColumn: owneridyominame
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column owningbusinessunitname
+		dataType: string
+		lineageTag: b7994a04-20ac-4ecc-8116-0d98fe642d01
+		sourceLineageTag: owningbusinessunitname
+		summarizeBy: none
+		sourceColumn: owningbusinessunitname
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column timezoneruleversionnumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 881ea7dd-854c-4b48-a8e7-8231ae668b5f
+		sourceLineageTag: timezoneruleversionnumber
+		summarizeBy: sum
+		sourceColumn: timezoneruleversionnumber
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column utcconversiontimezonecode
+		dataType: int64
+		formatString: 0
+		lineageTag: f3ab2ec9-685f-4578-a15c-3275bdb5620f
+		sourceLineageTag: utcconversiontimezonecode
+		summarizeBy: sum
+		sourceColumn: utcconversiontimezonecode
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column versionnumber
+		dataType: int64
+		formatString: 0
+		lineageTag: cf48df09-8aae-4986-825e-f40f6e379f0f
+		sourceLineageTag: versionnumber
+		summarizeBy: sum
+		sourceColumn: versionnumber
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDelete
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: cf446d37-d8ed-40b8-9c0b-8c50cfffb68a
+		sourceLineageTag: IsDelete
+		summarizeBy: none
+		sourceColumn: IsDelete
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartitionId
+		dataType: string
+		lineageTag: 212c3a81-1b3b-4b5e-8aa3-d529cf6971e0
+		sourceLineageTag: PartitionId
+		summarizeBy: none
+		sourceColumn: PartitionId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column transactioncurrencyid
+		dataType: string
+		lineageTag: c76b2aa1-65c4-492d-ba31-4bcd0e81ba11
+		sourceLineageTag: transactioncurrencyid
+		summarizeBy: none
+		sourceColumn: transactioncurrencyid
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column transactioncurrencyid_entitytype
+		dataType: string
+		lineageTag: fd6c025e-eff0-4981-9b3d-2d2c884d2b1d
+		sourceLineageTag: transactioncurrencyid_entitytype
+		summarizeBy: none
+		sourceColumn: transactioncurrencyid_entitytype
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_custosfixos
+		dataType: double
+		lineageTag: 80ab536c-ed65-479d-a674-864d5b9fee62
+		sourceLineageTag: crfc2_custosfixos
+		summarizeBy: sum
+		sourceColumn: crfc2_custosfixos
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column crfc2_custosfixos_base
+		dataType: double
+		lineageTag: 072028d1-bfdd-49cc-aa51-6f5c95b14ada
+		sourceLineageTag: crfc2_custosfixos_base
+		summarizeBy: sum
+		sourceColumn: crfc2_custosfixos_base
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column exchangerate
+		dataType: double
+		lineageTag: 12a9118c-f6af-4f9d-8a4c-e32f78928d85
+		sourceLineageTag: exchangerate
+		summarizeBy: sum
+		sourceColumn: exchangerate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column transactioncurrencyidname
+		dataType: string
+		lineageTag: 035ab019-57e1-405a-af24-a14c6b6bc522
+		sourceLineageTag: transactioncurrencyidname
+		summarizeBy: none
+		sourceColumn: transactioncurrencyidname
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_jornadapai
+		dataType: string
+		lineageTag: d7d0087f-2531-495f-a84a-08901dbc5a17
+		sourceLineageTag: crfc2_jornadapai
+		summarizeBy: none
+		sourceColumn: crfc2_jornadapai
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_jornadapai_entitytype
+		dataType: string
+		lineageTag: c498f94a-696c-4f8a-ad9b-6b8a80e43d20
+		sourceLineageTag: crfc2_jornadapai_entitytype
+		summarizeBy: none
+		sourceColumn: crfc2_jornadapai_entitytype
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_jornadapainame
+		dataType: string
+		lineageTag: fe98b56b-b8bc-4166-b8fa-ca0171d16bf7
+		sourceLineageTag: crfc2_jornadapainame
+		summarizeBy: none
+		sourceColumn: crfc2_jornadapainame
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_channeltotalcost
+		dataType: double
+		lineageTag: b8065593-3127-4a08-a101-aec290f6ad3c
+		sourceLineageTag: crfc2_channeltotalcost
+		summarizeBy: sum
+		sourceColumn: crfc2_channeltotalcost
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column crfc2_channeltotalcost_base
+		dataType: double
+		lineageTag: 20a5691c-1f6d-4d9d-b89d-ede1451af30b
+		sourceLineageTag: crfc2_channeltotalcost_base
+		summarizeBy: sum
+		sourceColumn: crfc2_channeltotalcost_base
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column crfc2_channeltotalcost_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c62616f8-7a5d-4fba-88bf-e02d31b2a981
+		sourceLineageTag: crfc2_channeltotalcost_date
+		summarizeBy: none
+		sourceColumn: crfc2_channeltotalcost_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_channeltotalcost_state
+		dataType: int64
+		formatString: 0
+		lineageTag: 49617c73-5ff0-4327-836a-b82ca89d45b8
+		sourceLineageTag: crfc2_channeltotalcost_state
+		summarizeBy: sum
+		sourceColumn: crfc2_channeltotalcost_state
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column crfc2_custototaldajornada
+		dataType: double
+		lineageTag: a844563e-456f-47a1-8c3f-36c7f633455d
+		sourceLineageTag: crfc2_custototaldajornada
+		summarizeBy: sum
+		sourceColumn: crfc2_custototaldajornada
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column crfc2_custototaldajornada_base
+		dataType: double
+		lineageTag: 05db0c9d-125c-4f6b-a750-784dcc688d82
+		sourceLineageTag: crfc2_custototaldajornada_base
+		summarizeBy: sum
+		sourceColumn: crfc2_custototaldajornada_base
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition msdynmkt_journey = entity
+		mode: directLake
+		source
+			entityName: msdynmkt_journey
+			expressionSource: 'DirectLake - dataverse_fsiprincipal_cds2_workspace_unqcc8d8adf2841f011be52000d3a106'
+
+	changedProperty = IsHidden
+
+	changedProperty = Description
+

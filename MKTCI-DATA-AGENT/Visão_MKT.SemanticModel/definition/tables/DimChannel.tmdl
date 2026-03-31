@@ -1,0 +1,39 @@
+table DimChannel
+	lineageTag: 0e0b918e-3f9f-49c9-be3a-d1df5ead4a1a
+
+	column crfc2_new_channel
+		formatString: 0
+		lineageTag: f755728e-741a-4f5d-9e20-d0963a1ba7a4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [crfc2_new_channel]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ChannelName
+		lineageTag: c87e942e-73e4-425e-bb9d-db0da87ea85e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [ChannelName]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimChannel = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "crfc2_new_channel", INTEGER,
+				    "ChannelName", STRING,
+				    {
+				        { 508510000, "Email" },
+				        { 508510001, "SMS" },
+				        { 508510002, "Whatsapp" },
+				        { 508510003, "Social" },
+				        { 508510004, "Push" },
+				        { 508510005, "Voice" }
+				    }
+				)
+
+	annotation PBI_Id = 373c2a4429d34101a7f2bacba636ee81
+

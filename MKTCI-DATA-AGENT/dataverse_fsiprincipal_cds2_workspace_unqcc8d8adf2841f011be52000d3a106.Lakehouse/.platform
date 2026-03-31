@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "dataverse_fsiprincipal_cds2_workspace_unqcc8d8adf2841f011be52000d3a106",
+    "description": ""
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d889679a-b8d7-9fdf-491e-2e22e0542029"
+  }
+}

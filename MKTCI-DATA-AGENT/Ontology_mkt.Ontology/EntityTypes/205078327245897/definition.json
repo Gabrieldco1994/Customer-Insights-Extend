@@ -1,0 +1,590 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/entityType/1.0.0/schema.json",
+  "id": "205078327245897",
+  "namespace": "usertypes",
+  "baseEntityTypeId": null,
+  "name": "Jornada",
+  "entityIdParts": [
+    "6180568890974327949"
+  ],
+  "displayNamePropertyId": null,
+  "namespaceType": "Custom",
+  "visibility": "Visible",
+  "properties": [
+    {
+      "id": "6180568891801704388",
+      "name": "Id",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568893354645796",
+      "name": "SinkCreatedOn",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    },
+    {
+      "id": "6180568890960359989",
+      "name": "SinkModifiedOn",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    },
+    {
+      "id": "6180568893636865196",
+      "name": "statecode",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    },
+    {
+      "id": "6180568893636189487",
+      "name": "statuscode",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    },
+    {
+      "id": "6180568893432567920",
+      "name": "msdynmkt_frequencycaptype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    },
+    {
+      "id": "6180568895050779635",
+      "name": "msdynmkt_triggertype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    },
+    {
+      "id": "6180568891683931513",
+      "name": "msdynmkt_issupersededbylaterversion",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "Boolean"
+    },
+    {
+      "id": "6180568890968994227",
+      "name": "msdynmkt_journeyinstancepartitionenabled",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "Boolean"
+    },
+    {
+      "id": "6180568894869832425",
+      "name": "msdynmkt_queueTriggers",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "Boolean"
+    },
+    {
+      "id": "6180568894300321803",
+      "name": "msdynmkt_readytobetriggeredbysegmentrefresh",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "Boolean"
+    },
+    {
+      "id": "6180568892751795886",
+      "name": "createdby",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568894398059682",
+      "name": "createdby_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568891745088990",
+      "name": "createdonbehalfby",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568892239120263",
+      "name": "createdonbehalfby_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568894060908800",
+      "name": "modifiedby",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568893930986094",
+      "name": "modifiedby_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568890868298925",
+      "name": "modifiedonbehalfby",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568890875192420",
+      "name": "modifiedonbehalfby_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568893432440254",
+      "name": "msdynmkt_doubleoptincompliance",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568894903838769",
+      "name": "msdynmkt_doubleoptincompliance_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568893771916629",
+      "name": "msdynmkt_templateid",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568891226704554",
+      "name": "msdynmkt_templateid_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568891004172420",
+      "name": "owningbusinessunit",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568894920620161",
+      "name": "owningbusinessunit_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568894442500737",
+      "name": "owningteam",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568891994740715",
+      "name": "owningteam_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568894473735094",
+      "name": "owninguser",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568890878348781",
+      "name": "owninguser_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568893115561126",
+      "name": "ownerid",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568891576578106",
+      "name": "ownerid_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568894791926880",
+      "name": "createdbyname",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568892595984104",
+      "name": "createdbyyominame",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568891494615708",
+      "name": "createdon",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    },
+    {
+      "id": "6180568894153399404",
+      "name": "createdonbehalfbyname",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568893641693173",
+      "name": "createdonbehalfbyyominame",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568891540272630",
+      "name": "importsequencenumber",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    },
+    {
+      "id": "6180568894181949718",
+      "name": "modifiedbyname",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568893221642437",
+      "name": "modifiedbyyominame",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568895063369717",
+      "name": "modifiedon",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    },
+    {
+      "id": "6180568894929367675",
+      "name": "modifiedonbehalfbyname",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568894563962805",
+      "name": "modifiedonbehalfbyyominame",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568891753091986",
+      "name": "msdynmkt_automaticResumeTime",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    },
+    {
+      "id": "6180568891530299633",
+      "name": "msdynmkt_baseversionjourneyid",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568891307604706",
+      "name": "msdynmkt_doubleoptincompliancename",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568891486483931",
+      "name": "msdynmkt_errorDetails",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568894483638860",
+      "name": "msdynmkt_flags",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568894410456527",
+      "name": "msdynmkt_journeyendtime",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    },
+    {
+      "id": "6180568891142496536",
+      "name": "msdynmkt_journeyfeatureversionnumber",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    },
+    {
+      "id": "6180568890974327949",
+      "name": "msdynmkt_journeyid",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568893162167905",
+      "name": "msdynmkt_journeyjson",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568894800838796",
+      "name": "msdynmkt_journeyjsonbackup",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568892751637407",
+      "name": "msdynmkt_journeystarttime",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    },
+    {
+      "id": "6180568891244070502",
+      "name": "msdynmkt_name",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568894935417278",
+      "name": "msdynmkt_pauseTime",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    },
+    {
+      "id": "6180568891697076498",
+      "name": "msdynmkt_templateidname",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568893961103746",
+      "name": "msdynmkt_versiondescription",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568890843888165",
+      "name": "msdynmkt_versionnumber",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    },
+    {
+      "id": "6180568891881294985",
+      "name": "overriddencreatedon",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    },
+    {
+      "id": "6180568893003637453",
+      "name": "owneridname",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568892528453778",
+      "name": "owneridtype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568894705347927",
+      "name": "owneridyominame",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568891679148915",
+      "name": "owningbusinessunitname",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568893267398737",
+      "name": "timezoneruleversionnumber",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    },
+    {
+      "id": "6180568895032514120",
+      "name": "utcconversiontimezonecode",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    },
+    {
+      "id": "6180568893093639334",
+      "name": "versionnumber",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    },
+    {
+      "id": "6180568891734199277",
+      "name": "IsDelete",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "Boolean"
+    },
+    {
+      "id": "6180568894981051759",
+      "name": "PartitionId",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568892087495614",
+      "name": "transactioncurrencyid",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568893406579858",
+      "name": "transactioncurrencyid_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568894809905882",
+      "name": "crfc2_custosfixos",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568892302186987",
+      "name": "crfc2_custosfixos_base",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568891583727001",
+      "name": "transactioncurrencyidname",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568894523519842",
+      "name": "crfc2_jornadapai",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568891192341829",
+      "name": "crfc2_jornadapai_entitytype",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568894995060340",
+      "name": "crfc2_jornadapainame",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568891613146223",
+      "name": "crfc2_channeltotalcost",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568895031678525",
+      "name": "crfc2_channeltotalcost_base",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568891410323647",
+      "name": "crfc2_channeltotalcost_date",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    },
+    {
+      "id": "6180568894611746322",
+      "name": "crfc2_channeltotalcost_state",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "BigInt"
+    },
+    {
+      "id": "6180568893922544565",
+      "name": "crfc2_custototaldajornada",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "6180568894734492497",
+      "name": "crfc2_custototaldajornada_base",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    }
+  ],
+  "timeseriesProperties": []
+}

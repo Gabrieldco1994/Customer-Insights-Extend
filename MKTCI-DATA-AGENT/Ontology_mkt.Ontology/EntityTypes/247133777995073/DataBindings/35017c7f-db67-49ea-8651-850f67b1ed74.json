@@ -1,0 +1,164 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "35017c7f-db67-49ea-8651-850f67b1ed74",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "AccountId",
+        "targetPropertyId": "6196404646084229094"
+      },
+      {
+        "sourceColumnName": "ActivityExpiryTime",
+        "targetPropertyId": "6196404621482067030"
+      },
+      {
+        "sourceColumnName": "ActivityId",
+        "targetPropertyId": "6196404598021703047"
+      },
+      {
+        "sourceColumnName": "BounceCategory",
+        "targetPropertyId": "6196404568973054950"
+      },
+      {
+        "sourceColumnName": "BusinessUnitId",
+        "targetPropertyId": "6196404542633722414"
+      },
+      {
+        "sourceColumnName": "ChannelEventName",
+        "targetPropertyId": "6196404524144601647"
+      },
+      {
+        "sourceColumnName": "ContactId",
+        "targetPropertyId": "6196404495913353575"
+      },
+      {
+        "sourceColumnName": "CustomerJourneyId",
+        "targetPropertyId": "6196404474674811980"
+      },
+      {
+        "sourceColumnName": "CustomerJourneyIterationId",
+        "targetPropertyId": "6196404451876563774"
+      },
+      {
+        "sourceColumnName": "DeliveredCount",
+        "targetPropertyId": "6196404422589098390"
+      },
+      {
+        "sourceColumnName": "Details",
+        "targetPropertyId": "6196404402460216402"
+      },
+      {
+        "sourceColumnName": "EmailAddressUsed",
+        "targetPropertyId": "6196404368897485460"
+      },
+      {
+        "sourceColumnName": "EmailDomain",
+        "targetPropertyId": "6196404329204598425"
+      },
+      {
+        "sourceColumnName": "IdempotencyId",
+        "targetPropertyId": "6196404298874395771"
+      },
+      {
+        "sourceColumnName": "InteractionType",
+        "targetPropertyId": "6196404274850556674"
+      },
+      {
+        "sourceColumnName": "InternalMarketingInteractionId",
+        "targetPropertyId": "6196404246408289107"
+      },
+      {
+        "sourceColumnName": "IsSmartScheduled",
+        "targetPropertyId": "6196404225522904630"
+      },
+      {
+        "sourceColumnName": "IsUnresolvedProfile",
+        "targetPropertyId": "6196404199761294960"
+      },
+      {
+        "sourceColumnName": "JourneyActionId",
+        "targetPropertyId": "6196404173472176946"
+      },
+      {
+        "sourceColumnName": "JourneyRunId",
+        "targetPropertyId": "6196404153705150366"
+      },
+      {
+        "sourceColumnName": "JourneyVersion",
+        "targetPropertyId": "6196404128615565942"
+      },
+      {
+        "sourceColumnName": "LeadId",
+        "targetPropertyId": "6196404104149029442"
+      },
+      {
+        "sourceColumnName": "MessageId",
+        "targetPropertyId": "6196404066328407086"
+      },
+      {
+        "sourceColumnName": "MessageTemplateVersion",
+        "targetPropertyId": "6196404031030053461"
+      },
+      {
+        "sourceColumnName": "MessageVariationIndexes",
+        "targetPropertyId": "6196403994646227395"
+      },
+      {
+        "sourceColumnName": "MessageVariationName",
+        "targetPropertyId": "6196403959426130018"
+      },
+      {
+        "sourceColumnName": "OrganizationId",
+        "targetPropertyId": "6196403922112653511"
+      },
+      {
+        "sourceColumnName": "ProfileId",
+        "targetPropertyId": "6196403898166013470"
+      },
+      {
+        "sourceColumnName": "ProfileType",
+        "targetPropertyId": "6196403872272086073"
+      },
+      {
+        "sourceColumnName": "Reason",
+        "targetPropertyId": "6196403850434271456"
+      },
+      {
+        "sourceColumnName": "SchedulerId",
+        "targetPropertyId": "6196403824956784918"
+      },
+      {
+        "sourceColumnName": "SendingId",
+        "targetPropertyId": "6196403799581719371"
+      },
+      {
+        "sourceColumnName": "SourceSystem",
+        "targetPropertyId": "6196403776327145353"
+      },
+      {
+        "sourceColumnName": "Timestamp",
+        "targetPropertyId": "6196403749505251408"
+      },
+      {
+        "sourceColumnName": "UsageType",
+        "targetPropertyId": "6196403717532816378"
+      },
+      {
+        "sourceColumnName": "Version",
+        "targetPropertyId": "6196403688450930020"
+      },
+      {
+        "sourceColumnName": "WasRemoteBounced",
+        "targetPropertyId": "6196403669232490631"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "d889679a-b8d7-9fdf-491e-2e22e0542029",
+      "sourceTableName": "EmailDelivered",
+      "sourceSchema": null
+    }
+  }
+}

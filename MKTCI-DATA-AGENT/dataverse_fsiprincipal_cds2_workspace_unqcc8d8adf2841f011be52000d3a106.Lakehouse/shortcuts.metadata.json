@@ -1846,6 +1846,19 @@
     }
   },
   {
+    "name": "msdynmkt_journey_partitioned",
+    "path": "/Tables",
+    "target": {
+      "type": "Dataverse",
+      "dataverse": {
+        "connectionId": "243ff0dc-1725-4e91-adda-26550a8e71bf",
+        "deltaLakeFolder": "https://aeth10ce2ef8b5de402da93a.dfs.core.windows.net/aeth-40fe0ddb-31c0-43c9-b62f-836c9e2dcb0b/CDS2/deltalake",
+        "environmentDomain": "https://org0050eb50.crm.dynamics.com",
+        "tableName": "msdynmkt_journey_partitioned"
+      }
+    }
+  },
+  {
     "name": "msdynmkt_journey",
     "path": "/Tables",
     "target": {
@@ -1920,6 +1933,19 @@
         "deltaLakeFolder": "https://aeth10ce2ef8b5de402da93a.dfs.core.windows.net/aeth-40fe0ddb-31c0-43c9-b62f-836c9e2dcb0b/CDS2/deltalake",
         "environmentDomain": "https://org0050eb50.crm.dynamics.com",
         "tableName": "msdynmkt_customchannelmessage_partitioned"
+      }
+    }
+  },
+  {
+    "name": "msdynmkt_conversioneventdefinition_partitioned",
+    "path": "/Tables",
+    "target": {
+      "type": "Dataverse",
+      "dataverse": {
+        "connectionId": "243ff0dc-1725-4e91-adda-26550a8e71bf",
+        "deltaLakeFolder": "https://aeth10ce2ef8b5de402da93a.dfs.core.windows.net/aeth-40fe0ddb-31c0-43c9-b62f-836c9e2dcb0b/CDS2/deltalake",
+        "environmentDomain": "https://org0050eb50.crm.dynamics.com",
+        "tableName": "msdynmkt_conversioneventdefinition_partitioned"
       }
     }
   },
@@ -7644,6 +7670,19 @@
     }
   },
   {
+    "name": "JourneyEventCompleted_2",
+    "path": "/Tables",
+    "target": {
+      "type": "Dataverse",
+      "dataverse": {
+        "connectionId": "243ff0dc-1725-4e91-adda-26550a8e71bf",
+        "deltaLakeFolder": "https://aeth10ce2ef8b5de402da93a.dfs.core.windows.net/aeth-40fe0ddb-31c0-43c9-b62f-836c9e2dcb0b/5eef6240-6bd7-4f36-b9e1-2235e14788ca/msdynmkt_cio_analytics_v001",
+        "environmentDomain": "https://org0050eb50.crm.dynamics.com",
+        "tableName": "JourneyEventCompleted"
+      }
+    }
+  },
+  {
     "name": "JourneyEventCompleted_1",
     "path": "/Tables",
     "target": {
@@ -8238,6 +8277,32 @@
         "deltaLakeFolder": "https://aeth10ce2ef8b5de402da93a.dfs.core.windows.net/aeth-40fe0ddb-31c0-43c9-b62f-836c9e2dcb0b/CDS2/deltalake",
         "environmentDomain": "https://org0050eb50.crm.dynamics.com",
         "tableName": "desktopflowbinary_partitioned"
+      }
+    }
+  },
+  {
+    "name": "CustomSent",
+    "path": "/Tables",
+    "target": {
+      "type": "Dataverse",
+      "dataverse": {
+        "connectionId": "243ff0dc-1725-4e91-adda-26550a8e71bf",
+        "deltaLakeFolder": "https://aeth10ce2ef8b5de402da93a.dfs.core.windows.net/aeth-40fe0ddb-31c0-43c9-b62f-836c9e2dcb0b/5eef6240-6bd7-4f36-b9e1-2235e14788ca/msdynmkt_cio_analytics_v001",
+        "environmentDomain": "https://org0050eb50.crm.dynamics.com",
+        "tableName": "CustomSent"
+      }
+    }
+  },
+  {
+    "name": "CustomNotSent",
+    "path": "/Tables",
+    "target": {
+      "type": "Dataverse",
+      "dataverse": {
+        "connectionId": "243ff0dc-1725-4e91-adda-26550a8e71bf",
+        "deltaLakeFolder": "https://aeth10ce2ef8b5de402da93a.dfs.core.windows.net/aeth-40fe0ddb-31c0-43c9-b62f-836c9e2dcb0b/5eef6240-6bd7-4f36-b9e1-2235e14788ca/msdynmkt_cio_analytics_v001",
+        "environmentDomain": "https://org0050eb50.crm.dynamics.com",
+        "tableName": "CustomNotSent"
       }
     }
   },
@@ -9941,6 +10006,19 @@
         "deltaLakeFolder": "https://aeth10ce2ef8b5de402da93a.dfs.core.windows.net/aeth-40fe0ddb-31c0-43c9-b62f-836c9e2dcb0b/CDS2/deltalake",
         "environmentDomain": "https://org0050eb50.crm.dynamics.com",
         "tableName": "activityfileattachment_partitioned"
+      }
+    }
+  },
+  {
+    "name": "ActionEventProcessed_1",
+    "path": "/Tables",
+    "target": {
+      "type": "Dataverse",
+      "dataverse": {
+        "connectionId": "243ff0dc-1725-4e91-adda-26550a8e71bf",
+        "deltaLakeFolder": "https://aeth10ce2ef8b5de402da93a.dfs.core.windows.net/aeth-40fe0ddb-31c0-43c9-b62f-836c9e2dcb0b/5eef6240-6bd7-4f36-b9e1-2235e14788ca/msdynmkt_cio_analytics_v001",
+        "environmentDomain": "https://org0050eb50.crm.dynamics.com",
+        "tableName": "ActionEventProcessed"
       }
     }
   },

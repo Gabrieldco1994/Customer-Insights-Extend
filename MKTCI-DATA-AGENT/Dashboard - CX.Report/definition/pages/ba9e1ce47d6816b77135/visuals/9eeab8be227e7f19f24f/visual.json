@@ -4,10 +4,10 @@
   "position": {
     "x": 891.36767317939609,
     "y": 400.28419182948488,
-    "z": 3000,
+    "z": 2000,
     "height": 319.71580817051512,
     "width": 388.77442273534638,
-    "tabOrder": 3000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "pieChart",
@@ -51,7 +51,8 @@
                 }
               },
               "queryRef": "Sum(crfc2_journeychannelcost.crfc2_new_cost)",
-              "nativeQueryRef": "Soma de crfc2_new_cost"
+              "nativeQueryRef": "Soma de crfc2_new_cost",
+              "format": "\"R$\" #,0.###############;-\"R$\" #,0.###############;\"R$\" #,0.###############"
             }
           ]
         }
@@ -176,7 +177,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Gasto Por canal / Campanha'"
+                  "Value": "'Spending per channel / Campaign'"
                 }
               }
             }

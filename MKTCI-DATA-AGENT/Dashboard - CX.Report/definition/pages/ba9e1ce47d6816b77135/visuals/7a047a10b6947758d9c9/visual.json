@@ -160,6 +160,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
             }
           }
         },
@@ -284,7 +291,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'ROI por Campanha'"
+                  "Value": "'ROI by Campaing'"
                 }
               }
             },

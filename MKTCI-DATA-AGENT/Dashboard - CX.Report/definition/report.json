@@ -67,6 +67,17 @@
           "type": "BaseTheme"
         }
       ]
+    },
+    {
+      "name": "JourneySankeyChart1720000001",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "resources/JourneySankeyChart1720000001.pbiviz.json",
+          "path": "JourneySankeyChart1720000001.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
     }
   ],
   "settings": {

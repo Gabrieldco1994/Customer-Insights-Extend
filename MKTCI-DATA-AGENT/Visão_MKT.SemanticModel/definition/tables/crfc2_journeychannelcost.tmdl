@@ -542,5 +542,8 @@ table crfc2_journeychannelcost
 		mode: directLake
 		source
 			entityName: crfc2_journeychannelcost
-			expressionSource: 'DirectLake - dataverse_fsiprincipal_cds2_workspace_unqcc8d8adf2841f011be52000d3a106'
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
 

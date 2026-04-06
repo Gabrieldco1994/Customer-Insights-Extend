@@ -1,16 +1,17 @@
 model Model
 	culture: en-US
 	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
 	sourceQueryCulture: en-US
 	dataAccessOptions
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["DirectLake - dataverse_fsiprincipal_cds2_workspace_unqcc8d8adf2841f011be52000d3a106"]
+annotation PBI_QueryOrder = DatabaseQuery
 
-annotation __PBI_TimeIntelligenceEnabled = 1
+annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb","WebModelingEdit","CopilotTooling"]
+annotation PBI_ProTooling = ["CopilotTooling", "SLL", "WebModelingEdit", "CalcGroup", "DirectLakeOnOneLakeInWeb", "SLL_UpdateDLConnection_SQL"]
 
 ref table EmailDelivered
 ref table EmailOpened
@@ -19,10 +20,12 @@ ref table contact
 ref table EmailSent
 ref table msdynmkt_segmentusage
 ref table msdynmkt_email
-ref table msdynmkt_journey
-ref table ActionEventInflow
 ref table crfc2_journeychannelcost
 ref table DimChannel
+ref table lead
+ref table CustomSent
+ref table CustomNotSent
+ref table msdynmkt_journey
 
 ref cultureInfo en-US
 

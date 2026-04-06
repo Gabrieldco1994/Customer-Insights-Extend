@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0.0",
+  "author": {
+    "name": "Gabriel Barbosa",
+    "email": "dev@example.com"
+  },
+  "resources": [
+    {
+      "resourceId": "rId0",
+      "sourceType": 5,
+      "file": "resources/JourneySankeyChart1720000001.pbiviz.json"
+    }
+  ],
+  "visual": {
+    "name": "JourneySankeyChart",
+    "displayName": "Journey Sankey Chart",
+    "guid": "JourneySankeyChart1720000001",
+    "visualClassName": "JourneySankeyVisual",
+    "version": "1.0.0.0",
+    "description": "Diagrama de jornada multi-nível estilo Sankey para Power BI. Suporta múltiplos campos categóricos e medidas calculadas.",
+    "supportUrl": "https://github.com",
+    "gitHubUrl": "https://github.com"
+  },
+  "metadata": {
+    "pbivizjson": {
+      "resourceId": "rId0"
+    }
+  }
+}

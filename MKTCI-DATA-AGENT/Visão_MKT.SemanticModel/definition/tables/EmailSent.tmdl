@@ -2,6 +2,12 @@ table EmailSent
 	lineageTag: 3f3d36b5-d565-43a9-9ab0-9288b344f630
 	sourceLineageTag: [dbo].[EmailSent]
 
+	measure 'Total Sent Email' = COUNT(EmailSent[IdempotencyId])
+		formatString: 0
+		lineageTag: 60960c1b-7907-4d72-bbb3-a256e5b39723
+
+		changedProperty = Name
+
 	column AccountId
 		dataType: string
 		lineageTag: e3d82832-a61b-4b71-80a3-0f6bf885296b
@@ -364,7 +370,10 @@ table EmailSent
 		mode: directLake
 		source
 			entityName: EmailSent
-			expressionSource: 'DirectLake - dataverse_fsiprincipal_cds2_workspace_unqcc8d8adf2841f011be52000d3a106'
+			schemaName: dbo
+			expressionSource: DatabaseQuery
 
 	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
 

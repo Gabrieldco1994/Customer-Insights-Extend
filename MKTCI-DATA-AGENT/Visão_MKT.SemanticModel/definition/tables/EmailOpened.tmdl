@@ -2,6 +2,12 @@ table EmailOpened
 	lineageTag: 29e342c9-930a-40ac-be95-16eeefd221a8
 	sourceLineageTag: [dbo].[EmailOpened]
 
+	measure 'Total Delivered Emails' = COUNT(EmailDelivered[IdempotencyId])
+		formatString: 0
+		lineageTag: 87e54c0b-b453-49cc-b020-c8b5b645f048
+
+		changedProperty = Name
+
 	column AccountId
 		dataType: string
 		lineageTag: 2f5f783c-84b6-491e-90f4-ff7c1991b41b
@@ -525,5 +531,8 @@ table EmailOpened
 		mode: directLake
 		source
 			entityName: EmailOpened
-			expressionSource: 'DirectLake - dataverse_fsiprincipal_cds2_workspace_unqcc8d8adf2841f011be52000d3a106'
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
 

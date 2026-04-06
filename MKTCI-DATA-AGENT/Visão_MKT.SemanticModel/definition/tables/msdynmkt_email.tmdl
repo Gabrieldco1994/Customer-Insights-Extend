@@ -1000,5 +1000,8 @@ table msdynmkt_email
 		mode: directLake
 		source
 			entityName: msdynmkt_email
-			expressionSource: 'DirectLake - dataverse_fsiprincipal_cds2_workspace_unqcc8d8adf2841f011be52000d3a106'
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
 

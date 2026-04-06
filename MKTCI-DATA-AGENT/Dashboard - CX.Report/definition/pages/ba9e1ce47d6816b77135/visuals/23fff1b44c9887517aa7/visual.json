@@ -4,10 +4,10 @@
   "position": {
     "x": 986.21848739495806,
     "y": 84.705882352941188,
-    "z": 4001,
+    "z": 4000,
     "height": 68.9747899159664,
     "width": 275.89915966386559,
-    "tabOrder": 4001
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "slicer",
@@ -67,7 +67,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Filtro por Campanha'"
+                  "Value": "'Filter by Journey'"
                 }
               }
             }

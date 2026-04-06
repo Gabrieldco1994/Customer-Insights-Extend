@@ -1,0 +1,719 @@
+{
+  "properties": {
+    "jobMode": "Batch",
+    "source": {
+      "type": "CommonDataServiceForAppsEntity",
+      "connectionSettings": {
+        "type": "CommonDataServiceForApps",
+        "externalReferences": {
+          "connection": "4de6e535-3998-4fc7-98d4-072edf4d79e4"
+        }
+      }
+    },
+    "destination": {
+      "type": "LakehouseTable",
+      "connectionSettings": {
+        "type": "Lakehouse",
+        "typeProperties": {
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "artifactId": "d889679a-b8d7-9fdf-491e-2e22e0542029",
+          "rootFolder": "Tables"
+        }
+      }
+    },
+    "policy": {
+      "timeout": "0.12:00:00",
+      "retry": 0
+    }
+  },
+  "activities": [
+    {
+      "id": "66c73729-502c-48db-946d-3fe501165ee1",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "entityName": "msdynmkt_journey"
+          }
+        },
+        "destination": {
+          "partitionOption": "None",
+          "writeBehavior": "Overwrite",
+          "datasetSettings": {
+            "table": "msdynmkt_journey"
+          },
+          "applyVOrder": false
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator",
+          "mappings": [
+            {
+              "source": {
+                "name": "createdby",
+                "type": "Guid"
+              },
+              "destination": {
+                "name": "createdby",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "createdbyname",
+                "type": "String"
+              },
+              "destination": {
+                "name": "createdbyname",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "createdbyyominame",
+                "type": "String"
+              },
+              "destination": {
+                "name": "createdbyyominame",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "createdon",
+                "type": "DateTime"
+              },
+              "destination": {
+                "name": "createdon",
+                "physicalType": "timestamp"
+              }
+            },
+            {
+              "source": {
+                "name": "createdonbehalfby",
+                "type": "Guid"
+              },
+              "destination": {
+                "name": "createdonbehalfby",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "createdonbehalfbyname",
+                "type": "String"
+              },
+              "destination": {
+                "name": "createdonbehalfbyname",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "createdonbehalfbyyominame",
+                "type": "String"
+              },
+              "destination": {
+                "name": "createdonbehalfbyyominame",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "crfc2_channeltotalcost",
+                "type": "Decimal"
+              },
+              "destination": {
+                "name": "crfc2_channeltotalcost",
+                "physicalType": "decimal",
+                "scale": 18,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "crfc2_channeltotalcost_base",
+                "type": "Decimal"
+              },
+              "destination": {
+                "name": "crfc2_channeltotalcost_base",
+                "physicalType": "decimal",
+                "scale": 18,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "crfc2_custosfixos",
+                "type": "Decimal"
+              },
+              "destination": {
+                "name": "crfc2_custosfixos",
+                "physicalType": "decimal",
+                "scale": 18,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "crfc2_custosfixos_base",
+                "type": "Decimal"
+              },
+              "destination": {
+                "name": "crfc2_custosfixos_base",
+                "physicalType": "decimal",
+                "scale": 18,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "crfc2_custototaldajornada",
+                "type": "Decimal"
+              },
+              "destination": {
+                "name": "crfc2_custototaldajornada",
+                "physicalType": "decimal",
+                "scale": 18,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "crfc2_custototaldajornada_base",
+                "type": "Decimal"
+              },
+              "destination": {
+                "name": "crfc2_custototaldajornada_base",
+                "physicalType": "decimal",
+                "scale": 18,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "crfc2_jornadapai",
+                "type": "Guid"
+              },
+              "destination": {
+                "name": "crfc2_jornadapai",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "crfc2_jornadapainame",
+                "type": "String"
+              },
+              "destination": {
+                "name": "crfc2_jornadapainame",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "exchangerate",
+                "type": "Decimal"
+              },
+              "destination": {
+                "name": "exchangerate",
+                "physicalType": "decimal",
+                "scale": 18,
+                "precision": 38
+              }
+            },
+            {
+              "source": {
+                "name": "importsequencenumber",
+                "type": "Int32"
+              },
+              "destination": {
+                "name": "importsequencenumber",
+                "physicalType": "integer"
+              }
+            },
+            {
+              "source": {
+                "name": "modifiedby",
+                "type": "Guid"
+              },
+              "destination": {
+                "name": "modifiedby",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "modifiedbyname",
+                "type": "String"
+              },
+              "destination": {
+                "name": "modifiedbyname",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "modifiedbyyominame",
+                "type": "String"
+              },
+              "destination": {
+                "name": "modifiedbyyominame",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "modifiedon",
+                "type": "DateTime"
+              },
+              "destination": {
+                "name": "modifiedon",
+                "physicalType": "timestamp"
+              }
+            },
+            {
+              "source": {
+                "name": "modifiedonbehalfby",
+                "type": "Guid"
+              },
+              "destination": {
+                "name": "modifiedonbehalfby",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "modifiedonbehalfbyname",
+                "type": "String"
+              },
+              "destination": {
+                "name": "modifiedonbehalfbyname",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "modifiedonbehalfbyyominame",
+                "type": "String"
+              },
+              "destination": {
+                "name": "modifiedonbehalfbyyominame",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_automaticResumeTime",
+                "type": "DateTime"
+              },
+              "destination": {
+                "name": "msdynmkt_automaticResumeTime",
+                "physicalType": "timestamp"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_baseversionjourneyid",
+                "type": "Guid"
+              },
+              "destination": {
+                "name": "msdynmkt_baseversionjourneyid",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_doubleoptincompliance",
+                "type": "Guid"
+              },
+              "destination": {
+                "name": "msdynmkt_doubleoptincompliance",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_doubleoptincompliancename",
+                "type": "String"
+              },
+              "destination": {
+                "name": "msdynmkt_doubleoptincompliancename",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_errorDetails",
+                "type": "String"
+              },
+              "destination": {
+                "name": "msdynmkt_errorDetails",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_flags",
+                "type": "String"
+              },
+              "destination": {
+                "name": "msdynmkt_flags",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_frequencycaptype",
+                "type": "Int32"
+              },
+              "destination": {
+                "name": "msdynmkt_frequencycaptype",
+                "physicalType": "integer"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_issupersededbylaterversion",
+                "type": "Boolean"
+              },
+              "destination": {
+                "name": "msdynmkt_issupersededbylaterversion",
+                "physicalType": "boolean"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_journeyendtime",
+                "type": "DateTime"
+              },
+              "destination": {
+                "name": "msdynmkt_journeyendtime",
+                "physicalType": "timestamp"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_journeyfeatureversionnumber",
+                "type": "Int32"
+              },
+              "destination": {
+                "name": "msdynmkt_journeyfeatureversionnumber",
+                "physicalType": "integer"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_journeyid",
+                "type": "Guid"
+              },
+              "destination": {
+                "name": "msdynmkt_journeyid",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_journeyinstancepartitionenabled",
+                "type": "Boolean"
+              },
+              "destination": {
+                "name": "msdynmkt_journeyinstancepartitionenabled",
+                "physicalType": "boolean"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_journeyjson",
+                "type": "String"
+              },
+              "destination": {
+                "name": "msdynmkt_journeyjson",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_journeyjsonbackup",
+                "type": "String"
+              },
+              "destination": {
+                "name": "msdynmkt_journeyjsonbackup",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_journeystarttime",
+                "type": "DateTime"
+              },
+              "destination": {
+                "name": "msdynmkt_journeystarttime",
+                "physicalType": "timestamp"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_name",
+                "type": "String"
+              },
+              "destination": {
+                "name": "msdynmkt_name",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_pauseTime",
+                "type": "DateTime"
+              },
+              "destination": {
+                "name": "msdynmkt_pauseTime",
+                "physicalType": "timestamp"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_purpose",
+                "type": "Int32"
+              },
+              "destination": {
+                "name": "msdynmkt_purpose",
+                "physicalType": "integer"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_queueTriggers",
+                "type": "Boolean"
+              },
+              "destination": {
+                "name": "msdynmkt_queueTriggers",
+                "physicalType": "boolean"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_readytobetriggeredbysegmentrefresh",
+                "type": "Boolean"
+              },
+              "destination": {
+                "name": "msdynmkt_readytobetriggeredbysegmentrefresh",
+                "physicalType": "boolean"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_templateid",
+                "type": "Guid"
+              },
+              "destination": {
+                "name": "msdynmkt_templateid",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_templateidname",
+                "type": "String"
+              },
+              "destination": {
+                "name": "msdynmkt_templateidname",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_triggertype",
+                "type": "Int32"
+              },
+              "destination": {
+                "name": "msdynmkt_triggertype",
+                "physicalType": "integer"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_versiondescription",
+                "type": "String"
+              },
+              "destination": {
+                "name": "msdynmkt_versiondescription",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "msdynmkt_versionnumber",
+                "type": "Int32"
+              },
+              "destination": {
+                "name": "msdynmkt_versionnumber",
+                "physicalType": "integer"
+              }
+            },
+            {
+              "source": {
+                "name": "overriddencreatedon",
+                "type": "DateTime"
+              },
+              "destination": {
+                "name": "overriddencreatedon",
+                "physicalType": "timestamp"
+              }
+            },
+            {
+              "source": {
+                "name": "ownerid",
+                "type": "Guid"
+              },
+              "destination": {
+                "name": "ownerid",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "owneridname",
+                "type": "String"
+              },
+              "destination": {
+                "name": "owneridname",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "owneridtype",
+                "type": "String"
+              },
+              "destination": {
+                "name": "owneridtype",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "owneridyominame",
+                "type": "String"
+              },
+              "destination": {
+                "name": "owneridyominame",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "owningbusinessunit",
+                "type": "Guid"
+              },
+              "destination": {
+                "name": "owningbusinessunit",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "owningbusinessunitname",
+                "type": "String"
+              },
+              "destination": {
+                "name": "owningbusinessunitname",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "owningteam",
+                "type": "Guid"
+              },
+              "destination": {
+                "name": "owningteam",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "owninguser",
+                "type": "Guid"
+              },
+              "destination": {
+                "name": "owninguser",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "statecode",
+                "type": "Int32"
+              },
+              "destination": {
+                "name": "statecode",
+                "physicalType": "integer"
+              }
+            },
+            {
+              "source": {
+                "name": "statuscode",
+                "type": "Int32"
+              },
+              "destination": {
+                "name": "statuscode",
+                "physicalType": "integer"
+              }
+            },
+            {
+              "source": {
+                "name": "timezoneruleversionnumber",
+                "type": "Int32"
+              },
+              "destination": {
+                "name": "timezoneruleversionnumber",
+                "physicalType": "integer"
+              }
+            },
+            {
+              "source": {
+                "name": "transactioncurrencyid",
+                "type": "Guid"
+              },
+              "destination": {
+                "name": "transactioncurrencyid",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "transactioncurrencyidname",
+                "type": "String"
+              },
+              "destination": {
+                "name": "transactioncurrencyidname",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "utcconversiontimezonecode",
+                "type": "Int32"
+              },
+              "destination": {
+                "name": "utcconversiontimezonecode",
+                "physicalType": "integer"
+              }
+            },
+            {
+              "source": {
+                "name": "versionnumber",
+                "type": "Int64"
+              },
+              "destination": {
+                "name": "versionnumber",
+                "physicalType": "long"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

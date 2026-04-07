@@ -7,198 +7,9 @@
   "type": "semantic_model",
   "userDescription": null,
   "metadata": {
-    "csdl_relationships": "[{\"FromTable\":\"EmailDelivered\",\"FromColumn\":\"CustomerJourneyId\",\"ToTable\":\"msdynmkt_journey\",\"ToColumn\":\"msdynmkt_journeyid\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"EmailDelivered\",\"FromColumn\":\"ContactId\",\"ToTable\":\"contact\",\"ToColumn\":\"contactid\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"EmailOpened\",\"FromColumn\":\"ContactId\",\"ToTable\":\"contact\",\"ToColumn\":\"contactid\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"EmailOpened\",\"FromColumn\":\"CustomerJourneyId\",\"ToTable\":\"msdynmkt_journey\",\"ToColumn\":\"msdynmkt_journeyid\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"opportunity\",\"FromColumn\":\"msdynmkt_journeyid\",\"ToTable\":\"msdynmkt_journey\",\"ToColumn\":\"msdynmkt_journeyid\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"opportunity\",\"FromColumn\":\"contactid\",\"ToTable\":\"contact\",\"ToColumn\":\"contactid\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"EmailSent\",\"FromColumn\":\"ContactId\",\"ToTable\":\"contact\",\"ToColumn\":\"contactid\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"EmailSent\",\"FromColumn\":\"CustomerJourneyId\",\"ToTable\":\"msdynmkt_journey\",\"ToColumn\":\"msdynmkt_journeyid\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"crfc2_journeychannelcost\",\"FromColumn\":\"crfc2_msdynmkt_journey\",\"ToTable\":\"msdynmkt_journey\",\"ToColumn\":\"msdynmkt_journeyid\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"}]"
+    "csdl_relationships": "[{\"FromTable\":\"EmailDelivered\",\"FromColumn\":\"ContactId\",\"ToTable\":\"contact\",\"ToColumn\":\"contactid\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"EmailDelivered\",\"FromColumn\":\"CustomerJourneyId\",\"ToTable\":\"msdynmkt_journey\",\"ToColumn\":\"Id\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"EmailOpened\",\"FromColumn\":\"ContactId\",\"ToTable\":\"contact\",\"ToColumn\":\"contactid\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"EmailOpened\",\"FromColumn\":\"CustomerJourneyId\",\"ToTable\":\"msdynmkt_journey\",\"ToColumn\":\"Id\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"opportunity\",\"FromColumn\":\"customerid\",\"ToTable\":\"contact\",\"ToColumn\":\"contactid\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"opportunity\",\"FromColumn\":\"msdynmkt_journeyid\",\"ToTable\":\"msdynmkt_journey\",\"ToColumn\":\"Id\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"EmailSent\",\"FromColumn\":\"ContactId\",\"ToTable\":\"contact\",\"ToColumn\":\"contactid\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"EmailSent\",\"FromColumn\":\"CustomerJourneyId\",\"ToTable\":\"msdynmkt_journey\",\"ToColumn\":\"Id\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"crfc2_journeychannelcost\",\"FromColumn\":\"crfc2_new_channel\",\"ToTable\":\"DimChannel\",\"ToColumn\":\"crfc2_new_channel\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"Unknown\"},{\"FromTable\":\"crfc2_journeychannelcost\",\"FromColumn\":\"crfc2_msdynmkt_journey\",\"ToTable\":\"msdynmkt_journey\",\"ToColumn\":\"Id\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"lead\",\"FromColumn\":\"msdynmkt_customerjourneyid\",\"ToTable\":\"msdynmkt_journey\",\"ToColumn\":\"Id\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"},{\"FromTable\":\"CustomSent\",\"FromColumn\":\"CustomerJourneyId\",\"ToTable\":\"msdynmkt_journey\",\"ToColumn\":\"Id\",\"IsActive\":true,\"IsBidirectional\":false,\"Cardinality\":\"ManyToOne\"}]"
   },
   "elements": [
-    {
-      "id": "758f024d-6bc8-4cb7-993c-95a966e22fc7",
-      "is_selected": false,
-      "display_name": "ActionEventInflow",
-      "type": "semantic_model.table",
-      "description": null,
-      "children": [
-        {
-          "id": "9d6a01fa-d7ca-4349-9f30-d5a169b095b3",
-          "is_selected": true,
-          "display_name": "ActionStatus",
-          "type": "semantic_model.column",
-          "data_type": "String",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "b2f17a9d-aa3f-403a-a739-e7c78bc51f02",
-          "is_selected": true,
-          "display_name": "BusinessUnitId",
-          "type": "semantic_model.column",
-          "data_type": "String",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "04e38c23-fcf8-4116-b4c9-f76c1be1dcfa",
-          "is_selected": true,
-          "display_name": "CustomerJourneyId",
-          "type": "semantic_model.column",
-          "data_type": "String",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "3367eb2d-5f29-4187-bf9b-e03d31a9ac10",
-          "is_selected": true,
-          "display_name": "IdempotencyId",
-          "type": "semantic_model.column",
-          "data_type": "String",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "aa650f15-81b5-4c93-ba28-3a0c61729d65",
-          "is_selected": true,
-          "display_name": "InteractionType",
-          "type": "semantic_model.column",
-          "data_type": "String",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "d2d6c5d9-0072-450a-a548-6451f7370835",
-          "is_selected": true,
-          "display_name": "InternalMarketingInteractionId",
-          "type": "semantic_model.column",
-          "data_type": "String",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "7a8fb55b-5e7c-45bd-9b14-1e42544af980",
-          "is_selected": true,
-          "display_name": "IsUnresolvedProfile",
-          "type": "semantic_model.column",
-          "data_type": "Boolean",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "af1ffbc3-c945-4759-8ff5-b0907fcc1389",
-          "is_selected": true,
-          "display_name": "JourneyActionId",
-          "type": "semantic_model.column",
-          "data_type": "String",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "a2084682-e9d8-432d-bc5f-f5b19dfe9f85",
-          "is_selected": true,
-          "display_name": "JourneyRunId",
-          "type": "semantic_model.column",
-          "data_type": "String",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "21ccfbaf-3d9f-452d-9b7e-9c8db4568854",
-          "is_selected": true,
-          "display_name": "MessageId",
-          "type": "semantic_model.column",
-          "data_type": "String",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "f5541719-009e-4455-841d-e246633903b0",
-          "is_selected": true,
-          "display_name": "MessageTemplateVersion",
-          "type": "semantic_model.column",
-          "data_type": "String",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "7f6f2dc6-dfcd-4c8e-b90a-921611f1e201",
-          "is_selected": true,
-          "display_name": "OrganizationId",
-          "type": "semantic_model.column",
-          "data_type": "String",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "26a0d5ab-d195-4607-97d2-2e447ebc5519",
-          "is_selected": true,
-          "display_name": "ParentActionId",
-          "type": "semantic_model.column",
-          "data_type": "String",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "0b3abdf9-2042-490d-bc0c-e780b818dbd9",
-          "is_selected": true,
-          "display_name": "ProfileId",
-          "type": "semantic_model.column",
-          "data_type": "String",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "52b49b69-4740-474a-9294-272ffb5a8d74",
-          "is_selected": true,
-          "display_name": "ProfileType",
-          "type": "semantic_model.column",
-          "data_type": "String",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "59907766-6d83-40da-8a28-a8a1e7440895",
-          "is_selected": true,
-          "display_name": "Reason",
-          "type": "semantic_model.column",
-          "data_type": "String",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "469f722a-ba2b-4b94-ace9-45e9a02eff86",
-          "is_selected": true,
-          "display_name": "ReasonDetail",
-          "type": "semantic_model.column",
-          "data_type": "String",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "3cccf6b3-f1eb-4c60-9a14-0f693adab296",
-          "is_selected": true,
-          "display_name": "SourceSystem",
-          "type": "semantic_model.column",
-          "data_type": "Int64",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "058f8c97-bd7e-4e6d-b058-cacc4a04e0fb",
-          "is_selected": true,
-          "display_name": "Timestamp",
-          "type": "semantic_model.column",
-          "data_type": "DateTime",
-          "description": null,
-          "children": []
-        },
-        {
-          "id": "7d6850e6-d1a2-41fd-9fe8-2b142e90c919",
-          "is_selected": true,
-          "display_name": "Version",
-          "type": "semantic_model.column",
-          "data_type": "Int64",
-          "description": null,
-          "children": []
-        }
-      ]
-    },
     {
       "id": "13ac9001-6e74-4156-829d-aceac703f08c",
       "is_selected": true,
@@ -3861,6 +3672,15 @@
       "description": null,
       "children": [
         {
+          "id": "6d4575cf-2ed0-4a5f-a49d-40779c79894a",
+          "is_selected": true,
+          "display_name": "Channel Name",
+          "type": "semantic_model.measure",
+          "data_type": "String",
+          "description": "Canal tratado",
+          "children": []
+        },
+        {
           "id": "e3366482-f142-4673-9bad-497320bdf3d9",
           "is_selected": true,
           "display_name": "createdby",
@@ -4358,6 +4178,501 @@
       ]
     },
     {
+      "id": "4c5059d8-5f0b-4655-9b7e-2dc9d80c1f60",
+      "is_selected": false,
+      "display_name": "CustomNotSent",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "62dcfb68-cc47-4074-a622-530ec352c179",
+          "is_selected": true,
+          "display_name": "BlockedReason",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7e35d9ab-8394-4370-adc8-0c08473f6b74",
+          "is_selected": true,
+          "display_name": "BusinessUnitId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c2ec6240-ba2b-4ecc-a1b0-9d58aeae0245",
+          "is_selected": true,
+          "display_name": "ChannelDefinitionId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ad59b8a0-219c-4451-aef1-0bc7a3c32997",
+          "is_selected": true,
+          "display_name": "ChannelType",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c3426613-6f8f-48b5-80e0-597c4990d349",
+          "is_selected": true,
+          "display_name": "CustomChannelMessageId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "61cb1686-b0b3-43f9-a2f6-60f9ec53cf96",
+          "is_selected": true,
+          "display_name": "CustomerJourneyId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d665552c-34f9-4ac1-b33a-2a430b617b35",
+          "is_selected": true,
+          "display_name": "Details",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "84fbd169-3c24-4e84-b2e3-923fb1844c41",
+          "is_selected": true,
+          "display_name": "IdempotencyId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6f426c25-a263-4aaf-b642-45efc32eb6f8",
+          "is_selected": true,
+          "display_name": "InteractionType",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d064f2ed-13a7-425f-be69-8cdcbdd706b2",
+          "is_selected": true,
+          "display_name": "InternalMarketingInteractionId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "70e8f12e-cdc6-49cb-80bf-f63c9946b841",
+          "is_selected": true,
+          "display_name": "IsUnresolvedProfile",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "be3d34c0-953d-4563-882d-e0fec66daaeb",
+          "is_selected": true,
+          "display_name": "JourneyActionId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "76e9e68b-2477-4fc0-a02e-66d73c891807",
+          "is_selected": true,
+          "display_name": "JourneyRunId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6cf9df77-be69-4bd5-b964-91be28347547",
+          "is_selected": true,
+          "display_name": "MessageId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e79d29b3-8664-4727-9a8b-8124f576a302",
+          "is_selected": true,
+          "display_name": "MessageTemplateVersion",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cc9a4403-3b2e-4202-aed9-3bce3e50a5ac",
+          "is_selected": true,
+          "display_name": "MessageVariationIndexes",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c5f8796b-6162-4c09-adb4-b6c59b6ce731",
+          "is_selected": true,
+          "display_name": "MessageVariationName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "61e2a57c-cad3-4520-b571-36ea3e33c822",
+          "is_selected": true,
+          "display_name": "OrganizationId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8d7ed879-9e88-4984-b26a-d7051ca38428",
+          "is_selected": true,
+          "display_name": "ProfileId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2362410c-1385-4c27-a23b-43136677294b",
+          "is_selected": true,
+          "display_name": "ProfileType",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "dd5abb02-5934-4999-b7f6-5b99f67da107",
+          "is_selected": true,
+          "display_name": "Recipient",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a26e6958-f668-4cc5-827a-89bc808baa38",
+          "is_selected": true,
+          "display_name": "Sender",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "59c867aa-a93a-4039-a3fe-9824a22ee8ed",
+          "is_selected": true,
+          "display_name": "SourceSystem",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "50873e85-dd00-4ef7-81fd-3a23e1d5090f",
+          "is_selected": true,
+          "display_name": "Timestamp",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7805540d-8b3a-495c-a979-e2387c5c8ed3",
+          "is_selected": true,
+          "display_name": "Version",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "eb16811f-214d-4783-bc98-abba5efc6566",
+      "is_selected": true,
+      "display_name": "CustomSent",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "ae6f5d0d-3361-43ba-9668-1c2c08a21ab7",
+          "is_selected": true,
+          "display_name": "BusinessUnitId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4d4e984d-48ef-4969-8271-64f43f071832",
+          "is_selected": true,
+          "display_name": "ChannelDefinitionId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7f3ba23a-1aac-4ba2-aff8-d4e6c1016b0b",
+          "is_selected": true,
+          "display_name": "ChannelType",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e7d2fb8c-8331-4f62-a4fa-d1d5751d852a",
+          "is_selected": true,
+          "display_name": "CustomChannelMessageId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5814d4f8-7071-4836-a924-0ca7057f0351",
+          "is_selected": true,
+          "display_name": "CustomerJourneyId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "970262c6-47b8-4949-8ba9-3babfdd0a31b",
+          "is_selected": true,
+          "display_name": "Details",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a3029152-a2de-4bcd-9223-6b9f3902a534",
+          "is_selected": true,
+          "display_name": "IdempotencyId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3211c5fd-ed15-4459-851a-31eafd7d066e",
+          "is_selected": true,
+          "display_name": "InteractionType",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b86d5213-a682-40ab-94cd-d6467ba66db6",
+          "is_selected": true,
+          "display_name": "InternalMarketingInteractionId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "35ef3a3f-9874-4112-a8cb-b2fcef0ffe75",
+          "is_selected": true,
+          "display_name": "IsUnresolvedProfile",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "58f1d35e-9fbf-431f-9aea-f92890b03c57",
+          "is_selected": true,
+          "display_name": "JourneyActionId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f9c96058-3ea6-4b60-9b91-8c61cff47e5c",
+          "is_selected": true,
+          "display_name": "JourneyRunId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b9ef3272-c58b-4157-8689-469f19f247f7",
+          "is_selected": true,
+          "display_name": "MessageId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9047dd4c-b1fa-4bad-b413-00fab80f1f01",
+          "is_selected": true,
+          "display_name": "MessageTemplateVersion",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5a7eef11-5b43-4033-8f94-6b57de377f7b",
+          "is_selected": true,
+          "display_name": "MessageVariationIndexes",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7b6f98f7-42c8-4c39-9ada-8925da0cc445",
+          "is_selected": true,
+          "display_name": "MessageVariationName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f27fe472-c903-41d5-8dab-ca5b1ba7b47e",
+          "is_selected": true,
+          "display_name": "OrganizationId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "808860d0-dedf-4678-85d3-4e91809fcd28",
+          "is_selected": true,
+          "display_name": "ProfileId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "394fc5ea-fedf-415e-b65f-5552be8b31c7",
+          "is_selected": true,
+          "display_name": "ProfileType",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d7e8fcd2-6b66-4bcd-a036-7eebd59f98a8",
+          "is_selected": true,
+          "display_name": "Recipient",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b78f954a-c16f-405d-bdb4-36d8bb3252ae",
+          "is_selected": true,
+          "display_name": "Sender",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7cdad723-81f9-4773-a997-c9491b479e11",
+          "is_selected": true,
+          "display_name": "SourceSystem",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "612838f8-23ac-491e-b46e-3baef26fba54",
+          "is_selected": true,
+          "display_name": "Timestamp",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "77a038d4-52ee-4a81-b691-eb5f3fcc181b",
+          "is_selected": true,
+          "display_name": "Total Whatsapp Msg",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "79d1f5b0-d8e3-4269-8491-5535c42f04de",
+          "is_selected": true,
+          "display_name": "Version",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "0e0b918e-3f9f-49c9-be3a-d1df5ead4a1a",
+      "is_selected": false,
+      "display_name": "DimChannel",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "c87e942e-73e4-425e-bb9d-db0da87ea85e",
+          "is_selected": true,
+          "display_name": "ChannelName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f755728e-741a-4f5d-9e20-d0963a1ba7a4",
+          "is_selected": true,
+          "display_name": "crfc2_new_channel",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
       "id": "a69c64e6-7ebf-4fba-9030-23176a0b7c8c",
       "is_selected": true,
       "display_name": "EmailDelivered",
@@ -4667,6 +4982,15 @@
           "display_name": "Timestamp",
           "type": "semantic_model.column",
           "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3e8785f5-e842-4dba-a009-0b285d59dd68",
+          "is_selected": true,
+          "display_name": "Total Opened Email",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
           "description": null,
           "children": []
         },
@@ -5166,6 +5490,15 @@
           "children": []
         },
         {
+          "id": "87e54c0b-b453-49cc-b020-c8b5b645f048",
+          "is_selected": true,
+          "display_name": "Total Delivered Emails",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
           "id": "971649e6-9357-4378-b5d6-3087044f03bf",
           "is_selected": true,
           "display_name": "UsageType",
@@ -5499,6 +5832,15 @@
           "children": []
         },
         {
+          "id": "60960c1b-7907-4d72-bbb3-a256e5b39723",
+          "is_selected": true,
+          "display_name": "Total Sent Email",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
           "id": "a2c77a96-7055-4dcd-864c-e508bb400868",
           "is_selected": true,
           "display_name": "UsageType",
@@ -5513,6 +5855,2886 @@
           "display_name": "Version",
           "type": "semantic_model.column",
           "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "2e0b910f-76c4-4e05-ad0f-8d5f2a1ca264",
+      "is_selected": true,
+      "display_name": "lead",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "94b69e34-1528-4adc-b11d-583f6bd011e0",
+          "is_selected": true,
+          "display_name": "accountid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "913148e9-1dcf-4a37-abdb-f20231ea01f1",
+          "is_selected": true,
+          "display_name": "accountid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "35c4faf6-ea1a-4330-8e1a-4a1aae353543",
+          "is_selected": true,
+          "display_name": "accountidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5f7b7749-2a81-4d9a-aa11-57d1d60d2a2f",
+          "is_selected": true,
+          "display_name": "accountidyominame",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e3ff9d9f-ddf9-4518-97f4-e595f499e724",
+          "is_selected": true,
+          "display_name": "address1_addressid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "30e7a7dd-0709-4512-b020-5c47456c72e7",
+          "is_selected": true,
+          "display_name": "address1_addresstypecode",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "feb2cd24-7617-43be-ab5f-e742b87fdbcf",
+          "is_selected": true,
+          "display_name": "address1_city",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "25f3f793-e637-49a7-be7a-d9c7a0539fb9",
+          "is_selected": true,
+          "display_name": "address1_composite",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c8525924-d412-4662-a89d-58ad37ccb8ab",
+          "is_selected": true,
+          "display_name": "address1_country",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ea9e8992-0b50-4bc4-8bc6-f7f28a827b66",
+          "is_selected": true,
+          "display_name": "address1_county",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7b5e13bb-939a-4de0-944e-d517776be33f",
+          "is_selected": true,
+          "display_name": "address1_fax",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b23e402d-5fd3-42ad-a825-db267fdea02d",
+          "is_selected": true,
+          "display_name": "address1_latitude",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3ef879d6-4669-4bb6-8030-231d5c4b4891",
+          "is_selected": true,
+          "display_name": "address1_line1",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9ff12da4-fe2f-49f7-8973-84c7f554ec82",
+          "is_selected": true,
+          "display_name": "address1_line2",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6b0a02ee-df8a-4f42-8fde-ff922f562b20",
+          "is_selected": true,
+          "display_name": "address1_line3",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f1bcf645-ab3e-40af-b3a8-e6274cac04e5",
+          "is_selected": true,
+          "display_name": "address1_longitude",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c657e190-adba-4f4b-9956-32691ea1219f",
+          "is_selected": true,
+          "display_name": "address1_name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bfca32de-1e10-49bd-9440-2f347ce2eaff",
+          "is_selected": true,
+          "display_name": "address1_postalcode",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "345ab1bf-5b63-477e-a3ac-673fcfa1048c",
+          "is_selected": true,
+          "display_name": "address1_postofficebox",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c3555176-10a5-48c2-8c16-e028e8f2c2f4",
+          "is_selected": true,
+          "display_name": "address1_shippingmethodcode",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "49d3caf0-6ca1-43e7-8211-f0884e231604",
+          "is_selected": true,
+          "display_name": "address1_stateorprovince",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4faca05c-f060-4f2d-b97f-ff4102e844b7",
+          "is_selected": true,
+          "display_name": "address1_telephone1",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "31c82608-a622-42fc-9c36-eb85de766ea2",
+          "is_selected": true,
+          "display_name": "address1_telephone2",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1ca4401a-4e90-48ff-9ae2-f5b28c0d3d92",
+          "is_selected": true,
+          "display_name": "address1_telephone3",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "57490b86-86d1-4250-8bb3-f2b3e63eca3c",
+          "is_selected": true,
+          "display_name": "address1_upszone",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b2496eb3-a499-444c-aacd-fff0518c43a8",
+          "is_selected": true,
+          "display_name": "address1_utcoffset",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cd33464a-7c44-4c6a-9e13-ae6554bdaf53",
+          "is_selected": true,
+          "display_name": "address2_addressid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8aa620fc-7884-4963-9f38-40c17b4bed93",
+          "is_selected": true,
+          "display_name": "address2_addresstypecode",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "266c993f-0aa1-4b21-83d1-2f941158534e",
+          "is_selected": true,
+          "display_name": "address2_city",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a26c1975-56db-4c9c-b872-b77c7332e635",
+          "is_selected": true,
+          "display_name": "address2_composite",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ab25e7a7-f488-4cee-a639-4c4313586088",
+          "is_selected": true,
+          "display_name": "address2_country",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "19c22445-05fe-428d-baae-8568705dbf5b",
+          "is_selected": true,
+          "display_name": "address2_county",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "49958579-0ad8-4fd3-96c5-7f0adc43bfdd",
+          "is_selected": true,
+          "display_name": "address2_fax",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bcee9df2-a4e7-433d-8653-5db6a9003c27",
+          "is_selected": true,
+          "display_name": "address2_latitude",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7c6a75c7-3c4d-44a4-8994-2650f062d07f",
+          "is_selected": true,
+          "display_name": "address2_line1",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "aa971b07-54cc-44c2-ba66-2e35b2e9f369",
+          "is_selected": true,
+          "display_name": "address2_line2",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ea7ee03f-3089-4d2a-851c-bdab5d6c0c45",
+          "is_selected": true,
+          "display_name": "address2_line3",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e32768ec-d10c-44f2-b937-3899095710dd",
+          "is_selected": true,
+          "display_name": "address2_longitude",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "436e3cd5-7d2e-4fbd-b311-34ae24f85b46",
+          "is_selected": true,
+          "display_name": "address2_name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c4480c04-ca18-489d-8f0b-0d7c21e02693",
+          "is_selected": true,
+          "display_name": "address2_postalcode",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c902a93c-3d86-434e-8594-2a7ef8c10eb3",
+          "is_selected": true,
+          "display_name": "address2_postofficebox",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "497b2057-2f73-44ea-a1f9-3520e91ddc44",
+          "is_selected": true,
+          "display_name": "address2_shippingmethodcode",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "53cbec8c-0b19-4607-bc90-30632aeb28cf",
+          "is_selected": true,
+          "display_name": "address2_stateorprovince",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8acc83c4-57f9-41cd-98a6-bcb8a9a8fea4",
+          "is_selected": true,
+          "display_name": "address2_telephone1",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2d57babd-04e3-4c8d-9e3a-ea8a4aef8189",
+          "is_selected": true,
+          "display_name": "address2_telephone2",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7a9b9dc9-404c-45ab-93ab-fcbd10e9c803",
+          "is_selected": true,
+          "display_name": "address2_telephone3",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "78c91ec2-dbf3-4c69-80cf-3f794322e6b8",
+          "is_selected": true,
+          "display_name": "address2_upszone",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "388151e2-1ce2-4245-9204-03e7b4270142",
+          "is_selected": true,
+          "display_name": "address2_utcoffset",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d0999fdf-9898-4745-be2b-6ff21bb534f4",
+          "is_selected": true,
+          "display_name": "budgetamount",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6dc639b5-c7de-48a8-a630-084342eb00de",
+          "is_selected": true,
+          "display_name": "budgetamount_base",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "11fe3894-8f35-4e2a-a7a5-348f4030a5ec",
+          "is_selected": true,
+          "display_name": "budgetstatus",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b6cba17a-28e4-43e9-813d-8cdd73493d12",
+          "is_selected": true,
+          "display_name": "businesscard",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f1b3efab-4957-4828-bcfe-a6635c45178d",
+          "is_selected": true,
+          "display_name": "businesscardattributes",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c2227671-b674-4fee-95ba-fbc0ac57a7fc",
+          "is_selected": true,
+          "display_name": "campaignid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8b4a02a3-4cd4-49b4-891a-edf0144588a3",
+          "is_selected": true,
+          "display_name": "campaignid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f94a16d6-d212-4ef6-b0a3-db6a9e7c5362",
+          "is_selected": true,
+          "display_name": "campaignidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a866f1cd-ab8d-404b-8e34-16a0d96fd9d4",
+          "is_selected": true,
+          "display_name": "companyname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d5705df4-dfe3-41ff-a179-6c1c97ee1e40",
+          "is_selected": true,
+          "display_name": "confirminterest",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "172324c2-6888-4eb9-a5f7-db4033b5689b",
+          "is_selected": true,
+          "display_name": "contactid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a32552da-1235-45e4-96cd-ab6fedd5680f",
+          "is_selected": true,
+          "display_name": "contactid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "77e29fdf-510b-4a40-a884-ce1d404c1457",
+          "is_selected": true,
+          "display_name": "contactidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e008f3b1-3048-4ea8-8ea0-8a2c273adb81",
+          "is_selected": true,
+          "display_name": "contactidyominame",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6265971a-8d75-48ad-a7b0-c2f92720303f",
+          "is_selected": true,
+          "display_name": "createdby",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c29fdb42-5153-49c5-9164-8cd0f982a4d1",
+          "is_selected": true,
+          "display_name": "createdby_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8cc4c57b-f29f-4da5-a85b-0ef66492e792",
+          "is_selected": true,
+          "display_name": "createdbyname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b9a4aaf4-f04e-4489-968d-99387609a7d5",
+          "is_selected": true,
+          "display_name": "createdbyyominame",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "69f6e76e-31d0-4542-b09e-1019c452f18e",
+          "is_selected": true,
+          "display_name": "createdon",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "46dcba90-b0ec-4bbd-a0d0-13d0e21a12bd",
+          "is_selected": true,
+          "display_name": "createdonbehalfby",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a004fa64-93aa-4e87-ad52-557af3bf7f10",
+          "is_selected": true,
+          "display_name": "createdonbehalfby_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "66b00c59-7aac-4305-885e-43ae58051e9b",
+          "is_selected": true,
+          "display_name": "createdonbehalfbyname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2fb5f2ea-3cb8-4b5a-8ea0-8b106cde517a",
+          "is_selected": true,
+          "display_name": "createdonbehalfbyyominame",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "663dd608-09ff-4ced-90a2-45cb8e7b2d0c",
+          "is_selected": true,
+          "display_name": "crfc2_cadastronoaplicativofeito",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d501a80c-4540-485f-84a9-c7cf5bb7f6aa",
+          "is_selected": true,
+          "display_name": "crfc2_campanha",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "eee5d918-cf6a-4984-b043-93d3e9b3c79d",
+          "is_selected": true,
+          "display_name": "crfc2_classificacao",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6867ccb6-8c75-4e99-95b4-a6be2e329efe",
+          "is_selected": true,
+          "display_name": "crfc2_classificacaogenia",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6ef8fdb1-47d4-4e06-a283-79a5a173bfb2",
+          "is_selected": true,
+          "display_name": "crfc2_cpf",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8a8389d7-0b39-4689-8cc9-eeecffdba601",
+          "is_selected": true,
+          "display_name": "crfc2_formadecontato",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4e7f15ec-acd1-4645-be9c-49e78ccc3820",
+          "is_selected": true,
+          "display_name": "crfc2_fornecedoratualmapeado",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9572236c-9ac0-4f4f-b4a3-a7d36cd5bcb6",
+          "is_selected": true,
+          "display_name": "crfc2_horizontedeinvestimento",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5dbe36d3-bafe-4a1e-b8f0-1ef896236c8b",
+          "is_selected": true,
+          "display_name": "crfc2_linhadenegocios",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d3aea12a-3566-4cc4-b8c4-fc9930815684",
+          "is_selected": true,
+          "display_name": "crfc2_liquidezdesejada",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bb35ccdf-ea85-4870-87ef-56d2d09ca399",
+          "is_selected": true,
+          "display_name": "crfc2_niveldeconhecimentosobreinvestimentos",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9a5c5a4b-3067-4e7d-9cd8-46988fc65cf6",
+          "is_selected": true,
+          "display_name": "crfc2_objetivomapeado",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c872ae43-0242-4621-b773-6b19eba57b54",
+          "is_selected": true,
+          "display_name": "crfc2_patrimoniototal",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "609d2fe9-8aed-46de-a3c4-f20cd5bcacd4",
+          "is_selected": true,
+          "display_name": "crfc2_patrimoniototal_base",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b22da47e-81d3-4823-b065-dd2ed7613bf6",
+          "is_selected": true,
+          "display_name": "crfc2_perfilderisco",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "73c0b5bb-cbed-4ea5-90f6-9c6858280965",
+          "is_selected": true,
+          "display_name": "crfc2_produtodeinteresse",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2e1367f6-c697-4c00-ae22-26a76690c9e1",
+          "is_selected": true,
+          "display_name": "crfc2_rendamensal",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fc4acc57-da00-4afb-8387-7bb68c0b38ed",
+          "is_selected": true,
+          "display_name": "crfc2_rendamensal_base",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "728ce964-32c1-472c-967c-154974efeb12",
+          "is_selected": true,
+          "display_name": "crfc2_salesagentresearchsummary",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "95379941-a200-491b-9e39-08b8e91475f9",
+          "is_selected": true,
+          "display_name": "crfc2_salesagentresearchsummary_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e1917e2d-d96b-453f-80c1-686caffb2201",
+          "is_selected": true,
+          "display_name": "crfc2_salesagentresearchsummaryname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4207957e-011a-43d8-80c3-c7a499813c2e",
+          "is_selected": true,
+          "display_name": "crfc2_statusdoonboarding",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "835c24a3-65db-4502-8c81-08dfdc0b5ef5",
+          "is_selected": true,
+          "display_name": "crfc2_temperatura",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "be0a7c36-512b-472f-bd6d-a093cf722891",
+          "is_selected": true,
+          "display_name": "crfc2_tierdocliente",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f1ca7fbd-fdad-48f4-b5cc-22029bc7b425",
+          "is_selected": true,
+          "display_name": "crfc2_tipodedemanda",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "41d3241e-c47d-4ca0-bec2-7ed225620ab4",
+          "is_selected": true,
+          "display_name": "crfc2_valorparainvestimento",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3e647c7e-7c12-4dcf-81eb-fb3947561df8",
+          "is_selected": true,
+          "display_name": "crfc2_valorparainvestimento_base",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d5b6e651-dc7e-4a17-bdda-dc6515e68760",
+          "is_selected": true,
+          "display_name": "crfc2_volumeestimadodmtano",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c8070f25-3826-4dbd-b073-53fd3a515555",
+          "is_selected": true,
+          "display_name": "customerid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3dcbb9f1-2ff7-43c0-9029-e6bea9ecc664",
+          "is_selected": true,
+          "display_name": "customerid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fe5b4731-0368-493e-98c7-a624c0cb97ad",
+          "is_selected": true,
+          "display_name": "customeridname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ec7466d3-4369-4d69-adf2-9a4c1e167a2b",
+          "is_selected": true,
+          "display_name": "customeridtype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "164fd4b7-5f16-411e-8822-c128e081224e",
+          "is_selected": true,
+          "display_name": "customeridyominame",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fe735a08-d65f-44dd-b59d-0ee05cf86d09",
+          "is_selected": true,
+          "display_name": "decisionmaker",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "58e7f345-60c1-48e0-ba5b-532738647e1c",
+          "is_selected": true,
+          "display_name": "description",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ee548bc6-182a-4799-bac4-9fe0772d00f4",
+          "is_selected": true,
+          "display_name": "donotbulkemail",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "72939160-f670-4ddc-a3b0-c65832256da0",
+          "is_selected": true,
+          "display_name": "donotemail",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1befcc87-e088-40f1-b6e9-e3cd632ae714",
+          "is_selected": true,
+          "display_name": "donotfax",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f1f85bde-3912-49e4-9ed9-aa74592a7935",
+          "is_selected": true,
+          "display_name": "donotphone",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "49745d79-c749-4921-9a2f-f614a25354c6",
+          "is_selected": true,
+          "display_name": "donotpostalmail",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "85c7a27d-fa3a-4a42-acf3-cd601adfb9d5",
+          "is_selected": true,
+          "display_name": "donotsendmm",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "26eb3cf3-5bec-4c5b-8c82-efae864da4e0",
+          "is_selected": true,
+          "display_name": "emailaddress1",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "49a6832a-bb14-4575-a8f8-364a81c636aa",
+          "is_selected": true,
+          "display_name": "emailaddress2",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3ae1b8ac-7f93-4b70-ae83-8d56d74cf489",
+          "is_selected": true,
+          "display_name": "emailaddress3",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "aae90be6-bc3d-43a1-920f-e48344c82fb9",
+          "is_selected": true,
+          "display_name": "entityimage",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "00c78431-b5b5-4367-8f8a-a0c650a3ae14",
+          "is_selected": true,
+          "display_name": "entityimage_timestamp",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f2ff7199-8e2f-4e09-add8-3e8f924b1cf7",
+          "is_selected": true,
+          "display_name": "entityimage_url",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0086be4e-c73e-4299-945a-e39233b60a53",
+          "is_selected": true,
+          "display_name": "entityimageid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "71c8b1e0-6a68-4264-8156-3dec3a6226a1",
+          "is_selected": true,
+          "display_name": "estimatedamount",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0045e217-0ae1-43f4-9f66-e72085eb597a",
+          "is_selected": true,
+          "display_name": "estimatedamount_base",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8e129397-6b9e-4883-9233-8fac92556d60",
+          "is_selected": true,
+          "display_name": "estimatedclosedate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "36f11c98-62b5-4839-bd5b-5bcc2045bbc6",
+          "is_selected": true,
+          "display_name": "estimatedvalue",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "44fe7787-216b-475c-badd-9f3f7a1be1eb",
+          "is_selected": true,
+          "display_name": "evaluatefit",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7f03996f-03b3-4945-a243-2cd630f60b34",
+          "is_selected": true,
+          "display_name": "exchangerate",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0dc7b8ca-a7ad-4053-8cbc-735a49bf6913",
+          "is_selected": true,
+          "display_name": "fax",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4c8528e3-f866-4645-bfe5-a2de5a6ed6d0",
+          "is_selected": true,
+          "display_name": "firstname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "913f9df1-d55c-4882-af99-6be89dd0d6d4",
+          "is_selected": true,
+          "display_name": "followemail",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "079f2869-1cc6-456d-ace6-5753e9f2db96",
+          "is_selected": true,
+          "display_name": "fullname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "41210332-ed2f-40ea-90c4-94b96217a3e9",
+          "is_selected": true,
+          "display_name": "Id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ea404c79-93e9-4703-a44e-de60a1d240cd",
+          "is_selected": true,
+          "display_name": "importsequencenumber",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a88f99bf-ee3e-4960-ae82-83d40ccb88f8",
+          "is_selected": true,
+          "display_name": "industrycode",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fbb52e04-206c-45a1-8efd-a3975ae9f5e5",
+          "is_selected": true,
+          "display_name": "initialcommunication",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5e0c608f-9e2d-49be-870a-3b8a1e95cc13",
+          "is_selected": true,
+          "display_name": "isautocreate",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "943c676e-2a6e-4928-bc17-d226d8615f12",
+          "is_selected": true,
+          "display_name": "IsDelete",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4b4f7722-9989-4cee-abc2-a8ef90c1078b",
+          "is_selected": true,
+          "display_name": "isprivate",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "594baef3-223a-4dc9-bb97-52cb48f8f1c7",
+          "is_selected": true,
+          "display_name": "jobtitle",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "86a6b24f-0c2c-443a-8d26-f6bb271f9413",
+          "is_selected": true,
+          "display_name": "lastname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "be6d3c29-3822-4c2f-8249-d1ed9ebd7769",
+          "is_selected": true,
+          "display_name": "lastonholdtime",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "23389dd0-1405-4afc-b20a-55157d3acc37",
+          "is_selected": true,
+          "display_name": "lastusedincampaign",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b5b665ea-c858-41c8-911a-e4419656d616",
+          "is_selected": true,
+          "display_name": "leadid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2d8b1008-8e55-48cc-813d-888d829fcb4d",
+          "is_selected": true,
+          "display_name": "leadqualitycode",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "604134bc-b7ce-4a3e-85aa-6b1ce526850f",
+          "is_selected": true,
+          "display_name": "leads generated by marketing",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ec91746a-e50e-4108-be44-99e170cc99a7",
+          "is_selected": true,
+          "display_name": "leadsourcecode",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b440cde5-7984-41f5-b44d-ffab80cf8aa2",
+          "is_selected": true,
+          "display_name": "masterid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e322c2f7-f195-47a1-8ed6-4ed2212a74e5",
+          "is_selected": true,
+          "display_name": "masterid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "deedd447-6b2a-4144-a744-8acb007e9714",
+          "is_selected": true,
+          "display_name": "masterleadidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "04037d9e-3fbb-44f6-9f98-c0c7e2797d26",
+          "is_selected": true,
+          "display_name": "masterleadidyominame",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d3d031b2-a160-4528-82b5-4f2d7ee8e02b",
+          "is_selected": true,
+          "display_name": "merged",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f0c50334-e60b-4164-b973-f06aa053dad2",
+          "is_selected": true,
+          "display_name": "middlename",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "67ae996b-eedc-4cdb-ac46-62a6c50635c5",
+          "is_selected": true,
+          "display_name": "mobilephone",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8b532ec3-2499-46a3-a2ac-02fd5fa267ec",
+          "is_selected": true,
+          "display_name": "modifiedby",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5fc015f2-9265-4f77-a109-9d5db74eaec0",
+          "is_selected": true,
+          "display_name": "modifiedby_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "91809c93-6d6f-4fc0-8f38-f3b03beb58cc",
+          "is_selected": true,
+          "display_name": "modifiedbyname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5cde3586-a053-4877-9415-acb1ba64da29",
+          "is_selected": true,
+          "display_name": "modifiedbyyominame",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "05efcb75-712c-42cb-92c5-99d73c6e3da5",
+          "is_selected": true,
+          "display_name": "modifiedon",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c4a3a3c7-4c71-4b9b-9bcd-8fc4c2d86c49",
+          "is_selected": true,
+          "display_name": "modifiedonbehalfby",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3c3dce18-7e3c-42ff-9c7b-d525fef187f7",
+          "is_selected": true,
+          "display_name": "modifiedonbehalfby_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "07ce8cca-0a74-4c13-a249-1820106f15bd",
+          "is_selected": true,
+          "display_name": "modifiedonbehalfbyname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6e6b94e1-51d4-41c9-8fba-f649b35a3d37",
+          "is_selected": true,
+          "display_name": "modifiedonbehalfbyyominame",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b7fc0eb8-a311-40fa-936e-ca321be4a5cf",
+          "is_selected": true,
+          "display_name": "msdyn_gdproptout",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d197fec3-ee1f-4a31-aeda-45cc97db5f52",
+          "is_selected": true,
+          "display_name": "msdyn_leadgrade",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3c78bb94-32ee-4761-b23f-9f8a8d6c4300",
+          "is_selected": true,
+          "display_name": "msdyn_leadkpiid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9e6f1859-a692-4d9a-a283-425d6852138c",
+          "is_selected": true,
+          "display_name": "msdyn_leadkpiid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b6ee855f-bb57-4b95-9b4b-4b9050c4d41c",
+          "is_selected": true,
+          "display_name": "msdyn_leadkpiidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d4ed08cf-405a-42a1-9403-8e2a5552e2fb",
+          "is_selected": true,
+          "display_name": "msdyn_leadscore",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d3f87b36-76de-4655-a305-af9588b97d53",
+          "is_selected": true,
+          "display_name": "msdyn_leadscoretrend",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "10e57e1a-e2aa-40e9-886a-3188822cea89",
+          "is_selected": true,
+          "display_name": "msdyn_ordertype",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b23e00aa-2557-4591-b108-81134c8e220b",
+          "is_selected": true,
+          "display_name": "msdyn_predictivescoreid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fe5a8452-7249-4486-971f-c39f05e3553d",
+          "is_selected": true,
+          "display_name": "msdyn_predictivescoreid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "98da7967-2ac5-4cd1-9e97-f9ecfbdbca19",
+          "is_selected": true,
+          "display_name": "msdyn_predictivescoreidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "45525237-00f5-4c20-905e-f455343fe7ca",
+          "is_selected": true,
+          "display_name": "msdyn_salesassignmentresult",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "60f99b24-92a5-4c6e-85a9-8e9f51b19213",
+          "is_selected": true,
+          "display_name": "msdyn_scorehistory",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d165d551-e94e-4d80-8035-7e8e3d7c776e",
+          "is_selected": true,
+          "display_name": "msdyn_scorereasons",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6c4539e4-6fdb-430f-998a-9df80bf0ef26",
+          "is_selected": true,
+          "display_name": "msdyn_segmentid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5a23b834-39c6-4bae-8863-05bb07b7cfed",
+          "is_selected": true,
+          "display_name": "msdyn_segmentid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0ca1c0e6-4f90-46bd-b612-05cfa1a118a2",
+          "is_selected": true,
+          "display_name": "msdyn_segmentidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d49d77df-f88a-474b-9c8f-666442af8e10",
+          "is_selected": true,
+          "display_name": "msdyncrm_code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2192eacd-bce5-424c-9e16-fa3e0e2c8972",
+          "is_selected": true,
+          "display_name": "msdyncrm_companysize",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7ff862cd-71c5-449d-ac11-27fde43d99f3",
+          "is_selected": true,
+          "display_name": "msdyncrm_contactid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d47fbf3b-94a6-47fc-806c-3dbe992b0055",
+          "is_selected": true,
+          "display_name": "msdyncrm_customerjourneyid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6f1c2a20-e87b-45a2-b99a-88da13d9b037",
+          "is_selected": true,
+          "display_name": "msdyncrm_customerjourneyid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5c78c004-03ea-44d5-bec0-373e504bc5b0",
+          "is_selected": true,
+          "display_name": "msdyncrm_customerjourneyidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bdcfc736-9c35-4684-8fbc-6bc3f5d908a0",
+          "is_selected": true,
+          "display_name": "msdyncrm_degree",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "aa36b477-159a-4d7e-9fb6-d4a89986ba4c",
+          "is_selected": true,
+          "display_name": "msdyncrm_emailid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cdaddcb8-0c1f-4457-8221-576bfc049314",
+          "is_selected": true,
+          "display_name": "msdyncrm_emailid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "16e5753f-c62a-4af1-bbdc-19a48dfacb99",
+          "is_selected": true,
+          "display_name": "msdyncrm_emailidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "88ebae9b-e7c7-4e88-b491-d18ee32b36ca",
+          "is_selected": true,
+          "display_name": "msdyncrm_fieldofstudy",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9a4614ab-1bf9-4582-b435-75dfdedbbb15",
+          "is_selected": true,
+          "display_name": "msdyncrm_graduationdate",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5d889c04-6014-457d-8d09-de7879abc706",
+          "is_selected": true,
+          "display_name": "msdyncrm_industry",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "803592e4-1014-4727-a886-e9a8dd3b9638",
+          "is_selected": true,
+          "display_name": "msdyncrm_insights_placeholder",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0218d325-6b9d-45ef-81b7-efa7d987c5d9",
+          "is_selected": true,
+          "display_name": "msdyncrm_jobfunction",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "dc8e2b56-c9b2-49c9-bcfb-8f14b0136721",
+          "is_selected": true,
+          "display_name": "msdyncrm_latestsubmissiondate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "28f8a2bb-fd0d-45c7-b272-f47108c9956b",
+          "is_selected": true,
+          "display_name": "msdyncrm_leadid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "739a2fa5-03ae-4fd8-b582-727b27740804",
+          "is_selected": true,
+          "display_name": "msdyncrm_leadsourcetype",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4d61f7c9-99ad-457d-91d2-3cd5a928b998",
+          "is_selected": true,
+          "display_name": "msdyncrm_linkedincampaign",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2dac172e-6a77-48f7-a038-71c08aa76120",
+          "is_selected": true,
+          "display_name": "msdyncrm_linkedincampaign_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fcf47134-23ca-4525-a2f4-01b72066bfd5",
+          "is_selected": true,
+          "display_name": "msdyncrm_linkedincampaignname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "dce93dd6-b476-4218-a881-baf69415c489",
+          "is_selected": true,
+          "display_name": "msdyncrm_linkedinsubmissioncount",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c00db3f8-fe3f-4603-844d-b07cd05f7b63",
+          "is_selected": true,
+          "display_name": "msdyncrm_linkedinsubmissioncount_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1a249153-cbe5-4171-8d25-1ccb53365e06",
+          "is_selected": true,
+          "display_name": "msdyncrm_linkedinsubmissioncount_state",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3b999f57-dd74-4f05-97d5-8c40ca43dbb8",
+          "is_selected": true,
+          "display_name": "msdyncrm_marketingformid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "eb8044ae-81f3-469c-b616-258a028220fc",
+          "is_selected": true,
+          "display_name": "msdyncrm_marketingformid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d4e84633-129b-45b6-be27-005012aab7de",
+          "is_selected": true,
+          "display_name": "msdyncrm_marketingformidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7cd92eb9-71e7-4694-8b4a-e0fa6d6f0e26",
+          "is_selected": true,
+          "display_name": "msdyncrm_marketingformsubmissiondateprecise",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e24fa5e6-adf7-4a42-88e3-3e27c5c4e779",
+          "is_selected": true,
+          "display_name": "msdyncrm_marketingpageid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1e25c0e3-2b74-40b6-b755-15008e7a7193",
+          "is_selected": true,
+          "display_name": "msdyncrm_marketingpageid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "11716209-6c0a-43a6-99b8-a641a1c00f5b",
+          "is_selected": true,
+          "display_name": "msdyncrm_marketingpageidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "01f8713a-210d-4679-9334-ea651f2ec5bb",
+          "is_selected": true,
+          "display_name": "msdyncrm_profileid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9d4b6193-eb8f-4564-9a1e-b77503cc0a73",
+          "is_selected": true,
+          "display_name": "msdyncrm_purchaseneed",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "eb08ab43-d926-447d-9c00-52be156d30fe",
+          "is_selected": true,
+          "display_name": "msdyncrm_recycled",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "501231be-ad6a-4859-9984-7108249efbe8",
+          "is_selected": true,
+          "display_name": "msdyncrm_salesaccepted",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "76be513f-fd8d-4cdd-be5c-9ef4b17ec696",
+          "is_selected": true,
+          "display_name": "msdyncrm_salesready",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0152c7c3-e608-4386-8d7c-8de923d72528",
+          "is_selected": true,
+          "display_name": "msdyncrm_sastoken",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "accbcbd0-532b-4693-9560-b819e5c0a76b",
+          "is_selected": true,
+          "display_name": "msdyncrm_school",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6ad0dd99-13f5-48c0-af09-15d546bab157",
+          "is_selected": true,
+          "display_name": "msdyncrm_scores",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d3853ba2-65ce-4138-991e-68df90a72d29",
+          "is_selected": true,
+          "display_name": "msdyncrm_scoringgrade",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "53aa615f-f497-4e50-b134-42ff173b1f4b",
+          "is_selected": true,
+          "display_name": "msdyncrm_seniority",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "760b42ae-8f15-4900-b17f-517513f44327",
+          "is_selected": true,
+          "display_name": "msdyncrm_sourceform",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "854906dd-faa4-4237-b26a-016406fe9b53",
+          "is_selected": true,
+          "display_name": "msdyncrm_sourceform_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6dfbd266-811a-4000-9484-6b2b8ea0addb",
+          "is_selected": true,
+          "display_name": "msdyncrm_sourceformname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b03c5741-af36-4828-ba3b-056cad93ea67",
+          "is_selected": true,
+          "display_name": "msdyncrm_startdate",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "386a51f1-7564-4723-a652-0584e0ba40a7",
+          "is_selected": true,
+          "display_name": "msdyncrm_teleprospectaccepted",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "39b9ffd0-67df-41fa-9a98-dbbeeb33f2cb",
+          "is_selected": true,
+          "display_name": "msdyncrm_teleprospectready",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "aa6863a6-ad26-43a0-93e3-e1130790498a",
+          "is_selected": true,
+          "display_name": "msdyncrm_triggerrecycle",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f028de1f-4efb-4f67-984c-ea4468d7973f",
+          "is_selected": true,
+          "display_name": "msdynmkt_customerjourneyid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "211a2049-01b0-4c5f-8881-c1fda9283e95",
+          "is_selected": true,
+          "display_name": "msdynmkt_customerjourneyid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "229fa162-bc4b-46e6-8bbe-452b87bce969",
+          "is_selected": true,
+          "display_name": "msdynmkt_customerjourneyidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "90aaf03f-3a6d-45f6-a1df-e64e09fc2628",
+          "is_selected": true,
+          "display_name": "msdynmkt_emailid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "af277af0-7f11-4c9d-9434-806a9a5da023",
+          "is_selected": true,
+          "display_name": "msdynmkt_emailid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "052061dc-e074-4c69-92c9-9ea685f5e0cb",
+          "is_selected": true,
+          "display_name": "msdynmkt_emailidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4ee79aa8-b2c9-44b3-a332-6b6cbeb0588c",
+          "is_selected": true,
+          "display_name": "msdynmkt_issalesreadysetmanually",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "33eec561-5816-404d-b73a-15e94b1860b0",
+          "is_selected": true,
+          "display_name": "msdynmkt_journeyactionid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3de34ad8-9b96-4f3b-b292-28f66347ba6e",
+          "is_selected": true,
+          "display_name": "msdynmkt_marketingformid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6b6b7b7d-047f-4513-9a44-13b9c294bfd7",
+          "is_selected": true,
+          "display_name": "msdynmkt_marketingformid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4c87f862-3da4-45dc-9047-70535535b670",
+          "is_selected": true,
+          "display_name": "msdynmkt_marketingformidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6f6816ae-2535-4e19-9ccb-39098485edc4",
+          "is_selected": true,
+          "display_name": "msevtmgt_originatingeventid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "67f50221-4777-47e0-ad05-b5da57b6bfe7",
+          "is_selected": true,
+          "display_name": "msevtmgt_originatingeventid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2137332f-e1f4-4bc6-9447-9e918b5d25db",
+          "is_selected": true,
+          "display_name": "msevtmgt_originatingeventidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3e2acce4-b50d-4e93-a68d-ac7a32618a27",
+          "is_selected": true,
+          "display_name": "need",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "371ebfe2-79d1-4136-aa9a-d5466e9fcc24",
+          "is_selected": true,
+          "display_name": "numberofemployees",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9e15956b-0792-4523-aefd-054dc723da76",
+          "is_selected": true,
+          "display_name": "onholdtime",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "32512ac4-8426-4c18-9f02-7f51811db6bd",
+          "is_selected": true,
+          "display_name": "originatingcaseid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5100c484-d811-405b-9cf0-94cd16fa423b",
+          "is_selected": true,
+          "display_name": "originatingcaseid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a5d8331e-c302-4464-9e1d-f03ba9d57e2a",
+          "is_selected": true,
+          "display_name": "originatingcaseidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b966fc8d-080d-4d97-be28-b6ebafee5982",
+          "is_selected": true,
+          "display_name": "overriddencreatedon",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "df11c225-71bc-4ceb-9134-b28ffe27972a",
+          "is_selected": true,
+          "display_name": "ownerid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8320c761-35f4-44bf-8b86-7e6f3221b133",
+          "is_selected": true,
+          "display_name": "ownerid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "82bc7c6f-867a-4b52-bf8d-71da53b6cca6",
+          "is_selected": true,
+          "display_name": "owneridname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5b5634c7-2445-4c1f-9927-e37b444b25e0",
+          "is_selected": true,
+          "display_name": "owneridtype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8f791267-e12f-4268-8df0-351e04adfecf",
+          "is_selected": true,
+          "display_name": "owneridyominame",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0abaa1b2-f950-49b3-8699-32a84f2f4a34",
+          "is_selected": true,
+          "display_name": "owningbusinessunit",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bb26cbc8-1329-4b43-bfbb-1540f4862d73",
+          "is_selected": true,
+          "display_name": "owningbusinessunit_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "44463376-35df-47ee-b561-539d067f1719",
+          "is_selected": true,
+          "display_name": "owningbusinessunitname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "70d23dec-1383-4469-a919-ceed0d11c111",
+          "is_selected": true,
+          "display_name": "owningteam",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cb6f462b-d30d-447f-b7ba-ec744caa5290",
+          "is_selected": true,
+          "display_name": "owningteam_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "39c17740-c930-40b9-94d2-872e245b444b",
+          "is_selected": true,
+          "display_name": "owninguser",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e7a8090f-6681-49f2-9b3a-f43b0b6113af",
+          "is_selected": true,
+          "display_name": "owninguser_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "78765c8b-2cd4-4754-88d0-3ee067489aa5",
+          "is_selected": true,
+          "display_name": "pager",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d759b27d-a3c4-40d4-aa93-c2451922c3d3",
+          "is_selected": true,
+          "display_name": "parentaccountid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "41ef8fb0-655e-41b6-b650-5961b5627f50",
+          "is_selected": true,
+          "display_name": "parentaccountid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0286ef82-b80b-449b-9846-48e721390e53",
+          "is_selected": true,
+          "display_name": "parentaccountidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bee33db3-8172-40ee-a00f-68b09e56e638",
+          "is_selected": true,
+          "display_name": "parentaccountidyominame",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "282eda6a-3227-47f2-bf0f-25b0937d6087",
+          "is_selected": true,
+          "display_name": "parentcontactid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f157f1d6-2b6a-4078-94db-d1842035e29c",
+          "is_selected": true,
+          "display_name": "parentcontactid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "54b8878a-7b92-41aa-ab30-90b83b9898bf",
+          "is_selected": true,
+          "display_name": "parentcontactidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bd34e83a-3936-4a2d-880d-9655f406c99f",
+          "is_selected": true,
+          "display_name": "parentcontactidyominame",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ccb4e17d-25f8-4aac-9920-d781ff892a9b",
+          "is_selected": true,
+          "display_name": "participatesinworkflow",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "88f03298-d9c7-4ae0-8060-3f4f8461abbc",
+          "is_selected": true,
+          "display_name": "PartitionId",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f481532a-7680-4245-8797-7260f394aec9",
+          "is_selected": true,
+          "display_name": "preferredcontactmethodcode",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "059883ae-1234-4857-a049-21325bad8666",
+          "is_selected": true,
+          "display_name": "prioritycode",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "20fc5665-7d33-4c2d-a4f5-59f48d84b392",
+          "is_selected": true,
+          "display_name": "processid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "076f8837-122a-4599-9b39-ec8156163a78",
+          "is_selected": true,
+          "display_name": "purchaseprocess",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c53dfb59-e6d8-4557-b171-5cebb855089b",
+          "is_selected": true,
+          "display_name": "purchasetimeframe",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "68ef7a9f-df74-4a3d-8f7e-ba7127b37840",
+          "is_selected": true,
+          "display_name": "qualificationcomments",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b9e72c3b-9efc-4239-a0f1-50be7ae0d21e",
+          "is_selected": true,
+          "display_name": "qualifyingopportunityid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "116954c2-334b-43d3-b19a-660be486568c",
+          "is_selected": true,
+          "display_name": "qualifyingopportunityid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d6499a7f-df45-44dc-889e-b5724c5cb0a3",
+          "is_selected": true,
+          "display_name": "qualifyingopportunityidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4366bb24-63fc-465b-b2dd-4aedd3776085",
+          "is_selected": true,
+          "display_name": "relatedobjectid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e61f7e7c-850a-4f69-89de-2eaa3b982151",
+          "is_selected": true,
+          "display_name": "relatedobjectid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7e23af1d-706e-47d4-9d42-efb549eb7bc4",
+          "is_selected": true,
+          "display_name": "relatedobjectidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "76eb6103-93e0-4ef2-80c5-996d04f7339e",
+          "is_selected": true,
+          "display_name": "revenue",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "130b551e-8a7c-4574-a5f0-92b59a5f431c",
+          "is_selected": true,
+          "display_name": "revenue_base",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "edae450d-c775-45e2-a513-8afad38f3083",
+          "is_selected": true,
+          "display_name": "salesstage",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "eed83723-2896-4b10-9ec4-76edc5ffd783",
+          "is_selected": true,
+          "display_name": "salesstagecode",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6c90e23e-e995-46e3-981f-96e01e3df088",
+          "is_selected": true,
+          "display_name": "salutation",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "915faf99-a494-41ba-be95-66cccc12947c",
+          "is_selected": true,
+          "display_name": "schedulefollowup_prospect",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bcdaabfd-6933-4483-a743-23227c2dad91",
+          "is_selected": true,
+          "display_name": "schedulefollowup_qualify",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "02cb365c-6492-4bea-8b2a-e3941b7890b2",
+          "is_selected": true,
+          "display_name": "sic",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "82fe0a90-198d-415a-a91d-9f75c7385ced",
+          "is_selected": true,
+          "display_name": "SinkCreatedOn",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2640cd11-a471-466f-8daa-4aed28f41a93",
+          "is_selected": true,
+          "display_name": "SinkModifiedOn",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1f47a4a5-88a3-47b1-822e-4731e0cb2e14",
+          "is_selected": true,
+          "display_name": "slaid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "26d7d1b9-f213-4af3-92e8-3c9a2cdc3782",
+          "is_selected": true,
+          "display_name": "slaid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fa84d252-738f-4296-9542-11ec5a21efcb",
+          "is_selected": true,
+          "display_name": "slainvokedid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5d833c2f-7667-4b54-a77c-8cfc1a61c832",
+          "is_selected": true,
+          "display_name": "slainvokedid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f7ceb94c-8e9c-4d03-b2bd-a880ce0ed649",
+          "is_selected": true,
+          "display_name": "slainvokedidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3c8c8c19-e2f1-446d-8213-1a62b67f0dc9",
+          "is_selected": true,
+          "display_name": "slaname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9fdf7d0d-966d-48e9-9edd-91ab8792a2ad",
+          "is_selected": true,
+          "display_name": "stageid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1b0c6c27-a4f5-4383-8e0c-435fd51d76a6",
+          "is_selected": true,
+          "display_name": "statecode",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1537ccae-0cd7-405e-a233-67dfa1b6649f",
+          "is_selected": true,
+          "display_name": "statuscode",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "25b5504f-2865-4dff-9200-ed3eae99fa83",
+          "is_selected": true,
+          "display_name": "subject",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9563f8eb-40bc-48f4-b9c5-3b79f27ec4d2",
+          "is_selected": true,
+          "display_name": "teamsfollowed",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fa947189-baeb-4e64-abfa-5d69faf0af45",
+          "is_selected": true,
+          "display_name": "telephone1",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1534a9b4-9d77-4f52-8406-ca0e262fe1dc",
+          "is_selected": true,
+          "display_name": "telephone2",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "46b8f507-1b30-4e95-9f96-c015a0c09e2f",
+          "is_selected": true,
+          "display_name": "telephone3",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5bfff823-f334-48dd-9ce5-9fdbd34acd1b",
+          "is_selected": true,
+          "display_name": "timespentbymeonemailandmeetings",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f155cdc6-6657-4b74-80da-a79fc75f49ae",
+          "is_selected": true,
+          "display_name": "timezoneruleversionnumber",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "14a24dd6-bc45-4ff5-92d3-e500d90f1122",
+          "is_selected": true,
+          "display_name": "transactioncurrencyid",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b64511b2-aea2-47aa-8dcd-dda6934730fa",
+          "is_selected": true,
+          "display_name": "transactioncurrencyid_entitytype",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "025093c0-e035-4e90-b801-137c1e77c270",
+          "is_selected": true,
+          "display_name": "transactioncurrencyidname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1268d06e-1349-4e7a-ae13-82911f083770",
+          "is_selected": true,
+          "display_name": "traversedpath",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b1af5ec2-3bf1-4104-abcc-6365f422e754",
+          "is_selected": true,
+          "display_name": "utcconversiontimezonecode",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "20aa59bb-587b-45fb-a1b7-757ec72a86ce",
+          "is_selected": true,
+          "display_name": "versionnumber",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a96f7c51-8a6e-4696-9619-ea36da3e08f8",
+          "is_selected": true,
+          "display_name": "websiteurl",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6e28a519-1bf3-411b-b838-782d073f6008",
+          "is_selected": true,
+          "display_name": "yomicompanyname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "65ff9e73-6929-494b-ad0a-937d3d6ac406",
+          "is_selected": true,
+          "display_name": "yomifirstname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0550e9aa-ad44-4e75-bbb7-e5a6c201cf2a",
+          "is_selected": true,
+          "display_name": "yomifullname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9e3165c1-0648-45c5-9646-cfe95e152650",
+          "is_selected": true,
+          "display_name": "yomilastname",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e1103f03-9ae4-430a-acdb-1a117ab47e0c",
+          "is_selected": true,
+          "display_name": "yomimiddlename",
+          "type": "semantic_model.column",
+          "data_type": "String",
           "description": null,
           "children": []
         }
@@ -6500,14 +9722,32 @@
       ]
     },
     {
-      "id": "131f1e5e-4313-4f9f-9063-bffb693c6491",
+      "id": "effcab76-c53c-4ee8-b1e3-d3d9cec7ae82",
       "is_selected": true,
       "display_name": "msdynmkt_journey",
       "type": "semantic_model.table",
-      "description": "jornada de campanha",
+      "description": null,
       "children": [
         {
-          "id": "18d126af-c721-4147-b5d0-cc686ee6aaa2",
+          "id": "4bd77043-18a2-45b8-a001-21e6891cde3f",
+          "is_selected": true,
+          "display_name": "Cost of Interaction",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c37b0513-8bd1-40ed-96d1-7c5fe35c41ee",
+          "is_selected": true,
+          "display_name": "Cost per Lead",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "78035fff-f316-4614-b301-104b66397a60",
           "is_selected": true,
           "display_name": "createdby",
           "type": "semantic_model.column",
@@ -6516,7 +9756,7 @@
           "children": []
         },
         {
-          "id": "8c646e9a-6cae-4edb-a672-4aa1b7a9cbc8",
+          "id": "2b88e58d-fe7f-44e9-84d1-8f700c804a62",
           "is_selected": true,
           "display_name": "createdby_entitytype",
           "type": "semantic_model.column",
@@ -6525,7 +9765,7 @@
           "children": []
         },
         {
-          "id": "0981448d-1b52-4f4d-9a5e-35605917c579",
+          "id": "96cf1e93-8b4c-4a53-904d-92718ed1460d",
           "is_selected": true,
           "display_name": "createdbyname",
           "type": "semantic_model.column",
@@ -6534,7 +9774,7 @@
           "children": []
         },
         {
-          "id": "93b51952-2a5a-4cd5-a832-e1f4aed2d605",
+          "id": "c6d3479d-86db-4b56-be25-cab8a26d0f08",
           "is_selected": true,
           "display_name": "createdbyyominame",
           "type": "semantic_model.column",
@@ -6543,7 +9783,7 @@
           "children": []
         },
         {
-          "id": "3e988535-d68a-428e-bc36-771b9fc5eeb3",
+          "id": "dadee17d-c5b4-49b0-a314-527630398a21",
           "is_selected": true,
           "display_name": "createdon",
           "type": "semantic_model.column",
@@ -6552,7 +9792,7 @@
           "children": []
         },
         {
-          "id": "6dd9246c-a2a0-4e5f-b87c-b92d49652857",
+          "id": "e6e5ec65-f98b-4b05-98bb-b30a32f4a4ff",
           "is_selected": true,
           "display_name": "createdonbehalfby",
           "type": "semantic_model.column",
@@ -6561,7 +9801,7 @@
           "children": []
         },
         {
-          "id": "b4041d8c-f2aa-43f1-b2c1-cd1d4ce39225",
+          "id": "3b233d66-c975-4bef-b95b-82b9d887dd7f",
           "is_selected": true,
           "display_name": "createdonbehalfby_entitytype",
           "type": "semantic_model.column",
@@ -6570,7 +9810,7 @@
           "children": []
         },
         {
-          "id": "09ff0dd2-5791-4b5a-a5cc-d7c802d9ed99",
+          "id": "5a1b595a-9f31-4a90-807d-157818c91191",
           "is_selected": true,
           "display_name": "createdonbehalfbyname",
           "type": "semantic_model.column",
@@ -6579,7 +9819,7 @@
           "children": []
         },
         {
-          "id": "28254fe0-5da0-4abf-8a9b-39a1ef32e4f1",
+          "id": "7dd88396-4286-44e4-ae2c-8289121d85b8",
           "is_selected": true,
           "display_name": "createdonbehalfbyyominame",
           "type": "semantic_model.column",
@@ -6588,7 +9828,7 @@
           "children": []
         },
         {
-          "id": "b8065593-3127-4a08-a101-aec290f6ad3c",
+          "id": "61b01215-6ee9-4531-8ff2-a2261dfa2532",
           "is_selected": true,
           "display_name": "crfc2_channeltotalcost",
           "type": "semantic_model.column",
@@ -6597,7 +9837,7 @@
           "children": []
         },
         {
-          "id": "20a5691c-1f6d-4d9d-b89d-ede1451af30b",
+          "id": "999021cb-3cae-4613-95a7-0bd9578e62ff",
           "is_selected": true,
           "display_name": "crfc2_channeltotalcost_base",
           "type": "semantic_model.column",
@@ -6606,7 +9846,7 @@
           "children": []
         },
         {
-          "id": "c62616f8-7a5d-4fba-88bf-e02d31b2a981",
+          "id": "98f4327c-ef47-41ee-af86-e757334ab9e3",
           "is_selected": true,
           "display_name": "crfc2_channeltotalcost_date",
           "type": "semantic_model.column",
@@ -6615,7 +9855,7 @@
           "children": []
         },
         {
-          "id": "49617c73-5ff0-4327-836a-b82ca89d45b8",
+          "id": "eb7c7d89-ca3a-4461-a613-323ac9c55ea2",
           "is_selected": true,
           "display_name": "crfc2_channeltotalcost_state",
           "type": "semantic_model.column",
@@ -6624,7 +9864,7 @@
           "children": []
         },
         {
-          "id": "80ab536c-ed65-479d-a674-864d5b9fee62",
+          "id": "efff6714-423d-4998-bd88-7ef39301fe8f",
           "is_selected": true,
           "display_name": "crfc2_custosfixos",
           "type": "semantic_model.column",
@@ -6633,7 +9873,7 @@
           "children": []
         },
         {
-          "id": "072028d1-bfdd-49cc-aa51-6f5c95b14ada",
+          "id": "37a06e3d-d7dc-4708-af7a-8263a205f208",
           "is_selected": true,
           "display_name": "crfc2_custosfixos_base",
           "type": "semantic_model.column",
@@ -6642,7 +9882,7 @@
           "children": []
         },
         {
-          "id": "a844563e-456f-47a1-8c3f-36c7f633455d",
+          "id": "c4f640dd-9727-413a-8af7-198f9871c8d0",
           "is_selected": true,
           "display_name": "crfc2_custototaldajornada",
           "type": "semantic_model.column",
@@ -6651,7 +9891,7 @@
           "children": []
         },
         {
-          "id": "05db0c9d-125c-4f6b-a750-784dcc688d82",
+          "id": "c6fab017-e6d3-4bf9-947e-e32a7fe0cff4",
           "is_selected": true,
           "display_name": "crfc2_custototaldajornada_base",
           "type": "semantic_model.column",
@@ -6660,7 +9900,7 @@
           "children": []
         },
         {
-          "id": "d7d0087f-2531-495f-a84a-08901dbc5a17",
+          "id": "aa139486-1ac7-443b-b3c0-1e97570f6bef",
           "is_selected": true,
           "display_name": "crfc2_jornadapai",
           "type": "semantic_model.column",
@@ -6669,7 +9909,7 @@
           "children": []
         },
         {
-          "id": "c498f94a-696c-4f8a-ad9b-6b8a80e43d20",
+          "id": "14cb9bfa-b662-4f37-8be0-27f8451da044",
           "is_selected": true,
           "display_name": "crfc2_jornadapai_entitytype",
           "type": "semantic_model.column",
@@ -6678,7 +9918,7 @@
           "children": []
         },
         {
-          "id": "fe98b56b-b8bc-4166-b8fa-ca0171d16bf7",
+          "id": "1cc36090-af1d-4380-86e5-02e824e20631",
           "is_selected": true,
           "display_name": "crfc2_jornadapainame",
           "type": "semantic_model.column",
@@ -6687,7 +9927,7 @@
           "children": []
         },
         {
-          "id": "12a9118c-f6af-4f9d-8a4c-e32f78928d85",
+          "id": "7f71976f-0049-45af-8f9c-433ec6875d4f",
           "is_selected": true,
           "display_name": "exchangerate",
           "type": "semantic_model.column",
@@ -6696,7 +9936,7 @@
           "children": []
         },
         {
-          "id": "63ef71a6-1872-456f-b0b5-74f7e377cb9f",
+          "id": "946009bd-7409-4ee5-8a54-9ab2f51a6f7c",
           "is_selected": true,
           "display_name": "Id",
           "type": "semantic_model.column",
@@ -6705,7 +9945,7 @@
           "children": []
         },
         {
-          "id": "e9aacb77-7952-49f9-9f4d-412eb9db73db",
+          "id": "b1f3a39a-0b84-45fb-ad76-1a2a934ef3a4",
           "is_selected": true,
           "display_name": "importsequencenumber",
           "type": "semantic_model.column",
@@ -6714,7 +9954,7 @@
           "children": []
         },
         {
-          "id": "cf446d37-d8ed-40b8-9c0b-8c50cfffb68a",
+          "id": "0259bd6b-7b27-44e4-8a1e-f38be8097261",
           "is_selected": true,
           "display_name": "IsDelete",
           "type": "semantic_model.column",
@@ -6723,7 +9963,16 @@
           "children": []
         },
         {
-          "id": "c4308c36-a479-4fb3-8b96-e38bfcec4ebb",
+          "id": "3244f153-a467-4627-8353-e471dedff905",
+          "is_selected": true,
+          "display_name": "Journey Fix Cost",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3ebe694f-a5a0-4f04-befd-aa65aab56821",
           "is_selected": true,
           "display_name": "Journey Total Cost",
           "type": "semantic_model.measure",
@@ -6732,7 +9981,7 @@
           "children": []
         },
         {
-          "id": "857af010-a3b6-48b2-acd8-e6daa03d678c",
+          "id": "e0983602-e7a6-4190-bf1a-59cc8d2b101d",
           "is_selected": true,
           "display_name": "modifiedby",
           "type": "semantic_model.column",
@@ -6741,7 +9990,7 @@
           "children": []
         },
         {
-          "id": "5fbc8428-1f5b-4651-b262-ac5f0ee8b982",
+          "id": "e64b990f-885c-40c1-a6c2-97fd9130ca23",
           "is_selected": true,
           "display_name": "modifiedby_entitytype",
           "type": "semantic_model.column",
@@ -6750,7 +9999,7 @@
           "children": []
         },
         {
-          "id": "e0a64fb0-9ca1-49a6-8432-b2bd3646dc50",
+          "id": "7703e79e-c104-43c5-97b0-cee70bf810b1",
           "is_selected": true,
           "display_name": "modifiedbyname",
           "type": "semantic_model.column",
@@ -6759,7 +10008,7 @@
           "children": []
         },
         {
-          "id": "3d892576-3c7b-4cbb-8275-c379f250adf2",
+          "id": "543324be-5dca-47f6-beb8-420d9edf8eef",
           "is_selected": true,
           "display_name": "modifiedbyyominame",
           "type": "semantic_model.column",
@@ -6768,7 +10017,7 @@
           "children": []
         },
         {
-          "id": "63bc6652-1b0d-4eba-b351-e8cc540e565d",
+          "id": "87218f7a-760b-403f-a723-03a1cbe823c1",
           "is_selected": true,
           "display_name": "modifiedon",
           "type": "semantic_model.column",
@@ -6777,7 +10026,7 @@
           "children": []
         },
         {
-          "id": "d5c32b95-537c-42ed-9ae6-6b7e20900f4f",
+          "id": "eb9ddc0d-6a43-4ce6-abde-5dfaf429187c",
           "is_selected": true,
           "display_name": "modifiedonbehalfby",
           "type": "semantic_model.column",
@@ -6786,7 +10035,7 @@
           "children": []
         },
         {
-          "id": "17d56f85-eb61-425f-a830-5a0d97d6ce2c",
+          "id": "39d47022-6510-4fb9-9553-bff99857544c",
           "is_selected": true,
           "display_name": "modifiedonbehalfby_entitytype",
           "type": "semantic_model.column",
@@ -6795,7 +10044,7 @@
           "children": []
         },
         {
-          "id": "43636f26-5689-4b6f-be04-93111519b551",
+          "id": "8e3480ed-a72f-44e1-a4fc-f5c606f8630f",
           "is_selected": true,
           "display_name": "modifiedonbehalfbyname",
           "type": "semantic_model.column",
@@ -6804,7 +10053,7 @@
           "children": []
         },
         {
-          "id": "23435ebf-450c-47d3-a05b-7169e2fc1adf",
+          "id": "eb5a6abe-adcd-4ba2-a9f0-ab661584eca6",
           "is_selected": true,
           "display_name": "modifiedonbehalfbyyominame",
           "type": "semantic_model.column",
@@ -6813,7 +10062,7 @@
           "children": []
         },
         {
-          "id": "fd532c0c-4082-4ffb-be16-773dd9c46eec",
+          "id": "5e86c78b-dd5c-4b6f-b696-449908254994",
           "is_selected": true,
           "display_name": "msdynmkt_automaticResumeTime",
           "type": "semantic_model.column",
@@ -6822,7 +10071,7 @@
           "children": []
         },
         {
-          "id": "554b918c-d3ca-4869-888b-6fa7fd3a6c26",
+          "id": "a088be9a-de91-4faf-acdc-b0df0c58fa97",
           "is_selected": true,
           "display_name": "msdynmkt_baseversionjourneyid",
           "type": "semantic_model.column",
@@ -6831,7 +10080,7 @@
           "children": []
         },
         {
-          "id": "afe9bf46-ca1c-4970-8b4c-afd4a53aad53",
+          "id": "62e53a39-e47a-4671-9dc0-fb8bfb278cb4",
           "is_selected": true,
           "display_name": "msdynmkt_doubleoptincompliance",
           "type": "semantic_model.column",
@@ -6840,7 +10089,7 @@
           "children": []
         },
         {
-          "id": "50cfe900-d2ac-4a64-8c1e-42552564cd63",
+          "id": "c42bbcb6-2a5f-4b31-bfb1-696386909443",
           "is_selected": true,
           "display_name": "msdynmkt_doubleoptincompliance_entitytype",
           "type": "semantic_model.column",
@@ -6849,7 +10098,7 @@
           "children": []
         },
         {
-          "id": "80d286a5-ff4c-48d0-a76c-e624cb32884b",
+          "id": "88c6d199-3a46-4b67-ac73-4c9deffe5ad2",
           "is_selected": true,
           "display_name": "msdynmkt_doubleoptincompliancename",
           "type": "semantic_model.column",
@@ -6858,7 +10107,7 @@
           "children": []
         },
         {
-          "id": "80444bcc-60da-4839-ab5b-b53e28a489cf",
+          "id": "97a9d7e5-ef09-4198-921d-69e21b043e9a",
           "is_selected": true,
           "display_name": "msdynmkt_errorDetails",
           "type": "semantic_model.column",
@@ -6867,7 +10116,7 @@
           "children": []
         },
         {
-          "id": "8b1a159d-db58-4aa4-9547-713d85f83c39",
+          "id": "8639e178-ea2e-4c3a-949d-ba0f1c3f2c17",
           "is_selected": true,
           "display_name": "msdynmkt_flags",
           "type": "semantic_model.column",
@@ -6876,7 +10125,7 @@
           "children": []
         },
         {
-          "id": "1f905f8e-4993-4d73-bc72-89527f29a17c",
+          "id": "b9fca77e-f82f-4a7d-93ec-709755addaff",
           "is_selected": true,
           "display_name": "msdynmkt_frequencycaptype",
           "type": "semantic_model.column",
@@ -6885,7 +10134,7 @@
           "children": []
         },
         {
-          "id": "5da862ed-dbff-43d4-8149-d575296218b1",
+          "id": "acd877f8-ea8e-44e5-8dff-ed73f9b3606a",
           "is_selected": true,
           "display_name": "msdynmkt_issupersededbylaterversion",
           "type": "semantic_model.column",
@@ -6894,7 +10143,7 @@
           "children": []
         },
         {
-          "id": "dfd1bc43-1a39-49ff-9eba-d047ac2a2d92",
+          "id": "8724011b-0b45-4a28-ac77-4d1d87d0cac0",
           "is_selected": true,
           "display_name": "msdynmkt_journeyendtime",
           "type": "semantic_model.column",
@@ -6903,7 +10152,7 @@
           "children": []
         },
         {
-          "id": "dd836b12-b460-46a4-b318-fc99d0c89a99",
+          "id": "fd0939a6-640b-464f-8c49-2dbba8f0e672",
           "is_selected": true,
           "display_name": "msdynmkt_journeyfeatureversionnumber",
           "type": "semantic_model.column",
@@ -6912,16 +10161,16 @@
           "children": []
         },
         {
-          "id": "31ade701-dfbe-49e1-81f6-0e5dfd3523da",
+          "id": "b7eaaf8c-33fd-4615-96bd-2ca97dc860a4",
           "is_selected": true,
           "display_name": "msdynmkt_journeyid",
           "type": "semantic_model.column",
           "data_type": "String",
-          "description": "ID da jornada",
+          "description": null,
           "children": []
         },
         {
-          "id": "c3aa3ff8-2de8-4261-95ec-27b5133416b2",
+          "id": "32eb9995-9198-4453-a838-9b880f0f8703",
           "is_selected": true,
           "display_name": "msdynmkt_journeyinstancepartitionenabled",
           "type": "semantic_model.column",
@@ -6930,7 +10179,7 @@
           "children": []
         },
         {
-          "id": "dd106a4c-2bb5-4d6a-b8c6-5aa606ecebab",
+          "id": "92ada774-6864-43ca-8459-8285c7455672",
           "is_selected": true,
           "display_name": "msdynmkt_journeyjson",
           "type": "semantic_model.column",
@@ -6939,7 +10188,7 @@
           "children": []
         },
         {
-          "id": "fdfc3ea6-9dcb-4787-b1b9-8576725622f4",
+          "id": "836d1c56-7746-41bb-ad5a-e0b1d8df5eb4",
           "is_selected": true,
           "display_name": "msdynmkt_journeyjsonbackup",
           "type": "semantic_model.column",
@@ -6948,7 +10197,7 @@
           "children": []
         },
         {
-          "id": "a686bf96-3a42-4a52-b9e8-8dda6fe72fc1",
+          "id": "d13ad213-6eb0-4db9-943a-2d4ec2dabaca",
           "is_selected": true,
           "display_name": "msdynmkt_journeystarttime",
           "type": "semantic_model.column",
@@ -6957,7 +10206,7 @@
           "children": []
         },
         {
-          "id": "55171078-148a-4aa1-86d5-eebd5c36506d",
+          "id": "6fc6523f-88e5-403d-bc42-59fa1d47e98b",
           "is_selected": true,
           "display_name": "msdynmkt_name",
           "type": "semantic_model.column",
@@ -6966,7 +10215,7 @@
           "children": []
         },
         {
-          "id": "33c44cb7-0f1b-439b-a2ea-ebccacd474af",
+          "id": "1941ae6c-6b3a-459b-bb6c-938384300918",
           "is_selected": true,
           "display_name": "msdynmkt_pauseTime",
           "type": "semantic_model.column",
@@ -6975,7 +10224,7 @@
           "children": []
         },
         {
-          "id": "2e19a417-eaf9-4940-b5db-8ba35f9c41ef",
+          "id": "9566782f-f5c3-48c4-8614-2ddf0324fd8f",
           "is_selected": true,
           "display_name": "msdynmkt_purpose",
           "type": "semantic_model.column",
@@ -6984,7 +10233,7 @@
           "children": []
         },
         {
-          "id": "cb7cefae-579b-4c4b-afc1-c066f51c3b34",
+          "id": "14ecff40-f864-461a-9b8c-3c9ff1c6f709",
           "is_selected": true,
           "display_name": "msdynmkt_queueTriggers",
           "type": "semantic_model.column",
@@ -6993,7 +10242,7 @@
           "children": []
         },
         {
-          "id": "5259c354-5645-46b2-aea7-7da5b5bef652",
+          "id": "910cc10c-c8ef-4944-9d9a-b55f4e6f4402",
           "is_selected": true,
           "display_name": "msdynmkt_readytobetriggeredbysegmentrefresh",
           "type": "semantic_model.column",
@@ -7002,7 +10251,7 @@
           "children": []
         },
         {
-          "id": "d2b81fdc-e65f-481a-84ea-d5fd2a1965e9",
+          "id": "865e1af2-2280-4c48-a611-0e77626dca80",
           "is_selected": true,
           "display_name": "msdynmkt_templateid",
           "type": "semantic_model.column",
@@ -7011,7 +10260,7 @@
           "children": []
         },
         {
-          "id": "eb4711d3-f817-4b9a-9653-932ab94adef5",
+          "id": "b72218f7-106d-4a02-bd95-03160886f58c",
           "is_selected": true,
           "display_name": "msdynmkt_templateid_entitytype",
           "type": "semantic_model.column",
@@ -7020,7 +10269,7 @@
           "children": []
         },
         {
-          "id": "d377e713-e66d-426b-831e-99773796e268",
+          "id": "81c8566c-1c5b-4b01-8d5b-c9e6d9ec5b4d",
           "is_selected": true,
           "display_name": "msdynmkt_templateidname",
           "type": "semantic_model.column",
@@ -7029,7 +10278,7 @@
           "children": []
         },
         {
-          "id": "7a530011-e1e9-4be5-bc38-64f199456a06",
+          "id": "d8e3851b-ecea-4920-934e-aca54e44c7cd",
           "is_selected": true,
           "display_name": "msdynmkt_triggertype",
           "type": "semantic_model.column",
@@ -7038,7 +10287,7 @@
           "children": []
         },
         {
-          "id": "fc29bb62-a087-4726-924a-c54de56d927e",
+          "id": "1f138a27-2e14-4a1a-98ee-b11b83d582e8",
           "is_selected": true,
           "display_name": "msdynmkt_versiondescription",
           "type": "semantic_model.column",
@@ -7047,7 +10296,7 @@
           "children": []
         },
         {
-          "id": "38f6a35a-439c-4b8a-a6da-f0ca7957fe32",
+          "id": "94c65df9-5fdc-4079-ad56-114a97f8621d",
           "is_selected": true,
           "display_name": "msdynmkt_versionnumber",
           "type": "semantic_model.column",
@@ -7056,7 +10305,7 @@
           "children": []
         },
         {
-          "id": "8f8314ed-cdeb-48ea-95df-968d75358337",
+          "id": "c739238d-9f09-45bc-8496-89c4dd9dafbe",
           "is_selected": true,
           "display_name": "overriddencreatedon",
           "type": "semantic_model.column",
@@ -7065,7 +10314,7 @@
           "children": []
         },
         {
-          "id": "d0161279-eaf2-46c2-a57e-cd1db95f8a51",
+          "id": "4e14d035-7197-4019-9160-2a6a0f6c863d",
           "is_selected": true,
           "display_name": "ownerid",
           "type": "semantic_model.column",
@@ -7074,7 +10323,7 @@
           "children": []
         },
         {
-          "id": "b5a8b764-ec59-4969-bb7d-db9149668547",
+          "id": "db978e25-4543-44fc-9498-2b903ca12f9b",
           "is_selected": true,
           "display_name": "ownerid_entitytype",
           "type": "semantic_model.column",
@@ -7083,7 +10332,7 @@
           "children": []
         },
         {
-          "id": "393cd6c6-ee23-49c0-b5bd-6a5511e5c062",
+          "id": "86fbd53c-fcea-43e8-a1a1-e23c21a34ade",
           "is_selected": true,
           "display_name": "owneridname",
           "type": "semantic_model.column",
@@ -7092,7 +10341,7 @@
           "children": []
         },
         {
-          "id": "090c6f43-69cd-4529-a083-fd030bc5f2de",
+          "id": "c99be8e3-b297-4e33-806d-4b4530a9e8a4",
           "is_selected": true,
           "display_name": "owneridtype",
           "type": "semantic_model.column",
@@ -7101,7 +10350,7 @@
           "children": []
         },
         {
-          "id": "3e2b142a-616b-4b59-8b8c-8759a36fe353",
+          "id": "0cd61c80-2a60-4adf-b894-ff330a4e266c",
           "is_selected": true,
           "display_name": "owneridyominame",
           "type": "semantic_model.column",
@@ -7110,7 +10359,7 @@
           "children": []
         },
         {
-          "id": "342dfa0d-33b8-492c-88b2-fec0a2960d70",
+          "id": "077dc73f-b876-42b2-904d-98ae3a87280b",
           "is_selected": true,
           "display_name": "owningbusinessunit",
           "type": "semantic_model.column",
@@ -7119,7 +10368,7 @@
           "children": []
         },
         {
-          "id": "2930c34a-2122-454b-9b55-f5bd771b3c01",
+          "id": "a88ab773-2b69-4493-928e-fdc16726b527",
           "is_selected": true,
           "display_name": "owningbusinessunit_entitytype",
           "type": "semantic_model.column",
@@ -7128,7 +10377,7 @@
           "children": []
         },
         {
-          "id": "b7994a04-20ac-4ecc-8116-0d98fe642d01",
+          "id": "ef738b06-ced4-4cc1-8c5c-09151e69c5ab",
           "is_selected": true,
           "display_name": "owningbusinessunitname",
           "type": "semantic_model.column",
@@ -7137,7 +10386,7 @@
           "children": []
         },
         {
-          "id": "c233ee0f-c756-430b-a577-4ed7c9073035",
+          "id": "c82487e6-d5f6-4c30-a052-a6b675dd0fb7",
           "is_selected": true,
           "display_name": "owningteam",
           "type": "semantic_model.column",
@@ -7146,7 +10395,7 @@
           "children": []
         },
         {
-          "id": "e94df0bf-9bed-432d-9d8f-24e26409efb6",
+          "id": "6cdcefc2-dd55-48d2-9cde-532685c79407",
           "is_selected": true,
           "display_name": "owningteam_entitytype",
           "type": "semantic_model.column",
@@ -7155,7 +10404,7 @@
           "children": []
         },
         {
-          "id": "863dc717-bb27-4f07-84f1-ef7aee181eb0",
+          "id": "518f3055-b7ef-49a0-9c62-a82bf1678e05",
           "is_selected": true,
           "display_name": "owninguser",
           "type": "semantic_model.column",
@@ -7164,7 +10413,7 @@
           "children": []
         },
         {
-          "id": "4730f748-7784-4e25-b640-edc71f73b1ed",
+          "id": "4b5e1a67-b220-46fb-bd26-885c0b01acfe",
           "is_selected": true,
           "display_name": "owninguser_entitytype",
           "type": "semantic_model.column",
@@ -7173,7 +10422,7 @@
           "children": []
         },
         {
-          "id": "212c3a81-1b3b-4b5e-8aa3-d529cf6971e0",
+          "id": "5bd0c514-3f8a-4243-82e8-26472fac1306",
           "is_selected": true,
           "display_name": "PartitionId",
           "type": "semantic_model.column",
@@ -7182,7 +10431,7 @@
           "children": []
         },
         {
-          "id": "91746d4b-b0f7-4c15-ad3c-12627b346f05",
+          "id": "6933daf1-166c-4501-8f1e-475c43b5f452",
           "is_selected": true,
           "display_name": "ROI %",
           "type": "semantic_model.measure",
@@ -7191,7 +10440,7 @@
           "children": []
         },
         {
-          "id": "38b5c189-d3dd-42f4-9bd9-b7fe7c485d10",
+          "id": "6394e729-9515-47f4-8f9d-e1377a1cb456",
           "is_selected": true,
           "display_name": "ROI Geral %",
           "type": "semantic_model.measure",
@@ -7200,7 +10449,7 @@
           "children": []
         },
         {
-          "id": "23c19f9f-3476-4529-8fba-06ad188f5e35",
+          "id": "7a3b0c54-4487-414f-b232-4478911fba24",
           "is_selected": true,
           "display_name": "ROI Value",
           "type": "semantic_model.measure",
@@ -7209,7 +10458,7 @@
           "children": []
         },
         {
-          "id": "a0e852c0-1a3f-40f6-af73-3c6c591343ca",
+          "id": "bdf1b597-b99a-4e94-9ed0-ee4b3096b602",
           "is_selected": true,
           "display_name": "SinkCreatedOn",
           "type": "semantic_model.column",
@@ -7218,7 +10467,7 @@
           "children": []
         },
         {
-          "id": "c75b8bc9-f71f-4232-b353-471ba47f8fe0",
+          "id": "0f20c5c2-b16d-446b-a016-047827cddea3",
           "is_selected": true,
           "display_name": "SinkModifiedOn",
           "type": "semantic_model.column",
@@ -7227,7 +10476,7 @@
           "children": []
         },
         {
-          "id": "1b2987a4-b804-4be7-a7c3-9476c65d8cd9",
+          "id": "03a9de7c-e54a-4bb5-a19d-4bf9d5e7dff0",
           "is_selected": true,
           "display_name": "statecode",
           "type": "semantic_model.column",
@@ -7236,7 +10485,7 @@
           "children": []
         },
         {
-          "id": "3e437a05-ad5c-47b9-b9d5-9de8c96553e7",
+          "id": "5a131b30-0bcc-43a6-9713-6e334c93c64a",
           "is_selected": true,
           "display_name": "statuscode",
           "type": "semantic_model.column",
@@ -7245,7 +10494,7 @@
           "children": []
         },
         {
-          "id": "881ea7dd-854c-4b48-a8e7-8231ae668b5f",
+          "id": "5a0f08b6-de0e-4f3e-a9fa-7da47be80901",
           "is_selected": true,
           "display_name": "timezoneruleversionnumber",
           "type": "semantic_model.column",
@@ -7254,7 +10503,16 @@
           "children": []
         },
         {
-          "id": "c76b2aa1-65c4-492d-ba31-4bcd0e81ba11",
+          "id": "813b28aa-9a74-4cfe-b7c5-c8f0c79cd951",
+          "is_selected": true,
+          "display_name": "Total Interactions",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "90c7618f-4137-40d9-a1cc-6c521cf00001",
           "is_selected": true,
           "display_name": "transactioncurrencyid",
           "type": "semantic_model.column",
@@ -7263,7 +10521,7 @@
           "children": []
         },
         {
-          "id": "fd6c025e-eff0-4981-9b3d-2d2c884d2b1d",
+          "id": "6f861e18-d8a1-4ba2-bcaf-e0e01ddde671",
           "is_selected": true,
           "display_name": "transactioncurrencyid_entitytype",
           "type": "semantic_model.column",
@@ -7272,7 +10530,7 @@
           "children": []
         },
         {
-          "id": "035ab019-57e1-405a-af24-a14c6b6bc522",
+          "id": "cf512f59-8cd6-4aaf-a1ca-ef6a1c2dd610",
           "is_selected": true,
           "display_name": "transactioncurrencyidname",
           "type": "semantic_model.column",
@@ -7281,7 +10539,7 @@
           "children": []
         },
         {
-          "id": "f3ab2ec9-685f-4578-a15c-3275bdb5620f",
+          "id": "7848594e-788b-4e75-8194-c0fe8acdf647",
           "is_selected": true,
           "display_name": "utcconversiontimezonecode",
           "type": "semantic_model.column",
@@ -7290,7 +10548,7 @@
           "children": []
         },
         {
-          "id": "cf48df09-8aae-4986-825e-f40f6e379f0f",
+          "id": "85747419-d42d-4e73-aa2b-206a67048fcf",
           "is_selected": true,
           "display_name": "versionnumber",
           "type": "semantic_model.column",
@@ -7842,11 +11100,20 @@
     },
     {
       "id": "2c45c815-1987-45e4-a6f5-3240db5396c2",
-      "is_selected": false,
+      "is_selected": true,
       "display_name": "opportunity",
       "type": "semantic_model.table",
       "description": null,
       "children": [
+        {
+          "id": "7b6d01d8-11d9-44e3-ab5c-7d485bd468b4",
+          "is_selected": true,
+          "display_name": "% lead conversion",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
         {
           "id": "09c95830-dad6-421d-911a-e0d9c0d52f4f",
           "is_selected": true,
@@ -8388,6 +11655,15 @@
           "children": []
         },
         {
+          "id": "15bd0a5a-615e-49c2-94d4-f48d45a3482b",
+          "is_selected": true,
+          "display_name": "Customer Acquisition Cost CAC",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
           "id": "8fed1207-b765-4b5f-8161-b285e5889727",
           "is_selected": true,
           "display_name": "customerid",
@@ -8514,9 +11790,9 @@
           "children": []
         },
         {
-          "id": "f8c80ac6-1955-40e9-a308-bfc2310b569e",
+          "id": "57518049-a4e8-48fe-9fa3-ac9bc7527fdf",
           "is_selected": true,
-          "display_name": "Estimated Revenue",
+          "display_name": "Estimated Revenue by Lead Conversion",
           "type": "semantic_model.measure",
           "data_type": "Double",
           "description": null,
@@ -8690,6 +11966,15 @@
           "display_name": "lastonholdtime",
           "type": "semantic_model.column",
           "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f8c80ac6-1955-40e9-a308-bfc2310b569e",
+          "is_selected": true,
+          "display_name": "MKT Estimated Revenue",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
           "description": null,
           "children": []
         },
@@ -9068,6 +12353,15 @@
           "display_name": "msdynmkt_journeyidname",
           "type": "semantic_model.column",
           "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "262ef110-7ef3-4e10-9fc4-3dd1e406a019",
+          "is_selected": true,
+          "display_name": "N converted opportunities",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
           "description": null,
           "children": []
         },

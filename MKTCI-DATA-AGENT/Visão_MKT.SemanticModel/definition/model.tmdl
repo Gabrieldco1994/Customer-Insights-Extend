@@ -11,7 +11,7 @@ annotation PBI_QueryOrder = DatabaseQuery
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_ProTooling = ["CopilotTooling", "SLL", "WebModelingEdit", "CalcGroup", "DirectLakeOnOneLakeInWeb", "SLL_UpdateDLConnection_SQL"]
+annotation PBI_ProTooling = ["CopilotTooling","SLL","WebModelingEdit","CalcGroup","DirectLakeOnOneLakeInWeb","SLL_UpdateDLConnection_SQL"]
 
 ref table EmailDelivered
 ref table EmailOpened

@@ -1,0 +1,112 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "deab6ea4-d09a-4153-bba1-d7589261622a",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "BusinessUnitId",
+        "targetPropertyId": "1016881590337598038"
+      },
+      {
+        "sourceColumnName": "ChannelDefinitionId",
+        "targetPropertyId": "1016881611558444889"
+      },
+      {
+        "sourceColumnName": "ChannelType",
+        "targetPropertyId": "1016881634684298611"
+      },
+      {
+        "sourceColumnName": "CustomChannelMessageId",
+        "targetPropertyId": "1016881661248204186"
+      },
+      {
+        "sourceColumnName": "CustomerJourneyId",
+        "targetPropertyId": "1016881683516834205"
+      },
+      {
+        "sourceColumnName": "Details",
+        "targetPropertyId": "1016881704068726507"
+      },
+      {
+        "sourceColumnName": "IdempotencyId",
+        "targetPropertyId": "1016881727396375944"
+      },
+      {
+        "sourceColumnName": "InteractionType",
+        "targetPropertyId": "1016881753100035062"
+      },
+      {
+        "sourceColumnName": "InternalMarketingInteractionId",
+        "targetPropertyId": "1016881778214778782"
+      },
+      {
+        "sourceColumnName": "IsUnresolvedProfile",
+        "targetPropertyId": "1016881803486543565"
+      },
+      {
+        "sourceColumnName": "JourneyActionId",
+        "targetPropertyId": "1016881823597597716"
+      },
+      {
+        "sourceColumnName": "JourneyRunId",
+        "targetPropertyId": "1016881849056373061"
+      },
+      {
+        "sourceColumnName": "MessageId",
+        "targetPropertyId": "1016881870398365131"
+      },
+      {
+        "sourceColumnName": "MessageTemplateVersion",
+        "targetPropertyId": "1016881891837872085"
+      },
+      {
+        "sourceColumnName": "MessageVariationIndexes",
+        "targetPropertyId": "1016881917712635581"
+      },
+      {
+        "sourceColumnName": "MessageVariationName",
+        "targetPropertyId": "1016881942648359060"
+      },
+      {
+        "sourceColumnName": "OrganizationId",
+        "targetPropertyId": "1016881964879544680"
+      },
+      {
+        "sourceColumnName": "ProfileId",
+        "targetPropertyId": "1016881988210741337"
+      },
+      {
+        "sourceColumnName": "ProfileType",
+        "targetPropertyId": "1016882014373539789"
+      },
+      {
+        "sourceColumnName": "Recipient",
+        "targetPropertyId": "1016882032527688845"
+      },
+      {
+        "sourceColumnName": "Sender",
+        "targetPropertyId": "1016882055647265761"
+      },
+      {
+        "sourceColumnName": "SourceSystem",
+        "targetPropertyId": "1016882077523145853"
+      },
+      {
+        "sourceColumnName": "Timestamp",
+        "targetPropertyId": "1016882104540796057"
+      },
+      {
+        "sourceColumnName": "Version",
+        "targetPropertyId": "1016882125051790657"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "d889679a-b8d7-9fdf-491e-2e22e0542029",
+      "sourceTableName": "CustomSent",
+      "sourceSchema": null
+    }
+  }
+}

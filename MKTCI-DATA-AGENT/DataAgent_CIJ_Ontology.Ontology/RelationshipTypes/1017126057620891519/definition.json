@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "1017126057620891519",
+  "name": "opportunity_has_contact",
+  "namespaceType": "Imported",
+  "source": {
+    "entityTypeId": "257468275835386"
+  },
+  "target": {
+    "entityTypeId": "270803660151252"
+  }
+}

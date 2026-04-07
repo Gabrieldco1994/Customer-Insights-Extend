@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/contextualization/1.0.0/schema.json",
+  "id": "575128fc-b3a1-4e6d-802f-c29217073ed6",
+  "dataBindingTable": {
+    "workspaceId": "00000000-0000-0000-0000-000000000000",
+    "itemId": "d889679a-b8d7-9fdf-491e-2e22e0542029",
+    "sourceTableName": "EmailSent",
+    "sourceSchema": null,
+    "sourceType": "LakehouseTable"
+  },
+  "sourceKeyRefBindings": [
+    {
+      "sourceColumnName": "IdempotencyId",
+      "targetPropertyId": "1016867802876574621"
+    }
+  ],
+  "targetKeyRefBindings": [
+    {
+      "sourceColumnName": "ContactId",
+      "targetPropertyId": "1016863661248662908"
+    }
+  ]
+}

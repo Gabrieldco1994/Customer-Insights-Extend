@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/contextualization/1.0.0/schema.json",
+  "id": "857d1a5f-2abd-4123-98f6-2b08ed582a49",
+  "dataBindingTable": {
+    "workspaceId": "00000000-0000-0000-0000-000000000000",
+    "itemId": "d889679a-b8d7-9fdf-491e-2e22e0542029",
+    "sourceTableName": "opportunity",
+    "sourceSchema": null,
+    "sourceType": "LakehouseTable"
+  },
+  "sourceKeyRefBindings": [
+    {
+      "sourceColumnName": "msdynmkt_journeyid",
+      "targetPropertyId": "1190918240929662567"
+    }
+  ],
+  "targetKeyRefBindings": [
+    {
+      "sourceColumnName": "opportunityid",
+      "targetPropertyId": "1016856344584697614"
+    }
+  ]
+}

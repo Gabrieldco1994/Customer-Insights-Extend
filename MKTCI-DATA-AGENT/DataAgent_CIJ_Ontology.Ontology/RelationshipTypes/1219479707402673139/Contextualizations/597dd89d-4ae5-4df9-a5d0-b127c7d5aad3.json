@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/contextualization/1.0.0/schema.json",
+  "id": "597dd89d-4ae5-4df9-a5d0-b127c7d5aad3",
+  "dataBindingTable": {
+    "workspaceId": "00000000-0000-0000-0000-000000000000",
+    "itemId": "d889679a-b8d7-9fdf-491e-2e22e0542029",
+    "sourceTableName": "crfc2_journeychannelcost",
+    "sourceSchema": null,
+    "sourceType": "LakehouseTable"
+  },
+  "sourceKeyRefBindings": [
+    {
+      "sourceColumnName": "crfc2_msdynmkt_journey",
+      "targetPropertyId": "1190918240929662567"
+    }
+  ],
+  "targetKeyRefBindings": [
+    {
+      "sourceColumnName": "crfc2_new_channel",
+      "targetPropertyId": "1016872785592826728"
+    }
+  ]
+}

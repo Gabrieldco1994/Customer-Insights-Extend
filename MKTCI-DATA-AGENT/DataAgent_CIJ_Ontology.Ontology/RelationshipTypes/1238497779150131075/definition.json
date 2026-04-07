@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "1238497779150131075",
+  "name": "Journey_Convert_Leads",
+  "namespaceType": "Custom",
+  "source": {
+    "entityTypeId": "145219471354497"
+  },
+  "target": {
+    "entityTypeId": "75438247373469"
+  }
+}

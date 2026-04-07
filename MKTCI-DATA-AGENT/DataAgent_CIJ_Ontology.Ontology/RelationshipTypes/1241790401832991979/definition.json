@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "1241790401832991979",
+  "name": "Lead_ConvertInto_Oppt",
+  "namespaceType": "Custom",
+  "source": {
+    "entityTypeId": "75438247373469"
+  },
+  "target": {
+    "entityTypeId": "257468275835386"
+  }
+}

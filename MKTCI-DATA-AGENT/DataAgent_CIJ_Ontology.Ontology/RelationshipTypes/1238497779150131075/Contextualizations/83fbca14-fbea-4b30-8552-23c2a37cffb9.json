@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/contextualization/1.0.0/schema.json",
+  "id": "83fbca14-fbea-4b30-8552-23c2a37cffb9",
+  "dataBindingTable": {
+    "workspaceId": "00000000-0000-0000-0000-000000000000",
+    "itemId": "d889679a-b8d7-9fdf-491e-2e22e0542029",
+    "sourceTableName": "lead",
+    "sourceSchema": null,
+    "sourceType": "LakehouseTable"
+  },
+  "sourceKeyRefBindings": [
+    {
+      "sourceColumnName": "msdynmkt_customerjourneyid",
+      "targetPropertyId": "1190918240929662567"
+    }
+  ],
+  "targetKeyRefBindings": [
+    {
+      "sourceColumnName": "leadid",
+      "targetPropertyId": "1016878636995453021"
+    }
+  ]
+}

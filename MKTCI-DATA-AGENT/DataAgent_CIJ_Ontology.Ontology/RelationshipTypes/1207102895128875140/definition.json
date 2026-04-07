@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "1207102895128875140",
+  "name": "Journey_has_emaildelivered",
+  "namespaceType": "Custom",
+  "source": {
+    "entityTypeId": "145219471354497"
+  },
+  "target": {
+    "entityTypeId": "230152368398681"
+  }
+}

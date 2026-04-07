@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
-  "artifactId": "1f34588a-dd22-8f89-4bbd-a2dffcaae4bd",
-  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "artifactId": "fcaae4bd-a2df-4bbd-8f89-dd221f34588a",
+  "workspaceId": "b84200d4-c6e9-4925-a23a-77f16f9701eb",
   "dataSourceInstructions": null,
   "displayName": "Ontology_mkt",
   "type": "ontology",

@@ -1,0 +1,1636 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "a5ade153-91d2-41db-935d-e579487ba639",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "Id",
+        "targetPropertyId": "1016858032002244992"
+      },
+      {
+        "sourceColumnName": "SinkCreatedOn",
+        "targetPropertyId": "1016858060577356424"
+      },
+      {
+        "sourceColumnName": "SinkModifiedOn",
+        "targetPropertyId": "1016858082439111238"
+      },
+      {
+        "sourceColumnName": "statecode",
+        "targetPropertyId": "1016858105277377847"
+      },
+      {
+        "sourceColumnName": "statuscode",
+        "targetPropertyId": "1016858127045121739"
+      },
+      {
+        "sourceColumnName": "accountrolecode",
+        "targetPropertyId": "1016858155525883456"
+      },
+      {
+        "sourceColumnName": "address1_addresstypecode",
+        "targetPropertyId": "1016858174843392824"
+      },
+      {
+        "sourceColumnName": "address1_freighttermscode",
+        "targetPropertyId": "1016858195274761820"
+      },
+      {
+        "sourceColumnName": "address1_shippingmethodcode",
+        "targetPropertyId": "1016858220013670268"
+      },
+      {
+        "sourceColumnName": "address2_addresstypecode",
+        "targetPropertyId": "1016858242301682970"
+      },
+      {
+        "sourceColumnName": "address2_freighttermscode",
+        "targetPropertyId": "1016858266037776181"
+      },
+      {
+        "sourceColumnName": "address2_shippingmethodcode",
+        "targetPropertyId": "1016858288609884556"
+      },
+      {
+        "sourceColumnName": "address3_addresstypecode",
+        "targetPropertyId": "1016858308870450962"
+      },
+      {
+        "sourceColumnName": "address3_freighttermscode",
+        "targetPropertyId": "1016858331746895915"
+      },
+      {
+        "sourceColumnName": "address3_shippingmethodcode",
+        "targetPropertyId": "1016858349869356442"
+      },
+      {
+        "sourceColumnName": "customersizecode",
+        "targetPropertyId": "1016858372826748761"
+      },
+      {
+        "sourceColumnName": "customertypecode",
+        "targetPropertyId": "1016858397235927771"
+      },
+      {
+        "sourceColumnName": "educationcode",
+        "targetPropertyId": "1016858420719307255"
+      },
+      {
+        "sourceColumnName": "familystatuscode",
+        "targetPropertyId": "1016858441561294732"
+      },
+      {
+        "sourceColumnName": "gendercode",
+        "targetPropertyId": "1016858463882138014"
+      },
+      {
+        "sourceColumnName": "haschildrencode",
+        "targetPropertyId": "1016858483670850726"
+      },
+      {
+        "sourceColumnName": "leadsourcecode",
+        "targetPropertyId": "1016858505077522122"
+      },
+      {
+        "sourceColumnName": "msdyn_decisioninfluencetag",
+        "targetPropertyId": "1016858526722037320"
+      },
+      {
+        "sourceColumnName": "msdyn_orgchangestatus",
+        "targetPropertyId": "1016858548959225880"
+      },
+      {
+        "sourceColumnName": "msgdpr_gdprconsent",
+        "targetPropertyId": "1016858571384632208"
+      },
+      {
+        "sourceColumnName": "mspp_userpreferredlcid",
+        "targetPropertyId": "1016858596551939854"
+      },
+      {
+        "sourceColumnName": "paymenttermscode",
+        "targetPropertyId": "1016858618602124183"
+      },
+      {
+        "sourceColumnName": "preferredappointmentdaycode",
+        "targetPropertyId": "1016858637957866540"
+      },
+      {
+        "sourceColumnName": "preferredappointmenttimecode",
+        "targetPropertyId": "1016858665689626720"
+      },
+      {
+        "sourceColumnName": "preferredcontactmethodcode",
+        "targetPropertyId": "1016858687751955527"
+      },
+      {
+        "sourceColumnName": "shippingmethodcode",
+        "targetPropertyId": "1016858706536834880"
+      },
+      {
+        "sourceColumnName": "territorycode",
+        "targetPropertyId": "1016858729984439187"
+      },
+      {
+        "sourceColumnName": "adx_confirmremovepassword",
+        "targetPropertyId": "1016858751985936807"
+      },
+      {
+        "sourceColumnName": "adx_identity_emailaddress1confirmed",
+        "targetPropertyId": "1016858773069354748"
+      },
+      {
+        "sourceColumnName": "adx_identity_locallogindisabled",
+        "targetPropertyId": "1016858791902405693"
+      },
+      {
+        "sourceColumnName": "adx_identity_lockoutenabled",
+        "targetPropertyId": "1016858818971921057"
+      },
+      {
+        "sourceColumnName": "adx_identity_logonenabled",
+        "targetPropertyId": "1016858840513317204"
+      },
+      {
+        "sourceColumnName": "adx_identity_mobilephoneconfirmed",
+        "targetPropertyId": "1016858861464211080"
+      },
+      {
+        "sourceColumnName": "adx_identity_twofactorenabled",
+        "targetPropertyId": "1016858882039439992"
+      },
+      {
+        "sourceColumnName": "adx_profilealert",
+        "targetPropertyId": "1016858903806540365"
+      },
+      {
+        "sourceColumnName": "adx_profileisanonymous",
+        "targetPropertyId": "1016858930348129790"
+      },
+      {
+        "sourceColumnName": "creditonhold",
+        "targetPropertyId": "1016858951155579594"
+      },
+      {
+        "sourceColumnName": "donotbulkemail",
+        "targetPropertyId": "1016858974188087998"
+      },
+      {
+        "sourceColumnName": "donotbulkpostalmail",
+        "targetPropertyId": "1016858995811778992"
+      },
+      {
+        "sourceColumnName": "donotemail",
+        "targetPropertyId": "1016859017329649831"
+      },
+      {
+        "sourceColumnName": "donotfax",
+        "targetPropertyId": "1016859037682481625"
+      },
+      {
+        "sourceColumnName": "donotphone",
+        "targetPropertyId": "1016859061909703301"
+      },
+      {
+        "sourceColumnName": "donotpostalmail",
+        "targetPropertyId": "1016859083026257959"
+      },
+      {
+        "sourceColumnName": "donotsendmm",
+        "targetPropertyId": "1016859105015765483"
+      },
+      {
+        "sourceColumnName": "followemail",
+        "targetPropertyId": "1016859125717173460"
+      },
+      {
+        "sourceColumnName": "isautocreate",
+        "targetPropertyId": "1016859147918380491"
+      },
+      {
+        "sourceColumnName": "isbackofficecustomer",
+        "targetPropertyId": "1016859167730517137"
+      },
+      {
+        "sourceColumnName": "isprivate",
+        "targetPropertyId": "1016859194615786373"
+      },
+      {
+        "sourceColumnName": "marketingonly",
+        "targetPropertyId": "1016859215840845573"
+      },
+      {
+        "sourceColumnName": "merged",
+        "targetPropertyId": "1016859235998752713"
+      },
+      {
+        "sourceColumnName": "msdyn_disablewebtracking",
+        "targetPropertyId": "1016859256864266273"
+      },
+      {
+        "sourceColumnName": "msdyn_gdproptout",
+        "targetPropertyId": "1016859280046478930"
+      },
+      {
+        "sourceColumnName": "msdyn_isassistantinorgchart",
+        "targetPropertyId": "1016859301309740125"
+      },
+      {
+        "sourceColumnName": "msdyn_isminor",
+        "targetPropertyId": "1016859321764792299"
+      },
+      {
+        "sourceColumnName": "msdyn_isminorwithparentalconsent",
+        "targetPropertyId": "1016859341694016387"
+      },
+      {
+        "sourceColumnName": "msdyncrm_rememberme",
+        "targetPropertyId": "1016859365311916806"
+      },
+      {
+        "sourceColumnName": "msgdpr_donottrack",
+        "targetPropertyId": "1016859392168459542"
+      },
+      {
+        "sourceColumnName": "msgdpr_gdprischild",
+        "targetPropertyId": "1016859410851654250"
+      },
+      {
+        "sourceColumnName": "participatesinworkflow",
+        "targetPropertyId": "1016859433410382619"
+      },
+      {
+        "sourceColumnName": "accountid",
+        "targetPropertyId": "1016859453979301198"
+      },
+      {
+        "sourceColumnName": "accountid_entitytype",
+        "targetPropertyId": "1016859482231441871"
+      },
+      {
+        "sourceColumnName": "adx_preferredlanguageid",
+        "targetPropertyId": "1016859502401270382"
+      },
+      {
+        "sourceColumnName": "adx_preferredlanguageid_entitytype",
+        "targetPropertyId": "1016859522250991077"
+      },
+      {
+        "sourceColumnName": "createdby",
+        "targetPropertyId": "1016859544315646842"
+      },
+      {
+        "sourceColumnName": "createdby_entitytype",
+        "targetPropertyId": "1016859568940951040"
+      },
+      {
+        "sourceColumnName": "createdbyexternalparty",
+        "targetPropertyId": "1016859587410013530"
+      },
+      {
+        "sourceColumnName": "createdbyexternalparty_entitytype",
+        "targetPropertyId": "1016859608225598004"
+      },
+      {
+        "sourceColumnName": "createdonbehalfby",
+        "targetPropertyId": "1016859631011439034"
+      },
+      {
+        "sourceColumnName": "createdonbehalfby_entitytype",
+        "targetPropertyId": "1016859658122745779"
+      },
+      {
+        "sourceColumnName": "defaultpricelevelid",
+        "targetPropertyId": "1016859677235715081"
+      },
+      {
+        "sourceColumnName": "defaultpricelevelid_entitytype",
+        "targetPropertyId": "1016859700872054168"
+      },
+      {
+        "sourceColumnName": "masterid",
+        "targetPropertyId": "1016859722899350694"
+      },
+      {
+        "sourceColumnName": "masterid_entitytype",
+        "targetPropertyId": "1016859744121681639"
+      },
+      {
+        "sourceColumnName": "modifiedby",
+        "targetPropertyId": "1016859765763290135"
+      },
+      {
+        "sourceColumnName": "modifiedby_entitytype",
+        "targetPropertyId": "1016859784389262650"
+      },
+      {
+        "sourceColumnName": "modifiedbyexternalparty",
+        "targetPropertyId": "1016859809642582673"
+      },
+      {
+        "sourceColumnName": "modifiedbyexternalparty_entitytype",
+        "targetPropertyId": "1016859828920803081"
+      },
+      {
+        "sourceColumnName": "modifiedonbehalfby",
+        "targetPropertyId": "1016859849744701219"
+      },
+      {
+        "sourceColumnName": "modifiedonbehalfby_entitytype",
+        "targetPropertyId": "1016859872012054337"
+      },
+      {
+        "sourceColumnName": "msa_managingpartnerid",
+        "targetPropertyId": "1016859897779858320"
+      },
+      {
+        "sourceColumnName": "msa_managingpartnerid_entitytype",
+        "targetPropertyId": "1016859919831069802"
+      },
+      {
+        "sourceColumnName": "msdyn_contactkpiid",
+        "targetPropertyId": "1016859942253371814"
+      },
+      {
+        "sourceColumnName": "msdyn_contactkpiid_entitytype",
+        "targetPropertyId": "1016859963651375464"
+      },
+      {
+        "sourceColumnName": "msdyn_segmentid",
+        "targetPropertyId": "1016859984855052806"
+      },
+      {
+        "sourceColumnName": "msdyn_segmentid_entitytype",
+        "targetPropertyId": "1016860003527267062"
+      },
+      {
+        "sourceColumnName": "msdyncrm_contactid",
+        "targetPropertyId": "1016860026529439435"
+      },
+      {
+        "sourceColumnName": "msdyncrm_contactid_entitytype",
+        "targetPropertyId": "1016860054294787019"
+      },
+      {
+        "sourceColumnName": "msdyncrm_customerjourneyid",
+        "targetPropertyId": "1016860074824302255"
+      },
+      {
+        "sourceColumnName": "msdyncrm_customerjourneyid_entitytype",
+        "targetPropertyId": "1016860094931830689"
+      },
+      {
+        "sourceColumnName": "msdyncrm_emailid",
+        "targetPropertyId": "1016860118997210022"
+      },
+      {
+        "sourceColumnName": "msdyncrm_emailid_entitytype",
+        "targetPropertyId": "1016860140613830906"
+      },
+      {
+        "sourceColumnName": "msdyncrm_marketingformid",
+        "targetPropertyId": "1016860163182150190"
+      },
+      {
+        "sourceColumnName": "msdyncrm_marketingformid_entitytype",
+        "targetPropertyId": "1016860185996456351"
+      },
+      {
+        "sourceColumnName": "msdyncrm_marketingpageid",
+        "targetPropertyId": "1016860211402810384"
+      },
+      {
+        "sourceColumnName": "msdyncrm_marketingpageid_entitytype",
+        "targetPropertyId": "1016860233846723661"
+      },
+      {
+        "sourceColumnName": "msdyncrm_segmentmemberid",
+        "targetPropertyId": "1016860254862644078"
+      },
+      {
+        "sourceColumnName": "msdyncrm_segmentmemberid_entitytype",
+        "targetPropertyId": "1016860276906941243"
+      },
+      {
+        "sourceColumnName": "msdynmkt_customerjourneyid",
+        "targetPropertyId": "1016860296669432159"
+      },
+      {
+        "sourceColumnName": "msdynmkt_customerjourneyid_entitytype",
+        "targetPropertyId": "1016860317018982229"
+      },
+      {
+        "sourceColumnName": "msdynmkt_emailid",
+        "targetPropertyId": "1016860344263964111"
+      },
+      {
+        "sourceColumnName": "msdynmkt_emailid_entitytype",
+        "targetPropertyId": "1016860365905776201"
+      },
+      {
+        "sourceColumnName": "msdynmkt_marketingformid",
+        "targetPropertyId": "1016860388055407763"
+      },
+      {
+        "sourceColumnName": "msdynmkt_marketingformid_entitytype",
+        "targetPropertyId": "1016860407837511656"
+      },
+      {
+        "sourceColumnName": "msevtmgt_contactid",
+        "targetPropertyId": "1016860431704847856"
+      },
+      {
+        "sourceColumnName": "msevtmgt_contactid_entitytype",
+        "targetPropertyId": "1016860455050396031"
+      },
+      {
+        "sourceColumnName": "msevtmgt_originatingeventid",
+        "targetPropertyId": "1016860478645414429"
+      },
+      {
+        "sourceColumnName": "msevtmgt_originatingeventid_entitytype",
+        "targetPropertyId": "1016860499621366665"
+      },
+      {
+        "sourceColumnName": "msgdpr_consentchangesourceformid",
+        "targetPropertyId": "1016860522050528007"
+      },
+      {
+        "sourceColumnName": "msgdpr_consentchangesourceformid_entitytype",
+        "targetPropertyId": "1016860541037711654"
+      },
+      {
+        "sourceColumnName": "msgdpr_gdprparentid",
+        "targetPropertyId": "1016860563083434447"
+      },
+      {
+        "sourceColumnName": "msgdpr_gdprparentid_entitytype",
+        "targetPropertyId": "1016860586917891396"
+      },
+      {
+        "sourceColumnName": "originatingleadid",
+        "targetPropertyId": "1016860611947582581"
+      },
+      {
+        "sourceColumnName": "originatingleadid_entitytype",
+        "targetPropertyId": "1016860632461789685"
+      },
+      {
+        "sourceColumnName": "owningbusinessunit",
+        "targetPropertyId": "1016860653310329707"
+      },
+      {
+        "sourceColumnName": "owningbusinessunit_entitytype",
+        "targetPropertyId": "1016860675792047363"
+      },
+      {
+        "sourceColumnName": "owningteam",
+        "targetPropertyId": "1016860698118227761"
+      },
+      {
+        "sourceColumnName": "owningteam_entitytype",
+        "targetPropertyId": "1016860720651923404"
+      },
+      {
+        "sourceColumnName": "owninguser",
+        "targetPropertyId": "1016860745720663891"
+      },
+      {
+        "sourceColumnName": "owninguser_entitytype",
+        "targetPropertyId": "1016860766205773724"
+      },
+      {
+        "sourceColumnName": "parentcontactid",
+        "targetPropertyId": "1016860791650463089"
+      },
+      {
+        "sourceColumnName": "parentcontactid_entitytype",
+        "targetPropertyId": "1016860812370972568"
+      },
+      {
+        "sourceColumnName": "preferredequipmentid",
+        "targetPropertyId": "1016860833106159678"
+      },
+      {
+        "sourceColumnName": "preferredequipmentid_entitytype",
+        "targetPropertyId": "1016860857441789855"
+      },
+      {
+        "sourceColumnName": "preferredserviceid",
+        "targetPropertyId": "1016860874870012456"
+      },
+      {
+        "sourceColumnName": "preferredserviceid_entitytype",
+        "targetPropertyId": "1016860902394623855"
+      },
+      {
+        "sourceColumnName": "preferredsystemuserid",
+        "targetPropertyId": "1016860923711282621"
+      },
+      {
+        "sourceColumnName": "preferredsystemuserid_entitytype",
+        "targetPropertyId": "1016860946430448042"
+      },
+      {
+        "sourceColumnName": "slaid",
+        "targetPropertyId": "1016860966450248761"
+      },
+      {
+        "sourceColumnName": "slaid_entitytype",
+        "targetPropertyId": "1016860990005899813"
+      },
+      {
+        "sourceColumnName": "slainvokedid",
+        "targetPropertyId": "1016861010339004776"
+      },
+      {
+        "sourceColumnName": "slainvokedid_entitytype",
+        "targetPropertyId": "1016861034776418744"
+      },
+      {
+        "sourceColumnName": "transactioncurrencyid",
+        "targetPropertyId": "1016861057276918723"
+      },
+      {
+        "sourceColumnName": "transactioncurrencyid_entitytype",
+        "targetPropertyId": "1016861079405144365"
+      },
+      {
+        "sourceColumnName": "ownerid",
+        "targetPropertyId": "1016861099946635934"
+      },
+      {
+        "sourceColumnName": "ownerid_entitytype",
+        "targetPropertyId": "1016861122718863446"
+      },
+      {
+        "sourceColumnName": "parentcustomerid",
+        "targetPropertyId": "1016861147525563572"
+      },
+      {
+        "sourceColumnName": "parentcustomerid_entitytype",
+        "targetPropertyId": "1016861169850235355"
+      },
+      {
+        "sourceColumnName": "aging30",
+        "targetPropertyId": "1016861191771901544"
+      },
+      {
+        "sourceColumnName": "aging30_base",
+        "targetPropertyId": "1016861210883248970"
+      },
+      {
+        "sourceColumnName": "aging60",
+        "targetPropertyId": "1016861235283219693"
+      },
+      {
+        "sourceColumnName": "aging60_base",
+        "targetPropertyId": "1016861254002514728"
+      },
+      {
+        "sourceColumnName": "aging90",
+        "targetPropertyId": "1016861279969167084"
+      },
+      {
+        "sourceColumnName": "aging90_base",
+        "targetPropertyId": "1016861303155428183"
+      },
+      {
+        "sourceColumnName": "annualincome",
+        "targetPropertyId": "1016861324378605754"
+      },
+      {
+        "sourceColumnName": "annualincome_base",
+        "targetPropertyId": "1016861344947720210"
+      },
+      {
+        "sourceColumnName": "creditlimit",
+        "targetPropertyId": "1016861368098165125"
+      },
+      {
+        "sourceColumnName": "creditlimit_base",
+        "targetPropertyId": "1016861391941945452"
+      },
+      {
+        "sourceColumnName": "accountidname",
+        "targetPropertyId": "1016861414918635459"
+      },
+      {
+        "sourceColumnName": "accountidyominame",
+        "targetPropertyId": "1016861442854647380"
+      },
+      {
+        "sourceColumnName": "address1_addressid",
+        "targetPropertyId": "1016861480329043249"
+      },
+      {
+        "sourceColumnName": "address1_city",
+        "targetPropertyId": "1016861509120946466"
+      },
+      {
+        "sourceColumnName": "address1_composite",
+        "targetPropertyId": "1016861532725820060"
+      },
+      {
+        "sourceColumnName": "address1_country",
+        "targetPropertyId": "1016861555307431413"
+      },
+      {
+        "sourceColumnName": "address1_county",
+        "targetPropertyId": "1016861579373462434"
+      },
+      {
+        "sourceColumnName": "address1_fax",
+        "targetPropertyId": "1016861603927181171"
+      },
+      {
+        "sourceColumnName": "address1_latitude",
+        "targetPropertyId": "1016861628472625560"
+      },
+      {
+        "sourceColumnName": "address1_line1",
+        "targetPropertyId": "1016861649800194082"
+      },
+      {
+        "sourceColumnName": "address1_line2",
+        "targetPropertyId": "1016861670594043083"
+      },
+      {
+        "sourceColumnName": "address1_line3",
+        "targetPropertyId": "1016861696913991956"
+      },
+      {
+        "sourceColumnName": "address1_longitude",
+        "targetPropertyId": "1016861718121868528"
+      },
+      {
+        "sourceColumnName": "address1_name",
+        "targetPropertyId": "1016861738187205211"
+      },
+      {
+        "sourceColumnName": "address1_postalcode",
+        "targetPropertyId": "1016861760980637266"
+      },
+      {
+        "sourceColumnName": "address1_postofficebox",
+        "targetPropertyId": "1016861784335627251"
+      },
+      {
+        "sourceColumnName": "address1_primarycontactname",
+        "targetPropertyId": "1016861807979220464"
+      },
+      {
+        "sourceColumnName": "address1_stateorprovince",
+        "targetPropertyId": "1016861830262244949"
+      },
+      {
+        "sourceColumnName": "address1_telephone1",
+        "targetPropertyId": "1016861850292924652"
+      },
+      {
+        "sourceColumnName": "address1_telephone2",
+        "targetPropertyId": "1016861876682411469"
+      },
+      {
+        "sourceColumnName": "address1_telephone3",
+        "targetPropertyId": "1016861899699884614"
+      },
+      {
+        "sourceColumnName": "address1_upszone",
+        "targetPropertyId": "1016861922587870379"
+      },
+      {
+        "sourceColumnName": "address1_utcoffset",
+        "targetPropertyId": "1016861943351118805"
+      },
+      {
+        "sourceColumnName": "address2_addressid",
+        "targetPropertyId": "1016861969977243313"
+      },
+      {
+        "sourceColumnName": "address2_city",
+        "targetPropertyId": "1016861987599794424"
+      },
+      {
+        "sourceColumnName": "address2_composite",
+        "targetPropertyId": "1016862010936276558"
+      },
+      {
+        "sourceColumnName": "address2_country",
+        "targetPropertyId": "1016862031807379804"
+      },
+      {
+        "sourceColumnName": "address2_county",
+        "targetPropertyId": "1016862052198679840"
+      },
+      {
+        "sourceColumnName": "address2_fax",
+        "targetPropertyId": "1016862080114524266"
+      },
+      {
+        "sourceColumnName": "address2_latitude",
+        "targetPropertyId": "1016862109182788431"
+      },
+      {
+        "sourceColumnName": "address2_line1",
+        "targetPropertyId": "1016862137653804008"
+      },
+      {
+        "sourceColumnName": "address2_line2",
+        "targetPropertyId": "1016862167017442973"
+      },
+      {
+        "sourceColumnName": "address2_line3",
+        "targetPropertyId": "1016862189913034364"
+      },
+      {
+        "sourceColumnName": "address2_longitude",
+        "targetPropertyId": "1016862217898680318"
+      },
+      {
+        "sourceColumnName": "address2_name",
+        "targetPropertyId": "1016862237330001414"
+      },
+      {
+        "sourceColumnName": "address2_postalcode",
+        "targetPropertyId": "1016862258891233397"
+      },
+      {
+        "sourceColumnName": "address2_postofficebox",
+        "targetPropertyId": "1016862284929113617"
+      },
+      {
+        "sourceColumnName": "address2_primarycontactname",
+        "targetPropertyId": "1016862306223339171"
+      },
+      {
+        "sourceColumnName": "address2_stateorprovince",
+        "targetPropertyId": "1016862327027529290"
+      },
+      {
+        "sourceColumnName": "address2_telephone1",
+        "targetPropertyId": "1016862351722057990"
+      },
+      {
+        "sourceColumnName": "address2_telephone2",
+        "targetPropertyId": "1016862374555708585"
+      },
+      {
+        "sourceColumnName": "address2_telephone3",
+        "targetPropertyId": "1016862397861992768"
+      },
+      {
+        "sourceColumnName": "address2_upszone",
+        "targetPropertyId": "1016862421221646469"
+      },
+      {
+        "sourceColumnName": "address2_utcoffset",
+        "targetPropertyId": "1016862444315592425"
+      },
+      {
+        "sourceColumnName": "address3_addressid",
+        "targetPropertyId": "1016862466268374069"
+      },
+      {
+        "sourceColumnName": "address3_city",
+        "targetPropertyId": "1016862488415832668"
+      },
+      {
+        "sourceColumnName": "address3_composite",
+        "targetPropertyId": "1016862513540993814"
+      },
+      {
+        "sourceColumnName": "address3_country",
+        "targetPropertyId": "1016862536226802609"
+      },
+      {
+        "sourceColumnName": "address3_county",
+        "targetPropertyId": "1016862555013229585"
+      },
+      {
+        "sourceColumnName": "address3_fax",
+        "targetPropertyId": "1016862578590960735"
+      },
+      {
+        "sourceColumnName": "address3_latitude",
+        "targetPropertyId": "1016862598379420556"
+      },
+      {
+        "sourceColumnName": "address3_line1",
+        "targetPropertyId": "1016862627150948433"
+      },
+      {
+        "sourceColumnName": "address3_line2",
+        "targetPropertyId": "1016862646153957235"
+      },
+      {
+        "sourceColumnName": "address3_line3",
+        "targetPropertyId": "1016862667194545295"
+      },
+      {
+        "sourceColumnName": "address3_longitude",
+        "targetPropertyId": "1016862695718429751"
+      },
+      {
+        "sourceColumnName": "address3_name",
+        "targetPropertyId": "1016862715768475366"
+      },
+      {
+        "sourceColumnName": "address3_postalcode",
+        "targetPropertyId": "1016862746923186974"
+      },
+      {
+        "sourceColumnName": "address3_postofficebox",
+        "targetPropertyId": "1016862771686498880"
+      },
+      {
+        "sourceColumnName": "address3_primarycontactname",
+        "targetPropertyId": "1016862794916793742"
+      },
+      {
+        "sourceColumnName": "address3_stateorprovince",
+        "targetPropertyId": "1016862823258538972"
+      },
+      {
+        "sourceColumnName": "address3_telephone1",
+        "targetPropertyId": "1016862847117033155"
+      },
+      {
+        "sourceColumnName": "address3_telephone2",
+        "targetPropertyId": "1016862870937436493"
+      },
+      {
+        "sourceColumnName": "address3_telephone3",
+        "targetPropertyId": "1016862894581360362"
+      },
+      {
+        "sourceColumnName": "address3_upszone",
+        "targetPropertyId": "1016862915783414724"
+      },
+      {
+        "sourceColumnName": "address3_utcoffset",
+        "targetPropertyId": "1016862940732979494"
+      },
+      {
+        "sourceColumnName": "adx_createdbyipaddress",
+        "targetPropertyId": "1016862963774062183"
+      },
+      {
+        "sourceColumnName": "adx_createdbyusername",
+        "targetPropertyId": "1016862987845136815"
+      },
+      {
+        "sourceColumnName": "adx_identity_accessfailedcount",
+        "targetPropertyId": "1016863005579034394"
+      },
+      {
+        "sourceColumnName": "adx_identity_lastsuccessfullogin",
+        "targetPropertyId": "1016863033753536166"
+      },
+      {
+        "sourceColumnName": "adx_identity_lockoutenddate",
+        "targetPropertyId": "1016863053278130956"
+      },
+      {
+        "sourceColumnName": "adx_identity_newpassword",
+        "targetPropertyId": "1016863075567916431"
+      },
+      {
+        "sourceColumnName": "adx_identity_passwordhash",
+        "targetPropertyId": "1016863103449044294"
+      },
+      {
+        "sourceColumnName": "adx_identity_securitystamp",
+        "targetPropertyId": "1016863124542337673"
+      },
+      {
+        "sourceColumnName": "adx_identity_username",
+        "targetPropertyId": "1016863145489908205"
+      },
+      {
+        "sourceColumnName": "adx_modifiedbyipaddress",
+        "targetPropertyId": "1016863164908456986"
+      },
+      {
+        "sourceColumnName": "adx_modifiedbyusername",
+        "targetPropertyId": "1016863190223220577"
+      },
+      {
+        "sourceColumnName": "adx_organizationname",
+        "targetPropertyId": "1016863211727214223"
+      },
+      {
+        "sourceColumnName": "adx_preferredlanguageidname",
+        "targetPropertyId": "1016863233301837267"
+      },
+      {
+        "sourceColumnName": "adx_preferredlcid",
+        "targetPropertyId": "1016863261460341780"
+      },
+      {
+        "sourceColumnName": "adx_profilealertdate",
+        "targetPropertyId": "1016863281807652922"
+      },
+      {
+        "sourceColumnName": "adx_profilealertinstructions",
+        "targetPropertyId": "1016863303213588521"
+      },
+      {
+        "sourceColumnName": "adx_profilelastactivity",
+        "targetPropertyId": "1016863331548282313"
+      },
+      {
+        "sourceColumnName": "adx_profilemodifiedon",
+        "targetPropertyId": "1016863353464069229"
+      },
+      {
+        "sourceColumnName": "adx_publicprofilecopy",
+        "targetPropertyId": "1016863376372557110"
+      },
+      {
+        "sourceColumnName": "adx_timezone",
+        "targetPropertyId": "1016863403307844548"
+      },
+      {
+        "sourceColumnName": "anniversary",
+        "targetPropertyId": "1016863427091255976"
+      },
+      {
+        "sourceColumnName": "assistantname",
+        "targetPropertyId": "1016863451607257279"
+      },
+      {
+        "sourceColumnName": "assistantphone",
+        "targetPropertyId": "1016863475853410596"
+      },
+      {
+        "sourceColumnName": "birthdate",
+        "targetPropertyId": "1016863498408549675"
+      },
+      {
+        "sourceColumnName": "business2",
+        "targetPropertyId": "1016863521721359973"
+      },
+      {
+        "sourceColumnName": "businesscard",
+        "targetPropertyId": "1016863544489052212"
+      },
+      {
+        "sourceColumnName": "businesscardattributes",
+        "targetPropertyId": "1016863565388290003"
+      },
+      {
+        "sourceColumnName": "callback",
+        "targetPropertyId": "1016863589875015423"
+      },
+      {
+        "sourceColumnName": "childrensnames",
+        "targetPropertyId": "1016863612045893412"
+      },
+      {
+        "sourceColumnName": "company",
+        "targetPropertyId": "1016863639174871454"
+      },
+      {
+        "sourceColumnName": "contactid",
+        "targetPropertyId": "1016863661248662908"
+      },
+      {
+        "sourceColumnName": "createdbyexternalpartyname",
+        "targetPropertyId": "1016863683588061149"
+      },
+      {
+        "sourceColumnName": "createdbyexternalpartyyominame",
+        "targetPropertyId": "1016863701004585305"
+      },
+      {
+        "sourceColumnName": "createdbyname",
+        "targetPropertyId": "1016863727992010161"
+      },
+      {
+        "sourceColumnName": "createdbyyominame",
+        "targetPropertyId": "1016863748213353630"
+      },
+      {
+        "sourceColumnName": "createdon",
+        "targetPropertyId": "1016863773675366185"
+      },
+      {
+        "sourceColumnName": "createdonbehalfbyname",
+        "targetPropertyId": "1016863798222457571"
+      },
+      {
+        "sourceColumnName": "createdonbehalfbyyominame",
+        "targetPropertyId": "1016863819345947138"
+      },
+      {
+        "sourceColumnName": "defaultpricelevelidname",
+        "targetPropertyId": "1016863841771025194"
+      },
+      {
+        "sourceColumnName": "department",
+        "targetPropertyId": "1016863865899301553"
+      },
+      {
+        "sourceColumnName": "description",
+        "targetPropertyId": "1016863889174490997"
+      },
+      {
+        "sourceColumnName": "emailaddress1",
+        "targetPropertyId": "1016863909855689736"
+      },
+      {
+        "sourceColumnName": "emailaddress2",
+        "targetPropertyId": "1016863936418920093"
+      },
+      {
+        "sourceColumnName": "emailaddress3",
+        "targetPropertyId": "1016863957264860705"
+      },
+      {
+        "sourceColumnName": "employeeid",
+        "targetPropertyId": "1016863976580962390"
+      },
+      {
+        "sourceColumnName": "entityimage",
+        "targetPropertyId": "1016864002899156910"
+      },
+      {
+        "sourceColumnName": "entityimage_timestamp",
+        "targetPropertyId": "1016864025482347989"
+      },
+      {
+        "sourceColumnName": "entityimage_url",
+        "targetPropertyId": "1016864053001524564"
+      },
+      {
+        "sourceColumnName": "entityimageid",
+        "targetPropertyId": "1016864079736254718"
+      },
+      {
+        "sourceColumnName": "exchangerate",
+        "targetPropertyId": "1016864101535462462"
+      },
+      {
+        "sourceColumnName": "externaluseridentifier",
+        "targetPropertyId": "1016864127657309910"
+      },
+      {
+        "sourceColumnName": "fax",
+        "targetPropertyId": "1016864162320511287"
+      },
+      {
+        "sourceColumnName": "firstname",
+        "targetPropertyId": "1016864189023519992"
+      },
+      {
+        "sourceColumnName": "ftpsiteurl",
+        "targetPropertyId": "1016864219033499707"
+      },
+      {
+        "sourceColumnName": "fullname",
+        "targetPropertyId": "1016864243046739054"
+      },
+      {
+        "sourceColumnName": "governmentid",
+        "targetPropertyId": "1016864266208670991"
+      },
+      {
+        "sourceColumnName": "home2",
+        "targetPropertyId": "1016864291321060319"
+      },
+      {
+        "sourceColumnName": "importsequencenumber",
+        "targetPropertyId": "1016864313851897858"
+      },
+      {
+        "sourceColumnName": "jobtitle",
+        "targetPropertyId": "1016864337193385992"
+      },
+      {
+        "sourceColumnName": "lastname",
+        "targetPropertyId": "1016864366475148067"
+      },
+      {
+        "sourceColumnName": "lastonholdtime",
+        "targetPropertyId": "1016864392797649056"
+      },
+      {
+        "sourceColumnName": "lastusedincampaign",
+        "targetPropertyId": "1016864429878382581"
+      },
+      {
+        "sourceColumnName": "managername",
+        "targetPropertyId": "1016864449870074308"
+      },
+      {
+        "sourceColumnName": "managerphone",
+        "targetPropertyId": "1016864477674805944"
+      },
+      {
+        "sourceColumnName": "mastercontactidname",
+        "targetPropertyId": "1016864504726817396"
+      },
+      {
+        "sourceColumnName": "mastercontactidyominame",
+        "targetPropertyId": "1016864532247162678"
+      },
+      {
+        "sourceColumnName": "middlename",
+        "targetPropertyId": "1016864553984670006"
+      },
+      {
+        "sourceColumnName": "mobilephone",
+        "targetPropertyId": "1016864580346573176"
+      },
+      {
+        "sourceColumnName": "modifiedbyexternalpartyname",
+        "targetPropertyId": "1016864600570444267"
+      },
+      {
+        "sourceColumnName": "modifiedbyexternalpartyyominame",
+        "targetPropertyId": "1016864620693372111"
+      },
+      {
+        "sourceColumnName": "modifiedbyname",
+        "targetPropertyId": "1016864648326269648"
+      },
+      {
+        "sourceColumnName": "modifiedbyyominame",
+        "targetPropertyId": "1016864670093899921"
+      },
+      {
+        "sourceColumnName": "modifiedon",
+        "targetPropertyId": "1016864693101035250"
+      },
+      {
+        "sourceColumnName": "modifiedonbehalfbyname",
+        "targetPropertyId": "1016864722545193365"
+      },
+      {
+        "sourceColumnName": "modifiedonbehalfbyyominame",
+        "targetPropertyId": "1016864747422988129"
+      },
+      {
+        "sourceColumnName": "msa_managingpartneridname",
+        "targetPropertyId": "1016864772911137961"
+      },
+      {
+        "sourceColumnName": "msa_managingpartneridyominame",
+        "targetPropertyId": "1016864795258955514"
+      },
+      {
+        "sourceColumnName": "msdyn_contactkpiidname",
+        "targetPropertyId": "1016864814038518098"
+      },
+      {
+        "sourceColumnName": "msdyn_portaltermsagreementdate",
+        "targetPropertyId": "1016864842307754935"
+      },
+      {
+        "sourceColumnName": "msdyn_primarytimezone",
+        "targetPropertyId": "1016864862444646721"
+      },
+      {
+        "sourceColumnName": "msdyn_segmentidname",
+        "targetPropertyId": "1016864887354689435"
+      },
+      {
+        "sourceColumnName": "msdyncrm_contactidname",
+        "targetPropertyId": "1016864912008969633"
+      },
+      {
+        "sourceColumnName": "msdyncrm_customerjourneyidname",
+        "targetPropertyId": "1016864931876332182"
+      },
+      {
+        "sourceColumnName": "msdyncrm_emailidname",
+        "targetPropertyId": "1016864958277975147"
+      },
+      {
+        "sourceColumnName": "msdyncrm_insights_placeholder",
+        "targetPropertyId": "1016864980508930709"
+      },
+      {
+        "sourceColumnName": "msdyncrm_marketingformidname",
+        "targetPropertyId": "1016865006554246881"
+      },
+      {
+        "sourceColumnName": "msdyncrm_marketingformsubmissiondateprecise",
+        "targetPropertyId": "1016865027884496715"
+      },
+      {
+        "sourceColumnName": "msdyncrm_marketingpageidname",
+        "targetPropertyId": "1016865049078917785"
+      },
+      {
+        "sourceColumnName": "msdyncrm_segmentmemberidname",
+        "targetPropertyId": "1016865073263852088"
+      },
+      {
+        "sourceColumnName": "msdynmkt_customerjourneyidname",
+        "targetPropertyId": "1016865095143221663"
+      },
+      {
+        "sourceColumnName": "msdynmkt_emailidname",
+        "targetPropertyId": "1016865116806631526"
+      },
+      {
+        "sourceColumnName": "msdynmkt_marketingformidname",
+        "targetPropertyId": "1016865141481340092"
+      },
+      {
+        "sourceColumnName": "msevtmgt_aadobjectid",
+        "targetPropertyId": "1016865163406421062"
+      },
+      {
+        "sourceColumnName": "msevtmgt_contactidname",
+        "targetPropertyId": "1016865185616600421"
+      },
+      {
+        "sourceColumnName": "msevtmgt_originatingeventidname",
+        "targetPropertyId": "1016865209100710333"
+      },
+      {
+        "sourceColumnName": "msgdpr_consentchangesourceformidname",
+        "targetPropertyId": "1016865230152905009"
+      },
+      {
+        "sourceColumnName": "msgdpr_gdprparentidname",
+        "targetPropertyId": "1016865255588864842"
+      },
+      {
+        "sourceColumnName": "msgdpr_gdprparentidyominame",
+        "targetPropertyId": "1016865276165212720"
+      },
+      {
+        "sourceColumnName": "nickname",
+        "targetPropertyId": "1016865302435294089"
+      },
+      {
+        "sourceColumnName": "numberofchildren",
+        "targetPropertyId": "1016865321471832232"
+      },
+      {
+        "sourceColumnName": "onholdtime",
+        "targetPropertyId": "1016865344694180007"
+      },
+      {
+        "sourceColumnName": "originatingleadidname",
+        "targetPropertyId": "1016865367418073072"
+      },
+      {
+        "sourceColumnName": "originatingleadidyominame",
+        "targetPropertyId": "1016865393700109712"
+      },
+      {
+        "sourceColumnName": "overriddencreatedon",
+        "targetPropertyId": "1016865415432227313"
+      },
+      {
+        "sourceColumnName": "owneridname",
+        "targetPropertyId": "1016865439958936587"
+      },
+      {
+        "sourceColumnName": "owneridtype",
+        "targetPropertyId": "1016865460092149691"
+      },
+      {
+        "sourceColumnName": "owneridyominame",
+        "targetPropertyId": "1016865484308404562"
+      },
+      {
+        "sourceColumnName": "owningbusinessunitname",
+        "targetPropertyId": "1016865508556918684"
+      },
+      {
+        "sourceColumnName": "pager",
+        "targetPropertyId": "1016865527921968792"
+      },
+      {
+        "sourceColumnName": "parentcontactidname",
+        "targetPropertyId": "1016865551752812153"
+      },
+      {
+        "sourceColumnName": "parentcontactidyominame",
+        "targetPropertyId": "1016865577371058772"
+      },
+      {
+        "sourceColumnName": "parentcustomeridname",
+        "targetPropertyId": "1016865595047148551"
+      },
+      {
+        "sourceColumnName": "parentcustomeridtype",
+        "targetPropertyId": "1016865617182143032"
+      },
+      {
+        "sourceColumnName": "parentcustomeridyominame",
+        "targetPropertyId": "1016865638517119615"
+      },
+      {
+        "sourceColumnName": "preferredequipmentidname",
+        "targetPropertyId": "1016865666834054569"
+      },
+      {
+        "sourceColumnName": "preferredserviceidname",
+        "targetPropertyId": "1016865686717069154"
+      },
+      {
+        "sourceColumnName": "preferredsystemuseridname",
+        "targetPropertyId": "1016865707005587985"
+      },
+      {
+        "sourceColumnName": "preferredsystemuseridyominame",
+        "targetPropertyId": "1016865734428572786"
+      },
+      {
+        "sourceColumnName": "processid",
+        "targetPropertyId": "1016865758131760780"
+      },
+      {
+        "sourceColumnName": "salutation",
+        "targetPropertyId": "1016865778543102249"
+      },
+      {
+        "sourceColumnName": "slainvokedidname",
+        "targetPropertyId": "1016865799672257136"
+      },
+      {
+        "sourceColumnName": "slaname",
+        "targetPropertyId": "1016865822739630284"
+      },
+      {
+        "sourceColumnName": "spousesname",
+        "targetPropertyId": "1016865845303072601"
+      },
+      {
+        "sourceColumnName": "stageid",
+        "targetPropertyId": "1016865869303210910"
+      },
+      {
+        "sourceColumnName": "subscriptionid",
+        "targetPropertyId": "1016865889926334355"
+      },
+      {
+        "sourceColumnName": "suffix",
+        "targetPropertyId": "1016865916135053742"
+      },
+      {
+        "sourceColumnName": "teamsfollowed",
+        "targetPropertyId": "1016865935998879669"
+      },
+      {
+        "sourceColumnName": "telephone1",
+        "targetPropertyId": "1016865958196229996"
+      },
+      {
+        "sourceColumnName": "telephone2",
+        "targetPropertyId": "1016865985209588720"
+      },
+      {
+        "sourceColumnName": "telephone3",
+        "targetPropertyId": "1016866006089871305"
+      },
+      {
+        "sourceColumnName": "timespentbymeonemailandmeetings",
+        "targetPropertyId": "1016866036867769416"
+      },
+      {
+        "sourceColumnName": "timezoneruleversionnumber",
+        "targetPropertyId": "1016866056505429855"
+      },
+      {
+        "sourceColumnName": "transactioncurrencyidname",
+        "targetPropertyId": "1016866083028606048"
+      },
+      {
+        "sourceColumnName": "traversedpath",
+        "targetPropertyId": "1016866104205254153"
+      },
+      {
+        "sourceColumnName": "utcconversiontimezonecode",
+        "targetPropertyId": "1016866124840386842"
+      },
+      {
+        "sourceColumnName": "versionnumber",
+        "targetPropertyId": "1016866152832921595"
+      },
+      {
+        "sourceColumnName": "websiteurl",
+        "targetPropertyId": "1016866170821436146"
+      },
+      {
+        "sourceColumnName": "yomifirstname",
+        "targetPropertyId": "1016866192583934832"
+      },
+      {
+        "sourceColumnName": "yomifullname",
+        "targetPropertyId": "1016866222079956080"
+      },
+      {
+        "sourceColumnName": "yomilastname",
+        "targetPropertyId": "1016866242194182052"
+      },
+      {
+        "sourceColumnName": "yomimiddlename",
+        "targetPropertyId": "1016866268134006009"
+      },
+      {
+        "sourceColumnName": "IsDelete",
+        "targetPropertyId": "1016866286556497009"
+      },
+      {
+        "sourceColumnName": "PartitionId",
+        "targetPropertyId": "1016866308861366478"
+      },
+      {
+        "sourceColumnName": "crfc2_corretor",
+        "targetPropertyId": "1016866335807627741"
+      },
+      {
+        "sourceColumnName": "crfc2_corretor_entitytype",
+        "targetPropertyId": "1016866357506030616"
+      },
+      {
+        "sourceColumnName": "crfc2_corretorname",
+        "targetPropertyId": "1016866378871772580"
+      },
+      {
+        "sourceColumnName": "crfc2_corretoryominame",
+        "targetPropertyId": "1016866405991974537"
+      },
+      {
+        "sourceColumnName": "crfc2_cpf",
+        "targetPropertyId": "1016866426908114762"
+      },
+      {
+        "sourceColumnName": "crfc2_segmentacao",
+        "targetPropertyId": "1016866447849473080"
+      },
+      {
+        "sourceColumnName": "crfc2_nps",
+        "targetPropertyId": "1016866467961479678"
+      },
+      {
+        "sourceColumnName": "parent_contactid",
+        "targetPropertyId": "1016866493725526256"
+      },
+      {
+        "sourceColumnName": "parent_contactid_entitytype",
+        "targetPropertyId": "1016866514998919018"
+      },
+      {
+        "sourceColumnName": "parent_contactidname",
+        "targetPropertyId": "1016866539406834085"
+      },
+      {
+        "sourceColumnName": "parent_contactidyominame",
+        "targetPropertyId": "1016866561169284738"
+      },
+      {
+        "sourceColumnName": "crfc2_teste",
+        "targetPropertyId": "1016866585351411626"
+      },
+      {
+        "sourceColumnName": "crfc2_teste_entitytype",
+        "targetPropertyId": "1016866607154244296"
+      },
+      {
+        "sourceColumnName": "crfc2_testename",
+        "targetPropertyId": "1016866629800251608"
+      },
+      {
+        "sourceColumnName": "crfc2_plano",
+        "targetPropertyId": "1016866653555986148"
+      },
+      {
+        "sourceColumnName": "crfc2_cadastronoaplicativofeito",
+        "targetPropertyId": "1016866677597278347"
+      },
+      {
+        "sourceColumnName": "crfc2_statusdoonboarding",
+        "targetPropertyId": "1016866704677699628"
+      },
+      {
+        "sourceColumnName": "crfc2_perfilderisco",
+        "targetPropertyId": "1016866730924461629"
+      },
+      {
+        "sourceColumnName": "crfc2_perfilderisco2",
+        "targetPropertyId": "1016866752663963385"
+      },
+      {
+        "sourceColumnName": "crfc2_perfilderisco2_entitytype",
+        "targetPropertyId": "1016866772273304238"
+      },
+      {
+        "sourceColumnName": "crfc2_perfilderisco2name",
+        "targetPropertyId": "1016866797783124149"
+      },
+      {
+        "sourceColumnName": "crfc2_perfildocliente",
+        "targetPropertyId": "1016866820173974915"
+      },
+      {
+        "sourceColumnName": "crfc2_fasedofunil",
+        "targetPropertyId": "1016866841555608343"
+      },
+      {
+        "sourceColumnName": "crfc2_temperatura",
+        "targetPropertyId": "1016866866739475788"
+      },
+      {
+        "sourceColumnName": "crfc2_tipodocliente",
+        "targetPropertyId": "1016866891084916300"
+      },
+      {
+        "sourceColumnName": "crfc2_origemdocliente",
+        "targetPropertyId": "1016866917246714858"
+      },
+      {
+        "sourceColumnName": "crfc2_statusdocliente",
+        "targetPropertyId": "1016866937630798585"
+      },
+      {
+        "sourceColumnName": "crfc2_welcomekitenviado",
+        "targetPropertyId": "1016866961926648444"
+      },
+      {
+        "sourceColumnName": "crfc2_statusdaanalisedoperfileconomico",
+        "targetPropertyId": "1016866983760603589"
+      },
+      {
+        "sourceColumnName": "crfc2_carteiramapeada",
+        "targetPropertyId": "1016867011589757784"
+      },
+      {
+        "sourceColumnName": "crfc2_perfildeinvestimentocriado",
+        "targetPropertyId": "1016867032179812401"
+      },
+      {
+        "sourceColumnName": "crfc2_statusdaativacao",
+        "targetPropertyId": "1016867059505040427"
+      },
+      {
+        "sourceColumnName": "crfc2_perfil",
+        "targetPropertyId": "1016867078384322653"
+      },
+      {
+        "sourceColumnName": "crfc2_temperatura3",
+        "targetPropertyId": "1016867100672748945"
+      },
+      {
+        "sourceColumnName": "crfc2_senioridade",
+        "targetPropertyId": "1016867119811272669"
+      },
+      {
+        "sourceColumnName": "crfc2_comunidade",
+        "targetPropertyId": "1016867149253109560"
+      },
+      {
+        "sourceColumnName": "crfc2_apolice",
+        "targetPropertyId": "1016867167537116998"
+      },
+      {
+        "sourceColumnName": "crfc2_msdyn_ocliveworkitemsentiment",
+        "targetPropertyId": "1016867190882753331"
+      },
+      {
+        "sourceColumnName": "crfc2_msdyn_ocliveworkitemsentiment_entitytype",
+        "targetPropertyId": "1016867215908372962"
+      },
+      {
+        "sourceColumnName": "crfc2_msdyn_ocliveworkitemsentimentname",
+        "targetPropertyId": "1016867239113070209"
+      },
+      {
+        "sourceColumnName": "crfc2_npsaverage",
+        "targetPropertyId": "1016867259567649078"
+      },
+      {
+        "sourceColumnName": "crfc2_npsaverage_date",
+        "targetPropertyId": "1016867287034068793"
+      },
+      {
+        "sourceColumnName": "crfc2_npsaverage_state",
+        "targetPropertyId": "1016867307686184809"
+      },
+      {
+        "sourceColumnName": "crfc2_npsaverage_count",
+        "targetPropertyId": "1016867331097394382"
+      },
+      {
+        "sourceColumnName": "crfc2_npsaverage_sum",
+        "targetPropertyId": "1016867364648181026"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "d889679a-b8d7-9fdf-491e-2e22e0542029",
+      "sourceTableName": "contact",
+      "sourceSchema": null
+    }
+  }
+}

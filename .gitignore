@@ -1,0 +1,5 @@
+.appdeploy
+.DS_Store
+dist/
+node_modules/
+deployment/

@@ -28,10 +28,6 @@ relationship 80b35631-fcb4-9976-6e28-d866bb7100a8
 	fromColumn: EmailDelivered.CustomerJourneyId
 	toColumn: msdynmkt_journey.Id
 
-relationship 116e1397-9761-4ac3-2706-80e2510613d8
-	fromColumn: CustomSent.CustomerJourneyId
-	toColumn: msdynmkt_journey.Id
-
 relationship 9ae16c88-006c-5f70-ef3c-b1b9333db235
 	fromColumn: EmailOpened.CustomerJourneyId
 	toColumn: msdynmkt_journey.Id
@@ -47,4 +43,3 @@ relationship 3569e27c-7485-4048-1b23-6add348b1a5e
 relationship 8d796db4-6b4f-769b-e86e-b775d374b039
 	fromColumn: crfc2_journeychannelcost.crfc2_msdynmkt_journey
 	toColumn: msdynmkt_journey.Id
-

@@ -193,6 +193,7 @@
         "bubbles": [
           {
             "bubbleSize": -10,
+            "preventOverflow": true,
             "markerRangeType": "auto"
           }
         ],

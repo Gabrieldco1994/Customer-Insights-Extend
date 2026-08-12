@@ -877,28 +877,6 @@ table msdynmkt_journey
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column crfc2_channeltotalcost_date
-		dataType: dateTime
-		formatString: General Date
-		sourceProviderType: datetime2
-		lineageTag: 98f4327c-ef47-41ee-af86-e757334ab9e3
-		sourceLineageTag: crfc2_channeltotalcost_date
-		summarizeBy: none
-		sourceColumn: crfc2_channeltotalcost_date
-
-		annotation SummarizationSetBy = Automatic
-
-	column crfc2_channeltotalcost_state
-		dataType: int64
-		formatString: 0
-		sourceProviderType: bigint
-		lineageTag: eb7c7d89-ca3a-4461-a613-323ac9c55ea2
-		sourceLineageTag: crfc2_channeltotalcost_state
-		summarizeBy: sum
-		sourceColumn: crfc2_channeltotalcost_state
-
-		annotation SummarizationSetBy = Automatic
-
 	column crfc2_custototaldajornada
 		dataType: double
 		sourceProviderType: decimal(38, 2)

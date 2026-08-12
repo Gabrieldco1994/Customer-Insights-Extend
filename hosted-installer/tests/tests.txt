@@ -1,0 +1,145 @@
+# Tests
+
+## Test 1 - Block deployment until prerequisites are ready [sanity]
+Viewport: desktop
+Covers: environment input, Microsoft connection gate, Customer Insights prerequisite, Link to Fabric prerequisite, install-button guardrail
+Description: Verifies the complete installer cannot start before authentication and both platform prerequisites are detected.
+
+Steps:
+1. Open the installer without connecting a Microsoft account
+2. Review the Customer Insights and Link to Fabric sections
+3. Inspect the Install solution button
+
+Expected: Capacity, Customer Insights, and Link to Fabric show "Not checked"; both the Phase 1 Dataverse and Phase 2 Fabric actions are disabled.
+
+## Test 2 - Guide an administrator to Customer Insights setup
+Viewport: desktop
+Covers: Customer Insights - Journeys prerequisite guidance, Power Platform admin center deep link, Microsoft installation documentation
+Description: Verifies an administrator can reach the official setup destinations when Customer Insights is missing.
+
+Steps:
+1. Find the Customer Insights - Journeys section
+2. Inspect the available setup links
+3. Open each link
+
+Expected: The page offers working links to Power Platform admin center and the official Customer Insights setup documentation.
+
+## Test 3 - Guide an administrator to Link to Fabric setup
+Viewport: mobile
+Covers: Link to Fabric prerequisite guidance, workspace selection, Lakehouse selection, official maker and documentation links
+Description: Verifies the Fabric prerequisite is understandable and actionable on a small screen.
+
+Steps:
+1. Find the Dataverse Link to Microsoft Fabric section
+2. Inspect workspace and Lakehouse controls
+3. Open the setup links
+
+Expected: Controls remain readable, the page separates required Dataverse Link tables from Journey interaction shortcuts, and Fabric deployment remains gated until every required table and shortcut is detected.
+
+## Test 4 - Explain installation scope and security
+Viewport: desktop
+Covers: deployment contents, token-handling disclosure, rerunnable installation messaging
+Description: Verifies the administrator understands what will be installed and how credentials are handled.
+
+Steps:
+1. Read the page header
+2. Read the final installation section
+3. Inspect the initial status message
+
+Expected: The page states that tokens are not stored, detects and skips an already-installed managed solution version, and separates Dataverse import from semantic model, report, and Lakehouse-backed Data Agent deployment.
+
+## Test 5 - Show prerequisites and actionable access errors
+Viewport: desktop
+Covers: access prerequisites, delegated permissions, Azure requirements, Microsoft API error details
+Description: Verifies administrators know what access is needed and receive the original Microsoft failure instead of a generic validation error.
+
+Steps:
+1. Read the Before you begin section
+2. Review the required Dataverse, Fabric, and tenant permissions
+3. Review the access-failure disclosure
+
+Expected: The page states that Azure CLI is not required, explains when an Azure subscription is needed, requires a Dataverse System Administrator, lists licensing, Data Agent, and delegated permission requirements, and explains that validation displays the original Microsoft HTTP status, error code/message, and Request ID when available.
+
+## Test 6 - Explain both Microsoft sign-ins
+Viewport: desktop
+Covers: Fabric device code, Dataverse device code, popup-independent authentication
+Description: Verifies the sequential delegated sign-ins are explained without requiring an external Microsoft login during QA.
+
+Steps:
+1. Start the Microsoft connection
+2. Inspect the Fabric device-code prompt
+3. Review the sign-in sequence guidance
+
+Expected: The Fabric prompt is labeled "Sign-in 1 of 2: Microsoft Fabric", provides a clickable Microsoft sign-in link, and explains that Dataverse is sign-in 2 of 2 after Fabric authentication completes.
+
+## Test 7 - Explain qualifying Fabric capacity
+Viewport: desktop
+Covers: Fabric capacity prerequisite, trial and pricing guidance, authenticated Azure F2 provisioning gate
+Description: Verifies capacity requirements and remediation remain visible before authentication.
+
+Steps:
+1. Review the Fabric or Power BI Premium capacity section
+2. Inspect the trial and pricing links
+3. Review the Azure F2 provisioning guidance
+
+Expected: The page requires qualifying capacity in the Dataverse geography, links to trial and pricing, and states that Azure authentication and explicit billing confirmation are required before a billable F2 capacity can be created.
+
+## Test 8 - Keep Fabric authentication in context
+Viewport: desktop
+Covers: contextual Fabric device-code prompt, automatic scrolling
+Description: Verifies administrators see the first actionable authentication step without requiring an external Microsoft login.
+
+Steps:
+1. Start Fabric authentication
+2. Inspect the Fabric device-code prompt
+3. Review the sign-in link and instructions
+
+Expected: The Fabric code appears beside the Microsoft connection action, the page scrolls to it, and the administrator is told to complete Microsoft sign-in before Dataverse authentication begins.
+
+## Test 9 - Register the Fabric Azure provider before creation
+Viewport: desktop
+Covers: Microsoft.Fabric resource provider registration, progress feedback, capacity creation retry
+Description: Verifies a new Azure subscription is prepared before F2 provisioning.
+
+Steps:
+1. Review the Azure F2 creation section
+2. Read the provider-registration guidance
+3. Inspect the billing confirmation and creation action
+
+Expected: The page states that F2 creation requires an Azure subscription, Contributor access, the Microsoft.Fabric provider, and explicit pay-as-you-go billing acceptance.
+
+## Test 10 - Keep F2 creation gated before a quota check
+Viewport: desktop
+Covers: regional Fabric quota, available Capacity Units, quota increase guidance
+Description: Verifies an unauthenticated visitor can't start billable capacity creation.
+
+Steps:
+1. Open the installer without connecting a Microsoft account
+2. Inspect the F2 capacity guidance
+3. Open the quota-management link
+
+Expected: The billable F2 action isn't available before Microsoft and Azure authentication, and Azure quota management is linked.
+
+## Test 11 - Reject paused and Premium Per User capacities
+Viewport: desktop
+Covers: active capacity requirement, paused F SKU, PPU exclusion, Azure resume guidance
+Description: Verifies Lakehouse readiness is not inferred from an unusable license or paused capacity.
+
+Steps:
+1. Review a paused F capacity
+2. Review an active Premium Per User capacity
+3. Inspect remediation links
+
+Expected: A paused F/P capacity shows "Resume required", a PP SKU states that Premium Per User is not a Fabric capacity, prerequisite status remains Action required, and the page links to Azure capacity management.
+
+## Test 12 - Prepare the Dataverse Link workspace automatically
+Viewport: desktop
+Covers: idempotent workspace creation, active capacity assignment, Power Apps handoff
+Description: Verifies the prerequisite that fixed Lakehouse creation is part of the installer flow.
+
+Steps:
+1. Connect a tenant with an active qualifying Fabric capacity
+2. Review the Dataverse Link section
+3. Open the Power Apps handoff
+
+Expected: The installer creates CI-JOURNEY-Integration or reuses it only when the connected user is its sole assigned principal and an Admin, assigns it to an active capacity, detects the linked Lakehouse without depending on its generated name, validates the Dataverse System Administrator role, and requires every listed Link table. It directs the administrator to Power Apps > Link data > Refresh Fabric links, then provides exact numbered instructions for Lakehouse Get data > New shortcut > Dataverse, entering the Dataverse hostname without protocol or trailing slash, creating a new organizational connection, selecting EmailSent, EmailDelivered, EmailOpened, CustomSent, and CustomNotSent, and refreshing until Ready.

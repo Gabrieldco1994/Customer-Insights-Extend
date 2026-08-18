@@ -1,18 +1,40 @@
-# Customer Insights Journey Extension
+# Journey Cost Management and Marketing Data Agent
 
-Community installer for a Microsoft Fabric marketing analytics solution built
-on Dynamics 365 Customer Insights - Journeys and Dataverse.
+An accelerator that brings journey cost management, an ROI dashboard, and an
+AI agent to Dynamics 365 Customer Insights - Journeys, running on Microsoft
+Fabric.
 
 **Live installer:**
 
 https://customer-insights-journey-installer-gxmwv9.v2.appdeploy.ai/
 
-## What it installs
+## What it ships
 
-- Managed Dataverse solution with journey cost fields
-- Direct Lake semantic model
-- Marketing ROI and engagement report
-- Optional Fabric Data Agent with curated source instructions
+- Solution with journey cost management and dashboard
+- Fabric Lakehouse, Direct Lake semantic layer — relationships and cost/ROI
+  measures ready to go
+- Business ontology (curated source instructions) that gives the Marketing
+  Data Agent context on journeys, costs, and metrics
+- Marketing Data Agent — ask in natural language, get answers grounded in the
+  real data
+- Marketing ROI and engagement dashboard, ready to use
+
+## Architecture
+
+```
+Dataverse (CI - Journeys)
+   │
+   ▼
+Link to Fabric  ──▶  Lakehouse + shortcuts
+                         │ (CIJ Entities + Dataverse Entities)
+                         ▼
+                 Marketing Ontology
+             ┌───────────┴───────────┐
+   Direct Lake Semantic Model   Marketing Data Agent
+             │
+             ▼
+   ROI & Engagement Dashboard
+```
 
 The installer is rerunnable. It reuses compatible Fabric resources and updates
 existing items instead of creating duplicates.

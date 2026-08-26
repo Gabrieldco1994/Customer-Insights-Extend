@@ -1,0 +1,10 @@
+<mcpserver name="msdynce_saleshub_MCPServer">
+  <description>MCP Server for app Sales Hub</description>
+  <displayname>Sales Hub MCP Server</displayname>
+  <iscustom>0</iscustom>
+  <iscustomizable>1</iscustomizable>
+  <isremote>0</isremote>
+  <serverurl>https://agent365.svc.cloud.microsoft/mcp/environments/c058cc8c-1ade-eb1e-9479-b19a0d907f07/servers/msdynce_saleshub_MCPServer</serverurl>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</mcpserver>

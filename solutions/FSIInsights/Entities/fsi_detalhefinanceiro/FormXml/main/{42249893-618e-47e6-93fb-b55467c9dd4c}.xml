@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{42249893-618e-47e6-93fb-b55467c9dd4c}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="geral" verticallayout="true" id="{761ac82e-550b-5eb1-a822-d8a32848881c}" IsUserDefined="0" expanded="true" showlabel="true">
+          <labels>
+            <label description="Geral" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="posicao" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{2ea09ef5-ef2c-53b3-bf61-4c45fccddc38}">
+                  <labels>
+                    <label description="Posição" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{2f02d6b8-74ae-5320-939b-7e0f17de827a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Nome" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_name" disabled="false" />
+                      </cell>
+                      <cell id="{f59fdbaf-c3f1-532e-9e40-db3511c86f4d}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Produto do cliente" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_produtoclienteid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_produtoclienteid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d376493f-1a0f-50c0-825e-e60964d007d5}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Limite" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_limite" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="fsi_limite" disabled="false" />
+                      </cell>
+                      <cell id="{137f9800-d59d-5f6b-8b9c-ffcd12a1c459}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Saldo" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_saldo" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="fsi_saldo" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{03bf7728-52f6-5c5a-9fe9-2efae6ef20ed}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Saldo devedor" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_saldodevedor" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="fsi_saldodevedor" disabled="false" />
+                      </cell>
+                      <cell id="{63d31928-77b2-5e17-8911-4b7be7d3b29f}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Taxa (% a.m.)" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_taxa" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="fsi_taxa" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="parcelas" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{efd16e90-3186-5bb5-adb6-c7617c115ce2}">
+                  <labels>
+                    <label description="Parcelas" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{dbd80fe1-b11f-5d92-b6ac-3d3ebdecc6b0}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Parcelas (total)" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_parcelastotal" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="fsi_parcelastotal" disabled="false" />
+                      </cell>
+                      <cell id="{08409e5b-b56e-5cbb-abfd-61d48ab5b5de}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Parcelas pagas" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_parcelaspagas" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="fsi_parcelaspagas" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{41f85661-07c6-5466-afd9-37af8bb81861}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Parcelas em aberto" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_parcelasabertas" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="fsi_parcelasabertas" disabled="false" />
+                      </cell>
+                      <cell id="{93e70bdf-b8dc-5a31-9421-c9def88c702c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Dia de vencimento" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_diavencimento" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="fsi_diavencimento" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{5ef52808-bfd5-5fee-9ef9-0c56c8c4aaf8}" columns="1111" celllabelposition="Top" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{08e226d7-c458-5214-932f-25ae67c49d59}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Produto do cliente" languagecode="1046" />
+              </labels>
+              <control id="fsi_produtoclienteid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_produtoclienteid" disabled="false" />
+            </cell>
+            <cell id="{69a25a5e-ca47-5529-a803-14339fb45f32}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Saldo" languagecode="1046" />
+              </labels>
+              <control id="fsi_saldo" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="fsi_saldo" disabled="false" />
+            </cell>
+            <cell id="{ef8960ba-d712-535b-8410-9afd07ceedf5}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Limite" languagecode="1046" />
+              </labels>
+              <control id="fsi_limite" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="fsi_limite" disabled="false" />
+            </cell>
+            <cell id="{dccda517-f183-5f4d-9a44-812075503139}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Proprietário" languagecode="1046" />
+              </labels>
+              <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informações" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Um formulário para esta entidade." languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

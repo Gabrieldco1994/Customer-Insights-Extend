@@ -1,0 +1,658 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{894cc46a-b0cb-4ab0-8bf6-200544e46a2d}</formid>
+    <IntroducedVersion>5.0.0.0</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form showImage="true">
+      <tabs>
+        <tab name="general" verticallayout="true" id="{9748ec98-3746-40cc-83bf-d15c7363166f}" IsUserDefined="0" ordinalvalue="1" solutionaction="Modified">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="name" showlabel="false" showbar="false" id="{90b0776f-2977-4695-9cd4-73bb6c820f88}" IsUserDefined="0" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{90317617-38db-4734-aef8-4bb4e8cb9012}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Saudação" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                      <cell id="{f3eec8ff-7b5a-43af-92c4-1a41adaf4b50}" ordinalvalue="20001">
+                        <labels>
+                          <label description="Telefone Comercial" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{478c8803-2686-4d10-8cf0-e6e5b3b6007f}" ordinalvalue="10002">
+                        <labels>
+                          <label description="Nome" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                      <cell id="{0304f83d-bb05-4e72-bf12-c9bfa8a8e152}" ordinalvalue="20003">
+                        <labels>
+                          <label description="Telefone Residencial" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8097efd5-8af7-4944-b7a5-42ece196e23d}" ordinalvalue="10004">
+                        <labels>
+                          <label description="Segundo Nome" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                      <cell id="{70d9cd8f-142b-4a88-bf82-4d2bc2972140}" ordinalvalue="20005">
+                        <labels>
+                          <label description="Celular" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4fde05d9-89b1-4acf-a98f-13159f1bdcc8}" ordinalvalue="10006">
+                        <labels>
+                          <label description="Sobrenome" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                      <cell id="{068c2954-dfdf-4d68-a9da-f70e3feb3e63}" ordinalvalue="20007">
+                        <labels>
+                          <label description="Fax" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{921eaba2-6044-405e-8354-c3c5dbe3e97f}" ordinalvalue="10008">
+                        <labels>
+                          <label description="Cargo" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                      <cell id="{38d7b950-436b-412f-a71b-ae4187e60c14}" ordinalvalue="20009">
+                        <labels>
+                          <label description="Email" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{1afed90e-5ba2-4868-b33f-e4ffe086596b}" ordinalvalue="10010">
+                        <labels>
+                          <label description="Nome da Empresa" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="description" showlabel="true" showbar="true" id="{e165b345-b7ce-4c73-a508-0f42cbf6dd53}" IsUserDefined="0" height="auto" ordinalvalue="3">
+                  <rows>
+                    <row>
+                      <cell colspan="2" showlabel="false" rowspan="5" auto="true" id="{c0a08372-d225-411f-87e4-14554329507a}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Descrição" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="details" id="{cafbf41a-42bf-4665-8562-1e37017eba69}" IsUserDefined="0" ordinalvalue="2" solutionaction="Modified">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="professional information" showlabel="true" showbar="true" id="{a778d498-3bf2-4c33-85e2-7730d8ae126b}" IsUserDefined="0" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{c21cf98d-7d3a-4e4c-815c-5fd6de4b89d7}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Departamento" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                      <cell id="{c545928a-8081-4b80-a21e-8a3c405dd0b0}" ordinalvalue="20001">
+                        <labels>
+                          <label description="Função" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{452ca48e-8c7b-4a96-81f7-387d0c9b033c}" ordinalvalue="10002">
+                        <labels>
+                          <label description="Gerente" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                      <cell id="{80128d81-f664-47c0-b348-d176679224b9}" ordinalvalue="20003">
+                        <labels>
+                          <label description="Assistente" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d336a999-cdf1-4109-bcbe-db27ec0b7e72}" ordinalvalue="10004">
+                        <labels>
+                          <label description="Telefone do Gerente" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                      <cell id="{cb2ae5b6-2919-439e-ab41-327d880272a8}" ordinalvalue="20005">
+                        <labels>
+                          <label description="Telefone do Assistente" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="personal information" showlabel="true" showbar="true" id="{518cc50e-1350-4b4b-a056-fc3c0e7d36d7}" IsUserDefined="0" ordinalvalue="1">
+                  <rows>
+                    <row>
+                      <cell id="{9748b178-14ab-49af-8985-c02de8892720}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Sexo" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                      <cell id="{b2adc634-723e-4e87-b8f1-b62e3cf1fad1}" ordinalvalue="20001">
+                        <labels>
+                          <label description="Aniversário" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{acac3dbc-a956-459f-9dba-8c3f5ce3777a}" ordinalvalue="10002">
+                        <labels>
+                          <label description="Estado Civil" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                      <cell id="{4435fdd5-a586-436e-882c-58b516484ae1}" ordinalvalue="20003">
+                        <labels>
+                          <label description="Datas Especiais" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4bd24018-9343-41e8-b119-66c87186ef1c}" ordinalvalue="10004">
+                        <labels>
+                          <label description="Nome do Cônjuge/Companheiro(a)" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="notes and activities" id="{A6C643C6-E98F-4738-812F-0B7F7FFC80F7}" IsUserDefined="0" expanded="false" ordinalvalue="3" solutionaction="Modified" />
+        <tab name="administration" id="{0dd7233e-247b-4eef-a71b-0185da6d16ad}" IsUserDefined="0" ordinalvalue="4" solutionaction="Modified">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="internal information" showlabel="false" showbar="false" id="{c3e86ffb-2b8b-4c56-877f-67bdaa5a7363}" IsUserDefined="0" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{2329843a-6ab4-4431-8a2b-101f3272e104}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Proprietário" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="billing information" showlabel="true" showbar="true" id="{0738bc1c-9226-486d-9258-9b6fc75cbaa7}" IsUserDefined="0" ordinalvalue="1">
+                  <rows>
+                    <row>
+                      <cell id="{d9a0c6e4-2016-48cd-b0c1-a6a03e9d47c6}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Moeda" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                      <cell id="{cf9708ff-df37-4fda-86c3-79896dbeaa2c}" ordinalvalue="20001">
+                        <labels>
+                          <label description="Condições de Pagamento" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{200a7ca9-4a7e-4462-8f22-9a13ce27bd46}" ordinalvalue="10002">
+                        <labels>
+                          <label description="Limite de Crédito" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{86ed48db-8fdc-4880-aa78-1532af6060ee}" ordinalvalue="10003">
+                        <labels>
+                          <label description="Suspensão de Crédito" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_recordwall" id="{e94e6ac4-12db-bc8c-ec81-8b20c5987655}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="false" labelid="{6b9db78a-e2af-4c06-9669-4bbfea3d6d82}" ordinalvalue="0" solutionaction="Added">
+          <labels>
+            <label description="Novidades" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="tab_recordwall_section_1" showlabel="false" showbar="false" locklevel="0" id="{ac0addcc-a626-6c98-40ee-b11edac36204}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" labelid="{c67a7d31-fe82-4afb-95b4-c22ba3a00ad7}" ordinalvalue="0">
+                  <labels>
+                    <label description="" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{be13b312-b6ac-83d7-34e1-e90dc1ecbec7}" showlabel="false" colspan="1" auto="false" rowspan="15" labelid="{a229002c-5bed-4b3d-b88e-1bf25730154a}" ordinalvalue="10000">
+                        <labels>
+                          <label description="" languagecode="1046" />
+                        </labels>
+                        <control id="WebResource_RecordWall" classid="{9FDF5F91-88B1-47f4-AD53-C11EFC01A01D}">
+                          <parameters>
+                            <Url>msdyn_/RecordWall.htm</Url>
+                            <PassParameters>true</PassParameters>
+                            <Security>false</Security>
+                            <Scrolling>auto</Scrolling>
+                            <Border>false</Border>
+                          </parameters>
+                        </control>
+                        <events>
+                          <event name="onload" application="0">
+                            <dependencies />
+                          </event>
+                        </events>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+          <events>
+            <event name="tabstatechange" application="false" active="false">
+              <Handlers>
+                <Handler functionName="ActivityFeeds.Form.CustomizationUtils.updateRecordWallRenderingState" libraryName="msdyn_/ActivityFeeds.Form.js" handlerUniqueId="{9beb6ce6-2666-8033-a406-3d68d44b9592}" enabled="true" parameters="" passExecutionContext="true" ordinalvalue="0" />
+              </Handlers>
+            </event>
+          </events>
+        </tab>
+        <tab name="fsi_tab" verticallayout="true" id="{18d4c05a-07c9-5a85-afe3-475e93cf6306}" IsUserDefined="0" expanded="true" showlabel="true" ordinalvalue="5" solutionaction="Added">
+          <labels>
+            <label description="FSI" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="pessoais" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{54697b43-28e5-52d6-8559-9b64fb7b7746}" ordinalvalue="0">
+                  <labels>
+                    <label description="Dados pessoais" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{8df788d0-5bd2-55b8-a89e-01c301303db5}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="CPF" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_cpf" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_cpf" disabled="false" />
+                      </cell>
+                      <cell id="{5269cf73-393b-5df6-acaa-f7794ca65393}" showlabel="true" locklevel="0" ordinalvalue="20001">
+                        <labels>
+                          <label description="Nome social" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_nomesocial" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_nomesocial" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1323c934-b0e0-5281-82a9-82e2990ed141}" showlabel="true" locklevel="0" ordinalvalue="10002">
+                        <labels>
+                          <label description="Profissão" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_profissao" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_profissao" disabled="false" />
+                      </cell>
+                      <cell id="{cdc088ad-f887-5db8-a283-a14fd9728b84}" showlabel="true" locklevel="0" ordinalvalue="20003">
+                        <labels>
+                          <label description="Óbito" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_obito" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="fsi_obito" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ef558590-21b1-569d-b5c6-fa4b29479424}" showlabel="true" locklevel="0" ordinalvalue="10004">
+                        <labels>
+                          <label description="Data do óbito" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_dataobito" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="fsi_dataobito" disabled="false" />
+                      </cell>
+                      <cell id="{f33931b6-2595-5187-93e9-e88487da0f8e}" showlabel="true" locklevel="0" ordinalvalue="20005">
+                        <labels>
+                          <label description="" languagecode="1046" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="financeiro" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{c21fb728-a671-586d-aec2-69a6074eb03b}" ordinalvalue="1">
+                  <labels>
+                    <label description="Perfil financeiro" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{2722304a-5cf0-50bc-8b92-2af3327494c5}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Faixa de renda" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_faixarenda" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_faixarenda" disabled="false" />
+                      </cell>
+                      <cell id="{6c78b326-d9d7-5ef0-90f1-1edca7ba0d27}" showlabel="true" locklevel="0" ordinalvalue="20001">
+                        <labels>
+                          <label description="Renda mensal" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_rendamensal" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="fsi_rendamensal" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fc5c8087-3752-50cc-a69f-12307ebd5224}" showlabel="true" locklevel="0" ordinalvalue="10002">
+                        <labels>
+                          <label description="Patrimônio declarado" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_patrimonio" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="fsi_patrimonio" disabled="false" />
+                      </cell>
+                      <cell id="{911e51a1-8f3c-50d8-9045-92c198a49110}" showlabel="true" locklevel="0" ordinalvalue="20003">
+                        <labels>
+                          <label description="Perfil de investidor" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_perfilinvestidor" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_perfilinvestidor" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{41d699e4-4b54-50b4-bba9-9fe9f3ca8609}" showlabel="true" locklevel="0" ordinalvalue="10004">
+                        <labels>
+                          <label description="Validade da suitability" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_validadesuitability" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="fsi_validadesuitability" disabled="false" />
+                      </cell>
+                      <cell id="{078b0c7b-0cec-5bce-b7a5-5ed1073b7df1}" showlabel="true" locklevel="0" ordinalvalue="20005">
+                        <labels>
+                          <label description="PEP (pessoa exposta politicamente)" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_pep" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="fsi_pep" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="segmentacao" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{29a5c470-eb61-5f0c-8cc5-4f8e831223af}" ordinalvalue="2">
+                  <labels>
+                    <label description="Segmentação e origem" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{db1f3da6-7aa8-5e64-bca7-efb1b5984265}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Segmento principal" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_segmentoprincipal" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_segmentoprincipal" disabled="false" />
+                      </cell>
+                      <cell id="{58ffcdd8-4d12-5f1f-bbef-156af3d4a048}" showlabel="true" locklevel="0" ordinalvalue="20001">
+                        <labels>
+                          <label description="Sistema de origem" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_sistemaorigem" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_sistemaorigem" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0512e474-9b37-5e82-af64-c8aa06826e1b}" showlabel="true" locklevel="0" ordinalvalue="10002">
+                        <labels>
+                          <label description="ID na origem" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_idorigem" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_idorigem" disabled="false" />
+                      </cell>
+                      <cell id="{fac374dc-cf61-527a-9946-194f99aecfb6}" showlabel="true" locklevel="0" ordinalvalue="20003">
+                        <labels>
+                          <label description="" languagecode="1046" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="jornada" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{a3ceb3d7-d2ae-51d4-8d7f-77010bb24e97}" ordinalvalue="3">
+                  <labels>
+                    <label description="Jornada e persona" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{7d634609-ca94-5fea-8b73-bcd3cd2e6be1}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Fase de vida" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_fasevida" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_fasevida" disabled="false" />
+                      </cell>
+                      <cell id="{a6390c43-463b-523a-98c3-3d0e9a34faed}" showlabel="true" locklevel="0" ordinalvalue="20001">
+                        <labels>
+                          <label description="Engajamento digital (0 a 100)" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_engajamentodigital" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="fsi_engajamentodigital" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{af747432-d6e4-52bf-85c1-7309c2c9be02}" showlabel="true" locklevel="0" ordinalvalue="10002">
+                        <labels>
+                          <label description="Etapa principal" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_etapaprincipalid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_etapaprincipalid" disabled="false" />
+                      </cell>
+                      <cell id="{0032b409-9904-5655-b83a-910babeef1d8}" showlabel="true" locklevel="0" ordinalvalue="20003">
+                        <labels>
+                          <label description="Origem da persona" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_personaorigem" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_personaorigem" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3589b2bf-69a1-519c-8127-a3a17c219670}" showlabel="true" locklevel="0" ordinalvalue="10004">
+                        <labels>
+                          <label description="Data de referência da persona" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_personadata" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="fsi_personadata" disabled="false" />
+                      </cell>
+                      <cell id="{226b14aa-f522-56a0-a8fa-e1157e0ee248}" showlabel="true" locklevel="0" ordinalvalue="20005">
+                        <labels>
+                          <label description="Versão da regra da persona" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_personaversao" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_personaversao" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2ce1aa2d-b728-5a53-bf58-4d841ad15091}" showlabel="true" locklevel="0" ordinalvalue="10006">
+                        <labels>
+                          <label description="Próxima revisão da persona" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_personarevisao" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="fsi_personarevisao" disabled="false" />
+                      </cell>
+                      <cell id="{bba658af-14a3-5054-8bf6-f15777513a8d}" showlabel="true" locklevel="0" ordinalvalue="20007">
+                        <labels>
+                          <label description="" languagecode="1046" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="sg_fsi_vinculonegocio_clienteid_contact" showlabel="true" showbar="false" columns="1" IsUserDefined="0" id="{e0dd310c-4180-5313-b414-c6ebdc0ffff4}" ordinalvalue="4">
+                  <labels>
+                    <label description="Vínculos de negócio" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{4a6e48a1-f1aa-5abd-b454-ab93a8638969}" showlabel="false" rowspan="8" colspan="1" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Vínculos de negócio" languagecode="1046" />
+                        </labels>
+                        <control id="sg_fsi_vinculonegocio_clienteid_contact" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{8adf80f6-b5c8-f111-aaad-000d3a343a55}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>fsi_vinculonegocio_clienteid_contact</RelationshipName>
+                            <TargetEntityType>fsi_vinculonegocio</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>5</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="sg_fsi_produtocliente_clienteprincipalid_contact" showlabel="true" showbar="false" columns="1" IsUserDefined="0" id="{aca7a4ab-5e22-5599-8958-67e1babd351f}" ordinalvalue="5">
+                  <labels>
+                    <label description="Produtos do cliente" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{48c57478-af38-53c9-b5ab-43fef07f9840}" showlabel="false" rowspan="8" colspan="1" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Produtos do cliente" languagecode="1046" />
+                        </labels>
+                        <control id="sg_fsi_produtocliente_clienteprincipalid_contact" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{073525fa-b5c8-f111-aaaf-000d3a3437e2}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>fsi_produtocliente_clienteprincipalid_contact</RelationshipName>
+                            <TargetEntityType>fsi_produtocliente</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>5</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="sg_fsi_eventovida_contactid" showlabel="true" showbar="false" columns="1" IsUserDefined="0" id="{4966f711-52d7-59d9-84c7-c4bd4435d30e}" ordinalvalue="6">
+                  <labels>
+                    <label description="Eventos de vida" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{be817a23-7109-5524-afdd-cfc61ec825d0}" showlabel="false" rowspan="8" colspan="1" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Eventos de vida" languagecode="1046" />
+                        </labels>
+                        <control id="sg_fsi_eventovida_contactid" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{2e68891e-b6c8-f111-aaaf-000d3a343828}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>fsi_eventovida_contactid</RelationshipName>
+                            <TargetEntityType>fsi_eventovida</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>5</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="sg_fsi_membrogrupo_contactid" showlabel="true" showbar="false" columns="1" IsUserDefined="0" id="{b2d92d46-0b6b-5dd8-b4d8-b420279897e2}" ordinalvalue="7">
+                  <labels>
+                    <label description="Grupos familiares (membro)" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{d74ead01-5946-5e2a-a1a5-9365d9f2f854}" showlabel="false" rowspan="8" colspan="1" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Grupos familiares (membro)" languagecode="1046" />
+                        </labels>
+                        <control id="sg_fsi_membrogrupo_contactid" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{628eb718-b6c8-f111-aaaf-000d3a3437e2}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>fsi_membrogrupo_contactid</RelationshipName>
+                            <TargetEntityType>fsi_membrogrupo</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>5</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{59314f22-396d-45d8-baef-75b09c8dd512}" celllabelposition="Top">
+        <rows>
+          <row>
+            <cell id="{b0074c9c-4bdb-9521-0b2a-468199980643}" ordinalvalue="10000">
+              <labels>
+                <label description="Email" languagecode="1046" solutionaction="Modified" />
+              </labels>
+            </cell>
+            <cell id="{9c4cd12a-3da3-d3cc-b902-6ee03bd43729}" ordinalvalue="20001">
+              <labels>
+                <label description="Forma Preferencial de Contato" languagecode="1046" solutionaction="Modified" />
+              </labels>
+            </cell>
+            <cell id="{6eb10c6b-c25e-a2ea-b4c1-b3d4a075d081}" ordinalvalue="30002">
+              <labels>
+                <label description="Proprietário" languagecode="1046" solutionaction="Modified" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <formLibraries solutionaction="Added">
+        <Library name="msdyn_/ActivityFeeds.Form.js" libraryUniqueId="{4181da4c-6d13-ba3c-c859-be404e4ee2e3}" />
+      </formLibraries>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Informações" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Um formulário para esta entidade." languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

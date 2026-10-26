@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{6c72f550-a6c8-f111-aaad-000d3a343a55}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="fsi_numeroapolice" select="1" icon="1" preview="1">
+        <row name="result" id="fsi_apoliceid">
+          <cell name="fsi_numeroapolice" width="130" />
+          <cell name="fsi_name" width="200" />
+          <cell name="fsi_ramo" width="100" />
+          <cell name="fsi_tipoapolice" width="110" />
+          <cell name="fsi_produtoclienteid" width="180" />
+          <cell name="fsi_corretoraid" width="160" />
+          <cell name="fsi_premiototal" width="110" />
+          <cell name="fsi_situacaofinanceira" width="130" />
+          <cell name="fsi_renovacaoautomatica" width="110" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical" output-format="xml-platform">
+        <entity name="fsi_apolice">
+          <attribute name="fsi_numeroapolice" />
+          <attribute name="fsi_name" />
+          <attribute name="fsi_ramo" />
+          <attribute name="fsi_tipoapolice" />
+          <attribute name="fsi_produtoclienteid" />
+          <attribute name="fsi_corretoraid" />
+          <attribute name="fsi_premiototal" />
+          <attribute name="fsi_situacaofinanceira" />
+          <attribute name="fsi_renovacaoautomatica" />
+          <attribute name="fsi_apoliceid" />
+          <order attribute="fsi_numeroapolice" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Apólices – Visão Geral" languagecode="1046" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

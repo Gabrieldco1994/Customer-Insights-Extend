@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{f71e6994-7cc9-f111-aaad-000d3a343a55}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="fsi_name" select="1" icon="1" preview="1">
+        <row name="result" id="fsi_movimentoetapaid">
+          <cell name="fsi_name" width="160" />
+          <cell name="fsi_vinculoid" width="160" />
+          <cell name="fsi_etapadestinoid" width="160" />
+          <cell name="fsi_dataentrada" width="160" />
+          <cell name="fsi_tipomovimento" width="160" />
+          <cell name="ownerid" width="160" />
+          <cell name="createdon" width="160" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical" output-format="xml-platform">
+        <entity name="fsi_movimentoetapa">
+          <attribute name="fsi_name" />
+          <attribute name="fsi_vinculoid" />
+          <attribute name="fsi_etapadestinoid" />
+          <attribute name="fsi_dataentrada" />
+          <attribute name="fsi_tipomovimento" />
+          <attribute name="ownerid" />
+          <attribute name="createdon" />
+          <attribute name="fsi_movimentoetapaid" />
+          <order attribute="fsi_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Movimentos de Etapa – Visão Geral" languagecode="1046" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{9c9e3f49-c6d3-4c24-a923-22ffd428888a}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="geral" verticallayout="true" id="{e7fbedb0-ebd4-5fb5-93df-30599e54d7e1}" IsUserDefined="0" expanded="true" showlabel="true">
+          <labels>
+            <label description="Geral" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="evento" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{ebda6c1c-b5dc-59e2-9097-c698eff0487c}">
+                  <labels>
+                    <label description="Evento" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{288405a2-4d6f-5965-a156-9d43f890da3e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Nome" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_name" disabled="false" />
+                      </cell>
+                      <cell id="{2a21f735-1897-56de-958a-e1ce5a9c1b70}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Cliente" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_contactid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_contactid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b6e9870d-6a5a-5d6d-ba70-43f7036053f2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Tipo" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_tipoevento" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_tipoevento" disabled="false" />
+                      </cell>
+                      <cell id="{909f9caf-7a6c-5191-a5d1-c219e26e715c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Origem" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_origemevento" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_origemevento" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b511867a-08aa-5f85-9e64-5cab48e721b7}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Status" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_statusevento" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_statusevento" disabled="false" />
+                      </cell>
+                      <cell id="{99478fe8-5ff3-5d80-9296-eb61c87ba14a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Data do evento" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_dataevento" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="fsi_dataevento" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1be17bec-6eb5-5204-b9ab-77002bfc8525}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Data prevista" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_dataprevista" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="fsi_dataprevista" disabled="false" />
+                      </cell>
+                      <cell id="{7b6c1759-d66b-56e1-9666-21752b7e9d04}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Oportunidade gerada" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_opportunityid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_opportunityid" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{986456ac-ec23-52e3-9f74-ff85377047d8}" columns="1111" celllabelposition="Top" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{3d362159-2057-5aac-93d7-c319bbf47352}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Cliente" languagecode="1046" />
+              </labels>
+              <control id="fsi_contactid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_contactid" disabled="false" />
+            </cell>
+            <cell id="{01b8a4b4-5dfe-5426-b62b-18c02d88db59}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Tipo" languagecode="1046" />
+              </labels>
+              <control id="fsi_tipoevento" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_tipoevento" disabled="false" />
+            </cell>
+            <cell id="{9d68b513-8729-5c99-a009-7d8389ecaefb}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Status" languagecode="1046" />
+              </labels>
+              <control id="fsi_statusevento" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_statusevento" disabled="false" />
+            </cell>
+            <cell id="{09cef12f-395d-5d0d-8dc3-74966de3fa69}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Proprietário" languagecode="1046" />
+              </labels>
+              <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informações" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Um formulário para esta entidade." languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

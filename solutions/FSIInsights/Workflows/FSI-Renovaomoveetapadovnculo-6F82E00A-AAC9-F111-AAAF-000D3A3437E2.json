@@ -1,0 +1,291 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "fsi_dataverse"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Quando_oportunidade_de_renovacao_aberta": {
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 4,
+              "subscriptionRequest/entityname": "opportunity",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filteringattributes": "statecode,fsi_tipooportunidade,fsi_produtoorigemid",
+              "subscriptionRequest/filterexpression": "fsi_tipooportunidade eq 712400001 and statecode eq 0"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Tem_produto_de_origem": {
+          "runAfter": {},
+          "type": "If",
+          "expression": {
+            "equals": [
+              "@empty(triggerOutputs()?['body/_fsi_produtoorigemid_value'])",
+              false
+            ]
+          },
+          "actions": {
+            "Obter_produto": {
+              "runAfter": {},
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "fsi_produtoclientes",
+                  "recordId": "@triggerOutputs()?['body/_fsi_produtoorigemid_value']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Obter_vinculo": {
+              "runAfter": {
+                "Obter_produto": [
+                  "Succeeded"
+                ]
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "fsi_vinculonegocios",
+                  "recordId": "@outputs('Obter_produto')?['body/_fsi_vinculoid_value']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Etapa_atual": {
+              "runAfter": {
+                "Obter_vinculo": [
+                  "Succeeded"
+                ]
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "fsi_etapajornadas",
+                  "recordId": "@outputs('Obter_vinculo')?['body/_fsi_etapaatualid_value']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Etapa_renovacao": {
+              "runAfter": {
+                "Etapa_atual": [
+                  "Succeeded"
+                ]
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "fsi_etapajornadas",
+                  "$top": 1,
+                  "$select": "fsi_etapajornadaid,fsi_acaorecomendada",
+                  "$filter": "_fsi_jornadaid_value eq '@{outputs('Etapa_atual')?['body/_fsi_jornadaid_value']}' and startswith(fsi_name,'Renova')"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Deve_mover": {
+              "runAfter": {
+                "Etapa_renovacao": [
+                  "Succeeded"
+                ]
+              },
+              "type": "If",
+              "expression": {
+                "and": [
+                  {
+                    "equals": [
+                      "@empty(outputs('Etapa_renovacao')?['body/value'])",
+                      false
+                    ]
+                  },
+                  {
+                    "or": [
+                      {
+                        "equals": [
+                          "@outputs('Obter_vinculo')?['body/fsi_statusvinculo']",
+                          712400000
+                        ]
+                      },
+                      {
+                        "equals": [
+                          "@outputs('Obter_vinculo')?['body/fsi_statusvinculo']",
+                          712400001
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "not": {
+                      "equals": [
+                        "@first(outputs('Etapa_renovacao')?['body/value'])?['fsi_etapajornadaid']",
+                        "@outputs('Obter_vinculo')?['body/_fsi_etapaatualid_value']"
+                      ]
+                    }
+                  }
+                ]
+              },
+              "actions": {
+                "Movimentos_abertos": {
+                  "runAfter": {},
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "ListRecords",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "fsi_movimentoetapas",
+                      "$filter": "_fsi_vinculoid_value eq '@{outputs('Obter_vinculo')?['body/fsi_vinculonegocioid']}' and fsi_datasaida eq null",
+                      "$select": "fsi_movimentoetapaid"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Fechar_movimentos": {
+                  "foreach": "@outputs('Movimentos_abertos')?['body/value']",
+                  "runAfter": {
+                    "Movimentos_abertos": [
+                      "Succeeded"
+                    ]
+                  },
+                  "type": "Foreach",
+                  "actions": {
+                    "Fechar": {
+                      "runAfter": {},
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps",
+                          "operationId": "UpdateRecord",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "fsi_movimentoetapas",
+                          "recordId": "@items('Fechar_movimentos')?['fsi_movimentoetapaid']",
+                          "item/fsi_datasaida": "@utcNow('yyyy-MM-dd')"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    }
+                  }
+                },
+                "Criar_movimento": {
+                  "runAfter": {
+                    "Fechar_movimentos": [
+                      "Succeeded"
+                    ]
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "fsi_movimentoetapas",
+                      "item/fsi_name": "Movimento automático (R1)",
+                      "item/fsi_dataentrada": "@utcNow('yyyy-MM-dd')",
+                      "item/fsi_origem": 712400001,
+                      "item/fsi_tipomovimento": 712400000,
+                      "item/fsi_versaocatalogo": "1.0",
+                      "item/fsi_duracaodias": 0,
+                      "item/fsi_vinculoid@odata.bind": "fsi_vinculonegocios(@{outputs('Obter_vinculo')?['body/fsi_vinculonegocioid']})",
+                      "item/fsi_etapadestinoid@odata.bind": "fsi_etapajornadas(@{first(outputs('Etapa_renovacao')?['body/value'])?['fsi_etapajornadaid']})",
+                      "item/fsi_etapaorigemid@odata.bind": "fsi_etapajornadas(@{outputs('Etapa_atual')?['body/fsi_etapajornadaid']})"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Atualizar_vinculo": {
+                  "runAfter": {
+                    "Criar_movimento": [
+                      "Succeeded"
+                    ]
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "UpdateRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "fsi_vinculonegocios",
+                      "recordId": "@outputs('Obter_vinculo')?['body/fsi_vinculonegocioid']",
+                      "item/fsi_etapaatualid@odata.bind": "fsi_etapajornadas(@{first(outputs('Etapa_renovacao')?['body/value'])?['fsi_etapajornadaid']})",
+                      "item/fsi_dataentradaetapa": "@utcNow('yyyy-MM-dd')",
+                      "item/fsi_diasnaetapa": 0,
+                      "item/fsi_proximaacao": "@first(outputs('Etapa_renovacao')?['body/value'])?['fsi_acaorecomendada']"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                }
+              },
+              "else": {
+                "actions": {}
+              }
+            }
+          },
+          "else": {
+            "actions": {}
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

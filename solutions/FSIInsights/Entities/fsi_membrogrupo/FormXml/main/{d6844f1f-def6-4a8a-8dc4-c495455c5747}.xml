@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{d6844f1f-def6-4a8a-8dc4-c495455c5747}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="geral" verticallayout="true" id="{f336d0c6-9d3a-57fc-bf49-989bf8fd1522}" IsUserDefined="0" expanded="true" showlabel="true">
+          <labels>
+            <label description="Geral" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="membro" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{e428838d-4ccc-5a62-a417-2dd316486104}">
+                  <labels>
+                    <label description="Membro" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{a85916bc-c80b-573e-ab12-be171558f426}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Nome" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_name" disabled="false" />
+                      </cell>
+                      <cell id="{fb3cdb65-78c0-5bb9-9539-d2d660cafbed}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Grupo" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_grupoid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_grupoid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c4adb93c-48e5-57a1-82ca-6a3193455a95}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Contato" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_contactid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_contactid" disabled="false" />
+                      </cell>
+                      <cell id="{16fd337d-8335-5ff2-8189-06e20dd9c59a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Papel no grupo" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_papelgrupo" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_papelgrupo" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4f4ed044-ccd6-565b-9194-d927dfff9218}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Início" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_inicio" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="fsi_inicio" disabled="false" />
+                      </cell>
+                      <cell id="{65070b9f-33dc-5a0f-8e53-ae5514d42036}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Fim" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_fim" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="fsi_fim" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{4cdaa494-186f-5605-a0ac-abc8c3350e0b}" columns="1111" celllabelposition="Top" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{ead10e18-e7ee-516c-b5e5-f91015ebb7a2}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Grupo" languagecode="1046" />
+              </labels>
+              <control id="fsi_grupoid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_grupoid" disabled="false" />
+            </cell>
+            <cell id="{59530ac9-ffa5-51a9-82e8-462e061bf21c}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Contato" languagecode="1046" />
+              </labels>
+              <control id="fsi_contactid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_contactid" disabled="false" />
+            </cell>
+            <cell id="{11081b28-287d-57c6-8958-7adfe8e9febd}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Papel no grupo" languagecode="1046" />
+              </labels>
+              <control id="fsi_papelgrupo" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_papelgrupo" disabled="false" />
+            </cell>
+            <cell id="{04b8e6bf-3f4d-5da9-b678-c9cbde325fb8}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Proprietário" languagecode="1046" />
+              </labels>
+              <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informações" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Um formulário para esta entidade." languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

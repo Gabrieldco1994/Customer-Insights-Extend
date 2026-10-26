@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{5dc8537b-a4a0-4a65-a073-f6733c6992f2}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="geral" verticallayout="true" id="{20e02c08-0c57-5e01-88c5-9279badf6383}" IsUserDefined="0" expanded="true" showlabel="true">
+          <labels>
+            <label description="Geral" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="movimento" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{bfeacdef-695b-5d03-8cdf-a764bad38fc2}">
+                  <labels>
+                    <label description="Movimento" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{dbcc34e1-83ae-5f6a-ad3a-883b154ff3e1}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Nome" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_name" disabled="false" />
+                      </cell>
+                      <cell id="{87f41556-2339-5813-9dae-425ec5feb7cc}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Vínculo" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_vinculoid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_vinculoid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{28a45470-4b30-5e2d-858f-94b209b11ad7}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Etapa de origem" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_etapaorigemid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_etapaorigemid" disabled="false" />
+                      </cell>
+                      <cell id="{960ed226-962f-5058-b9ab-ff2390054256}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Etapa de destino" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_etapadestinoid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_etapadestinoid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5fc9d563-4fae-5592-8b42-7b2e84b22edc}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Tipo de movimento" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_tipomovimento" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_tipomovimento" disabled="false" />
+                      </cell>
+                      <cell id="{f3d45f37-0aca-5112-82aa-4396d2cb7ab9}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Origem do movimento" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_origem" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_origem" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="datas" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{b01bfcb3-da29-5daa-8d4c-974687b64a34}">
+                  <labels>
+                    <label description="Datas e motivo" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{28b8e7f2-4ac6-5a8f-9977-07c9a1a46ec1}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Data de entrada" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_dataentrada" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="fsi_dataentrada" disabled="false" />
+                      </cell>
+                      <cell id="{842e957d-e46c-5a6b-895e-5fac15753e7c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Data de saída" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_datasaida" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="fsi_datasaida" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bdd364f7-e5da-5786-b9a0-170df9249658}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Duração (dias)" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_duracaodias" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="fsi_duracaodias" disabled="false" />
+                      </cell>
+                      <cell id="{42acfef0-3393-5266-88ec-d0ccee23a7bb}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Motivo" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_motivoid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_motivoid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c545c80d-3888-57b3-b3e2-bb03dbecc76a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Versão do catálogo" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_versaocatalogo" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_versaocatalogo" disabled="false" />
+                      </cell>
+                      <cell id="{b3a06506-c177-5356-8db9-4d4d6204d5b7}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1046" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{56d42c16-7042-5642-936f-4960a8593aa3}" columns="1111" celllabelposition="Top" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{a120eacb-d597-54ed-a566-c1757c2523c6}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Vínculo" languagecode="1046" />
+              </labels>
+              <control id="fsi_vinculoid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_vinculoid" disabled="false" />
+            </cell>
+            <cell id="{45d30fd3-a70c-5c83-8ba0-5bf969f54ccb}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Etapa de destino" languagecode="1046" />
+              </labels>
+              <control id="fsi_etapadestinoid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_etapadestinoid" disabled="false" />
+            </cell>
+            <cell id="{cecac911-d67e-50a6-b7bb-3d5ade82621d}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Data de entrada" languagecode="1046" />
+              </labels>
+              <control id="fsi_dataentrada" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="fsi_dataentrada" disabled="false" />
+            </cell>
+            <cell id="{a430bc59-0f0e-56ea-aade-10f1dd104f15}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Tipo de movimento" languagecode="1046" />
+              </labels>
+              <control id="fsi_tipomovimento" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_tipomovimento" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informações" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Um formulário para esta entidade." languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{bddc0100-0dbe-4562-aafe-31d08c8ab506}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form shownavigationbar="true" headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{4e685d18-f4e0-4a73-a113-04f2e36439e0}" IsUserDefined="0" labelid="{a2f03898-14ad-4d93-b9cd-f7d37d5fdcea}" ordinalvalue="1" solutionaction="Modified">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section showlabel="false" showbar="false" id="{7192bd67-ae8a-4119-9943-726e9c0e8c34}" IsUserDefined="0" labelid="{adc5d95d-0c2a-4df9-bf61-71fd86efb383}" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{6bb33121-88c0-43db-bc2a-ec1e3caac2cf}" locklevel="0" colspan="2" rowspan="1" ordinalvalue="10009">
+                        <labels>
+                          <label description="Idioma Preferido" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_recordwall" id="{e94e6ac4-12db-bc8c-ec81-8b20c5987655}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="false" labelid="{9df1517e-9b1a-4cf5-a808-28b16d909224}" ordinalvalue="0" solutionaction="Added">
+          <labels>
+            <label description="Novidades" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="tab_recordwall_section_1" showlabel="false" showbar="false" locklevel="0" id="{ac0addcc-a626-6c98-40ee-b11edac36204}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" labelid="{8a592dbd-1787-472a-a5ad-9200aee8c9b6}" ordinalvalue="0">
+                  <labels>
+                    <label description="" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{be13b312-b6ac-83d7-34e1-e90dc1ecbec7}" showlabel="false" colspan="1" auto="false" rowspan="15" labelid="{1132f4ac-13c9-4b21-92a6-3d5ac3e8db31}" ordinalvalue="10000">
+                        <labels>
+                          <label description="" languagecode="1046" />
+                        </labels>
+                        <control id="WebResource_RecordWall" classid="{9FDF5F91-88B1-47f4-AD53-C11EFC01A01D}">
+                          <parameters>
+                            <Url>msdyn_/RecordWall.htm</Url>
+                            <PassParameters>true</PassParameters>
+                            <Security>false</Security>
+                            <Scrolling>auto</Scrolling>
+                            <Border>false</Border>
+                          </parameters>
+                        </control>
+                        <events>
+                          <event name="onload" application="0">
+                            <dependencies />
+                          </event>
+                        </events>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+          <events>
+            <event name="tabstatechange" application="false" active="false">
+              <Handlers>
+                <Handler functionName="ActivityFeeds.Form.CustomizationUtils.updateRecordWallRenderingState" libraryName="msdyn_/ActivityFeeds.Form.js" handlerUniqueId="{9beb6ce6-2666-8033-a406-3d68d44b9592}" enabled="true" parameters="" passExecutionContext="true" ordinalvalue="0" />
+              </Handlers>
+            </event>
+          </events>
+        </tab>
+      </tabs>
+      <formLibraries solutionaction="Added">
+        <Library name="msdyn_/ActivityFeeds.Form.js" libraryUniqueId="{4181da4c-6d13-ba3c-c859-be404e4ee2e3}" />
+      </formLibraries>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Profile Web Form (Enhanced)" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Este formulário é usado pelo portal para que o usuário atualize suas informações de contato" languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

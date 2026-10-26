@@ -1,0 +1,94 @@
+{
+  "result": "accepted",
+  "demonstration": true,
+  "date": "2026-10-26",
+  "channel": "Published dedicated Copilot Studio agent embedded on the specific Power Pages route",
+  "portalUrl": "https://portalatendimento01.powerappsportals.com/renegociacao-financiamento/",
+  "bot": {
+    "schemaName": "fsi_renegociacao",
+    "id": "b23c421e-e534-4acf-8d21-4e4c41d0ed62",
+    "publishedOn": "2026-10-26T16:16:16Z",
+    "publishStatus": "Succeeded",
+    "synchronization": "Synchronized",
+    "nativeCheckerErrors": 0,
+    "nativeCheckerWarnings": 0
+  },
+  "identity": {
+    "authentication": "User completed native Entra OAuth; subsequent conversation reused the authenticated cache",
+    "cpfProvided": false,
+    "cpfAuthenticates": false,
+    "profileAndOwnedContractsReadInChat": true,
+    "otherCustomerContractDisplayed": false,
+    "tokensOrSecretsInEvidence": false
+  },
+  "agreement": {
+    "contractNumber": "REN-DEMO-001",
+    "contractId": "9fbf8f2a-2ebe-5186-b634-41f735b76e02",
+    "requestId": "4c939339-1fef-4dd3-8e3f-62879d54115a",
+    "protocol": "DEMO-4c939339-1fef-4dd3-8e3f-62879d54115a",
+    "offerId": "e2a246b3-8c22-5a2f-b83b-106f948aac71",
+    "version": 1,
+    "entryCents": 5,
+    "installments": 6,
+    "paymentCents": 300020,
+    "totalCents": 1800125,
+    "validUntil": "2026-11-25T13:09:39Z",
+    "explicitConfirmation": "Sim",
+    "acceptedAt": "2026-10-26T16:22:35Z",
+    "completedInChat": true,
+    "independentStatusReadbackInChat": true,
+    "pageRedirectRequiredToConfirm": false
+  },
+  "nativeReadback": {
+    "entity": "fsi_renegociacao",
+    "id": "4c939339-1fef-4dd3-8e3f-62879d54115a",
+    "fsi_status": "Concluido",
+    "fsi_etapa": "formalizacao",
+    "fsi_canal": "chat",
+    "fsi_errointegracao": null,
+    "fsi_protocoloexterno": "DEMO-4c939339-1fef-4dd3-8e3f-62879d54115a",
+    "moneyAndVersionMatchReview": true,
+    "bpf": {
+      "id": "7cf07b33-59d1-f111-a059-000d3a3437e2",
+      "statecode": 1,
+      "statuscode": 2,
+      "activeStage": "formalizacao",
+      "activeStageId": "1b9574d9-412e-55f2-bbc0-38882ee0fd19",
+      "distinctTraversedStages": 5,
+      "completed": true
+    },
+    "case": {
+      "id": "4c939339-1fef-4dd3-8e3f-62879d54115a",
+      "statecode": 0,
+      "statuscode": 1,
+      "legacyProcessId": null,
+      "manuallyClosedByThisAgent": false
+    }
+  },
+  "observedSelectionActions": [
+    {"type": "Adaptive Card selection", "contractId": "9fbf8f2a-2ebe-5186-b634-41f735b76e02"},
+    {"type": "Adaptive Card selection", "offerId": "e2a246b3-8c22-5a2f-b83b-106f948aac71"}
+  ],
+  "transcriptSource": "Live published Web Chat DOM, successful fresh conversation; role determined from native --from-user class",
+  "transcript": [
+    {"role": "user", "text": "quero renegociar meu financiamento"},
+    {"role": "bot", "text": "DEMONSTRAÇÃO FICTÍCIA — nenhum acordo real será criado. Podemos concluir a simulação neste chat, sem abrir outra página. Sua conta autenticada determina quais contratos você pode consultar; CPF é apenas confirmação opcional."},
+    {"role": "bot", "text": "Deseja confirmar também seu CPF? É opcional e não substitui entrar na conta."},
+    {"role": "user", "text": "Não"},
+    {"role": "bot", "text": "Demonstração fictícia. Cadastro autenticado: MOD Administrator."},
+    {"role": "bot", "text": "Demonstração fictícia. Seus contratos: REN-DEMO-001 — Veiculo ficticio 001 — saldo R$ 18.001,25 — elegível\nREN-DEMO-002 — Veiculo ficticio 002 — saldo R$ 24.002,40 — não elegível\nREN-DEMO-003 — Veiculo ficticio 003 — saldo R$ 30.003,45 — não elegível"},
+    {"role": "bot", "text": "Demonstração fictícia: selecione seu contrato\nREN-DEMO-001 — Veiculo ficticio 001 — R$ 18.001,25"},
+    {"role": "bot", "text": "Demonstração fictícia: selecione uma oferta\nOferta e2a246b3-8c22-5a2f-b83b-106f948aac71, versão 1. Entrada: R$ 0,05. Parcelas: 6 de R$ 3.000,20. Total: R$ 18.001,25. Validade (informada pelo serviço): 2026-11-25T13:09:39Z\nOferta 5195168a-a979-5f4c-9fb1-19d58330f7b7, versão 1. Entrada: R$ 1.800,17. Parcelas: 12 de R$ 1.350,09. Total: R$ 18.001,25. Validade (informada pelo serviço): 2026-11-25T13:09:39Z"},
+    {"role": "bot", "text": "DEMONSTRAÇÃO FICTÍCIA. Contrato selecionado: REN-DEMO-001. Oferta e2a246b3-8c22-5a2f-b83b-106f948aac71, versão 1. Entrada: R$ 0,05. Parcelas: 6 de R$ 3.000,20. Total: R$ 18.001,25. Validade (informada pelo serviço): 2026-11-25T13:09:39Z"},
+    {"role": "bot", "text": "Confirma expressamente a simulação com exatamente a entrada, parcelas, total, versão e validade lidos acima? Sim envia a confirmação; Não encerra sem finalizar."},
+    {"role": "user", "text": "Sim"},
+    {"role": "bot", "text": "DEMONSTRAÇÃO FICTÍCIA — renegociação concluída somente no ambiente demonstrativo. Protocolo: DEMO-4c939339-1fef-4dd3-8e3f-62879d54115a. Solicitação: 4c939339-1fef-4dd3-8e3f-62879d54115a. Oferta e2a246b3-8c22-5a2f-b83b-106f948aac71, versão 1. Entrada: R$ 0,05. Parcelas: 6 de R$ 3.000,20. Total: R$ 18.001,25. Validade (informada pelo serviço): 2026-11-25T13:09:39Z"},
+    {"role": "user", "text": "consultar andamento"},
+    {"role": "bot", "text": "DEMONSTRAÇÃO FICTÍCIA — renegociação concluída somente no ambiente demonstrativo. Protocolo: DEMO-4c939339-1fef-4dd3-8e3f-62879d54115a. Solicitação: 4c939339-1fef-4dd3-8e3f-62879d54115a. Oferta e2a246b3-8c22-5a2f-b83b-106f948aac71, versão 1. Entrada: R$ 0,05. Parcelas: 6 de R$ 3.000,20. Total: R$ 18.001,25. Validade (informada pelo serviço): 2026-11-25T13:09:39Z"}
+  ],
+  "contract002ChangedByThisAgent": false,
+  "unverified": [
+    "CPF-yes and invalid-CPF branches in the live chat",
+    "Non-administrator end-user session"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "fixtures": [
+    {
+      "contactId": "11111111-1111-4111-8111-111111111111",
+      "anchorId": "44444444-4444-4444-8444-444444444444",
+      "contractId": "33333333-3333-4333-8333-333333333333",
+      "number": "DEMO-001",
+      "vehicle": "Veículo fictício",
+      "debtCents": 10001,
+      "eligible": true
+    }
+  ],
+  "managedIdentityName": "your-function-mi",
+  "managedIdentityClientId": "66666666-6666-4666-8666-666666666666"
+}

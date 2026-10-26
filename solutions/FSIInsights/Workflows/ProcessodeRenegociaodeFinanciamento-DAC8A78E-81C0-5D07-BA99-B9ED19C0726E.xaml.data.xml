@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{dac8a78e-81c0-5d07-ba99-b9ed19c0726e}" Name="Processo de Renegociação de Financiamento" Description="Autosserviço demonstrativo integrado ao Caso e ao vínculo FSI." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/ProcessodeRenegociaodeFinanciamento-DAC8A78E-81C0-5D07-BA99-B9ED19C0726E.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>4</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <RunAs>1</RunAs>
+  <UniqueName>fsi_processorenegociacao</UniqueName>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ModernFlowType>0</ModernFlowType>
+  <PrimaryEntity>Incident</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1046" description="Processo de Renegociação de Financiamento" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description languagecode="1046" description="Autosserviço demonstrativo integrado ao Caso e ao vínculo FSI." />
+  </Descriptions>
+  <labels>
+    <steplabels id="{765a5e9d-f028-5234-bc57-b7bb55df46cd}">
+      <label languagecode="1046" description="Identificação" />
+    </steplabels>
+    <steplabels id="{33f9c20d-49e8-562b-9f9b-0e77981f2dfc}">
+      <label languagecode="1046" description="Cliente" />
+    </steplabels>
+    <steplabels id="{b859111d-df3b-5a77-9f26-73f0e901ac26}">
+      <label languagecode="1046" description="Elegibilidade" />
+    </steplabels>
+    <steplabels id="{544aeb45-575c-5a7a-8cda-fb22a9d9950f}">
+      <label languagecode="1046" description="Financiamento" />
+    </steplabels>
+    <steplabels id="{46153538-f165-5018-bd2b-abde4394011a}">
+      <label languagecode="1046" description="Simulação e escolha" />
+    </steplabels>
+    <steplabels id="{768be710-4c66-596f-aeb6-e0353fa672fb}">
+      <label languagecode="1046" description="Atendimento" />
+    </steplabels>
+    <steplabels id="{7bff740a-70f3-568b-a2a8-cfbd83a89c53}">
+      <label languagecode="1046" description="Confirmação" />
+    </steplabels>
+    <steplabels id="{14b4c11f-24b7-5649-8f82-43871a6cca0a}">
+      <label languagecode="1046" description="Assunto" />
+    </steplabels>
+    <steplabels id="{1b9574d9-412e-55f2-bbc0-38882ee0fd19}">
+      <label languagecode="1046" description="Formalização e acompanhamento" />
+    </steplabels>
+    <steplabels id="{ad6b0d8f-dd78-53fc-bb64-4afc3e35f7c0}">
+      <label languagecode="1046" description="Resultado" />
+    </steplabels>
+  </labels>
+</Workflow>

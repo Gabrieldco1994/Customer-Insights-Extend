@@ -1,0 +1,138 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "fsi_dataverse"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Quando_contestacao_registrada": {
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 1,
+              "subscriptionRequest/entityname": "fsi_contestacao",
+              "subscriptionRequest/scope": 4
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Tem_referencias": {
+          "runAfter": {},
+          "type": "If",
+          "expression": {
+            "and": [
+              {
+                "equals": [
+                  "@empty(triggerOutputs()?['body/fsi_casoref'])",
+                  false
+                ]
+              },
+              {
+                "equals": [
+                  "@empty(triggerOutputs()?['body/fsi_itemref'])",
+                  false
+                ]
+              }
+            ]
+          },
+          "actions": {
+            "Obter_caso": {
+              "runAfter": {},
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "incidents",
+                  "recordId": "@triggerOutputs()?['body/fsi_casoref']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Vincular": {
+              "runAfter": {
+                "Obter_caso": [
+                  "Succeeded"
+                ]
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "fsi_contestacaos",
+                  "recordId": "@triggerOutputs()?['body/fsi_contestacaoid']",
+                  "item/fsi_casoid@odata.bind": "incidents(@{triggerOutputs()?['body/fsi_casoref']})",
+                  "item/fsi_itemid@odata.bind": "fsi_itemfaturas(@{triggerOutputs()?['body/fsi_itemref']})",
+                  "item/fsi_produtoclienteid@odata.bind": "@if(empty(outputs('Obter_caso')?['body/_fsi_produtoclienteid_value']), null, concat('fsi_produtoclientes(', outputs('Obter_caso')?['body/_fsi_produtoclienteid_value'], ')'))",
+                  "item/fsi_prazoresposta": "@addDays(utcNow(), 10, 'yyyy-MM-dd')"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Marcar_item": {
+              "runAfter": {
+                "Vincular": [
+                  "Succeeded"
+                ]
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "fsi_itemfaturas",
+                  "recordId": "@triggerOutputs()?['body/fsi_itemref']",
+                  "item/fsi_statusitem": 712400001
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "else": {
+            "actions": {}
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

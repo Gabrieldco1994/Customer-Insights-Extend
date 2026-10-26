@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{b05c1e9c-94d0-46c1-8968-df49b8f33ec7}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form enablerelatedinformation="false" shownavigationbar="true" hasmargin="false" relatedInformationCollapsed="false" showImage="false" maxWidth="1920" headerdensity="HighWithControls">
+      <tabs showlabels="true">
+        <tab name="Summary" verticallayout="true" id="{564b9a08-4626-46f5-8bd8-3d31e17a8873}" IsUserDefined="0" expanded="true" labelid="{c0d4705e-6f76-4a03-9aad-880e7a1aa0fb}" ordinalvalue="0">
+          <columns>
+            <column width="66%" id="1">
+              <sections>
+                <section name="copilot_summary_section" id="d35be81a-baa9-4fb1-a616-a0e2105f2f1f" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" visible="false" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{4b29cc9b-8d0c-46c0-a14d-8c359f2bcf76}" locklevel="0" colspan="1" rowspan="1" showlabel="false" ordinalvalue="10000">
+                        <labels>
+                          <label description="(Deprecated) Traversed Path" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="Tab_Attachment" id="7182f9ba-17fc-4e4a-9989-fa2360dcc453" IsUserDefined="0" locklevel="0" showlabel="true" ordinalvalue="2">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="attachmentSection" id="72892b3f-9032-4827-9b12-dea5cfad4b51" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{35cd64ab-4417-4ff8-9856-92c09b3abc8b}" locklevel="0" colspan="1" rowspan="1" showlabel="false" ordinalvalue="10000">
+                        <labels>
+                          <label description="Pré-criar ID de Anexos de Entidade" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <footer id="{75361064-6117-4ac0-b270-ea30250c4b6c}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows />
+      </footer>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Case for Multisession experience" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Case form for Multisession experience" languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

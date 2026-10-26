@@ -1,0 +1,43 @@
+<bot schemaname="fsi_renegociacao">
+  <authenticationconfiguration>{
+  "$kind": "BotAuthenticationConfiguration",
+  "connectionName": "2b56bd71-4ef1-42c4-9468-11c3106dd54c"
+}</authenticationconfiguration>
+  <authenticationmode>3</authenticationmode>
+  <authenticationtrigger>1</authenticationtrigger>
+  <iscustomizable>0</iscustomizable>
+  <language>1046</language>
+  <name>FSI Renegociação Demonstrativa</name>
+  <runtimeprovider>0</runtimeprovider>
+  <synchronizationstatus>{
+  "$kind": "BotSynchronizationDetails",
+  "contentVersion": 2,
+  "lastFinishedPublishOperation": {
+    "$kind": "PublishResultDetails",
+    "userId": "4e9974ab-2251-4cfa-a98a-4be41612f6e8",
+    "operationStart": "2026-10-26T16:16:03.6848181Z",
+    "operationEnd": "2026-10-26T16:16:17.4702033Z",
+    "status": "Succeeded"
+  },
+  "lastPublishedDetails": {
+    "$kind": "SuccessfulPublishResultDetails",
+    "authenticationMode": "CustomAzureActiveDirectory"
+  },
+  "lastPublishedUserId": "4e9974ab-2251-4cfa-a98a-4be41612f6e8",
+  "lastPublishedOnUtc": "2026-10-26T16:16:16.7450311",
+  "currentSynchronizationState": {
+    "$kind": "SynchronizationState",
+    "botRegistration": {
+      "$kind": "BotRegistrationDetails",
+      "botRegistrationIdConsumptionTime": "2026-10-26T13:04:59Z",
+      "applicationId": "44608151-10b3-4b23-b547-b3cea31a0578",
+      "isAppAvailableInTenant": true
+    },
+    "provisioningStatus": "Provisioned",
+    "state": "Synchronized"
+  },
+  "lastSynchronizedOnUtc": "2026-10-26T16:16:35.2206267Z"
+}</synchronizationstatus>
+  <template>kickStartTemplate-1.0.0</template>
+  <timezoneruleversionnumber>4</timezoneruleversionnumber>
+</bot>

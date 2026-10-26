@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{c430da15-188d-50f7-8cf7-090741e8eb5b}" Name="Processo de Contestação" Description="Jornada do assunto Contestação de item de fatura de cartão: identificar, analisar o item, registrar a contestação (tela transacional), apurar e dar retorno ao cliente. Cada etapa aciona a tela do catálogo fsi_servicotransacional." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/ProcessodeContestao-C430DA15-188D-50F7-8CF7-090741E8EB5B.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>4</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <RunAs>1</RunAs>
+  <UniqueName>fsi_processocontestacao</UniqueName>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ModernFlowType>0</ModernFlowType>
+  <PrimaryEntity>Incident</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1046" description="Processo de Contestação" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description languagecode="1046" description="Jornada do assunto Contestação de item de fatura de cartão: identificar, analisar o item, registrar a contestação (tela transacional), apurar e dar retorno ao cliente. Cada etapa aciona a tela do catálogo fsi_servicotransacional." />
+  </Descriptions>
+  <labels>
+    <steplabels id="{a1bc1f61-ba04-54c0-8eff-114201ed7001}">
+      <label languagecode="1046" description="Identificação" />
+    </steplabels>
+    <steplabels id="{c1301628-3b30-5bea-bd29-5940c59fc29e}">
+      <label languagecode="1046" description="Assunto" />
+    </steplabels>
+    <steplabels id="{941e7d83-6a22-5468-9391-5cc97cd0242a}">
+      <label languagecode="1046" description="Cartão do cliente" />
+    </steplabels>
+    <steplabels id="{f3908195-f596-5850-80d0-c73b86300a32}">
+      <label languagecode="1046" description="Análise do item" />
+    </steplabels>
+    <steplabels id="{3676c0e3-5b1a-53a8-9445-44fff1790c80}">
+      <label languagecode="1046" description="Tipo de manifestação" />
+    </steplabels>
+    <steplabels id="{190a74ad-e2cf-5df7-8714-36a194140d39}">
+      <label languagecode="1046" description="Registro da contestação" />
+    </steplabels>
+    <steplabels id="{11fa1aa4-0620-53df-858c-1edadeeb35c5}">
+      <label languagecode="1046" description="Prioridade" />
+    </steplabels>
+    <steplabels id="{9b7d0cf6-7eac-5729-99b4-57a5584dfa06}">
+      <label languagecode="1046" description="Apuração" />
+    </steplabels>
+    <steplabels id="{ec5e42a6-18c9-5622-af76-09baf3febc8c}">
+      <label languagecode="1046" description="Reincidente" />
+    </steplabels>
+    <steplabels id="{95504cd2-e418-5e6f-b44d-9de58e5af8ad}">
+      <label languagecode="1046" description="Retorno ao cliente" />
+    </steplabels>
+    <steplabels id="{3d659a4f-5eb7-5e3e-bced-8aa1807e65be}">
+      <label languagecode="1046" description="Retorno dado ao cliente" />
+    </steplabels>
+  </labels>
+</Workflow>

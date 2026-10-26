@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{3b808469-6588-4807-b9ca-2c5c32dd5f32}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="geral" verticallayout="true" id="{9ffe1932-a128-522d-9b8f-de6278571ef5}" IsUserDefined="0" expanded="true" showlabel="true">
+          <labels>
+            <label description="Geral" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="grupo" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{1c04b9c3-d50f-5a80-85a6-8a5b6a56a7a9}">
+                  <labels>
+                    <label description="Grupo" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{9dc5ae2c-a9e8-57bc-b380-cd1a1b1405ef}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Nome" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_name" disabled="false" />
+                      </cell>
+                      <cell id="{38a21220-ab69-58b3-b956-c9c99f5c9458}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Tipo do grupo" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_tipogrupo" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_tipogrupo" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{97323098-6a58-5ac9-ae4e-f90d06c0f356}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Responsável" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_responsavelid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_responsavelid" disabled="false" />
+                      </cell>
+                      <cell id="{2ce389f2-1dab-5a04-8e6d-6e665be1eb19}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Quantidade de membros" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_qtdmembros" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="fsi_qtdmembros" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3bab9ae0-212b-56eb-837e-fe84f830ae46}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Patrimônio consolidado" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_patrimonioconsolidado" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="fsi_patrimonioconsolidado" disabled="false" />
+                      </cell>
+                      <cell id="{a623d987-e85e-52ff-bb63-24e8f8a8d3b7}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1046" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="relacionados" verticallayout="true" id="{2b6776a5-bd93-5065-83ed-7f0aef041620}" IsUserDefined="0" expanded="true" showlabel="true">
+          <labels>
+            <label description="Relacionados" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sg_fsi_membrogrupo_grupoid" showlabel="true" showbar="false" columns="1" IsUserDefined="0" id="{6d087acb-8b5b-5c19-88de-a311a4570c21}">
+                  <labels>
+                    <label description="Membros" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{843abe8d-4b87-508a-8b68-1a8ca3739b5e}" showlabel="false" rowspan="8" colspan="1" locklevel="0">
+                        <labels>
+                          <label description="Membros" languagecode="1046" />
+                        </labels>
+                        <control id="sg_fsi_membrogrupo_grupoid" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{628eb718-b6c8-f111-aaaf-000d3a3437e2}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>fsi_membrogrupo_grupoid</RelationshipName>
+                            <TargetEntityType>fsi_membrogrupo</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>5</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{d17754e0-55d6-51e8-a313-321659714461}" columns="1111" celllabelposition="Top" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{b71cd48f-596f-5afc-a449-a9d68818951c}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Tipo do grupo" languagecode="1046" />
+              </labels>
+              <control id="fsi_tipogrupo" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_tipogrupo" disabled="false" />
+            </cell>
+            <cell id="{91f6f126-8bff-5c7c-9f7e-6255553b8c7c}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Responsável" languagecode="1046" />
+              </labels>
+              <control id="fsi_responsavelid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_responsavelid" disabled="false" />
+            </cell>
+            <cell id="{ab1e5f32-cd60-5182-b85f-de5a518cccb5}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Quantidade de membros" languagecode="1046" />
+              </labels>
+              <control id="fsi_qtdmembros" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="fsi_qtdmembros" disabled="false" />
+            </cell>
+            <cell id="{b25415fb-2943-5ce1-ae0c-67d3cf98316e}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Proprietário" languagecode="1046" />
+              </labels>
+              <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informações" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Um formulário para esta entidade." languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

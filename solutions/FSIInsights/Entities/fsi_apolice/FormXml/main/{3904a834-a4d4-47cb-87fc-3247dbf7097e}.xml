@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{3904a834-a4d4-47cb-87fc-3247dbf7097e}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="geral" verticallayout="true" id="{6c0cbbf8-c134-58ca-b5a4-c82220704b74}" IsUserDefined="0" expanded="true" showlabel="true">
+          <labels>
+            <label description="Geral" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="identificacao" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{b2e2e889-9c9b-54bf-a122-0ba17a4badda}">
+                  <labels>
+                    <label description="Identificação" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{d1d7a7b4-5fcd-59b5-8cc3-52af40eb6d68}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Nome" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_name" disabled="false" />
+                      </cell>
+                      <cell id="{4e8ede20-4128-5221-be36-bc50f5e12fe0}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Nº da apólice" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_numeroapolice" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_numeroapolice" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1898df97-35ff-5817-9283-3dca75a96b47}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Nº da proposta" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_numeroproposta" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_numeroproposta" disabled="false" />
+                      </cell>
+                      <cell id="{f378b258-2777-59e7-b8cd-70662ebc82a2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Ramo" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_ramo" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_ramo" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{89e03876-ca06-5259-80f1-9dae35c2793d}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Sucursal" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_sucursal" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_sucursal" disabled="false" />
+                      </cell>
+                      <cell id="{442760fe-ee02-5d43-90f8-7dfb5d3c81c6}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Tipo de apólice" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_tipoapolice" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_tipoapolice" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8ca8f697-e553-5f92-a3d1-43643aedbf72}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Produto do cliente" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_produtoclienteid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_produtoclienteid" disabled="false" />
+                      </cell>
+                      <cell id="{3ffb1934-e98c-5f27-8c3d-a4539f0c2658}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Corretora" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_corretoraid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_corretoraid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ead3ece3-7761-5213-846b-2635c06d8793}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Apólice-mãe" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_apolicemaeid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_apolicemaeid" disabled="false" />
+                      </cell>
+                      <cell id="{06864ef7-e9db-5432-8761-21810e4cea36}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Apólice anterior" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_apoliceanteriorid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_apoliceanteriorid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3b9ca4b1-ac9c-54a7-99ea-29b919f85b79}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Quantidade de vidas" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_qtdvidas" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="fsi_qtdvidas" disabled="false" />
+                      </cell>
+                      <cell id="{8a534b96-b291-5f36-8d3c-fd98e2aa1b0a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Classe de bônus" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_classebonus" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="fsi_classebonus" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="financeiro" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{55b71d27-efff-5dbf-beae-7bbf35b0d53c}">
+                  <labels>
+                    <label description="Financeiro" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{8e3eb40f-6840-52fe-977f-a4ef06c1740f}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Prêmio líquido" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_premioliquido" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="fsi_premioliquido" disabled="false" />
+                      </cell>
+                      <cell id="{9abd48b1-9b9c-51f0-9a23-88f380a8e6f9}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="IOF" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_iof" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="fsi_iof" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d56f6928-7ed7-534e-a74c-36853481897e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Prêmio total" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_premiototal" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="fsi_premiototal" disabled="false" />
+                      </cell>
+                      <cell id="{be12d174-eb0e-5777-98bd-69c085a74680}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Forma de pagamento" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_formapagamento" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_formapagamento" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e9e90116-0cce-5483-92c4-feca58bd8de9}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Nº de parcelas" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_numeroparcelas" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="fsi_numeroparcelas" disabled="false" />
+                      </cell>
+                      <cell id="{82a36e2d-4bf4-5a3d-8bae-9ecccd4fb1ea}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Situação financeira" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_situacaofinanceira" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_situacaofinanceira" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="renovacao" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{43a3baf2-2af9-529b-a4fa-f7324eecbb41}">
+                  <labels>
+                    <label description="Renovação" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{996496ef-1a45-5ec2-9046-9926b497bfd0}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Renovação automática" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_renovacaoautomatica" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="fsi_renovacaoautomatica" disabled="false" />
+                      </cell>
+                      <cell id="{bf2c0df6-4dc3-5f5e-9659-e836a151f223}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Prazo do aviso de renovação" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_prazoavisorenovacao" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="fsi_prazoavisorenovacao" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="relacionados" verticallayout="true" id="{281d8380-9ea9-50c7-8f4b-5b6dbe5f0e46}" IsUserDefined="0" expanded="true" showlabel="true">
+          <labels>
+            <label description="Relacionados" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sg_fsi_cobertura_apoliceid" showlabel="true" showbar="false" columns="1" IsUserDefined="0" id="{2bfb4695-d1bf-5462-8fd8-b26b7afe3778}">
+                  <labels>
+                    <label description="Coberturas" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{6b16b5f3-3450-5fb9-be5e-82e80af4ac34}" showlabel="false" rowspan="8" colspan="1" locklevel="0">
+                        <labels>
+                          <label description="Coberturas" languagecode="1046" />
+                        </labels>
+                        <control id="sg_fsi_cobertura_apoliceid" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{e2727508-b6c8-f111-aaad-000d3a343a55}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>fsi_cobertura_apoliceid</RelationshipName>
+                            <TargetEntityType>fsi_cobertura</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>5</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="sg_fsi_itemsegurado_apoliceid" showlabel="true" showbar="false" columns="1" IsUserDefined="0" id="{fadc4efa-760d-5716-adee-8e9dbb87a7fe}">
+                  <labels>
+                    <label description="Itens segurados" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{f2cd5dac-8598-5362-9e2c-87e87586b180}" showlabel="false" rowspan="8" colspan="1" locklevel="0">
+                        <labels>
+                          <label description="Itens segurados" languagecode="1046" />
+                        </labels>
+                        <control id="sg_fsi_itemsegurado_apoliceid" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{4aa87206-b6c8-f111-aaaf-000d3a343828}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>fsi_itemsegurado_apoliceid</RelationshipName>
+                            <TargetEntityType>fsi_itemsegurado</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>5</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="sg_fsi_endosso_apoliceid" showlabel="true" showbar="false" columns="1" IsUserDefined="0" id="{3ce6e3ba-791f-59ee-9aad-082cd48f7edd}">
+                  <labels>
+                    <label description="Endossos" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{756c27e9-ba52-5ebc-8a03-6ea6f745a946}" showlabel="false" rowspan="8" colspan="1" locklevel="0">
+                        <labels>
+                          <label description="Endossos" languagecode="1046" />
+                        </labels>
+                        <control id="sg_fsi_endosso_apoliceid" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{137a6d0c-b6c8-f111-aaaf-000d3a343828}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>fsi_endosso_apoliceid</RelationshipName>
+                            <TargetEntityType>fsi_endosso</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>5</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="sg_fsi_sinistro_apoliceid" showlabel="true" showbar="false" columns="1" IsUserDefined="0" id="{2045b1ce-7fd0-572a-8925-59ee2700be87}">
+                  <labels>
+                    <label description="Sinistros" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{27a278fe-c090-58a3-9f31-1eb8b33d7055}" showlabel="false" rowspan="8" colspan="1" locklevel="0">
+                        <labels>
+                          <label description="Sinistros" languagecode="1046" />
+                        </labels>
+                        <control id="sg_fsi_sinistro_apoliceid" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{e1596812-b6c8-f111-aaaf-000d3a343828}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>fsi_sinistro_apoliceid</RelationshipName>
+                            <TargetEntityType>fsi_sinistro</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>5</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{a6a8850c-f9bc-5b76-b73c-cfec57007023}" columns="1111" celllabelposition="Top" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{30b9dc45-9a8e-5474-93e3-02ac073a5b04}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Nº da apólice" languagecode="1046" />
+              </labels>
+              <control id="fsi_numeroapolice" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_numeroapolice" disabled="false" />
+            </cell>
+            <cell id="{8d2c44f2-56d4-5d26-beb4-53ab190c1b2c}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Prêmio total" languagecode="1046" />
+              </labels>
+              <control id="fsi_premiototal" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="fsi_premiototal" disabled="false" />
+            </cell>
+            <cell id="{884bfcd9-8d11-57b4-adbb-336b62f9f2a5}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Situação financeira" languagecode="1046" />
+              </labels>
+              <control id="fsi_situacaofinanceira" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_situacaofinanceira" disabled="false" />
+            </cell>
+            <cell id="{0837bb08-2427-50ab-a23b-b01797b1a1f4}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Proprietário" languagecode="1046" />
+              </labels>
+              <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informações" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Um formulário para esta entidade." languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

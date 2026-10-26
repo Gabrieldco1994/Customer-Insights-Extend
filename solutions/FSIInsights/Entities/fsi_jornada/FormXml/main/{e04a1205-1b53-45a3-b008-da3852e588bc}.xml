@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{e04a1205-1b53-45a3-b008-da3852e588bc}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="geral" verticallayout="true" id="{c5e5f41c-16cd-5a78-be0f-5559f19f8b64}" IsUserDefined="0" expanded="true" showlabel="true">
+          <labels>
+            <label description="Geral" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="identificacao" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{86db87b3-1e10-52a3-9bf3-c22e98e71ff0}">
+                  <labels>
+                    <label description="Identificação" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{4897a138-997f-5ffc-af9f-25756627390f}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Nome" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_name" disabled="false" />
+                      </cell>
+                      <cell id="{34c1abe0-b941-514a-81bb-11617820596b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Domínio" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_dominio" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_dominio" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d40aab36-c657-587a-a338-f714aa505a12}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Responsável pela jornada" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_responsavel" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_responsavel" disabled="false" />
+                      </cell>
+                      <cell id="{9ec34d7d-e0a5-5a1e-bfbf-5414696cd98f}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Versão do catálogo" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_versao" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_versao" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3d792f36-fc6d-57b8-a31f-1c16a9b38aa6}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Início da vigência" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_iniciovigencia" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="fsi_iniciovigencia" disabled="false" />
+                      </cell>
+                      <cell id="{f628be7d-ca16-5018-99c5-27cc40f2ef21}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Fim da vigência" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_fimvigencia" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="fsi_fimvigencia" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{86dd250d-3be8-59c6-b125-623da374fc98}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Objetivo da jornada" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_objetivo" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_objetivo" disabled="false" />
+                      </cell>
+                      <cell id="{3a618c3f-cff2-5331-ba3b-ef85dfa11f57}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1046" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="relacionados" verticallayout="true" id="{dab9af14-5f37-503b-a89b-0d2554eb235d}" IsUserDefined="0" expanded="true" showlabel="true">
+          <labels>
+            <label description="Relacionados" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="sg_fsi_etapajornada_jornadaid" showlabel="true" showbar="false" columns="1" IsUserDefined="0" id="{1a31d41d-773e-54a5-b25c-71e49960035f}">
+                  <labels>
+                    <label description="Etapas" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{cdb65307-7185-5c49-a5ba-33160ca62636}" showlabel="false" rowspan="8" colspan="1" locklevel="0">
+                        <labels>
+                          <label description="Etapas" languagecode="1046" />
+                        </labels>
+                        <control id="sg_fsi_etapajornada_jornadaid" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <ViewId>{44dcd68b-7cc9-f111-aaad-000d3a343a55}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>fsi_etapajornada_jornadaid</RelationshipName>
+                            <TargetEntityType>fsi_etapajornada</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds />
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>5</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{f6023b94-9b40-59c9-aa24-60a73da308fc}" columns="111" celllabelposition="Top" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{b705b47b-dd53-55cd-8297-c90ca8d78f2a}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Domínio" languagecode="1046" />
+              </labels>
+              <control id="fsi_dominio" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_dominio" disabled="false" />
+            </cell>
+            <cell id="{89429391-d631-53f8-9337-223a0585d4f4}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Versão do catálogo" languagecode="1046" />
+              </labels>
+              <control id="fsi_versao" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_versao" disabled="false" />
+            </cell>
+            <cell id="{b4c8b5e7-08e7-5a2b-b8b2-7a1f19c8443b}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Responsável pela jornada" languagecode="1046" />
+              </labels>
+              <control id="fsi_responsavel" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_responsavel" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informações" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Um formulário para esta entidade." languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

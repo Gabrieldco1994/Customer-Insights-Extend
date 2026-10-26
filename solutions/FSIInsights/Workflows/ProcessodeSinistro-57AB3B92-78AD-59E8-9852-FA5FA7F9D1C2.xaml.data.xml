@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{57ab3b92-78ad-59e8-9852-fa5fa7f9d1c2}" Name="Processo de Sinistro" Description="Do aviso ao encerramento do sinistro: aviso, regulação, documentos, decisão e pagamento. O status do sinistro continua sendo o campo de decisão; a jornada do cliente trata o sinistro como evento paralelo, não como etapa." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/ProcessodeSinistro-57AB3B92-78AD-59E8-9852-FA5FA7F9D1C2.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>4</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <RunAs>1</RunAs>
+  <UniqueName>fsi_processosinistro</UniqueName>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ModernFlowType>0</ModernFlowType>
+  <PrimaryEntity>fsi_sinistro</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1046" description="Processo de Sinistro" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description languagecode="1046" description="Do aviso ao encerramento do sinistro: aviso, regulação, documentos, decisão e pagamento. O status do sinistro continua sendo o campo de decisão; a jornada do cliente trata o sinistro como evento paralelo, não como etapa." />
+  </Descriptions>
+  <labels>
+    <steplabels id="{3fc0445f-a5ee-5fba-9d86-346ff253403f}">
+      <label languagecode="1046" description="Aviso" />
+    </steplabels>
+    <steplabels id="{7d2abc29-ada9-54d3-a128-54319e90a2fb}">
+      <label languagecode="1046" description="Apólice" />
+    </steplabels>
+    <steplabels id="{9fcd48e9-b748-55c9-9aa4-bfe63c5d1f70}">
+      <label languagecode="1046" description="Data da ocorrência" />
+    </steplabels>
+    <steplabels id="{49e7ef67-931a-5b6e-870f-16d2d7e9911c}">
+      <label languagecode="1046" description="Data do aviso" />
+    </steplabels>
+    <steplabels id="{56c343c4-9a70-58f8-8ee5-8c0a590a62db}">
+      <label languagecode="1046" description="Causa" />
+    </steplabels>
+    <steplabels id="{b3b61f6e-5913-5f80-a1c5-46a766b50946}">
+      <label languagecode="1046" description="Em regulação" />
+    </steplabels>
+    <steplabels id="{9ee2025b-1bde-533c-8e95-f06fa98fc924}">
+      <label languagecode="1046" description="Cobertura acionada" />
+    </steplabels>
+    <steplabels id="{f62a1544-b217-5ba1-b1c6-58ee3ec6b0dd}">
+      <label languagecode="1046" description="Regulador" />
+    </steplabels>
+    <steplabels id="{e40ba5e5-2cc9-5fe9-8db1-0c5ffcb26b6e}">
+      <label languagecode="1046" description="Valor reclamado" />
+    </steplabels>
+    <steplabels id="{ea37b1bd-d93c-5451-8c57-a2feb22508a0}">
+      <label languagecode="1046" description="Reserva" />
+    </steplabels>
+    <steplabels id="{a59d3c2e-9488-52d5-9880-5433b712df42}">
+      <label languagecode="1046" description="Aguardando documentos" />
+    </steplabels>
+    <steplabels id="{07d7ec0b-9e99-55e3-9d92-ed347ad5faa4}">
+      <label languagecode="1046" description="Data da documentação completa" />
+    </steplabels>
+    <steplabels id="{af66bc72-2e44-5ba6-b6e6-58cc34ee348c}">
+      <label languagecode="1046" description="Decisão" />
+    </steplabels>
+    <steplabels id="{8ffe4dc0-a2f9-5d18-a2c1-6150bd345686}">
+      <label languagecode="1046" description="Status do sinistro" />
+    </steplabels>
+    <steplabels id="{439e3a5e-ffbb-50bb-b734-107de76a48dd}">
+      <label languagecode="1046" description="Motivo da negativa" />
+    </steplabels>
+    <steplabels id="{062e716e-e1e1-5f15-ba08-cd3ff16955a6}">
+      <label languagecode="1046" description="Pagamento e encerramento" />
+    </steplabels>
+    <steplabels id="{90393679-942b-5e1c-b41f-0dcf37797265}">
+      <label languagecode="1046" description="Valor pago" />
+    </steplabels>
+    <steplabels id="{e8fabf4a-e4e4-57ab-998e-0c2a64fbfcf1}">
+      <label languagecode="1046" description="Data da liquidação" />
+    </steplabels>
+  </labels>
+</Workflow>

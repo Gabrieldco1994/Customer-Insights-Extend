@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{b1b386f2-c1f3-4d38-bd64-87b9021e24c5}</formid>
+    <IntroducedVersion>6.1.0.0</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form shownavigationbar="true">
+      <tabs>
+        <tab name="general" id="{dc4d0897-2de0-5b7e-c82c-16439db02145}" IsUserDefined="0" locklevel="0" showlabel="false" expanded="true" ordinalvalue="0">
+          <columns>
+            <column width="33%" id="0">
+              <sections>
+                <section name="information" showlabel="true" showbar="false" locklevel="0" id="{3646071e-16b9-e1da-416c-1505807a02c4}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="210" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{67a46b89-4719-dcc5-41ec-6c44e114244a}" showlabel="true" locklevel="0" ordinalvalue="10002">
+                        <labels>
+                          <label description="Data de Início" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4b959c0e-95b1-9e3c-2162-7ca7ae238047}" showlabel="true" locklevel="0" ordinalvalue="10003">
+                        <labels>
+                          <label description="Data de Término" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{87e21764-c28e-407c-1b18-d638a18517ed}" showlabel="true" locklevel="0" ordinalvalue="10004">
+                        <labels>
+                          <label description="Restrito com base nos termos do direito" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{45e2c06b-14b0-4e30-2621-28cc5eb7a6b9}" showlabel="true" locklevel="0" ordinalvalue="10005">
+                        <labels>
+                          <label description="SLA" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fb145c7d-a342-47cd-b340-1b4769114271}" showlabel="true" ordinalvalue="10006">
+                        <labels>
+                          <label description="Owner" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c100c7b2-b3a7-463b-8348-2c0822d44514}" showlabel="true" ordinalvalue="10007">
+                        <labels>
+                          <label description="Descrição" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{272f133c-5837-464d-8068-c6705f16f5a5}" showlabel="true" locklevel="0" ordinalvalue="10008">
+                        <labels>
+                          <label description="É Padrão" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="1">
+              <sections>
+                <section name="entitlementterms" showlabel="true" showbar="false" locklevel="0" id="{b92b4201-7aa6-9612-d403-59bb532e0e0a}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="210" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{b7e3073e-9790-1db8-890d-71d816689868}" showlabel="true" locklevel="0" ordinalvalue="10001">
+                        <labels>
+                          <label description="Tipo de Alocação" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2644c491-a21e-2c85-3da3-2a3ec7846cc6}" showlabel="true" locklevel="0" ordinalvalue="10002">
+                        <labels>
+                          <label description="Redução Restante em" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8b8cb1ee-4544-a296-e954-e1e4c796d0d4}" showlabel="true" locklevel="0" ordinalvalue="10003">
+                        <labels>
+                          <label description="Total de Termos" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e1bbcacb-8c5e-1753-4652-2b9b4a949e69}" showlabel="true" locklevel="0" ordinalvalue="10004">
+                        <labels>
+                          <label description="Termos Restantes" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="fsi_tab" verticallayout="true" id="{acdc49ac-393c-598d-a247-91f55ef1dbc2}" IsUserDefined="0" expanded="true" showlabel="true" ordinalvalue="1" solutionaction="Added">
+          <labels>
+            <label description="FSI" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="fsi" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{6901896f-1a06-5937-9426-99bac814aca8}" ordinalvalue="0">
+                  <labels>
+                    <label description="FSI" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{7d2f64d4-a357-5390-9a25-ee6e1973cd0a}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Produto do cliente" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_produtoclienteid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_produtoclienteid" disabled="false" />
+                      </cell>
+                      <cell id="{397915dc-e7f3-58cb-933f-f1ef54c38c9b}" showlabel="true" locklevel="0" ordinalvalue="20001">
+                        <labels>
+                          <label description="" languagecode="1046" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{EADC182C-4511-4C64-9CD3-2B7CB6C72934}" celllabelposition="Top" columns="1111" labelwidth="115">
+        <rows>
+          <row>
+            <cell id="{8f3e65d7-cb60-46ab-93ac-d3e0f6a7fa74}" showlabel="true" ordinalvalue="10000">
+              <labels>
+                <label description="Cliente" languagecode="1046" solutionaction="Modified" />
+              </labels>
+            </cell>
+            <cell id="{398a927a-47a8-46c7-8737-ccd6a25b01ca}" showlabel="true" locklevel="0" ordinalvalue="20001">
+              <labels>
+                <label description="Termos Restantes" languagecode="1046" solutionaction="Modified" />
+              </labels>
+            </cell>
+            <cell id="{7ace3cb8-b47b-49e8-b194-a5112d6ee4c5}" ordinalvalue="30002">
+              <labels>
+                <label description="Data de Término" languagecode="1046" solutionaction="Modified" />
+              </labels>
+            </cell>
+            <cell id="{4708186b-7c36-4a31-a67b-79108a245449}" ordinalvalue="40003">
+              <labels>
+                <label description="Status" languagecode="1046" solutionaction="Modified" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Direito" languagecode="1046" />
+    </LocalizedNames>
+  </systemform>
+</forms>

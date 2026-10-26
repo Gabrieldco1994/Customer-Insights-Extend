@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="fsi_tipotela" localizedName="Tipo de tela" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <displaynames>
+    <displayname description="Tipo de tela" languagecode="1046" />
+  </displaynames>
+  <options>
+    <option value="712400000" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Seção do formulário (canvas app ou PCF)" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400001" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Página personalizada (painel lateral)" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400002" IsHidden="0">
+      <labels>
+        <label description="Canvas app em iframe (recebe o registro)" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400003" IsHidden="0">
+      <labels>
+        <label description="Power Pages (autosserviço)" languagecode="1046" />
+      </labels>
+    </option>
+  </options>
+</optionset>

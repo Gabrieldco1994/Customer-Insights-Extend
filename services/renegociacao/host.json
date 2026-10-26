@@ -1,0 +1,15 @@
+{
+  "version": "2.0",
+  "logging": {
+    "logLevel": {
+      "default": "Warning",
+      "Function": "Warning",
+      "Host.Results": "Warning"
+    },
+    "applicationInsights": {
+      "samplingSettings": {"isEnabled": true},
+      "enableDependencyTracking": false
+    }
+  },
+  "extensions": {"http": {"routePrefix": "api", "maxOutstandingRequests": 100, "maxConcurrentRequests": 20}}
+}

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{0c5aeee0-40d1-f111-a05c-000d3a343f56}</savedqueryid>
+    <querytype>8192</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical" output-format="xml-platform">
+        <entity name="fsi_parcelafinanceiravirtual">
+          <attribute name="fsi_parcelafinanceiravirtualid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Parcelas financeiras externas" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Todos os Parcelas financeiras externas ativos" languagecode="1046" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

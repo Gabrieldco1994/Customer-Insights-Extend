@@ -1,0 +1,7 @@
+{
+  "$kind": "BotConfiguration",
+  "settings": {
+    "GenerativeActionsEnabled": false
+  },
+  "publishOnImport": false
+}

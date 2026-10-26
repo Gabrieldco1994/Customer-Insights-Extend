@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="fsi_tipoproduto" localizedName="Tipo de produto" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <displaynames>
+    <displayname description="Tipo de produto" languagecode="1046" />
+  </displaynames>
+  <options>
+    <option value="712400000" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Seguro" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400001" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Previdência" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400002" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Capitalização" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400003" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Conta" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400004" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Cartão" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400005" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Crédito" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400006" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Investimento" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400007" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Consórcio" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400008" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Contrato B2B" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400009" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Assistência/Serviço" languagecode="1046" />
+      </labels>
+    </option>
+  </options>
+</optionset>

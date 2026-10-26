@@ -1,0 +1,198 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "fsi_dataverse"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Quando_o_assunto_do_caso_muda": {
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 4,
+              "subscriptionRequest/entityname": "incident",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filteringattributes": "fsi_motivoid"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Tem_assunto": {
+          "runAfter": {},
+          "type": "If",
+          "expression": {
+            "equals": [
+              "@empty(triggerOutputs()?['body/_fsi_motivoid_value'])",
+              false
+            ]
+          },
+          "actions": {
+            "Obter_assunto": {
+              "runAfter": {},
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "fsi_motivos",
+                  "recordId": "@triggerOutputs()?['body/_fsi_motivoid_value']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Tem_jornada": {
+              "runAfter": {
+                "Obter_assunto": [
+                  "Succeeded"
+                ]
+              },
+              "type": "If",
+              "expression": {
+                "equals": [
+                  "@empty(outputs('Obter_assunto')?['body/fsi_processo'])",
+                  false
+                ]
+              },
+              "actions": {
+                "Processo": {
+                  "runAfter": {},
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "ListRecords",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "workflows",
+                      "$top": 1,
+                      "$select": "workflowid",
+                      "$filter": "uniquename eq '@{outputs('Obter_assunto')?['body/fsi_processo']}' and category eq 4 and statecode eq 1"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Etapa_inicial": {
+                  "runAfter": {
+                    "Processo": [
+                      "Succeeded"
+                    ]
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "ListRecords",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "processstages",
+                      "$top": 1,
+                      "$select": "processstageid",
+                      "$filter": "_processid_value eq '@{first(outputs('Processo')?['body/value'])?['workflowid']}' and stagename eq 'identificacao'"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Precisa_trocar": {
+                  "runAfter": {
+                    "Etapa_inicial": [
+                      "Succeeded"
+                    ]
+                  },
+                  "type": "If",
+                  "expression": {
+                    "and": [
+                      {
+                        "equals": [
+                          "@empty(outputs('Processo')?['body/value'])",
+                          false
+                        ]
+                      },
+                      {
+                        "equals": [
+                          "@empty(outputs('Etapa_inicial')?['body/value'])",
+                          false
+                        ]
+                      },
+                      {
+                        "not": {
+                          "equals": [
+                            "@triggerOutputs()?['body/processid']",
+                            "@first(outputs('Processo')?['body/value'])?['workflowid']"
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "actions": {
+                    "Aplicar_jornada": {
+                      "runAfter": {},
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps",
+                          "operationId": "UpdateRecord",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "incidents",
+                          "recordId": "@triggerOutputs()?['body/incidentid']",
+                          "item/processid": "@first(outputs('Processo')?['body/value'])?['workflowid']",
+                          "item/stageid": "@first(outputs('Etapa_inicial')?['body/value'])?['processstageid']"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    }
+                  },
+                  "else": {
+                    "actions": {}
+                  }
+                }
+              },
+              "else": {
+                "actions": {}
+              }
+            }
+          },
+          "else": {
+            "actions": {}
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

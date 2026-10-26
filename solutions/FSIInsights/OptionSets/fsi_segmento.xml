@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="fsi_segmento" localizedName="Segmento" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <displaynames>
+    <displayname description="Segmento" languagecode="1046" />
+  </displaynames>
+  <options>
+    <option value="712400000" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Varejo PF" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400001" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Alta Renda" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400002" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="PME" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400003" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Middle" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400004" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Corporate" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400005" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Parceiro" languagecode="1046" />
+      </labels>
+    </option>
+  </options>
+</optionset>

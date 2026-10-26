@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="fsi_personapj" localizedName="Persona (PJ)" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <displaynames>
+    <displayname description="Persona (PJ)" languagecode="1046" />
+  </displaynames>
+  <options>
+    <option value="712400000" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Pequeno negócio em expansão" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400001" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Empregadora / potencial estipulante" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400002" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Grupo econômico complexo" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400003" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Não classificado" languagecode="1046" />
+      </labels>
+    </option>
+  </options>
+</optionset>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{95c64d8a-4cfb-54ce-9e41-666af8e95782}" Name="Processo de Renovação" Description="Renovação de apólice ou contrato: janela de aviso, proposta, negociação e decisão. Use quando o tipo da oportunidade for Renovação. Não substitui o Processo de Vendas nativo." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/ProcessodeRenovao-95C64D8A-4CFB-54CE-9E41-666AF8E95782.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>4</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <RunAs>1</RunAs>
+  <UniqueName>fsi_processorenovacao</UniqueName>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ModernFlowType>0</ModernFlowType>
+  <PrimaryEntity>Opportunity</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1046" description="Processo de Renovação" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description languagecode="1046" description="Renovação de apólice ou contrato: janela de aviso, proposta, negociação e decisão. Use quando o tipo da oportunidade for Renovação. Não substitui o Processo de Vendas nativo." />
+  </Descriptions>
+  <labels>
+    <steplabels id="{8645482a-76df-5fa5-9bc7-8ad1ea4942d0}">
+      <label languagecode="1046" description="Janela de aviso" />
+    </steplabels>
+    <steplabels id="{b78e6c02-f743-5705-9092-d0105f4520b6}">
+      <label languagecode="1046" description="Tipo de oportunidade" />
+    </steplabels>
+    <steplabels id="{5020d15a-b016-5b41-b70c-542796eb5001}">
+      <label languagecode="1046" description="Produto de origem" />
+    </steplabels>
+    <steplabels id="{ca342a56-0b1d-526a-8b09-7ade719fc343}">
+      <label languagecode="1046" description="Fim da vigência" />
+    </steplabels>
+    <steplabels id="{f990114f-1349-5fa9-8b74-5ba00c73199e}">
+      <label languagecode="1046" description="Sinistralidade (%)" />
+    </steplabels>
+    <steplabels id="{05988ee3-b247-5b3d-bfac-6fdd9a7bab55}">
+      <label languagecode="1046" description="Proposta de renovação" />
+    </steplabels>
+    <steplabels id="{491b9d5e-b889-523b-91dd-d668530a580a}">
+      <label languagecode="1046" description="Solução proposta" />
+    </steplabels>
+    <steplabels id="{7cb4890a-7b30-509f-a441-e352dbc479d1}">
+      <label languagecode="1046" description="Valor estimado" />
+    </steplabels>
+    <steplabels id="{feea6c6c-fc38-54ca-979a-0e0606df8db6}">
+      <label languagecode="1046" description="Corretora" />
+    </steplabels>
+    <steplabels id="{15f79001-15bd-5a3e-a177-2605d872e9b6}">
+      <label languagecode="1046" description="Negociação" />
+    </steplabels>
+    <steplabels id="{95b25515-c5c5-52eb-8e75-ea0931438169}">
+      <label languagecode="1046" description="Pontos de atenção do cliente" />
+    </steplabels>
+    <steplabels id="{dfd08d66-35dc-5bb4-8d68-86e314be3f33}">
+      <label languagecode="1046" description="Orçamento do cliente" />
+    </steplabels>
+    <steplabels id="{56e1df9b-f559-5f47-ab25-06ad4eadc1f3}">
+      <label languagecode="1046" description="Decisão" />
+    </steplabels>
+    <steplabels id="{3016f397-3ddd-5dac-84c6-c91e575380c6}">
+      <label languagecode="1046" description="Probabilidade de fechamento" />
+    </steplabels>
+    <steplabels id="{ee27a284-abfa-5dca-841b-d5d4fed6628b}">
+      <label languagecode="1046" description="Decisor identificado" />
+    </steplabels>
+  </labels>
+</Workflow>

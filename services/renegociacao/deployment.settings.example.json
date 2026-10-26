@@ -1,0 +1,16 @@
+{
+  "AUTH_MODE": "entra",
+  "AZURE_CREDENTIAL_MODE": "managed_identity",
+  "MANAGED_IDENTITY_CLIENT_ID": "<user-assigned-MI-client-id-GUID-or-remove-for-system-assigned>",
+  "ENTRA_AUDIENCE": "<dedicated-Entra-API-application-client-id-GUID>",
+  "DATAVERSE_URL": "https://org88957f9a.crm.dynamics.com",
+  "SQL_SERVER": "<sql-server-name>.database.windows.net",
+  "SQL_DATABASE": "<demo-database-name>",
+  "CPF_FIELD": "fsi_cpf",
+  "REASON_CODE_FIELD": "<confirmed-existing-reason-code-logical-field>",
+  "BPF_WORKFLOW_ID": "<deployed-fsi_processorenegociacao-workflowid-GUID>",
+  "BPF_STAGE_MAP": "{\"identificacao\":\"<stage-GUID>\",\"elegibilidade\":\"<stage-GUID>\",\"simulacao\":\"<stage-GUID>\",\"confirmacao\":\"<stage-GUID>\",\"formalizacao\":\"<stage-GUID>\"}",
+  "ODATA_PUBLIC_ROOT": "https://<function-app>.azurewebsites.net/api/odata",
+  "BOOTSTRAP_ENABLED": "0",
+  "DIRECTLINE_SECRET": ""
+}

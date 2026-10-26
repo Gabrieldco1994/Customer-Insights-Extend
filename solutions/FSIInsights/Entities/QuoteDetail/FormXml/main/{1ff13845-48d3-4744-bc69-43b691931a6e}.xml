@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{1ff13845-48d3-4744-bc69-43b691931a6e}</formid>
+    <IntroducedVersion>5.0.0.0</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="general" verticallayout="true" id="{109982e3-de79-48cc-b9f6-54692e6b3221}" IsUserDefined="0" ordinalvalue="0">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="quote detail information" showlabel="false" showbar="false" id="{b10abd1a-0622-44f0-826b-5d23cc11f17b}" IsUserDefined="0" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{267b5a6d-75ac-45ed-9ebc-1619a4580a52}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Selecionar Produto" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                      <cell id="{835c0b42-955b-4a9e-a539-598120cd76ed}" ordinalvalue="20001">
+                        <labels>
+                          <label description="Produto Fora do Catálogo" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{299d78d0-70f6-4013-888a-379a52bdf873}" ordinalvalue="10002">
+                        <labels>
+                          <label description="Produto Existente" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                      <cell id="{7b966045-59b5-4fcd-ba2f-ea5c48df0d4f}" ordinalvalue="20003">
+                        <labels>
+                          <label description="Unidade" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="pricing" showlabel="true" showbar="true" id="{c698d298-de24-4df2-9d74-615b58944ef5}" IsUserDefined="0" ordinalvalue="1">
+                  <rows>
+                    <row>
+                      <cell id="{654649c6-b808-40ab-a7d9-d66e4ddddcfd}" ordinalvalue="10001">
+                        <labels>
+                          <label description="Preço por Unidade" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c4b8fa44-f934-469c-b0e0-a5adc1f19c68}" ordinalvalue="10003">
+                        <labels>
+                          <label description="Desconto por Volume" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{52aeb14b-3eb3-4301-93d3-ecf8325517a3}" ordinalvalue="10005">
+                        <labels>
+                          <label description="Quantidade" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{12eb4313-8f7b-45b3-a4eb-8627d7bab14f}" ordinalvalue="10007">
+                        <labels>
+                          <label description="Valor" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f68d6478-2a5d-4343-91c9-317f0763fe2e}" ordinalvalue="10009">
+                        <labels>
+                          <label description="Desconto Manual" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1afc4de2-7d37-4089-86c0-29e02a68cf82}" ordinalvalue="10011">
+                        <labels>
+                          <label description="Imposto" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{78dc2ac8-f0ae-4f0a-94e5-a4a2f8bab441}" ordinalvalue="10013">
+                        <labels>
+                          <label description="Valor Total" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="delivery" id="{86020aab-4fae-4348-ba38-4654f1ddbfa5}" IsUserDefined="0" ordinalvalue="1">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="delivery information" showlabel="false" showbar="false" id="{c73c8ec3-8b83-4da3-910c-0185c05b5191}" IsUserDefined="0" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{4b6ef5bb-ec22-4c3c-bc4d-9b17b5fba899}" ordinalvalue="20001">
+                        <labels>
+                          <label description="Vendedor" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="address" id="{d8e6ed83-a015-46e8-8563-a283e783a473}" IsUserDefined="0" ordinalvalue="2">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="ship to address" showlabel="true" showbar="true" id="{c864599a-81f1-4ab7-8a8d-0a1cc96f1fd4}" IsUserDefined="0" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell colspan="2" id="{ff9e091b-3a42-40f3-b8bb-04df4dd62392}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Remeter para" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8853810d-d70a-4470-a918-18967d37f5e4}" ordinalvalue="20010">
+                        <labels>
+                          <label description="Condições de Frete" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="editproductpropertiesinlinetab" id="{3F7FF7ED-8EED-4B79-86A9-F21FD8311726}" IsUserDefined="0" showlabel="true" ordinalvalue="3">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="productpropertiessection" showlabel="false" showbar="false" locklevel="1" id="{84C87E0F-BF0F-484E-AE44-BDA58224BD02}" IsUserDefined="0" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{9B6DDF6F-94A8-4FCA-B7CC-E64DD99278BB}" showlabel="false" ordinalvalue="10000">
+                        <labels>
+                          <label description="Configuração da Propriedade" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="fsi_tab" verticallayout="true" id="{38a6c195-f9fa-5640-9452-47e1bff6d3ad}" IsUserDefined="0" expanded="true" showlabel="true" ordinalvalue="4" solutionaction="Added">
+          <labels>
+            <label description="FSI" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="fsi" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{9bfddb18-406b-5be3-b7d2-0ca3cb93029b}" ordinalvalue="0">
+                  <labels>
+                    <label description="FSI" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b4f858ff-9a07-59ee-be82-8e496eae9b59}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Importância segurada" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_importanciasegurada" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="fsi_importanciasegurada" disabled="false" />
+                      </cell>
+                      <cell id="{2b46cd58-3e6c-5120-a644-bf6ad9f34a03}" showlabel="true" locklevel="0" ordinalvalue="20001">
+                        <labels>
+                          <label description="Franquia" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_franquia" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="fsi_franquia" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Informações" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Um formulário para esta entidade." languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

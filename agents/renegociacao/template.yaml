@@ -1,0 +1,31 @@
+kind: BotDefinition
+entity:
+  accessControlPolicy: Any
+  authenticationMode: CustomAzureActiveDirectory
+  authenticationTrigger: Always
+  language: 1046
+  configuration:
+    settings:
+      GenerativeActionsEnabled: false
+    publishOnCreate: false
+    publishOnImport: false
+  template: kickStartTemplate-1.0.0
+components:
+  - kind: DialogComponent
+    displayName: ConversationStart
+    schemaName: template-content.topic.ConversationStart
+    dialog:
+      kind: AdaptiveDialog
+      beginDialog:
+        kind: OnConversationStart
+        id: main
+        actions:
+          - kind: SendActivity
+            id: welcome
+            activity:
+              text:
+                - DEMONSTRAÇÃO FICTÍCIA — assistente de renegociação. Diga renegociar para entrar com segurança, consultar seus contratos e concluir a simulação inteiramente neste chat. CPF não autentica.
+      inputType: {}
+      outputType: {}
+    state: Active
+    status: Active

@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{f93a2336-bbf3-4cf9-bc85-7a03a0f58330}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{8645482a-76df-5fa5-9bc7-8ad1ea4942d0}" name="StageStep2" locklevel="0" expanded="true" visible="false" labelid="{86c2bfec-66e4-407c-853a-cddade2aad2b}">
+          <labels>
+            <label description="Janela de aviso" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{03bd213f-ce12-578c-75a1-652d859aec4a}" name="StageStep2_section1" labelid="{bf36f0c7-55f5-4d3d-9dc1-930bf1522297}">
+                  <labels>
+                    <label description="Janela de aviso" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b78e6c02-f743-5705-9092-d0105f4520b6}" showlabel="true" visible="true" labelid="{00ad60af-2f30-4a34-9bbb-3e5a51b37289}">
+                        <labels>
+                          <label description="Tipo de oportunidade" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_opportunity_fsi_processorenovacao:fsi_tipooportunidade" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="fsi_tipooportunidade" relationship="bpf_opportunity_fsi_processorenovacao" isrequired="true" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5020d15a-b016-5b41-b70c-542796eb5001}" showlabel="true" visible="true" labelid="{4aea81d5-59b4-4a40-9556-bf237574ee7d}">
+                        <labels>
+                          <label description="Produto de origem" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_opportunity_fsi_processorenovacao:fsi_produtoorigemid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_produtoorigemid" relationship="bpf_opportunity_fsi_processorenovacao" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ca342a56-0b1d-526a-8b09-7ade719fc343}" showlabel="true" visible="true" labelid="{2a83a3bd-e667-40ab-a31a-ffb75c6b8a86}">
+                        <labels>
+                          <label description="Fim da vigência" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_opportunity_fsi_processorenovacao:fsi_datafimvigencia" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="fsi_datafimvigencia" relationship="bpf_opportunity_fsi_processorenovacao" isrequired="true" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f990114f-1349-5fa9-8b74-5ba00c73199e}" showlabel="true" visible="true" labelid="{c1cea374-629f-4c7b-a8af-6014ab040bac}">
+                        <labels>
+                          <label description="Sinistralidade (%)" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_opportunity_fsi_processorenovacao:fsi_sinistralidade" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="fsi_sinistralidade" relationship="bpf_opportunity_fsi_processorenovacao" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{05988ee3-b247-5b3d-bfac-6fdd9a7bab55}" name="StageStep11" locklevel="0" expanded="true" visible="false" labelid="{6052ab9b-92f0-4fc8-8c30-f6fd9eb94acc}">
+          <labels>
+            <label description="Proposta de renovação" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{bb603c89-10b4-52e3-9ae7-756e87f04a4b}" name="StageStep11_section1" labelid="{a2b81eab-0db8-4928-bde2-b243f5d7895b}">
+                  <labels>
+                    <label description="Proposta de renovação" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{491b9d5e-b889-523b-91dd-d668530a580a}" showlabel="true" visible="true" labelid="{09509da2-9fa5-4dca-b529-364dbe68baca}">
+                        <labels>
+                          <label description="Solução proposta" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_opportunity_fsi_processorenovacao:proposedsolution" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="proposedsolution" relationship="bpf_opportunity_fsi_processorenovacao" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7cb4890a-7b30-509f-a441-e352dbc479d1}" showlabel="true" visible="true" labelid="{e488de10-7db7-4a82-a137-44d1833538b7}">
+                        <labels>
+                          <label description="Valor estimado" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_opportunity_fsi_processorenovacao:estimatedvalue" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="estimatedvalue" relationship="bpf_opportunity_fsi_processorenovacao" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{feea6c6c-fc38-54ca-979a-0e0606df8db6}" showlabel="true" visible="true" labelid="{d5ee442f-f413-4aa8-ae59-ca0e889ca81f}">
+                        <labels>
+                          <label description="Corretora" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_opportunity_fsi_processorenovacao:fsi_corretoraid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_corretoraid" relationship="bpf_opportunity_fsi_processorenovacao" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{15f79001-15bd-5a3e-a177-2605d872e9b6}" name="StageStep18" locklevel="0" expanded="true" visible="false" labelid="{58ffbbbe-2e8f-4985-a3bf-e41dbb741c99}">
+          <labels>
+            <label description="Negociação" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{d2a2e644-309c-0d95-dac9-4b3df39f4874}" name="StageStep18_section1" labelid="{32077b4b-16c4-4de7-b154-1a2b19e88f0c}">
+                  <labels>
+                    <label description="Negociação" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{95b25515-c5c5-52eb-8e75-ea0931438169}" showlabel="true" visible="true" labelid="{62c45ebe-d412-49e2-8919-c6478b336f53}">
+                        <labels>
+                          <label description="Pontos de atenção do cliente" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_opportunity_fsi_processorenovacao:customerpainpoints" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="customerpainpoints" relationship="bpf_opportunity_fsi_processorenovacao" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{dfd08d66-35dc-5bb4-8d68-86e314be3f33}" showlabel="true" visible="true" labelid="{be13df7b-4a47-480d-8c7a-7d59e98c37ba}">
+                        <labels>
+                          <label description="Orçamento do cliente" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_opportunity_fsi_processorenovacao:budgetamount" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="budgetamount" relationship="bpf_opportunity_fsi_processorenovacao" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{56e1df9b-f559-5f47-ab25-06ad4eadc1f3}" name="StageStep23" locklevel="0" expanded="true" visible="false" labelid="{3bdd9e4b-f51c-43d8-8efd-f6edd1442841}">
+          <labels>
+            <label description="Decisão" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{764adac7-3f2d-5dac-fd1b-a27cb8618cd4}" name="StageStep23_section1" labelid="{6724660a-daa1-4d41-9288-8a5ab5ef9309}">
+                  <labels>
+                    <label description="Decisão" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{3016f397-3ddd-5dac-84c6-c91e575380c6}" showlabel="true" visible="true" labelid="{6fbce4a1-cae9-40e1-a285-0c8caee640e9}">
+                        <labels>
+                          <label description="Probabilidade de fechamento" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_opportunity_fsi_processorenovacao:closeprobability" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="closeprobability" relationship="bpf_opportunity_fsi_processorenovacao" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ee27a284-abfa-5dca-841b-d5d4fed6628b}" showlabel="true" visible="true" labelid="{8a241c33-db91-4303-abff-ca4b1f23b18f}">
+                        <labels>
+                          <label description="Decisor identificado" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_opportunity_fsi_processorenovacao:decisionmaker" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="decisionmaker" relationship="bpf_opportunity_fsi_processorenovacao" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informações" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Um formulário para esta entidade." languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Role id="{9b0974e0-bb7a-5d62-b9ca-7dd7b52fdefa}" name="FSI Renegociacao API" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsCustomizable>1</IsCustomizable>
+  <IsAutoAssigned>0</IsAutoAssigned>
+  <RolePrivileges>
+    <RolePrivilege name="prvAppendActivity" level="Global" />
+    <RolePrivilege name="prvAppendfsi_processorenegociacao" level="Global" />
+    <RolePrivilege name="prvAppendfsi_renegociacao" level="Global" />
+    <RolePrivilege name="prvAppendIncident" level="Global" />
+    <RolePrivilege name="prvAppendToAccount" level="Global" />
+    <RolePrivilege name="prvAppendToActivity" level="Global" />
+    <RolePrivilege name="prvAppendToContact" level="Global" />
+    <RolePrivilege name="prvAppendTofsi_linhanegocio" level="Global" />
+    <RolePrivilege name="prvAppendTofsi_motivo" level="Global" />
+    <RolePrivilege name="prvAppendTofsi_processorenegociacao" level="Global" />
+    <RolePrivilege name="prvAppendTofsi_produtocliente" level="Global" />
+    <RolePrivilege name="prvAppendTofsi_renegociacao" level="Global" />
+    <RolePrivilege name="prvAppendToIncident" level="Global" />
+    <RolePrivilege name="prvAppendToWorkflow" level="Global" />
+    <RolePrivilege name="prvCreateActivity" level="Global" />
+    <RolePrivilege name="prvCreatefsi_processorenegociacao" level="Global" />
+    <RolePrivilege name="prvCreatefsi_renegociacao" level="Global" />
+    <RolePrivilege name="prvCreateIncident" level="Global" />
+    <RolePrivilege name="prvCreateSharePointData" level="Global" />
+    <RolePrivilege name="prvReadAccount" level="Global" />
+    <RolePrivilege name="prvReadActivity" level="Global" />
+    <RolePrivilege name="prvReadAsyncOperation" level="Basic" />
+    <RolePrivilege name="prvReadAttribute" level="Global" />
+    <RolePrivilege name="prvReadContact" level="Global" />
+    <RolePrivilege name="prvReadEntity" level="Global" />
+    <RolePrivilege name="prvReadfsi_linhanegocio" level="Global" />
+    <RolePrivilege name="prvReadfsi_motivo" level="Global" />
+    <RolePrivilege name="prvReadfsi_processorenegociacao" level="Global" />
+    <RolePrivilege name="prvReadfsi_produtocliente" level="Global" />
+    <RolePrivilege name="prvReadfsi_renegociacao" level="Global" />
+    <RolePrivilege name="prvReadIncident" level="Global" />
+    <RolePrivilege name="prvReadPluginAssembly" level="Global" />
+    <RolePrivilege name="prvReadPluginType" level="Global" />
+    <RolePrivilege name="prvReadRelationship" level="Global" />
+    <RolePrivilege name="prvReadSdkMessage" level="Global" />
+    <RolePrivilege name="prvReadSdkMessageProcessingStep" level="Global" />
+    <RolePrivilege name="prvReadSdkMessageProcessingStepImage" level="Global" />
+    <RolePrivilege name="prvReadSharePointData" level="Global" />
+    <RolePrivilege name="prvReadSharePointDocument" level="Global" />
+    <RolePrivilege name="prvReadWorkflow" level="Global" />
+    <RolePrivilege name="prvWriteActivity" level="Global" />
+    <RolePrivilege name="prvWritefsi_processorenegociacao" level="Global" />
+    <RolePrivilege name="prvWritefsi_renegociacao" level="Global" />
+    <RolePrivilege name="prvWriteIncident" level="Global" />
+    <RolePrivilege name="prvWriteSharePointData" level="Global" />
+  </RolePrivileges>
+</Role>

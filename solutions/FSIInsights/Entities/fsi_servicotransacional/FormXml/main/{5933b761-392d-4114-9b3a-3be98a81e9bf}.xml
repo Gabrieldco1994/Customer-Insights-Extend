@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{5933b761-392d-4114-9b3a-3be98a81e9bf}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="geral" verticallayout="true" id="{7684ab42-a773-5e84-a236-3aa1ab0ab4e3}" IsUserDefined="0" expanded="true" showlabel="true">
+          <labels>
+            <label description="Geral" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="servico" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{17570af8-10b3-5018-9f61-4ab029c1c6cd}">
+                  <labels>
+                    <label description="Serviço" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b31a747a-ca48-5538-a012-5d7883b012cd}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Nome" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_name" disabled="false" />
+                      </cell>
+                      <cell id="{e19c28f2-4a7d-5d60-aac1-c572bcc544c6}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Código" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_codigo" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_codigo" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{45c3c7ca-6f3f-57e6-a284-d97034bc95e6}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Entidade" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_entidade" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_entidade" disabled="false" />
+                      </cell>
+                      <cell id="{afeff5e1-a837-58a5-82ea-73414bcb274c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Motivo do caso (filtro)" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_motivoid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_motivoid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{540cfffe-5c3e-5783-b8ff-c5ef2f874dcd}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Descrição do serviço" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_descricao" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_descricao" disabled="false" />
+                      </cell>
+                      <cell id="{f4448476-c60d-5067-ad11-98705b068405}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1046" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tela" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{c669e5cc-538e-573f-a8ff-2d2270651101}">
+                  <labels>
+                    <label description="Tela por etapa" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b06ee0cc-04ee-534d-aae4-f3dbcf4f337c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Processo (nome único do BPF)" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_processo" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_processo" disabled="false" />
+                      </cell>
+                      <cell id="{02fc72a6-e82c-5c27-a405-0fe5fadcce19}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Etapa do processo (identificador)" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_etapa" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_etapa" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f1ca5164-0b16-5652-ae44-dbff3d1e971b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Tipo de tela" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_tipotela" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_tipotela" disabled="false" />
+                      </cell>
+                      <cell id="{6acf082f-8f7a-552e-9090-85ec091c644b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Identificador da tela (nome da seção ou da página)" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_identificador" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_identificador" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7e29f529-99d1-51a8-9e1b-06fac958505b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Parâmetros (JSON)" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_parametros" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_parametros" disabled="false" />
+                      </cell>
+                      <cell id="{eb55dc1d-16df-59bb-842c-09e66ed2d304}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1046" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{80ec4b99-4131-504c-a216-3bb166d34b9e}" columns="1111" celllabelposition="Top" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{2db6db1a-0a0a-55bf-87ff-e6ec2894a751}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Entidade" languagecode="1046" />
+              </labels>
+              <control id="fsi_entidade" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_entidade" disabled="false" />
+            </cell>
+            <cell id="{3ca8a770-d6d5-59c6-a301-0bd83613cef3}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Processo (nome único do BPF)" languagecode="1046" />
+              </labels>
+              <control id="fsi_processo" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_processo" disabled="false" />
+            </cell>
+            <cell id="{3e38e530-635e-5ad4-8e60-417c0a0616a5}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Etapa do processo (identificador)" languagecode="1046" />
+              </labels>
+              <control id="fsi_etapa" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_etapa" disabled="false" />
+            </cell>
+            <cell id="{013ff5d0-7686-5d15-9c30-a5e00088cbe0}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Tipo de tela" languagecode="1046" />
+              </labels>
+              <control id="fsi_tipotela" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_tipotela" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informações" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Um formulário para esta entidade." languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

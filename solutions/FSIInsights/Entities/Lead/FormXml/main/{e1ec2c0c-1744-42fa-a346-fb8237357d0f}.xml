@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{e1ec2c0c-1744-42fa-a346-fb8237357d0f}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form showImage="true" shownavigationbar="true" maxWidth="1920">
+      <tabs>
+        <tab name="linkedin_v2_tab" id="{631dcac1-5d53-49a4-b61c-ec3a189a7e5e}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true" availableforphone="false" visible="false" ordinalvalue="4">
+          <columns>
+            <column width="34%" id="0">
+              <sections>
+                <section name="linkedin_v2_tab_section_1" showlabel="true" showbar="false" locklevel="0" id="{6768605a-adc3-49bd-b00a-ef3ac640c0c5}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{89864ff7-f87d-4062-bfa9-d2c234c2ab3b}" showlabel="false" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Sobrenome" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="1">
+              <sections>
+                <section name="linkedin_v2_tab_section_2" showlabel="true" showbar="false" locklevel="0" id="{26e4ab69-17ec-4606-856d-6b29e969f1bc}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{29eeae22-0013-4d18-a59b-263568892ac2}" showlabel="false" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Nome da Empresa" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="2">
+              <sections>
+                <section name="linkedin_v2_tab_section_3" showlabel="true" showbar="false" locklevel="0" id="{52f1dfc8-21ac-4f22-9918-d3e11f79f53b}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{6f8c37e6-d7f9-49a0-bdc5-2601b5a6fde2}" showlabel="false" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Sobrenome" languagecode="1046" solutionaction="Modified" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Sales Insights" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulário Cliente Potencial padrão atualizado" languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

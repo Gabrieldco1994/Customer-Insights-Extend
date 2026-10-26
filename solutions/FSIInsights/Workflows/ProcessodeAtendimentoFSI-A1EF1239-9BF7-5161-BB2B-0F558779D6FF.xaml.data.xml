@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{a1ef1239-9bf7-5161-bb2b-0f558779d6ff}" Name="Processo de Atendimento FSI" Description="Atendimento de Caso com serviço transacional: identificar o motivo, executar o serviço (tela do catálogo fsi_servicotransacional) e encerrar. Não substitui o fluxo nativo de Caso." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/ProcessodeAtendimentoFSI-A1EF1239-9BF7-5161-BB2B-0F558779D6FF.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>4</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <RunAs>1</RunAs>
+  <UniqueName>fsi_processoatendimento</UniqueName>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ModernFlowType>0</ModernFlowType>
+  <PrimaryEntity>Incident</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1046" description="Processo de Atendimento FSI" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description languagecode="1046" description="Atendimento de Caso com serviço transacional: identificar o motivo, executar o serviço (tela do catálogo fsi_servicotransacional) e encerrar. Não substitui o fluxo nativo de Caso." />
+  </Descriptions>
+  <labels>
+    <steplabels id="{8a4ccacf-11e1-5b15-9648-4e7c0b394a8e}">
+      <label languagecode="1046" description="Identificação" />
+    </steplabels>
+    <steplabels id="{05e64428-d57e-540c-98e8-791be9f3c428}">
+      <label languagecode="1046" description="Motivo" />
+    </steplabels>
+    <steplabels id="{d340b84e-b4bb-532f-a93d-49cc1b45f6b3}">
+      <label languagecode="1046" description="Produto do cliente" />
+    </steplabels>
+    <steplabels id="{218cb759-4328-5027-8381-26a1d46efdb6}">
+      <label languagecode="1046" description="Execução do serviço" />
+    </steplabels>
+    <steplabels id="{83add249-9c83-5c12-8509-cb3c86aa7496}">
+      <label languagecode="1046" description="Tipo de manifestação" />
+    </steplabels>
+    <steplabels id="{656761b1-4542-5570-b45d-ec776de4f837}">
+      <label languagecode="1046" description="Encerramento" />
+    </steplabels>
+    <steplabels id="{51b1a2a4-ecac-51e5-8d98-30db32d280b9}">
+      <label languagecode="1046" description="Descrição do resultado" />
+    </steplabels>
+  </labels>
+</Workflow>

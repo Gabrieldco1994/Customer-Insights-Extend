@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{4aa87206-b6c8-f111-aaaf-000d3a343828}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="fsi_name" select="1" icon="1" preview="1">
+        <row name="result" id="fsi_itemseguradoid">
+          <cell name="fsi_name" width="160" />
+          <cell name="fsi_apoliceid" width="160" />
+          <cell name="fsi_tipoitem" width="160" />
+          <cell name="fsi_valorreferencia" width="160" />
+          <cell name="ownerid" width="160" />
+          <cell name="createdon" width="160" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical" output-format="xml-platform">
+        <entity name="fsi_itemsegurado">
+          <attribute name="fsi_name" />
+          <attribute name="fsi_apoliceid" />
+          <attribute name="fsi_tipoitem" />
+          <attribute name="fsi_valorreferencia" />
+          <attribute name="ownerid" />
+          <attribute name="createdon" />
+          <attribute name="fsi_itemseguradoid" />
+          <order attribute="fsi_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Itens Segurados – Visão Geral" languagecode="1046" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

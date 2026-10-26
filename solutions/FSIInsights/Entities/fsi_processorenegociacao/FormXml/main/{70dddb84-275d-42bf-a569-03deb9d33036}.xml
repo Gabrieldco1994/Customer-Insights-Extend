@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{70dddb84-275d-42bf-a569-03deb9d33036}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{765a5e9d-f028-5234-bc57-b7bb55df46cd}" name="StageStep2" locklevel="0" expanded="true" visible="false" labelid="{5cb6496c-1027-40d7-9cc3-7467b7247255}">
+          <labels>
+            <label description="Identificação" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{8848b517-77f2-b69e-590d-d0fbbc26f8a2}" name="StageStep2_section1" labelid="{dbe782ac-7f9f-4341-9501-44b99e204a03}">
+                  <labels>
+                    <label description="Identificação" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{33f9c20d-49e8-562b-9f9b-0e77981f2dfc}" showlabel="true" visible="true" labelid="{174ca480-4cd5-4e4c-8cd3-2e939029fb34}">
+                        <labels>
+                          <label description="Cliente" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_incident_fsi_processorenegociacao:customerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="customerid" relationship="bpf_incident_fsi_processorenegociacao" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{b859111d-df3b-5a77-9f26-73f0e901ac26}" name="StageStep5" locklevel="0" expanded="true" visible="false" labelid="{e5b871cc-d262-4e71-ac45-49c5099c4a50}">
+          <labels>
+            <label description="Elegibilidade" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{219265ae-456f-f4be-8c73-5edfe4f95836}" name="StageStep5_section1" labelid="{79a25450-8d4d-499d-b594-a936f1b45712}">
+                  <labels>
+                    <label description="Elegibilidade" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{544aeb45-575c-5a7a-8cda-fb22a9d9950f}" showlabel="true" visible="true" labelid="{893f3084-35a4-4d1a-8fb6-6737119f301e}">
+                        <labels>
+                          <label description="Financiamento" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_incident_fsi_processorenegociacao:fsi_produtoclienteid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_produtoclienteid" relationship="bpf_incident_fsi_processorenegociacao" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{46153538-f165-5018-bd2b-abde4394011a}" name="StageStep8" locklevel="0" expanded="true" visible="false" labelid="{6859bd9d-d0af-4051-ab60-f4d660f93d8f}">
+          <labels>
+            <label description="Simulação e escolha" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{713c03de-cd8c-355b-fc54-123d3a0df4c6}" name="StageStep8_section1" labelid="{89f5f44b-ba6e-435b-958b-b956d3cc8ab4}">
+                  <labels>
+                    <label description="Simulação e escolha" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{768be710-4c66-596f-aeb6-e0353fa672fb}" showlabel="true" visible="true" labelid="{df7c9020-4ee2-48c4-b60d-af20359e58d3}">
+                        <labels>
+                          <label description="Atendimento" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_incident_fsi_processorenegociacao:title" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="title" relationship="bpf_incident_fsi_processorenegociacao" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{7bff740a-70f3-568b-a2a8-cfbd83a89c53}" name="StageStep11" locklevel="0" expanded="true" visible="false" labelid="{6b8a2121-2a01-4754-8b03-adf53dfc2bf3}">
+          <labels>
+            <label description="Confirmação" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{cee74ac4-6e10-de99-bb49-74133c341515}" name="StageStep11_section1" labelid="{9c34856e-23b1-4de3-aecf-587ddaa6e171}">
+                  <labels>
+                    <label description="Confirmação" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{14b4c11f-24b7-5649-8f82-43871a6cca0a}" showlabel="true" visible="true" labelid="{ba030367-c4ca-4be5-b343-7ad16d6b7abf}">
+                        <labels>
+                          <label description="Assunto" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_incident_fsi_processorenegociacao:fsi_motivoid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_motivoid" relationship="bpf_incident_fsi_processorenegociacao" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{1b9574d9-412e-55f2-bbc0-38882ee0fd19}" name="StageStep14" locklevel="0" expanded="true" visible="false" labelid="{e4a9bb9d-d733-4802-ae86-0728eec6b8ce}">
+          <labels>
+            <label description="Formalização e acompanhamento" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{2688f85c-68c2-8b80-61a7-e9cd9eedeb9e}" name="StageStep14_section1" labelid="{d85be6cc-bb40-469c-80ba-48bf264edb69}">
+                  <labels>
+                    <label description="Formalização e acompanhamento" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{ad6b0d8f-dd78-53fc-bb64-4afc3e35f7c0}" showlabel="true" visible="true" labelid="{349e58f8-395d-4739-8284-21d613fe02f1}">
+                        <labels>
+                          <label description="Resultado" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_incident_fsi_processorenegociacao:description" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="description" relationship="bpf_incident_fsi_processorenegociacao" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informações" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Um formulário para esta entidade." languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModuleSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SiteMapUniqueName>fsi_FSICustomerInsights</SiteMapUniqueName>
+  <EnableCollapsibleGroups>False</EnableCollapsibleGroups>
+  <ShowHome>True</ShowHome>
+  <ShowPinned>True</ShowPinned>
+  <ShowRecents>True</ShowRecents>
+  <SiteMap>
+    <Area Id="area_fsi" ShowGroups="true">
+      <Titles>
+        <Title LCID="1046" Title="FSI" />
+      </Titles>
+      <Group Id="grp_rel" IsProfile="false">
+        <Titles>
+          <Title LCID="1046" Title="Relacionamento" />
+        </Titles>
+        <SubArea Id="sub_contact" Entity="contact">
+          <Titles>
+            <Title LCID="1046" Title="Contatos" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_account" Entity="account">
+          <Titles>
+            <Title LCID="1046" Title="Contas" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_fsi_vinculonegocio" Entity="fsi_vinculonegocio">
+          <Titles>
+            <Title LCID="1046" Title="Vínculos de Negócio" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_fsi_grupofamiliar" Entity="fsi_grupofamiliar">
+          <Titles>
+            <Title LCID="1046" Title="Grupos Familiares" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_fsi_membrogrupo" Entity="fsi_membrogrupo">
+          <Titles>
+            <Title LCID="1046" Title="Membros do Grupo" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_fsi_eventovida" Entity="fsi_eventovida">
+          <Titles>
+            <Title LCID="1046" Title="Eventos de Vida" />
+          </Titles>
+        </SubArea>
+      </Group>
+      <Group Id="grp_com" IsProfile="false">
+        <Titles>
+          <Title LCID="1046" Title="Comercial" />
+        </Titles>
+        <SubArea Id="sub_lead" Entity="lead">
+          <Titles>
+            <Title LCID="1046" Title="Leads" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_opportunity" Entity="opportunity">
+          <Titles>
+            <Title LCID="1046" Title="Oportunidades" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_quote" Entity="quote">
+          <Titles>
+            <Title LCID="1046" Title="Cotações" />
+          </Titles>
+        </SubArea>
+      </Group>
+      <Group Id="grp_ctr" IsProfile="false">
+        <Titles>
+          <Title LCID="1046" Title="Contratos e Produtos" />
+        </Titles>
+        <SubArea Id="sub_fsi_produtocliente" Entity="fsi_produtocliente">
+          <Titles>
+            <Title LCID="1046" Title="Produtos do Cliente" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_fsi_participacao" Entity="fsi_participacao">
+          <Titles>
+            <Title LCID="1046" Title="Participações" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_fsi_detalhefinanceiro" Entity="fsi_detalhefinanceiro">
+          <Titles>
+            <Title LCID="1046" Title="Detalhes Financeiros" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_product" Entity="product">
+          <Titles>
+            <Title LCID="1046" Title="Catálogo de Produtos" />
+          </Titles>
+        </SubArea>
+      </Group>
+      <Group Id="grp_seg" IsProfile="false">
+        <Titles>
+          <Title LCID="1046" Title="Seguros" />
+        </Titles>
+        <SubArea Id="sub_fsi_apolice" Entity="fsi_apolice">
+          <Titles>
+            <Title LCID="1046" Title="Apólices" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_fsi_cobertura" Entity="fsi_cobertura">
+          <Titles>
+            <Title LCID="1046" Title="Coberturas" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_fsi_itemsegurado" Entity="fsi_itemsegurado">
+          <Titles>
+            <Title LCID="1046" Title="Itens Segurados" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_fsi_endosso" Entity="fsi_endosso">
+          <Titles>
+            <Title LCID="1046" Title="Endossos" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_fsi_sinistro" Entity="fsi_sinistro">
+          <Titles>
+            <Title LCID="1046" Title="Sinistros" />
+          </Titles>
+        </SubArea>
+      </Group>
+      <Group Id="grp_ate" IsProfile="false">
+        <Titles>
+          <Title LCID="1046" Title="Atendimento" />
+        </Titles>
+        <SubArea Id="sub_incident" Entity="incident">
+          <Titles>
+            <Title LCID="1046" Title="Casos" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_entitlement" Entity="entitlement">
+          <Titles>
+            <Title LCID="1046" Title="Direitos" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_fsi_motivo" Entity="fsi_motivo">
+          <Titles>
+            <Title LCID="1046" Title="Motivos" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_fsi_servicotransacional" Entity="fsi_servicotransacional">
+          <Titles>
+            <Title LCID="1046" Title="Serviços Transacionais" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_fsi_contestacao" Entity="fsi_contestacao">
+          <Titles>
+            <Title LCID="1046" Title="Contestações" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_fsi_itemfatura" Entity="fsi_itemfatura">
+          <Titles>
+            <Title LCID="1046" Title="Itens de Fatura" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_fsi_renegociacao" Entity="fsi_renegociacao">
+          <Titles>
+            <Title LCID="1046" Title="Renegociações" />
+          </Titles>
+        </SubArea>
+      </Group>
+      <Group Id="grp_jor" IsProfile="false">
+        <Titles>
+          <Title LCID="1046" Title="Jornada e Persona" />
+        </Titles>
+        <SubArea Id="sub_fsi_movimentoetapa" Entity="fsi_movimentoetapa">
+          <Titles>
+            <Title LCID="1046" Title="Movimentos de Etapa" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_fsi_etapajornada" Entity="fsi_etapajornada">
+          <Titles>
+            <Title LCID="1046" Title="Etapas da Jornada" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_fsi_jornada" Entity="fsi_jornada">
+          <Titles>
+            <Title LCID="1046" Title="Jornadas" />
+          </Titles>
+        </SubArea>
+      </Group>
+      <Group Id="grp_cfg" IsProfile="false">
+        <Titles>
+          <Title LCID="1046" Title="Configuração" />
+        </Titles>
+        <SubArea Id="sub_fsi_linhanegocio" Entity="fsi_linhanegocio">
+          <Titles>
+            <Title LCID="1046" Title="Linhas de Negócio" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+  </SiteMap>
+  <LocalizedNames>
+    <LocalizedName description="FSI Customer Insights" languagecode="1046" />
+  </LocalizedNames>
+</AppModuleSiteMap>

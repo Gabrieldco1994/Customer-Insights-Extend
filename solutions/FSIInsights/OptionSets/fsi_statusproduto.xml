@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="fsi_statusproduto" localizedName="Status do produto" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <displaynames>
+    <displayname description="Status do produto" languagecode="1046" />
+  </displaynames>
+  <options>
+    <option value="712400000" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Proposta" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400001" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Ativo" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400002" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Suspenso" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400003" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Cancelado" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400004" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Encerrado" languagecode="1046" />
+      </labels>
+    </option>
+  </options>
+</optionset>

@@ -1,0 +1,6 @@
+bot.schema.yaml-authoring.json
+source-template.yaml
+native-roundtrip.yaml
+readback/
+before/
+__pycache__/

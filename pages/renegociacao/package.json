@@ -1,0 +1,16 @@
+{
+  "name": "fsi-renegociacao-pages",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/chat-frame.js --bundle --minify --target=es2022 --alias:botframework-webchat=./node_modules/botframework-webchat/dist/webchat.js --outfile=dist/chat.js && esbuild src/main.js --bundle --minify --target=es2022 --outfile=dist/renegociacao.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@azure/msal-browser": "5.26.0",
+    "botframework-webchat": "4.19.2"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

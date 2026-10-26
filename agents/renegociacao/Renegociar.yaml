@@ -1,0 +1,837 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Renegociar financiamento
+    triggerQueries:
+      - quero renegociar meu financiamento
+      - renegociar
+      - negociar dívida
+      - consultar meus contratos
+      - ofertas de renegociação
+      - simular acordo
+  actions:
+    - kind: SendActivity
+      id: demo
+      activity:
+        text:
+          - DEMONSTRAÇÃO FICTÍCIA — nenhum acordo real será criado. Podemos concluir a simulação neste chat, sem abrir outra página. Sua conta autenticada determina quais contratos você pode consultar; CPF é apenas confirmação opcional.
+    - kind: OAuthInput
+      id: login
+      title: Entrar com segurança
+      text: Entre com a conta vinculada ao seu cadastro para acessar somente seus contratos.
+    - kind: ConditionGroup
+      id: identity_required
+      conditions:
+        - id: identity_required_case
+          condition: =System.User.IsLoggedIn <> true || IsBlank(System.User.AccessToken)
+          actions:
+            - kind: SendActivity
+              id: no_identity_message
+              activity:
+                text:
+                  - Demonstração fictícia. É necessário entrar com a conta vinculada. CPF ou identificador informado não substitui autenticação.
+            - kind: EndDialog
+              id: no_identity_end
+    - kind: Question
+      id: ask_cpf
+      interruptionPolicy:
+        allowInterruption: false
+      repeatCount: 2
+      alwaysPrompt: true
+      variable: init:Topic.CheckCpf
+      prompt:
+        text:
+          - Deseja confirmar também seu CPF? É opcional e não substitui entrar na conta.
+      defaultValue: =Blank()
+      entity: BooleanPrebuiltEntity
+    - kind: ConditionGroup
+      id: cpf_answer
+      conditions:
+        - id: cpf_answer_case
+          condition: =IsBlank(Topic.CheckCpf)
+          actions:
+            - kind: SendActivity
+              id: no_cpf_answer_message
+              activity:
+                text:
+                  - Demonstração fictícia. Operação interrompida sem consultar contratos.
+            - kind: EndDialog
+              id: no_cpf_answer_end
+    - kind: SetVariable
+      id: empty_cpf
+      variable: init:Topic.Cpf
+      value: =""
+    - kind: ConditionGroup
+      id: optional_cpf
+      conditions:
+        - id: optional_cpf_case
+          condition: =Topic.CheckCpf = true
+          actions:
+            - kind: Question
+              id: cpf
+              interruptionPolicy:
+                allowInterruption: false
+              repeatCount: 2
+              alwaysPrompt: true
+              variable: init:Topic.CpfInput
+              prompt:
+                text:
+                  - Informe somente o seu CPF, com 11 dígitos.
+              defaultValue: =Blank()
+              entity: StringPrebuiltEntity
+            - kind: SetVariable
+              id: normalize_cpf
+              variable: Topic.Cpf
+              value: =Substitute(Substitute(Substitute(Trim(Topic.CpfInput), ".", ""), "-", ""), " ", "")
+            - kind: ConditionGroup
+              id: validate_cpf
+              conditions:
+                - id: validate_cpf_case
+                  condition: =!IsMatch(Topic.Cpf, "[0-9]{11}")
+                  actions:
+                    - kind: SendActivity
+                      id: bad_cpf_message
+                      activity:
+                        text:
+                          - Demonstração fictícia. CPF em formato inválido. Nenhum contrato foi consultado.
+                    - kind: EndDialog
+                      id: bad_cpf_end
+    - kind: SetVariable
+      id: profile_reset_error
+      variable: init:Topic.profileError
+      value: =Blank()
+    - kind: HttpRequestAction
+      id: profile
+      method: Post
+      url: https://fsi-reneg-88957f9a.azurewebsites.net/api/renegociacao/profile
+      headers:
+        Authorization: ="Bearer " & System.User.AccessToken
+        Content-Type: application/json
+      body:
+        kind: RawRequestContent
+        contentType: application/json
+        content: '=If(Topic.CheckCpf, JSON({cpf: Topic.Cpf}), "{}")'
+      requestTimeoutInMilliseconds: 30000
+      response: init:Topic.profile
+      responseSchema:
+        kind: Record
+        properties:
+          status: String
+          demonstration: Boolean
+          data:
+            type:
+              kind: Record
+              properties:
+                contactId: String
+                name: String
+                cpfVerified: Boolean
+      errorHandling:
+        kind: ContinueOnErrorBehavior
+        statusCode: Topic.profileError
+        errorResponseBody: init:Topic.profileErrorBody
+    - kind: ConditionGroup
+      id: profile_error
+      conditions:
+        - id: profile_error_case
+          condition: =!IsBlank(Topic.profileError)
+          actions:
+            - kind: ConditionGroup
+              id: profile_unauthorized
+              conditions:
+                - id: profile_unauthorized_case
+                  condition: =Topic.profileError = 401 || Topic.profileError = 403
+                  actions:
+                    - kind: SendActivity
+                      id: profile_identity_message
+                      activity:
+                        text:
+                          - Demonstração fictícia. A identidade não foi autorizada. Entre com a conta vinculada ao seu cadastro. CPF não autentica e nenhum contrato será consultado por CPF.
+                    - kind: EndDialog
+                      id: profile_identity_end
+              elseActions:
+                - kind: SendActivity
+                  id: profile_unavailable_message
+                  activity:
+                    text:
+                      - Demonstração fictícia. O serviço não confirmou esta operação. Não vou inventar condições nem informar que foi concluída. Tente consultar o andamento mais tarde.
+                - kind: EndDialog
+                  id: profile_unavailable_end
+    - kind: ConditionGroup
+      id: profile_wrapper
+      conditions:
+        - id: profile_wrapper_case
+          condition: =Topic.profile.demonstration <> true || Topic.profile.status <> "ok"
+          actions:
+            - kind: SendActivity
+              id: profile_invalid_message
+              activity:
+                text:
+                  - Demonstração fictícia. O serviço ainda não disponibilizou uma resposta válida. Nenhuma conclusão foi confirmada.
+            - kind: EndDialog
+              id: profile_invalid_end
+    - kind: ConditionGroup
+      id: mapped_profile
+      conditions:
+        - id: mapped_profile_case
+          condition: =IsBlank(Topic.profile.data.contactId) || (Topic.CheckCpf && Topic.profile.data.cpfVerified <> true)
+          actions:
+            - kind: SendActivity
+              id: unmapped_message
+              activity:
+                text:
+                  - Demonstração fictícia. Não foi possível validar seu cadastro autenticado ou confirmar o CPF. Não consultarei contratos de outra pessoa.
+            - kind: EndDialog
+              id: unmapped_end
+    - kind: SendActivity
+      id: profile_name
+      activity:
+        text:
+          - '{"Demonstração fictícia. Cadastro autenticado: " & Topic.profile.data.name & "."}'
+    - kind: SetVariable
+      id: contracts_reset_error
+      variable: init:Topic.contractsError
+      value: =Blank()
+    - kind: HttpRequestAction
+      id: contracts
+      method: Post
+      url: https://fsi-reneg-88957f9a.azurewebsites.net/api/renegociacao/contracts
+      headers:
+        Authorization: ="Bearer " & System.User.AccessToken
+        Content-Type: application/json
+      body:
+        kind: JsonRequestContent
+        content: ={}
+      requestTimeoutInMilliseconds: 30000
+      response: init:Topic.contracts
+      responseSchema:
+        kind: Record
+        properties:
+          status: String
+          demonstration: Boolean
+          data:
+            type:
+              kind: Record
+              properties:
+                contracts:
+                  type:
+                    kind: Table
+                    properties:
+                      id:
+                        type: String
+                      number: String
+                      vehicle: String
+                      debtCents: Number
+                      eligible: Boolean
+      errorHandling:
+        kind: ContinueOnErrorBehavior
+        statusCode: Topic.contractsError
+        errorResponseBody: init:Topic.contractsErrorBody
+    - kind: ConditionGroup
+      id: contracts_error
+      conditions:
+        - id: contracts_error_case
+          condition: =!IsBlank(Topic.contractsError)
+          actions:
+            - kind: ConditionGroup
+              id: contracts_unauthorized
+              conditions:
+                - id: contracts_unauthorized_case
+                  condition: =Topic.contractsError = 401 || Topic.contractsError = 403
+                  actions:
+                    - kind: SendActivity
+                      id: contracts_identity_message
+                      activity:
+                        text:
+                          - Demonstração fictícia. A identidade não foi autorizada. Entre com a conta vinculada ao seu cadastro. CPF não autentica e nenhum contrato será consultado por CPF.
+                    - kind: EndDialog
+                      id: contracts_identity_end
+              elseActions:
+                - kind: SendActivity
+                  id: contracts_unavailable_message
+                  activity:
+                    text:
+                      - Demonstração fictícia. O serviço não confirmou esta operação. Não vou inventar condições nem informar que foi concluída. Tente consultar o andamento mais tarde.
+                - kind: EndDialog
+                  id: contracts_unavailable_end
+    - kind: ConditionGroup
+      id: contracts_wrapper
+      conditions:
+        - id: contracts_wrapper_case
+          condition: =Topic.contracts.demonstration <> true || Topic.contracts.status <> "ok"
+          actions:
+            - kind: SendActivity
+              id: contracts_invalid_message
+              activity:
+                text:
+                  - Demonstração fictícia. O serviço ainda não disponibilizou uma resposta válida. Nenhuma conclusão foi confirmada.
+            - kind: EndDialog
+              id: contracts_invalid_end
+    - kind: ConditionGroup
+      id: no_contracts
+      conditions:
+        - id: no_contracts_case
+          condition: =CountRows(Topic.contracts.data.contracts) = 0
+          actions:
+            - kind: SendActivity
+              id: no_contract_message
+              activity:
+                text:
+                  - Demonstração fictícia. Não há contratos vinculados à sua identidade.
+            - kind: EndDialog
+              id: no_contract_end
+    - kind: SendActivity
+      id: own_contracts
+      activity:
+        text:
+          - '{"Demonstração fictícia. Seus contratos: " & Concat(Topic.contracts.data.contracts, number & " — " & vehicle & " — saldo " & "R$ " & Text((debtCents) / 100, "#,##0.00", "pt-BR") & If(eligible, " — elegível", " — não elegível"), Char(10))}'
+    - kind: ConditionGroup
+      id: no_eligible_contracts
+      conditions:
+        - id: no_eligible_contracts_case
+          condition: =CountRows(Filter(Topic.contracts.data.contracts, eligible = true)) = 0
+          actions:
+            - kind: SendActivity
+              id: not_eligible_message
+              activity:
+                text:
+                  - Demonstração fictícia. Nenhum de seus contratos está elegível para renegociação.
+            - kind: EndDialog
+              id: not_eligible_end
+    - kind: AdaptiveCardPrompt
+      id: select_contract
+      interruptionPolicy:
+        allowInterruption: false
+      repeatCount: 2
+      card: '={type: "AdaptiveCard", version: "1.3", body: [{type: "TextBlock", text: "Demonstração fictícia: selecione seu contrato", wrap: true}, {type: "Input.ChoiceSet", id: "selectedId", label: "Demonstração fictícia: selecione seu contrato", style: "expanded", isRequired: true, errorMessage: "Selecione uma opção.", choices: ForAll(Filter(Topic.contracts.data.contracts, eligible = true), {title: number & " — " & vehicle & " — " & "R$ " & Text((debtCents) / 100, "#,##0.00", "pt-BR"), value: id})}], actions: [{type: "Action.Submit", title: "Selecionar"}]}'
+      output:
+        binding:
+          selectedId: init:Topic.ContractId
+      outputType:
+        properties:
+          selectedId: String
+    - kind: ConditionGroup
+      id: valid_contract_selection
+      conditions:
+        - id: valid_contract_selection_case
+          condition: =IsBlank(Topic.ContractId) || CountRows(Filter(Topic.contracts.data.contracts, id = Topic.ContractId && eligible = true)) <> 1
+          actions:
+            - kind: SendActivity
+              id: invalid_contract_message
+              activity:
+                text:
+                  - Demonstração fictícia. Selecione somente um contrato elegível retornado para sua conta.
+            - kind: EndDialog
+              id: invalid_contract_end
+    - kind: SetVariable
+      id: offers_reset_error
+      variable: init:Topic.offersError
+      value: =Blank()
+    - kind: HttpRequestAction
+      id: offers
+      method: Post
+      url: https://fsi-reneg-88957f9a.azurewebsites.net/api/renegociacao/offers
+      headers:
+        Authorization: ="Bearer " & System.User.AccessToken
+        Content-Type: application/json
+      body:
+        kind: JsonRequestContent
+        content: '={contractId: Topic.ContractId}'
+      requestTimeoutInMilliseconds: 30000
+      response: init:Topic.offers
+      responseSchema:
+        kind: Record
+        properties:
+          status: String
+          demonstration: Boolean
+          data:
+            type:
+              kind: Record
+              properties:
+                offers:
+                  type:
+                    kind: Table
+                    properties:
+                      id:
+                        type: String
+                      version: Number
+                      entryCents: Number
+                      installments: Number
+                      paymentCents: Number
+                      totalCents: Number
+                      validUntil: String
+      errorHandling:
+        kind: ContinueOnErrorBehavior
+        statusCode: Topic.offersError
+        errorResponseBody: init:Topic.offersErrorBody
+    - kind: ConditionGroup
+      id: offers_error
+      conditions:
+        - id: offers_error_case
+          condition: =!IsBlank(Topic.offersError)
+          actions:
+            - kind: ConditionGroup
+              id: offers_unauthorized
+              conditions:
+                - id: offers_unauthorized_case
+                  condition: =Topic.offersError = 401 || Topic.offersError = 403
+                  actions:
+                    - kind: SendActivity
+                      id: offers_identity_message
+                      activity:
+                        text:
+                          - Demonstração fictícia. A identidade não foi autorizada. Entre com a conta vinculada ao seu cadastro. CPF não autentica e nenhum contrato será consultado por CPF.
+                    - kind: EndDialog
+                      id: offers_identity_end
+              elseActions:
+                - kind: SendActivity
+                  id: offers_unavailable_message
+                  activity:
+                    text:
+                      - Demonstração fictícia. O serviço não confirmou esta operação. Não vou inventar condições nem informar que foi concluída. Tente consultar o andamento mais tarde.
+                - kind: EndDialog
+                  id: offers_unavailable_end
+    - kind: ConditionGroup
+      id: offers_wrapper
+      conditions:
+        - id: offers_wrapper_case
+          condition: =Topic.offers.demonstration <> true || Topic.offers.status <> "ok"
+          actions:
+            - kind: SendActivity
+              id: offers_invalid_message
+              activity:
+                text:
+                  - Demonstração fictícia. O serviço ainda não disponibilizou uma resposta válida. Nenhuma conclusão foi confirmada.
+            - kind: EndDialog
+              id: offers_invalid_end
+    - kind: ConditionGroup
+      id: no_offers
+      conditions:
+        - id: no_offers_case
+          condition: =CountRows(Topic.offers.data.offers) = 0
+          actions:
+            - kind: SendActivity
+              id: unavailable_offers_message
+              activity:
+                text:
+                  - Demonstração fictícia. Não há ofertas disponíveis para esse contrato.
+            - kind: EndDialog
+              id: unavailable_offers_end
+    - kind: AdaptiveCardPrompt
+      id: select_offer
+      interruptionPolicy:
+        allowInterruption: false
+      repeatCount: 2
+      card: '={type: "AdaptiveCard", version: "1.3", body: [{type: "TextBlock", text: "Demonstração fictícia: selecione uma oferta", wrap: true}, {type: "Input.ChoiceSet", id: "selectedId", label: "Demonstração fictícia: selecione uma oferta", style: "expanded", isRequired: true, errorMessage: "Selecione uma opção.", choices: ForAll(Topic.offers.data.offers, {title: "Oferta " & ThisRecord.id & ", versão " & Text(ThisRecord.version) & ". Entrada: " & "R$ " & Text((ThisRecord.entryCents) / 100, "#,##0.00", "pt-BR") & ". Parcelas: " & Text(ThisRecord.installments) & " de " & "R$ " & Text((ThisRecord.paymentCents) / 100, "#,##0.00", "pt-BR") & ". Total: " & "R$ " & Text((ThisRecord.totalCents) / 100, "#,##0.00", "pt-BR") & ". Validade (informada pelo serviço): " & ThisRecord.validUntil, value: id})}], actions: [{type: "Action.Submit", title: "Selecionar"}]}'
+      output:
+        binding:
+          selectedId: init:Topic.OfferId
+      outputType:
+        properties:
+          selectedId: String
+    - kind: ConditionGroup
+      id: valid_offer_selection
+      conditions:
+        - id: valid_offer_selection_case
+          condition: =IsBlank(Topic.OfferId) || CountRows(Filter(Topic.offers.data.offers, id = Topic.OfferId)) <> 1
+          actions:
+            - kind: SendActivity
+              id: invalid_offer_message
+              activity:
+                text:
+                  - Demonstração fictícia. Selecione somente uma oferta retornada pelo serviço.
+            - kind: EndDialog
+              id: invalid_offer_end
+    - kind: SetVariable
+      id: selected_offer
+      variable: init:Topic.SelectedOffer
+      value: =First(Filter(Topic.offers.data.offers, id = Topic.OfferId))
+    - kind: SetVariable
+      id: start_reset_error
+      variable: init:Topic.startError
+      value: =Blank()
+    - kind: HttpRequestAction
+      id: start
+      method: Post
+      url: https://fsi-reneg-88957f9a.azurewebsites.net/api/renegociacao/start
+      headers:
+        Authorization: ="Bearer " & System.User.AccessToken
+        Content-Type: application/json
+      body:
+        kind: JsonRequestContent
+        content: '={contractId: Topic.ContractId, channel: "chat"}'
+      requestTimeoutInMilliseconds: 30000
+      response: init:Topic.start
+      responseSchema:
+        kind: Record
+        properties:
+          status: String
+          demonstration: Boolean
+          data:
+            type:
+              kind: Record
+              properties:
+                requestId: String
+                status: String
+      errorHandling:
+        kind: ContinueOnErrorBehavior
+        statusCode: Topic.startError
+        errorResponseBody: init:Topic.startErrorBody
+    - kind: ConditionGroup
+      id: start_error
+      conditions:
+        - id: start_error_case
+          condition: =!IsBlank(Topic.startError)
+          actions:
+            - kind: ConditionGroup
+              id: start_unauthorized
+              conditions:
+                - id: start_unauthorized_case
+                  condition: =Topic.startError = 401 || Topic.startError = 403
+                  actions:
+                    - kind: SendActivity
+                      id: start_identity_message
+                      activity:
+                        text:
+                          - Demonstração fictícia. A identidade não foi autorizada. Entre com a conta vinculada ao seu cadastro. CPF não autentica e nenhum contrato será consultado por CPF.
+                    - kind: EndDialog
+                      id: start_identity_end
+              elseActions:
+                - kind: SendActivity
+                  id: start_unavailable_message
+                  activity:
+                    text:
+                      - Demonstração fictícia. O serviço não confirmou esta operação. Não vou inventar condições nem informar que foi concluída. Tente consultar o andamento mais tarde.
+                - kind: EndDialog
+                  id: start_unavailable_end
+    - kind: ConditionGroup
+      id: start_wrapper
+      conditions:
+        - id: start_wrapper_case
+          condition: =Topic.start.demonstration <> true || (Topic.start.status <> "ok" && Topic.start.status <> "processing")
+          actions:
+            - kind: SendActivity
+              id: start_invalid_message
+              activity:
+                text:
+                  - Demonstração fictícia. O serviço ainda não disponibilizou uma resposta válida. Nenhuma conclusão foi confirmada.
+            - kind: EndDialog
+              id: start_invalid_end
+    - kind: ConditionGroup
+      id: start_request_required
+      conditions:
+        - id: start_request_required_case
+          condition: =IsBlank(Topic.start.data.requestId)
+          actions:
+            - kind: SendActivity
+              id: no_request_message
+              activity:
+                text:
+                  - Demonstração fictícia. O serviço não identificou a solicitação. Nenhuma confirmação foi enviada.
+            - kind: EndDialog
+              id: no_request_end
+    - kind: SetVariable
+      id: remember_request
+      variable: init:Global.RenegRequestId
+      value: =Topic.start.data.requestId
+    - kind: ConditionGroup
+      id: start_pending
+      conditions:
+        - id: start_pending_case
+          condition: =Topic.start.status = "processing"
+          actions:
+            - kind: SendActivity
+              id: start_wait_message
+              activity:
+                text:
+                  - '{"Demonstração fictícia. Solicitação " & Global.RenegRequestId & " PENDENTE: o atendimento está sendo preparado. Ainda não enviei confirmação nem concluí acordo. Diga consultar andamento para verificar. Quando o serviço estiver disponível, diga renegociar para retomar a seleção e revisão."}'
+            - kind: EndDialog
+              id: start_wait_end
+    - kind: SetVariable
+      id: review_reset_error
+      variable: init:Topic.reviewError
+      value: =Blank()
+    - kind: HttpRequestAction
+      id: review
+      method: Post
+      url: https://fsi-reneg-88957f9a.azurewebsites.net/api/renegociacao/review
+      headers:
+        Authorization: ="Bearer " & System.User.AccessToken
+        Content-Type: application/json
+      body:
+        kind: JsonRequestContent
+        content: '={requestId: Global.RenegRequestId, offerId: Topic.SelectedOffer.id, version: Topic.SelectedOffer.version}'
+      requestTimeoutInMilliseconds: 30000
+      response: init:Topic.review
+      responseSchema:
+        kind: Record
+        properties:
+          status: String
+          demonstration: Boolean
+          data:
+            type:
+              kind: Record
+              properties:
+                requestId: String
+                reviewHash: String
+                offer:
+                  type:
+                    kind: Record
+                    properties:
+                      id:
+                        type: String
+                      version: Number
+                      entryCents: Number
+                      installments: Number
+                      paymentCents: Number
+                      totalCents: Number
+                      validUntil: String
+      errorHandling:
+        kind: ContinueOnErrorBehavior
+        statusCode: Topic.reviewError
+        errorResponseBody: init:Topic.reviewErrorBody
+    - kind: ConditionGroup
+      id: review_error
+      conditions:
+        - id: review_error_case
+          condition: =!IsBlank(Topic.reviewError)
+          actions:
+            - kind: ConditionGroup
+              id: review_unauthorized
+              conditions:
+                - id: review_unauthorized_case
+                  condition: =Topic.reviewError = 401 || Topic.reviewError = 403
+                  actions:
+                    - kind: SendActivity
+                      id: review_identity_message
+                      activity:
+                        text:
+                          - Demonstração fictícia. A identidade não foi autorizada. Entre com a conta vinculada ao seu cadastro. CPF não autentica e nenhum contrato será consultado por CPF.
+                    - kind: EndDialog
+                      id: review_identity_end
+              elseActions:
+                - kind: SendActivity
+                  id: review_unavailable_message
+                  activity:
+                    text:
+                      - Demonstração fictícia. O serviço não confirmou esta operação. Não vou inventar condições nem informar que foi concluída. Tente consultar o andamento mais tarde.
+                - kind: EndDialog
+                  id: review_unavailable_end
+    - kind: ConditionGroup
+      id: review_wrapper
+      conditions:
+        - id: review_wrapper_case
+          condition: =Topic.review.demonstration <> true || Topic.review.status <> "ok"
+          actions:
+            - kind: SendActivity
+              id: review_invalid_message
+              activity:
+                text:
+                  - Demonstração fictícia. O serviço ainda não disponibilizou uma resposta válida. Nenhuma conclusão foi confirmada.
+            - kind: EndDialog
+              id: review_invalid_end
+    - kind: ConditionGroup
+      id: valid_review
+      conditions:
+        - id: valid_review_case
+          condition: =IsBlank(Topic.review.data.reviewHash) || Topic.review.data.requestId <> Global.RenegRequestId || Topic.review.data.offer.id <> Topic.SelectedOffer.id || Topic.review.data.offer.version <> Topic.SelectedOffer.version || IsBlank(Topic.review.data.offer.version) || Topic.review.data.offer.version < 1 || Mod(Topic.review.data.offer.version, 1) <> 0 || IsBlank(Topic.review.data.offer.entryCents) || Topic.review.data.offer.entryCents < 0 || Mod(Topic.review.data.offer.entryCents, 1) <> 0 || IsBlank(Topic.review.data.offer.installments) || Topic.review.data.offer.installments < 1 || Mod(Topic.review.data.offer.installments, 1) <> 0 || IsBlank(Topic.review.data.offer.paymentCents) || Topic.review.data.offer.paymentCents < 0 || Mod(Topic.review.data.offer.paymentCents, 1) <> 0 || IsBlank(Topic.review.data.offer.totalCents) || Topic.review.data.offer.totalCents < 0 || Mod(Topic.review.data.offer.totalCents, 1) <> 0 || IsBlank(Topic.review.data.offer.validUntil)
+          actions:
+            - kind: SendActivity
+              id: invalid_review_message
+              activity:
+                text:
+                  - Demonstração fictícia. A revisão não corresponde à oferta selecionada ou contém condições inválidas. Não vou confirmar.
+            - kind: EndDialog
+              id: invalid_review_end
+    - kind: SendActivity
+      id: read_exact_review
+      activity:
+        text:
+          - '{"DEMONSTRAÇÃO FICTÍCIA. Contrato selecionado: " & First(Filter(Topic.contracts.data.contracts, id = Topic.ContractId)).number & ". " & "Oferta " & Topic.review.data.offer.id & ", versão " & Text(Topic.review.data.offer.version) & ". Entrada: " & "R$ " & Text((Topic.review.data.offer.entryCents) / 100, "#,##0.00", "pt-BR") & ". Parcelas: " & Text(Topic.review.data.offer.installments) & " de " & "R$ " & Text((Topic.review.data.offer.paymentCents) / 100, "#,##0.00", "pt-BR") & ". Total: " & "R$ " & Text((Topic.review.data.offer.totalCents) / 100, "#,##0.00", "pt-BR") & ". Validade (informada pelo serviço): " & Topic.review.data.offer.validUntil}'
+    - kind: Question
+      id: explicit_confirmation
+      interruptionPolicy:
+        allowInterruption: false
+      repeatCount: 2
+      alwaysPrompt: true
+      variable: init:Topic.Confirmed
+      prompt:
+        text:
+          - Confirma expressamente a simulação com exatamente a entrada, parcelas, total, versão e validade lidos acima? Sim envia a confirmação; Não encerra sem finalizar.
+      defaultValue: =Blank()
+      entity: BooleanPrebuiltEntity
+    - kind: ConditionGroup
+      id: not_confirmed
+      conditions:
+        - id: not_confirmed_case
+          condition: =Topic.Confirmed <> true
+          actions:
+            - kind: SendActivity
+              id: cancelled_message
+              activity:
+                text:
+                  - Demonstração fictícia. Não enviei a confirmação. Nenhum acordo foi concluído por este chat.
+            - kind: EndDialog
+              id: cancelled_end
+    - kind: SetVariable
+      id: confirm_reset_error
+      variable: init:Topic.confirmError
+      value: =Blank()
+    - kind: HttpRequestAction
+      id: confirm
+      method: Post
+      url: https://fsi-reneg-88957f9a.azurewebsites.net/api/renegociacao/confirm
+      headers:
+        Authorization: ="Bearer " & System.User.AccessToken
+        Content-Type: application/json
+      body:
+        kind: JsonRequestContent
+        content: '={requestId: Global.RenegRequestId, reviewHash: Topic.review.data.reviewHash, confirmed: true}'
+      requestTimeoutInMilliseconds: 30000
+      response: init:Topic.confirm
+      responseSchema:
+        kind: Record
+        properties:
+          status: String
+          demonstration: Boolean
+          data:
+            type:
+              kind: Record
+              properties:
+                requestId: String
+                status: String
+                protocol: String
+                offer:
+                  type:
+                    kind: Record
+                    properties:
+                      id:
+                        type: String
+                      version: Number
+                      entryCents: Number
+                      installments: Number
+                      paymentCents: Number
+                      totalCents: Number
+                      validUntil: String
+      errorHandling:
+        kind: ContinueOnErrorBehavior
+        statusCode: Topic.confirmError
+        errorResponseBody: init:Topic.confirmErrorBody
+    - kind: ConditionGroup
+      id: confirm_transport_error
+      conditions:
+        - id: confirm_transport_error_case
+          condition: =!IsBlank(Topic.confirmError)
+          actions:
+            - kind: SendActivity
+              id: uncertain_write
+              activity:
+                text:
+                  - Demonstração fictícia. A confirmação teve resposta incerta. Vou consultar o andamento uma vez, sem repetir a confirmação.
+            - kind: SetVariable
+              id: recover_reset_error
+              variable: init:Topic.recoverError
+              value: =Blank()
+            - kind: HttpRequestAction
+              id: recover
+              method: Post
+              url: https://fsi-reneg-88957f9a.azurewebsites.net/api/renegociacao/status
+              headers:
+                Authorization: ="Bearer " & System.User.AccessToken
+                Content-Type: application/json
+              body:
+                kind: JsonRequestContent
+                content: '={requestId: Global.RenegRequestId}'
+              requestTimeoutInMilliseconds: 30000
+              response: init:Topic.recover
+              responseSchema:
+                kind: Record
+                properties:
+                  status: String
+                  demonstration: Boolean
+                  data:
+                    type:
+                      kind: Record
+                      properties:
+                        requestId: String
+                        status: String
+                        protocol: String
+                        offer:
+                          type:
+                            kind: Record
+                            properties:
+                              id:
+                                type: String
+                              version: Number
+                              entryCents: Number
+                              installments: Number
+                              paymentCents: Number
+                              totalCents: Number
+                              validUntil: String
+              errorHandling:
+                kind: ContinueOnErrorBehavior
+                statusCode: Topic.recoverError
+                errorResponseBody: init:Topic.recoverErrorBody
+            - kind: ConditionGroup
+              id: recovery_complete
+              conditions:
+                - id: recovery_complete_case
+                  condition: =Topic.recover.demonstration = true && Topic.recover.status = "ok" && Topic.recover.data.requestId = Global.RenegRequestId && Topic.recover.data.status = "completed" && !IsBlank(Trim(Topic.recover.data.protocol))
+                  actions:
+                    - kind: SendActivity
+                      id: recovery_success
+                      activity:
+                        text:
+                          - '{"DEMONSTRAÇÃO FICTÍCIA — renegociação concluída somente no ambiente demonstrativo. Protocolo: " & Topic.recover.data.protocol & ". Solicitação: " & Topic.recover.data.requestId & ". " & "Oferta " & Topic.recover.data.offer.id & ", versão " & Text(Topic.recover.data.offer.version) & ". Entrada: " & "R$ " & Text((Topic.recover.data.offer.entryCents) / 100, "#,##0.00", "pt-BR") & ". Parcelas: " & Text(Topic.recover.data.offer.installments) & " de " & "R$ " & Text((Topic.recover.data.offer.paymentCents) / 100, "#,##0.00", "pt-BR") & ". Total: " & "R$ " & Text((Topic.recover.data.offer.totalCents) / 100, "#,##0.00", "pt-BR") & ". Validade (informada pelo serviço): " & Topic.recover.data.offer.validUntil}'
+              elseActions:
+                - kind: ConditionGroup
+                  id: recovery_pending
+                  conditions:
+                    - id: recovery_pending_case
+                      condition: =Topic.recover.demonstration = true && Topic.recover.data.requestId = Global.RenegRequestId && (Topic.recover.status = "processing" || Topic.recover.data.status = "pending" || Topic.recover.data.status = "processing" || Topic.recover.data.status = "draft" || Topic.recover.data.status = "reviewed")
+                      actions:
+                        - kind: SendActivity
+                          id: recovery_pending_message
+                          activity:
+                            text:
+                              - '{"Demonstração fictícia. Solicitação " & Global.RenegRequestId & " PENDENTE/EM PROCESSAMENTO. Ainda não há conclusão confirmada. Diga consultar andamento para verificar; não refaça a confirmação."}'
+                  elseActions:
+                    - kind: SendActivity
+                      id: recovery_failure
+                      activity:
+                        text:
+                          - '{"Demonstração fictícia. Não há conclusão confirmada para a solicitação " & Global.RenegRequestId & ". O serviço retornou falha ou resposta não reconhecida. Diga consultar andamento. Não vou repetir uma escrita de resultado incerto."}'
+            - kind: EndDialog
+              id: recovery_end
+    - kind: ConditionGroup
+      id: confirmed_complete
+      conditions:
+        - id: confirmed_complete_case
+          condition: =Topic.confirm.demonstration = true && Topic.confirm.status = "ok" && Topic.confirm.data.requestId = Global.RenegRequestId && Topic.confirm.data.status = "completed" && !IsBlank(Trim(Topic.confirm.data.protocol))
+          actions:
+            - kind: SendActivity
+              id: confirmed_success
+              activity:
+                text:
+                  - '{"DEMONSTRAÇÃO FICTÍCIA — renegociação concluída somente no ambiente demonstrativo. Protocolo: " & Topic.confirm.data.protocol & ". Solicitação: " & Topic.confirm.data.requestId & ". " & "Oferta " & Topic.confirm.data.offer.id & ", versão " & Text(Topic.confirm.data.offer.version) & ". Entrada: " & "R$ " & Text((Topic.confirm.data.offer.entryCents) / 100, "#,##0.00", "pt-BR") & ". Parcelas: " & Text(Topic.confirm.data.offer.installments) & " de " & "R$ " & Text((Topic.confirm.data.offer.paymentCents) / 100, "#,##0.00", "pt-BR") & ". Total: " & "R$ " & Text((Topic.confirm.data.offer.totalCents) / 100, "#,##0.00", "pt-BR") & ". Validade (informada pelo serviço): " & Topic.confirm.data.offer.validUntil}'
+      elseActions:
+        - kind: ConditionGroup
+          id: confirmed_pending
+          conditions:
+            - id: confirmed_pending_case
+              condition: =Topic.confirm.demonstration = true && Topic.confirm.data.requestId = Global.RenegRequestId && (Topic.confirm.status = "processing" || Topic.confirm.data.status = "pending" || Topic.confirm.data.status = "processing" || Topic.confirm.data.status = "draft" || Topic.confirm.data.status = "reviewed")
+              actions:
+                - kind: SendActivity
+                  id: confirmed_pending_message
+                  activity:
+                    text:
+                      - '{"Demonstração fictícia. Solicitação " & Global.RenegRequestId & " PENDENTE/EM PROCESSAMENTO. Ainda não há conclusão confirmada. Diga consultar andamento para verificar; não refaça a confirmação."}'
+          elseActions:
+            - kind: SendActivity
+              id: confirmed_failure
+              activity:
+                text:
+                  - '{"Demonstração fictícia. Não há conclusão confirmada para a solicitação " & Global.RenegRequestId & ". O serviço retornou falha ou resposta não reconhecida. Diga consultar andamento. Não vou repetir uma escrita de resultado incerto."}'
+inputType: {}
+outputType: {}

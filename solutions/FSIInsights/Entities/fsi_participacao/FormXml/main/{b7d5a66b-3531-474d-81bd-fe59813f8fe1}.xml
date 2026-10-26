@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{b7d5a66b-3531-474d-81bd-fe59813f8fe1}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="geral" verticallayout="true" id="{6652951e-0a4f-5e44-a4b3-c14ee164bbe0}" IsUserDefined="0" expanded="true" showlabel="true">
+          <labels>
+            <label description="Geral" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="participacao" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{075a8e00-816f-54f1-8303-59e5cef15dca}">
+                  <labels>
+                    <label description="Participação" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{ad4403e2-565d-5972-bc0d-187888791bde}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Nome" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_name" disabled="false" />
+                      </cell>
+                      <cell id="{b1f918ab-bfee-555b-8c98-44270144e85a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Produto do cliente" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_produtoclienteid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_produtoclienteid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c09d1795-8482-5cd7-bc35-7d921a209098}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Cliente" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_clienteid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_clienteid" disabled="false" />
+                      </cell>
+                      <cell id="{b7b75fdb-4efa-5f4f-ae21-a5e5e542f354}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Papel" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_papel" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_papel" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1aabbfa7-7293-5d69-b73a-25686d6e2e85}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Principal" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_principal" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="fsi_principal" disabled="false" />
+                      </cell>
+                      <cell id="{3e888b56-9c1c-5310-9def-1bb0153f98f9}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="% de participação" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_percentual" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="fsi_percentual" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="vigencia" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{f044561b-5e1d-5915-98ed-8d3cae141e40}">
+                  <labels>
+                    <label description="Vigência" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{a75ed598-a652-590a-aaa9-aee1a5eaaa65}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Início" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_inicio" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="fsi_inicio" disabled="false" />
+                      </cell>
+                      <cell id="{ebd63009-be5f-5662-9370-97816a71b7fa}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Fim" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_fim" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="fsi_fim" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="integracao" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{2727b551-b2f6-58b3-9f01-862d6db74130}">
+                  <labels>
+                    <label description="Integração" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{9209dc1b-47b2-5926-9901-2f8b93e42554}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Chave de integração" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_chaveintegracao" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_chaveintegracao" disabled="false" />
+                      </cell>
+                      <cell id="{f5d6b2a7-7880-5939-a177-66ca2a084c90}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1046" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{6031f0d0-5752-56ec-a344-75f4d6203006}" columns="1111" celllabelposition="Top" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{08fbbdd8-0f49-5e01-a8ef-cb1155b8d221}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Cliente" languagecode="1046" />
+              </labels>
+              <control id="fsi_clienteid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_clienteid" disabled="false" />
+            </cell>
+            <cell id="{023608db-150c-59df-a7da-9af31b326f20}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Papel" languagecode="1046" />
+              </labels>
+              <control id="fsi_papel" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_papel" disabled="false" />
+            </cell>
+            <cell id="{e6b97d60-78d4-57d2-83ff-571cf1751d4f}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Principal" languagecode="1046" />
+              </labels>
+              <control id="fsi_principal" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="fsi_principal" disabled="false" />
+            </cell>
+            <cell id="{7425b61c-5cb2-5cac-9a89-86beefa25b76}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Proprietário" languagecode="1046" />
+              </labels>
+              <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informações" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Um formulário para esta entidade." languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

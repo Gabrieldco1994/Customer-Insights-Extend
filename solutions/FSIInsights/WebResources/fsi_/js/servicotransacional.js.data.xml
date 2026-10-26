@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{fdd2f52e-3acb-f111-a05c-000d3a343144}</WebResourceId>
+  <Name>fsi_/js/servicotransacional.js</Name>
+  <DisplayName>FSI - Serviço transacional por etapa</DisplayName>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/fsi_jsservicotransacionaljsFDD2F52E-3ACB-F111-A05C-000D3A343144</FileName>
+</WebResource>

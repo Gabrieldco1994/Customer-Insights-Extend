@@ -1,0 +1,24 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnSignIn
+  id: main
+  actions:
+    - kind: OAuthInput
+      id: required_login
+      title: Entrar com segurança
+      text: Demonstração fictícia. Entre com sua conta para continuar; CPF não substitui autenticação.
+    - kind: ConditionGroup
+      id: required_login_result
+      conditions:
+        - id: required_login_result_case
+          condition: =System.User.IsLoggedIn <> true || IsBlank(System.User.AccessToken)
+          actions:
+            - kind: SendActivity
+              id: required_login_failed_message
+              activity:
+                text:
+                  - Demonstração fictícia. Não foi possível autenticar sua conta. Nenhum contrato foi consultado.
+            - kind: EndDialog
+              id: required_login_failed_end
+inputType: {}
+outputType: {}

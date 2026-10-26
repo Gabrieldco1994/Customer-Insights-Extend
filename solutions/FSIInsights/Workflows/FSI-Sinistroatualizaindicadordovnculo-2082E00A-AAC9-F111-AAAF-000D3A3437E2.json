@@ -1,0 +1,178 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "fsi_dataverse"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Quando_sinistro_criado_ou_status_alterado": {
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 4,
+              "subscriptionRequest/entityname": "fsi_sinistro",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filteringattributes": "fsi_statussinistro,fsi_apoliceid"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Obter_apolice": {
+          "runAfter": {},
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "fsi_apolices",
+              "recordId": "@triggerOutputs()?['body/_fsi_apoliceid_value']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Obter_produto": {
+          "runAfter": {
+            "Obter_apolice": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "fsi_produtoclientes",
+              "recordId": "@outputs('Obter_apolice')?['body/_fsi_produtoclienteid_value']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Obter_vinculo": {
+          "runAfter": {
+            "Obter_produto": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "fsi_vinculonegocios",
+              "recordId": "@outputs('Obter_produto')?['body/_fsi_vinculoid_value']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Sinistro_esta_aberto": {
+          "runAfter": {
+            "Obter_vinculo": [
+              "Succeeded"
+            ]
+          },
+          "type": "If",
+          "expression": {
+            "equals": [
+              "@contains(createArray(712400004,712400005,712400006), triggerOutputs()?['body/fsi_statussinistro'])",
+              false
+            ]
+          },
+          "actions": {
+            "Ligar_indicador": {
+              "runAfter": {},
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "fsi_vinculonegocios",
+                  "recordId": "@outputs('Obter_vinculo')?['body/fsi_vinculonegocioid']",
+                  "item/fsi_sinistroabertoid@odata.bind": "fsi_sinistros(@{triggerOutputs()?['body/fsi_sinistroid']})"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "else": {
+            "actions": {
+              "Indicador_aponta_para_este": {
+                "runAfter": {},
+                "type": "If",
+                "expression": {
+                  "equals": [
+                    "@outputs('Obter_vinculo')?['body/_fsi_sinistroabertoid_value']",
+                    "@triggerOutputs()?['body/fsi_sinistroid']"
+                  ]
+                },
+                "actions": {
+                  "Desligar_indicador": {
+                    "runAfter": {},
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "connectionName": "shared_commondataserviceforapps",
+                        "operationId": "UpdateRecord",
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "fsi_vinculonegocios",
+                        "recordId": "@outputs('Obter_vinculo')?['body/fsi_vinculonegocioid']",
+                        "item/fsi_sinistroabertoid@odata.bind": null
+                      },
+                      "authentication": "@parameters('$authentication')"
+                    }
+                  }
+                },
+                "else": {
+                  "actions": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

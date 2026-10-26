@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{39fed6d4-40d1-f111-a05c-000d3a343f56}</savedqueryid>
+    <querytype>8192</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical" output-format="xml-platform">
+        <entity name="fsi_contratofinanceirovirtual">
+          <attribute name="fsi_contratofinanceirovirtualid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Contratos financeiros externos" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Todos os Contratos financeiros externos ativos" languagecode="1046" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

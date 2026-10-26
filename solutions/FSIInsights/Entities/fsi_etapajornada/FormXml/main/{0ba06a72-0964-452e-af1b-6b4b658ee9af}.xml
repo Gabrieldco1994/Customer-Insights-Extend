@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{0ba06a72-0964-452e-af1b-6b4b658ee9af}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="geral" verticallayout="true" id="{bdcbebde-05f2-5fe6-8702-158426e1bf14}" IsUserDefined="0" expanded="true" showlabel="true">
+          <labels>
+            <label description="Geral" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="etapa" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{dd49cdf9-7968-5e82-ac4b-5bd7385bf4b1}">
+                  <labels>
+                    <label description="Etapa" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{470b7f3a-223a-5046-88f3-b2696b16b5ea}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Nome" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_name" disabled="false" />
+                      </cell>
+                      <cell id="{9ffdee66-302b-5ec3-b4a0-750353b7650e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Jornada" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_jornadaid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_jornadaid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cd70f6e6-7204-5d12-942f-27b1c594d28e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Ordem" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_ordem" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="fsi_ordem" disabled="false" />
+                      </cell>
+                      <cell id="{818c2fce-e715-58cb-b41c-20786e690e69}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Prazo esperado (dias)" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_prazodias" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="fsi_prazodias" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="regras" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{74b4b29c-36d4-55ee-9587-3c5f3c0155dd}">
+                  <labels>
+                    <label description="Regras e indicadores" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{2f8f26fc-6fd6-5a51-8a4c-82334ea882a8}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Entrada → saída" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_entradasaida" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_entradasaida" disabled="false" />
+                      </cell>
+                      <cell id="{1bae2198-cc07-5187-bee0-ef5e252fec72}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Indicadores" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_indicadores" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_indicadores" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{70d916dc-375d-5587-ba7c-9e711ca21627}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Ação recomendada" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_acaorecomendada" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_acaorecomendada" disabled="false" />
+                      </cell>
+                      <cell id="{7adc00b8-9f8a-560e-859f-234577eadb7a}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Base da regra" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_basenormativa" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_basenormativa" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a3020b70-7b2e-57cb-bfc9-fd9c95cf23e2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Referência" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_referencia" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_referencia" disabled="false" />
+                      </cell>
+                      <cell id="{89252829-d611-5019-886a-90ef4b813531}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1046" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{c536f84d-2106-518c-8079-df62960e1a9a}" columns="1111" celllabelposition="Top" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{e8ff197f-2dd4-576f-aca7-0db6e9f22684}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Jornada" languagecode="1046" />
+              </labels>
+              <control id="fsi_jornadaid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_jornadaid" disabled="false" />
+            </cell>
+            <cell id="{5d1d5c1d-0ad3-5c00-b8aa-dd2ea53e76e3}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Ordem" languagecode="1046" />
+              </labels>
+              <control id="fsi_ordem" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="fsi_ordem" disabled="false" />
+            </cell>
+            <cell id="{1ddefa59-5af8-58c5-97f3-5767a5ec4e4b}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Base da regra" languagecode="1046" />
+              </labels>
+              <control id="fsi_basenormativa" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_basenormativa" disabled="false" />
+            </cell>
+            <cell id="{7c7ac102-de85-5d90-9cc9-4cfdec0318d3}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Prazo esperado (dias)" languagecode="1046" />
+              </labels>
+              <control id="fsi_prazodias" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="fsi_prazodias" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informações" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Um formulário para esta entidade." languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

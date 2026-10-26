@@ -1,0 +1,14 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnError
+  id: main
+  actions:
+    - kind: SendActivity
+      id: safe_error
+      activity:
+        text:
+          - Demonstração fictícia. Não consegui verificar esta operação. Não afirmo que foi concluída e não repetirei confirmações automaticamente. Se já confirmou, diga consultar andamento.
+    - kind: CancelAllDialogs
+      id: cancel_error
+inputType: {}
+outputType: {}

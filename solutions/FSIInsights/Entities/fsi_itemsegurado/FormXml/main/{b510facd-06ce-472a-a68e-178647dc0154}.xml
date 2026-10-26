@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{b510facd-06ce-472a-a68e-178647dc0154}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="geral" verticallayout="true" id="{3f4f7050-c132-5383-8a65-c23a18d65d35}" IsUserDefined="0" expanded="true" showlabel="true">
+          <labels>
+            <label description="Geral" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="item" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{46057b60-4903-5a29-88fc-bfb52ef75a9f}">
+                  <labels>
+                    <label description="Item" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b853e258-bb99-51bb-9a66-edd00b820907}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Nome" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_name" disabled="false" />
+                      </cell>
+                      <cell id="{b0012332-4b84-5cbd-8787-ba8d6bba27e3}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Apólice" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_apoliceid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_apoliceid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{846f1967-e5cc-52a8-b0a2-c44c8ce20e96}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Tipo do item" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_tipoitem" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_tipoitem" disabled="false" />
+                      </cell>
+                      <cell id="{dc9de2a2-8d60-56df-b6f0-0f73fd9732c4}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Descrição" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_descricao" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_descricao" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b47476eb-2cc7-59e0-bed2-733c6bad7ec2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Valor de referência" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_valorreferencia" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="fsi_valorreferencia" disabled="false" />
+                      </cell>
+                      <cell id="{59ab7b65-edfc-5d0e-a204-779bbbbdd85e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Chave de integração" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_chaveintegracao" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_chaveintegracao" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="veiculo" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{22b924fa-b5e1-5043-bdae-83ec43151f42}">
+                  <labels>
+                    <label description="Veículo" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{4d45f395-b2ae-5464-aa28-e4db78d64cb2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Placa" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_placa" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_placa" disabled="false" />
+                      </cell>
+                      <cell id="{e8c698f5-0070-5747-8c54-7ad1cc761b20}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Chassi" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_chassi" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_chassi" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fa2a20d3-8b5c-525f-932d-9a690cd9f406}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Código FIPE" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_codigofipe" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_codigofipe" disabled="false" />
+                      </cell>
+                      <cell id="{6d9edb33-efcc-504b-971a-53826a1dd85f}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Marca/Modelo" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_marcamodelo" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_marcamodelo" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{013a4a45-09d1-5675-86e6-0f8a3acd296c}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Ano do modelo" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_anomodelo" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="fsi_anomodelo" disabled="false" />
+                      </cell>
+                      <cell id="{7270a97a-073b-551a-9e59-d8826a1b90e8}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Uso" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_uso" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_uso" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="imovel" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{0266f18b-2522-5a4c-b3ac-6c3edae538aa}">
+                  <labels>
+                    <label description="Imóvel" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{c2edc708-559f-5910-b5be-65006e9ba3b4}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="CEP" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_cep" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_cep" disabled="false" />
+                      </cell>
+                      <cell id="{dbb302dc-801d-5dee-8824-a85bc2f0c13d}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Endereço" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_endereco" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_endereco" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1bb183bc-56e0-5ec2-8ac1-3f61cef82d25}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Tipo de imóvel" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_tipoimovel" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_tipoimovel" disabled="false" />
+                      </cell>
+                      <cell id="{fdf96537-41bd-54f9-9780-381bd3103353}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Tipo de construção" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_tipoconstrucao" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_tipoconstrucao" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="pessoa" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{c2290c75-39cb-5fca-95e6-306c2370a6d3}">
+                  <labels>
+                    <label description="Pessoa" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{ca72b2f0-4091-5342-a8ad-fe74280821a4}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Pessoa" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_contactid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_contactid" disabled="false" />
+                      </cell>
+                      <cell id="{6997f251-f59c-59d0-a61c-d4ba389f15d7}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1046" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{316db450-3812-5637-b91c-90d11426531d}" columns="1111" celllabelposition="Top" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{eba8279e-90a5-5abd-8b8e-f364f2b8a017}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Apólice" languagecode="1046" />
+              </labels>
+              <control id="fsi_apoliceid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_apoliceid" disabled="false" />
+            </cell>
+            <cell id="{f1fc0747-907d-5aa4-9e63-08669797f328}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Tipo do item" languagecode="1046" />
+              </labels>
+              <control id="fsi_tipoitem" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_tipoitem" disabled="false" />
+            </cell>
+            <cell id="{34081181-be73-5ad1-9b24-0fa1a56d71c0}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Valor de referência" languagecode="1046" />
+              </labels>
+              <control id="fsi_valorreferencia" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="fsi_valorreferencia" disabled="false" />
+            </cell>
+            <cell id="{fe453f0e-bdb4-5eb7-a787-0e1337a9cff0}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Proprietário" languagecode="1046" />
+              </labels>
+              <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informações" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Um formulário para esta entidade." languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

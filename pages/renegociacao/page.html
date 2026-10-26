@@ -1,0 +1,55 @@
+<style>
+  .fsi-reneg { max-width: 960px; margin: 2rem auto; padding: 0 1rem; color: #243344; }
+  .fsi-reneg h1 { font-size: 2rem; }
+  .fsi-reneg .notice { border-left: 4px solid #b45200; padding: 1rem; background: #fff6e8; }
+  .fsi-reneg .cards { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 1rem; margin: 1rem 0; }
+  .fsi-reneg .card { border: 1px solid #b5c2ce; border-radius: .5rem; padding: 1.25rem; }
+  .fsi-reneg button { padding: .7rem 1.1rem; margin: .25rem .5rem .25rem 0; border-radius: .3rem; border: 1px solid #174d7d; background: #174d7d; color: white; font: inherit; cursor: pointer; }
+  .fsi-reneg button:disabled { cursor: wait; opacity: .6; }
+  .fsi-reneg button.secondary { background: white; color: #174d7d; }
+  .fsi-reneg button:focus-visible, .fsi-reneg a:focus-visible { outline: 3px solid #b45200; outline-offset: 3px; }
+  .fsi-reneg [role=alert]:not(:empty) { padding: 1rem; border: 1px solid #a32323; color: #8a1717; background: #fff4f4; margin: 1rem 0; }
+  .fsi-reneg [role=status]:not(:empty) { padding: .75rem 0; }
+  .fsi-reneg dl { display: grid; grid-template-columns: minmax(130px,1fr) 2fr; gap: .5rem; }
+  .fsi-reneg dt, .fsi-reneg dd { margin: 0; }
+  .fsi-reneg #reneg-result { margin-top: 1.5rem; }
+  .fsi-reneg details { margin-top: 2rem; border: 1px solid #b5c2ce; border-radius: .5rem; padding: 1rem; }
+  .fsi-reneg summary { cursor: pointer; font-weight: 600; }
+  .fsi-reneg summary:focus-visible { outline: 3px solid #b45200; outline-offset: 3px; }
+  .fsi-reneg .reneg-chat-frame { display: block; width: 100%; height: 620px; border: 1px solid #b5c2ce; margin-top: 1rem; }
+</style>
+<section class="fsi-reneg" id="fsi-reneg"
+  data-api="{{ settings['FSI/Renegociacao/ApiUrl'] | escape }}"
+  data-client="{{ settings['FSI/Renegociacao/ClientId'] | escape }}"
+  data-audience="{{ settings['FSI/Renegociacao/Audience'] | escape }}"
+  data-tenant="{{ settings['FSI/Renegociacao/TenantId'] | escape }}">
+  <h1>Renegociação de financiamento</h1>
+  <p class="notice"><strong>Demonstração com dados fictícios.</strong> Nenhuma operação bancária real será realizada.</p>
+  {% if user %}
+  <p>Consulte as opções disponíveis, escolha uma alternativa e confirme os termos para concluir o autosserviço.</p>
+  <p>Você pode usar somente esta página. O chatbot não é necessário para concluir.</p>
+  <div role="alert" id="reneg-error" tabindex="-1"></div>
+  <div role="status" aria-live="polite" id="reneg-status"></div>
+  <button type="button" id="reneg-connect">Consultar meus financiamentos</button>
+  <section aria-labelledby="reneg-heading">
+    <h2 id="reneg-heading" tabindex="-1">Seus financiamentos</h2>
+    <div id="reneg-content"></div>
+  </section>
+  <section id="reneg-result" aria-label="Resultado da renegociação" hidden></section>
+  {% if settings['FSI/Renegociacao/ChatEnabled'] == 'true' %}
+  <details>
+    <summary>Assistente de renegociação (opcional)</summary>
+    <p>Este assistente dedicado usa dados fictícios e pode solicitar seu login próprio. Você pode concluir a renegociação pela página sem abrir a conversa.</p>
+    <button type="button" id="reneg-chat-open">Iniciar conversa</button>
+    <div id="reneg-chat-status" role="status" aria-live="polite" tabindex="-1"></div>
+    <div id="reneg-chat-host"></div>
+  </details>
+  {% endif %}
+  {% else %}
+  <p>Entre com sua conta para consultar exclusivamente os seus financiamentos.</p>
+  <a class="btn btn-primary" href="/SignIn?returnUrl=%2Frenegociacao-financiamento%2F">Entrar no autoatendimento</a>
+  {% endif %}
+</section>
+{% if user %}
+<script src="/renegociacao-financiamento/renegociacao.js" defer></script>
+{% endif %}

@@ -1,0 +1,12 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnConversationStart
+  id: main
+  actions:
+    - kind: SendActivity
+      id: welcome
+      activity:
+        text:
+          - DEMONSTRAÇÃO FICTÍCIA — assistente de renegociação. Diga renegociar para entrar com segurança, consultar seus contratos e concluir a simulação inteiramente neste chat. CPF não autentica.
+inputType: {}
+outputType: {}

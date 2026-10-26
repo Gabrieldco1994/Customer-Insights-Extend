@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{a8f4ace5-44d1-f111-a05b-000d3a343828}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="fsi_name" select="1" icon="1" preview="1">
+        <row name="result" id="fsi_renegociacaoid">
+          <cell name="fsi_name" width="230" />
+          <cell name="fsi_status" width="130" />
+          <cell name="fsi_etapa" width="130" />
+          <cell name="fsi_clienteid" width="180" />
+          <cell name="fsi_produtoclienteid" width="180" />
+          <cell name="fsi_canal" width="90" />
+          <cell name="fsi_protocoloexterno" width="230" />
+          <cell name="fsi_errointegracao" width="230" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical" output-format="xml-platform">
+        <entity name="fsi_renegociacao">
+          <attribute name="fsi_name" />
+          <attribute name="fsi_status" />
+          <attribute name="fsi_etapa" />
+          <attribute name="fsi_clienteid" />
+          <attribute name="fsi_produtoclienteid" />
+          <attribute name="fsi_canal" />
+          <attribute name="fsi_protocoloexterno" />
+          <attribute name="fsi_errointegracao" />
+          <attribute name="fsi_renegociacaoid" />
+          <order attribute="createdon" descending="true" />
+          <filter type="and">
+            <condition attribute="fsi_errointegracao" operator="not-null" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="FSI - Renegociacoes com pendencia" languagecode="1046" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

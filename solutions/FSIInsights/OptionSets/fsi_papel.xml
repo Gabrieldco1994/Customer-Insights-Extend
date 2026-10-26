@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="fsi_papel" localizedName="Papel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <displaynames>
+    <displayname description="Papel" languagecode="1046" />
+  </displaynames>
+  <options>
+    <option value="712400000" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Titular" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400001" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Cotitular" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400002" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Procurador" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400003" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Avalista" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400004" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Fiador" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400005" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Segurado" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400006" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Tomador" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400007" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Estipulante" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400008" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Beneficiário" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400009" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Condutor" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400010" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Pagador" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400011" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Contratante" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400012" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Representante" languagecode="1046" />
+      </labels>
+    </option>
+  </options>
+</optionset>

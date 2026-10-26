@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{cd6a1bc8-81fa-4e18-ba99-6e3f8063fb77}</savedqueryid>
+    <layoutxml>
+      <grid name="fsi_grupofamiliars" jump="fsi_name" select="1" icon="1" preview="1">
+        <row name="fsi_grupofamiliar" id="fsi_grupofamiliarid">
+          <cell name="fsi_name" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>2</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="fsi_grupofamiliar">
+          <attribute name="fsi_grupofamiliarid" />
+          <attribute name="fsi_name" />
+          <attribute name="createdon" />
+          <order attribute="fsi_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Exibição Associada de Grupo Familiar" languagecode="1046" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

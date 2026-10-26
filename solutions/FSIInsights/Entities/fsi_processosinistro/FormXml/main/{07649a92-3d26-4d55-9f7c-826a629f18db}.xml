@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{07649a92-3d26-4d55-9f7c-826a629f18db}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{3fc0445f-a5ee-5fba-9d86-346ff253403f}" name="StageStep2" locklevel="0" expanded="true" visible="false" labelid="{803ddc1f-3467-4172-98d9-4647166f012a}">
+          <labels>
+            <label description="Aviso" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{43ac4a30-e2f9-e899-1787-12dd5172403f}" name="StageStep2_section1" labelid="{45a659fe-1c19-483e-927c-4f318c72e1ef}">
+                  <labels>
+                    <label description="Aviso" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{7d2abc29-ada9-54d3-a128-54319e90a2fb}" showlabel="true" visible="true" labelid="{73cd52a6-3723-4a86-9461-04c4e5580d04}">
+                        <labels>
+                          <label description="Apólice" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_fsi_sinistro_fsi_processosinistro:fsi_apoliceid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_apoliceid" relationship="bpf_fsi_sinistro_fsi_processosinistro" isrequired="true" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9fcd48e9-b748-55c9-9aa4-bfe63c5d1f70}" showlabel="true" visible="true" labelid="{20a6ca5b-a67f-4ee8-be8a-c0ba27311c74}">
+                        <labels>
+                          <label description="Data da ocorrência" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_fsi_sinistro_fsi_processosinistro:fsi_dataocorrencia" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="fsi_dataocorrencia" relationship="bpf_fsi_sinistro_fsi_processosinistro" isrequired="true" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{49e7ef67-931a-5b6e-870f-16d2d7e9911c}" showlabel="true" visible="true" labelid="{6d5c3ac9-4138-42dc-84a8-30ce76346136}">
+                        <labels>
+                          <label description="Data do aviso" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_fsi_sinistro_fsi_processosinistro:fsi_dataaviso" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="fsi_dataaviso" relationship="bpf_fsi_sinistro_fsi_processosinistro" isrequired="true" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{56c343c4-9a70-58f8-8ee5-8c0a590a62db}" showlabel="true" visible="true" labelid="{9a160d01-3c5f-4559-80ab-0fbf8a5678c9}">
+                        <labels>
+                          <label description="Causa" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_fsi_sinistro_fsi_processosinistro:fsi_causa" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="fsi_causa" relationship="bpf_fsi_sinistro_fsi_processosinistro" isrequired="true" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{b3b61f6e-5913-5f80-a1c5-46a766b50946}" name="StageStep11" locklevel="0" expanded="true" visible="false" labelid="{7fbf6b40-c2c9-4186-af3f-c6c3c9b67f56}">
+          <labels>
+            <label description="Em regulação" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{e43d3005-e0a9-fe48-b247-e421e950d943}" name="StageStep11_section1" labelid="{bd76db6b-7252-486c-a8c4-1ac931da013d}">
+                  <labels>
+                    <label description="Em regulação" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{9ee2025b-1bde-533c-8e95-f06fa98fc924}" showlabel="true" visible="true" labelid="{9250be75-044d-49c0-b586-8c5993b34ae9}">
+                        <labels>
+                          <label description="Cobertura acionada" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_fsi_sinistro_fsi_processosinistro:fsi_coberturaid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_coberturaid" relationship="bpf_fsi_sinistro_fsi_processosinistro" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f62a1544-b217-5ba1-b1c6-58ee3ec6b0dd}" showlabel="true" visible="true" labelid="{65cdfa35-6479-4858-b2a3-f5461bc25e6c}">
+                        <labels>
+                          <label description="Regulador" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_fsi_sinistro_fsi_processosinistro:fsi_reguladorid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_reguladorid" relationship="bpf_fsi_sinistro_fsi_processosinistro" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e40ba5e5-2cc9-5fe9-8db1-0c5ffcb26b6e}" showlabel="true" visible="true" labelid="{0fea204a-491c-4387-9a03-5ffe11dc354b}">
+                        <labels>
+                          <label description="Valor reclamado" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_fsi_sinistro_fsi_processosinistro:fsi_valorreclamado" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="fsi_valorreclamado" relationship="bpf_fsi_sinistro_fsi_processosinistro" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ea37b1bd-d93c-5451-8c57-a2feb22508a0}" showlabel="true" visible="true" labelid="{dcaa0254-6f87-435e-91f9-b123dedad06d}">
+                        <labels>
+                          <label description="Reserva" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_fsi_sinistro_fsi_processosinistro:fsi_reserva" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="fsi_reserva" relationship="bpf_fsi_sinistro_fsi_processosinistro" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{a59d3c2e-9488-52d5-9880-5433b712df42}" name="StageStep20" locklevel="0" expanded="true" visible="false" labelid="{db33e995-f6ad-4a20-a201-92661ddd52fc}">
+          <labels>
+            <label description="Aguardando documentos" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{ff431016-1b99-2a4d-eb01-b6cfee406b53}" name="StageStep20_section1" labelid="{57a0ac6a-31df-4d9e-b46c-41fbb82d9631}">
+                  <labels>
+                    <label description="Aguardando documentos" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{07d7ec0b-9e99-55e3-9d92-ed347ad5faa4}" showlabel="true" visible="true" labelid="{f45c48f4-d584-42e8-94c9-0f327923f5dc}">
+                        <labels>
+                          <label description="Data da documentação completa" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_fsi_sinistro_fsi_processosinistro:fsi_datadocumentacao" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="fsi_datadocumentacao" relationship="bpf_fsi_sinistro_fsi_processosinistro" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{af66bc72-2e44-5ba6-b6e6-58cc34ee348c}" name="StageStep23" locklevel="0" expanded="true" visible="false" labelid="{1fa0e754-4a06-43dd-bd8c-27cd8e781b80}">
+          <labels>
+            <label description="Decisão" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{20c51c0c-89a6-6410-8199-f4621a2a8a90}" name="StageStep23_section1" labelid="{01c3b7c6-0ccf-4c40-89b9-590186d9d0db}">
+                  <labels>
+                    <label description="Decisão" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{8ffe4dc0-a2f9-5d18-a2c1-6150bd345686}" showlabel="true" visible="true" labelid="{f3064fa7-0c48-4b3f-a10f-4a320e68ac53}">
+                        <labels>
+                          <label description="Status do sinistro" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_fsi_sinistro_fsi_processosinistro:fsi_statussinistro" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="fsi_statussinistro" relationship="bpf_fsi_sinistro_fsi_processosinistro" isrequired="true" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{439e3a5e-ffbb-50bb-b734-107de76a48dd}" showlabel="true" visible="true" labelid="{fb8bf543-aa1f-4646-ab04-32134f62e534}">
+                        <labels>
+                          <label description="Motivo da negativa" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_fsi_sinistro_fsi_processosinistro:fsi_motivonegativa" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="fsi_motivonegativa" relationship="bpf_fsi_sinistro_fsi_processosinistro" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{062e716e-e1e1-5f15-ba08-cd3ff16955a6}" name="StageStep28" locklevel="0" expanded="true" visible="false" labelid="{ed8396b7-8922-49ee-9af5-e37ab7f2711e}">
+          <labels>
+            <label description="Pagamento e encerramento" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{b0d8e530-3a58-7abb-8417-543fe73e1063}" name="StageStep28_section1" labelid="{2ba3409d-b09b-431c-857d-de9172465349}">
+                  <labels>
+                    <label description="Pagamento e encerramento" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{90393679-942b-5e1c-b41f-0dcf37797265}" showlabel="true" visible="true" labelid="{7d43383d-6410-4af2-9202-a95fad9c9085}">
+                        <labels>
+                          <label description="Valor pago" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_fsi_sinistro_fsi_processosinistro:fsi_valorpago" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="fsi_valorpago" relationship="bpf_fsi_sinistro_fsi_processosinistro" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e8fabf4a-e4e4-57ab-998e-0c2a64fbfcf1}" showlabel="true" visible="true" labelid="{fc7a94b1-6aab-411b-8bf6-1eb308ecf06b}">
+                        <labels>
+                          <label description="Data da liquidação" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_fsi_sinistro_fsi_processosinistro:fsi_dataliquidacao" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="fsi_dataliquidacao" relationship="bpf_fsi_sinistro_fsi_processosinistro" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informações" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Um formulário para esta entidade." languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="fsi_sistemaorigem" localizedName="Sistema de origem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <displaynames>
+    <displayname description="Sistema de origem" languagecode="1046" />
+  </displaynames>
+  <options>
+    <option value="712400000" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Core de Apólices" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400001" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Core de Sinistros" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400002" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Core Bancário" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400003" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Investimentos" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400004" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Cobrança e Faturamento" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400005" IsHidden="0">
+      <labels>
+        <label description="CRM Legado" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400006" IsHidden="0">
+      <labels>
+        <label description="Portal de Corretores" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400007" IsHidden="0">
+      <labels>
+        <label description="Data Lake / Fabric" languagecode="1046" />
+      </labels>
+    </option>
+    <option value="712400008" IsHidden="0">
+      <labels>
+        <label description="Outro" languagecode="1046" />
+      </labels>
+    </option>
+  </options>
+</optionset>

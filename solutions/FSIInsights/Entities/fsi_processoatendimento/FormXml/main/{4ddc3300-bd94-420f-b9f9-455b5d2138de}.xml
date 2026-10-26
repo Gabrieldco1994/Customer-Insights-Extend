@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{4ddc3300-bd94-420f-b9f9-455b5d2138de}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{8a4ccacf-11e1-5b15-9648-4e7c0b394a8e}" name="StageStep2" locklevel="0" expanded="true" visible="false" labelid="{770fd4e7-156e-47d0-aaa5-51cca76404d1}">
+          <labels>
+            <label description="Identificação" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{794d2ff7-3c1d-57c3-90c6-7b58b0a5fad9}" name="StageStep2_section1" labelid="{c70ce8d0-cde7-46a4-80ef-c4f5b1119ee7}">
+                  <labels>
+                    <label description="Identificação" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{05e64428-d57e-540c-98e8-791be9f3c428}" showlabel="true" visible="true" labelid="{1c0484f4-a1c2-4d3f-8ab9-e967fb625814}">
+                        <labels>
+                          <label description="Motivo" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_incident_fsi_processoatendimento:fsi_motivoid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_motivoid" relationship="bpf_incident_fsi_processoatendimento" isrequired="true" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d340b84e-b4bb-532f-a93d-49cc1b45f6b3}" showlabel="true" visible="true" labelid="{621aa9c1-c391-4bc6-88bb-5d522ac6c53c}">
+                        <labels>
+                          <label description="Produto do cliente" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_incident_fsi_processoatendimento:fsi_produtoclienteid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_produtoclienteid" relationship="bpf_incident_fsi_processoatendimento" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{218cb759-4328-5027-8381-26a1d46efdb6}" name="StageStep7" locklevel="0" expanded="true" visible="false" labelid="{ff09e4f0-acd8-4259-9259-02ecd4306cf1}">
+          <labels>
+            <label description="Execução do serviço" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{21595443-8f1c-0529-c125-384adca18acd}" name="StageStep7_section1" labelid="{1e5a0714-6570-4360-9007-a30f37e23e2d}">
+                  <labels>
+                    <label description="Execução do serviço" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{83add249-9c83-5c12-8509-cb3c86aa7496}" showlabel="true" visible="true" labelid="{18d8190d-348c-41d1-9137-d8b2e68e8624}">
+                        <labels>
+                          <label description="Tipo de manifestação" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_incident_fsi_processoatendimento:fsi_tipomanifestacao" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="fsi_tipomanifestacao" relationship="bpf_incident_fsi_processoatendimento" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{656761b1-4542-5570-b45d-ec776de4f837}" name="StageStep10" locklevel="0" expanded="true" visible="false" labelid="{18b20185-7bb8-4ee2-8043-e2d47e4c540b}">
+          <labels>
+            <label description="Encerramento" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{7024a0e2-b41c-2771-fc9b-57486ab92695}" name="StageStep10_section1" labelid="{338f2644-17bb-4793-9d32-c327dce996d9}">
+                  <labels>
+                    <label description="Encerramento" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{51b1a2a4-ecac-51e5-8d98-30db32d280b9}" showlabel="true" visible="true" labelid="{2b4a20c3-adfa-4206-b189-d51e3835e634}">
+                        <labels>
+                          <label description="Descrição do resultado" languagecode="1046" />
+                        </labels>
+                        <control id="bpf_incident_fsi_processoatendimento:description" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="description" relationship="bpf_incident_fsi_processoatendimento" isrequired="false" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informações" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Um formulário para esta entidade." languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

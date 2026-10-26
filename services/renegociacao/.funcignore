@@ -1,0 +1,8 @@
+tests/
+__pycache__/
+.venv/
+README.md
+build_zip.py
+deployment.settings.example.json
+bootstrap.example.json
+renegociacao.zip

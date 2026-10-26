@@ -1,0 +1,117 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Consultar andamento
+    triggerQueries:
+      - consultar andamento
+      - status do acordo
+      - minha solicitação
+      - já concluiu
+  actions:
+    - kind: OAuthInput
+      id: status_login
+      title: Entrar com segurança
+      text: Entre com sua conta para consultar apenas suas solicitações.
+    - kind: ConditionGroup
+      id: status_identity
+      conditions:
+        - id: status_identity_case
+          condition: =System.User.IsLoggedIn <> true || IsBlank(System.User.AccessToken)
+          actions:
+            - kind: SendActivity
+              id: status_no_identity_message
+              activity:
+                text:
+                  - Demonstração fictícia. Entre com sua conta para consultar o andamento.
+            - kind: EndDialog
+              id: status_no_identity_end
+    - kind: ConditionGroup
+      id: status_request
+      conditions:
+        - id: status_request_case
+          condition: =IsBlank(Global.RenegRequestId)
+          actions:
+            - kind: SendActivity
+              id: status_no_request_message
+              activity:
+                text:
+                  - Demonstração fictícia. Não há solicitação neste chat. Diga renegociar para consultar seus contratos.
+            - kind: EndDialog
+              id: status_no_request_end
+    - kind: SetVariable
+      id: status_reset_error
+      variable: init:Topic.statusError
+      value: =Blank()
+    - kind: HttpRequestAction
+      id: status
+      method: Post
+      url: https://fsi-reneg-88957f9a.azurewebsites.net/api/renegociacao/status
+      headers:
+        Authorization: ="Bearer " & System.User.AccessToken
+        Content-Type: application/json
+      body:
+        kind: JsonRequestContent
+        content: '={requestId: Global.RenegRequestId}'
+      requestTimeoutInMilliseconds: 30000
+      response: init:Topic.status
+      responseSchema:
+        kind: Record
+        properties:
+          status: String
+          demonstration: Boolean
+          data:
+            type:
+              kind: Record
+              properties:
+                requestId: String
+                status: String
+                protocol: String
+                offer:
+                  type:
+                    kind: Record
+                    properties:
+                      id:
+                        type: String
+                      version: Number
+                      entryCents: Number
+                      installments: Number
+                      paymentCents: Number
+                      totalCents: Number
+                      validUntil: String
+      errorHandling:
+        kind: ContinueOnErrorBehavior
+        statusCode: Topic.statusError
+        errorResponseBody: init:Topic.statusErrorBody
+    - kind: ConditionGroup
+      id: current_status_complete
+      conditions:
+        - id: current_status_complete_case
+          condition: =Topic.status.demonstration = true && Topic.status.status = "ok" && Topic.status.data.requestId = Global.RenegRequestId && Topic.status.data.status = "completed" && !IsBlank(Trim(Topic.status.data.protocol))
+          actions:
+            - kind: SendActivity
+              id: current_status_success
+              activity:
+                text:
+                  - '{"DEMONSTRAÇÃO FICTÍCIA — renegociação concluída somente no ambiente demonstrativo. Protocolo: " & Topic.status.data.protocol & ". Solicitação: " & Topic.status.data.requestId & ". " & "Oferta " & Topic.status.data.offer.id & ", versão " & Text(Topic.status.data.offer.version) & ". Entrada: " & "R$ " & Text((Topic.status.data.offer.entryCents) / 100, "#,##0.00", "pt-BR") & ". Parcelas: " & Text(Topic.status.data.offer.installments) & " de " & "R$ " & Text((Topic.status.data.offer.paymentCents) / 100, "#,##0.00", "pt-BR") & ". Total: " & "R$ " & Text((Topic.status.data.offer.totalCents) / 100, "#,##0.00", "pt-BR") & ". Validade (informada pelo serviço): " & Topic.status.data.offer.validUntil}'
+      elseActions:
+        - kind: ConditionGroup
+          id: current_status_pending
+          conditions:
+            - id: current_status_pending_case
+              condition: =Topic.status.demonstration = true && Topic.status.data.requestId = Global.RenegRequestId && (Topic.status.status = "processing" || Topic.status.data.status = "pending" || Topic.status.data.status = "processing" || Topic.status.data.status = "draft" || Topic.status.data.status = "reviewed")
+              actions:
+                - kind: SendActivity
+                  id: current_status_pending_message
+                  activity:
+                    text:
+                      - '{"Demonstração fictícia. Solicitação " & Global.RenegRequestId & " PENDENTE/EM PROCESSAMENTO. Ainda não há conclusão confirmada. Diga consultar andamento para verificar; não refaça a confirmação."}'
+          elseActions:
+            - kind: SendActivity
+              id: current_status_failure
+              activity:
+                text:
+                  - '{"Demonstração fictícia. Não há conclusão confirmada para a solicitação " & Global.RenegRequestId & ". O serviço retornou falha ou resposta não reconhecida. Diga consultar andamento. Não vou repetir uma escrita de resultado incerto."}'
+inputType: {}
+outputType: {}

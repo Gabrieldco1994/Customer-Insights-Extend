@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "validatedOn": "2026-10-26",
+  "demonstration": true,
+  "legallyBinding": false,
+  "environment": "https://org88957f9a.crm.dynamics.com",
+  "solution": "FSIInsights",
+  "scope": {
+    "ownedPaths": [
+      "pages/renegociacao/**",
+      "scripts/renegociacao_pages.py"
+    ],
+    "unchangedByPageWork": [
+      "existing portal authentication",
+      "global portal bot",
+      "global navigation",
+      "CSP",
+      "CORS",
+      "blocked attachment extensions",
+      "Azure infrastructure",
+      "native table schema",
+      "Dataverse security roles"
+    ]
+  },
+  "publishedPage": {
+    "url": "https://portalatendimento01.powerappsportals.com/renegociacao-financiamento/",
+    "rootPageId": "4ec53887-38cf-f111-a05c-000d3a343828",
+    "localizedPageId": "83d84d8d-38cf-f111-a05c-000d3a343828",
+    "state": "Published",
+    "hiddenFromNavigation": true,
+    "independentOfChat": true
+  },
+  "pageTransaction": {
+    "contract": "REN-DEMO-002",
+    "requestId": "a7d207f2-a57f-43b9-b0dc-d423c16740ec",
+    "protocol": "DEMO-a7d207f2-a57f-43b9-b0dc-d423c16740ec",
+    "channel": "page",
+    "reviewHttpStatus": 200,
+    "confirmationTriggeredAt": "2026-10-26T14:48:42.158Z",
+    "confirmationHttpStatus": 200,
+    "result": "completed",
+    "offer": {
+      "id": "d1befe6d-fafa-5b91-aab5-d7173edfeb8d",
+      "version": 1,
+      "entryCents": 240024,
+      "installments": 12,
+      "paymentCents": 180018,
+      "totalCents": 2400240,
+      "validUntil": "2026-11-25T13:09:39Z"
+    },
+    "resume": {
+      "httpStatus": 200,
+      "result": "completed",
+      "sameProtocol": true,
+      "sameTerms": true
+    },
+    "idempotency": {
+      "originalConfirmationBodyReplayedOnce": true,
+      "replayedAt": "2026-10-26T15:02:13.011Z",
+      "httpStatus": 200,
+      "result": "completed",
+      "sameProtocol": true,
+      "sameTerms": true,
+      "reviewHashNotLoggedOrPersistedInReport": true
+    },
+    "sourceEligibilityAfterCompletion": {
+      "eligible": false,
+      "verificationOwner": "parent source/virtual-table readback"
+    },
+    "nativeReadback": {
+      "renegotiationId": "a7d207f2-a57f-43b9-b0dc-d423c16740ec",
+      "status": "Concluido",
+      "stage": "formalizacao",
+      "integrationError": null,
+      "protocolMatches": true,
+      "termsMatch": true,
+      "bpf": {
+        "instanceId": "e761780c-49d1-f111-a059-000d3a343a55",
+        "statecode": 1,
+        "statuscode": 2,
+        "activeStageId": "1b9574d9-412e-55f2-bbc0-38882ee0fd19",
+        "traversedStageCount": 5
+      }
+    }
+  },
+  "privacyAndEligibility": {
+    "otherCustomerContract": {
+      "contract": "REN-DEMO-004",
+      "actions": ["offers", "status", "start"],
+      "httpStatus": 403,
+      "errorCode": "ACCESS_DENIED",
+      "dataReturned": false,
+      "absentFromOwnContracts": true
+    },
+    "browserSelectedContact": {
+      "action": "profile",
+      "httpStatus": 400,
+      "errorCode": "INVALID_BODY",
+      "dataReturned": false
+    },
+    "divergentCpf": {
+      "action": "profile",
+      "httpStatus": 403,
+      "errorCode": "CPF_MISMATCH",
+      "dataReturned": false
+    },
+    "ineligibleContract": {
+      "contract": "REN-DEMO-003",
+      "action": "start",
+      "httpStatus": 409,
+      "errorCode": "NOT_ELIGIBLE",
+      "subsequentStatus": "not_started",
+      "requestId": null
+    }
+  },
+  "dedicatedWidget": {
+    "state": "Published",
+    "frameUrl": "https://portalatendimento01.powerappsportals.com/renegociacao-financiamento/chat-app/",
+    "sameOrigin": true,
+    "sdk": "botframework-webchat@4.19.2",
+    "hostMethod": "static native Power Pages code templates in nonced isolated HTML",
+    "sessionEndpoint": "https://fsi-reneg-88957f9a.azurewebsites.net/api/renegociacao/chat-token",
+    "sessionEndpointHttpStatus": 200,
+    "directLineConnectionObserved": "connected",
+    "messageInputRendered": true,
+    "botOAuthRequired": true,
+    "browserHasChannelSecret": false,
+    "entraAccessTokenPassedToFrame": false,
+    "chatBusinessAcceptance": {
+      "contract": "REN-DEMO-001",
+      "owner": "Copilot Studio agent",
+      "confirmedSeparatelyByParent": true
+    }
+  },
+  "localValidation": {
+    "javascriptTests": 32,
+    "deploymentTests": 6,
+    "build": "passed",
+    "commands": [
+      "npm --prefix pages/renegociacao test",
+      "npm --prefix pages/renegociacao run build",
+      "services/renegociacao/.venv/bin/python -m unittest discover -s pages/renegociacao/test -p '*_test.py'"
+    ]
+  },
+  "testLimitations": [
+    "The integrated tab reported visibilityState=hidden; financial button handlers were exercised in the signed-in DOM rather than claiming reliable native mouse automation.",
+    "The user completed portal MFA and bot OAuth; no credentials were typed by automation.",
+    "Local mocked UI scenarios were separate from the real SQL transaction reported above."
+  ],
+  "closure": {
+    "newDeploymentPerformedForReport": false,
+    "ownLocalHttpHelper": "stopped",
+    "azureResourcesStopped": false,
+    "widgetUiPreserved": true,
+    "tokensCredentialsAndReviewHashExcluded": true
+  }
+}

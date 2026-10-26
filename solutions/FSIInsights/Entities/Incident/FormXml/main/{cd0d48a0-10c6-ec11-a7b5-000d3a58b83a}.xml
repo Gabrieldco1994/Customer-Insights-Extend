@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{cd0d48a0-10c6-ec11-a7b5-000d3a58b83a}</formid>
+    <IntroducedVersion>9.1.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form enablerelatedinformation="false" shownavigationbar="true" hasmargin="false" headerdensity="HighWithControls" showinformselector="true">
+      <tabs showlabels="true">
+        <tab name="general" verticallayout="true" id="{564b9a08-4626-46f5-8bd8-3d31e17a8873}" IsUserDefined="0" labelid="{9d6e9f7c-5fb8-47a7-8d84-a6f1b8c14d4c}" ordinalvalue="0">
+          <columns>
+            <column width="50%" id="0">
+              <sections>
+                <section name="general_section_10" id="86e13dba-d7c9-43a5-a930-41b6d0695dbe" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" ordinalvalue="4">
+                  <rows />
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="fsi_tab" verticallayout="true" id="{75f3d170-b8ce-583d-a9cd-485fa002c99c}" IsUserDefined="0" expanded="true" showlabel="true" ordinalvalue="2" solutionaction="Added">
+          <labels>
+            <label description="FSI" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="classificacao" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{e792e8a5-0bcd-5a68-8c07-c93a4c30f8fb}" ordinalvalue="0">
+                  <labels>
+                    <label description="Classificação" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{94e54883-6a6e-51a2-99ac-afb9d0b42b19}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Protocolo" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_protocolo" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_protocolo" disabled="false" />
+                      </cell>
+                      <cell id="{348ef805-f90e-58d3-ab8f-1f39a297cb6d}" showlabel="true" locklevel="0" ordinalvalue="20001">
+                        <labels>
+                          <label description="Linha de negócio" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_linhanegocioid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_linhanegocioid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f156702f-f527-5588-943c-f4f3b2ec035b}" showlabel="true" locklevel="0" ordinalvalue="10002">
+                        <labels>
+                          <label description="Segmento" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_segmento" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_segmento" disabled="false" />
+                      </cell>
+                      <cell id="{ba3fccb4-4abd-55c5-b420-f02afb5ae867}" showlabel="true" locklevel="0" ordinalvalue="20003">
+                        <labels>
+                          <label description="Tipo de manifestação" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_tipomanifestacao" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_tipomanifestacao" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{488b9340-c78c-505b-9afe-3d325ca25ce6}" showlabel="true" locklevel="0" ordinalvalue="10004">
+                        <labels>
+                          <label description="Motivo" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_motivoid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_motivoid" disabled="false" />
+                      </cell>
+                      <cell id="{3ca24bcb-fa17-57a2-b8f4-0b96ac56ac37}" showlabel="true" locklevel="0" ordinalvalue="20005">
+                        <labels>
+                          <label description="Submotivo" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_submotivoid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_submotivoid" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="vinculo" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{62d137ce-333d-59a1-9b37-b583ea119fd9}" ordinalvalue="1">
+                  <labels>
+                    <label description="Vínculos" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{9bad1292-fe15-5000-957e-8eb31fc2aa81}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Produto do cliente" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_produtoclienteid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_produtoclienteid" disabled="false" />
+                      </cell>
+                      <cell id="{b3f16fd7-4e02-5f4e-8067-c89cd1f3df6a}" showlabel="true" locklevel="0" ordinalvalue="20001">
+                        <labels>
+                          <label description="Sinistro" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_sinistroid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_sinistroid" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="regulatorio" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{df3929d0-6331-59e5-9440-9845b43b58db}" ordinalvalue="2">
+                  <labels>
+                    <label description="Regulatório" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{90e37497-ec87-50e8-b039-21df1f91ba01}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="Instância" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_instancia" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_instancia" disabled="false" />
+                      </cell>
+                      <cell id="{fbe71526-af36-566f-85f9-f1c6b1c720a3}" showlabel="true" locklevel="0" ordinalvalue="20001">
+                        <labels>
+                          <label description="Órgão de origem" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_orgaoorigem" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_orgaoorigem" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0872980c-b291-5267-b540-1ae9a812b1d3}" showlabel="true" locklevel="0" ordinalvalue="10002">
+                        <labels>
+                          <label description="Protocolo externo" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_protocoloexterno" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_protocoloexterno" disabled="false" />
+                      </cell>
+                      <cell id="{d377c1b2-fe8d-586b-ba00-2cdd103a5fa4}" showlabel="true" locklevel="0" ordinalvalue="20003">
+                        <labels>
+                          <label description="Data de ciência" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_dataciencia" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="fsi_dataciencia" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4a21fa87-4bb2-56be-85f0-cc08b4f06d68}" showlabel="true" locklevel="0" ordinalvalue="10004">
+                        <labels>
+                          <label description="Prazo regulatório" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_prazoregulatorio" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="fsi_prazoregulatorio" disabled="false" />
+                      </cell>
+                      <cell id="{2f915c5a-536e-5d51-9348-998a818c6ac1}" showlabel="true" locklevel="0" ordinalvalue="20005">
+                        <labels>
+                          <label description="Resultado" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_resultado" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_resultado" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{242b8c24-6bce-505d-9177-5c792fec9499}" showlabel="true" locklevel="0" ordinalvalue="10006">
+                        <labels>
+                          <label description="Reincidente" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_reincidente" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="fsi_reincidente" disabled="false" />
+                      </cell>
+                      <cell id="{a6c73791-eab7-5b4f-8602-a65b325fbddd}" showlabel="true" locklevel="0" ordinalvalue="20007">
+                        <labels>
+                          <label description="" languagecode="1046" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_servico" verticallayout="true" visible="false" id="{395f7c91-a75b-5e04-a5b5-5525c3a605fa}" IsUserDefined="1" expanded="true" showlabel="true" ordinalvalue="3" solutionaction="Added">
+          <labels>
+            <label description="Serviço" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="sec_endosso" showlabel="true" showbar="false" columns="1" visible="false" IsUserDefined="1" id="{2bec228d-eeba-5444-a2d2-10212d2f6660}" ordinalvalue="0">
+                  <labels>
+                    <label description="Endosso de apólice" languagecode="1046" />
+                  </labels>
+                  <rows />
+                </section>
+                <section name="sec_avisosinistro" showlabel="true" showbar="false" columns="1" visible="false" IsUserDefined="1" id="{3d528611-ac62-590b-b753-30ffc3100caa}" ordinalvalue="1">
+                  <labels>
+                    <label description="Aviso de sinistro" languagecode="1046" />
+                  </labels>
+                  <rows />
+                </section>
+                <section name="sec_contestacaofatura" showlabel="true" showbar="false" columns="1" visible="false" IsUserDefined="1" id="{73f853a1-8a23-51e6-86ac-ce480163130e}" ordinalvalue="2">
+                  <labels>
+                    <label description="Contestação de item de fatura" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{aa4b04b9-841a-51aa-9eb2-d138c1134259}" showlabel="false" rowspan="16" colspan="1" locklevel="0" ordinalvalue="10000">
+                        <labels>
+                          <label description="sec_contestacaofatura" languagecode="1046" />
+                        </labels>
+                        <control id="IFRAME_sec_contestacaofatura" classid="{FD2A7985-3187-444e-908D-6624B21F86BB}">
+                          <parameters>
+                            <Url>about:blank</Url>
+                            <PassParameters>false</PassParameters>
+                            <Security>false</Security>
+                            <Scrolling>auto</Scrolling>
+                            <Border>false</Border>
+                            <ShowOnMobileClient>false</ShowOnMobileClient>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <footer id="{87f48bb0-8611-4251-b5a3-189a97be8c9d}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows />
+      </footer>
+      <formLibraries>
+        <Library name="fsi_/js/servicotransacional.js" libraryUniqueId="{3617999a-1ef2-5020-a60b-6e70efb6a283}" solutionaction="Added" />
+      </formLibraries>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Enhanced full case form" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Enhanced full case form" languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

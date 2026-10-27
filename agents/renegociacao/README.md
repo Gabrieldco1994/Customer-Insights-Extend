@@ -39,6 +39,68 @@ As seções de diagnóstico abaixo preservam o histórico anterior a esse aceite
 
 ## Jornada
 
+### Extensão IA/MCP no mesmo agente (2026-10-27)
+
+O agente e o vínculo do workstream **Renegociação** são preservados. Não é
+necessário criar ou selecionar outro agente para este cenário.
+**Publicação verificada: `Succeeded/Synchronized` em 2026-10-27T17:03:19Z.**
+Evidência sanitizada: [`acceptance-mcp.json`](acceptance-mcp.json).
+
+- `renegociar`: `AcessoDemonstrativo` solicita um código **simulado**, aceita
+  somente dígitos e não envia SMS nem autentica uma pessoa.
+- A IA consulta o servidor **FSI Renegociacao MCP**, com conexão maker
+  criptografada e limitada pelo servidor ao cliente fictício WHATS-DEMO.
+  Seus três tools são `listar_contratos_demo`, `consultar_ofertas_demo` e
+  `consultar_andamento_demo`. Eles são somente leitura e não formalizam acordos.
+- A IA explica as propostas usando os valores e o resumo retornados pela
+  fonte, em texto simples, sem depender de cartões ou botões no WhatsApp.
+- `ConfirmarDemonstrativo` recebe os IDs/versão da fonte, obtém a revisão,
+  lê os valores e pergunta ao usuário antes de executar a única confirmação.
+  O serviço mantém as validações, o hash, a idempotência e a projeção Caso/BPF.
+- `renegociar autenticado`: mantém o fluxo anterior, com token delegado e
+  contratos da conta real vinculada. O código fictício nunca autoriza esse fluxo.
+
+O modo de autenticação continua manual (`authenticationmode: 3`), mas seu gatilho
+passa a **conforme necessário** (`authenticationtrigger: 0`), para que o login
+real não bloqueie a simulação de WhatsApp antes de qualquer mensagem.
+O acesso autenticado continua verificando o token no tópico e no backend.
+Portal, broker Direct Line e vínculos de identidade não são modificados.
+
+Geração: [`renegociacao_agent_mcp.py`](../../scripts/renegociacao_agent_mcp.py).
+Conector: [`renegociacao-mcp`](../../connectors/renegociacao-mcp/).
+Probe real do protocolo: `python scripts/renegociacao_mcp.py probe`.
+
+Aceite: seleção em linguagem natural da oferta de 6 parcelas do WHATS-DEMO-001,
+revisão lida, “sim” explícito, protocolo
+`DEMO-b12301f8-1547-48d5-b634-c16fd3c2b622` entregue no chat e Caso/BPF
+lidos de volta. Entrada **R$ 0,00**, **6 × R$ 2.500,20**, total **R$ 15.001,20**.
+O BPF único percorreu as cinco etapas e terminou. O Caso não foi resolvido.
+
+No **publicado**, um novo chat Direct Line aceitou código `1`, consultou as
+propostas atuais do WHATS-DEMO-002 pelo MCP e retornou o protocolo concluído
+do WHATS-DEMO-001. **WHATS-DEMO-002 continua elegível para a demonstração do
+usuário**. Não houve envio de mensagem por um aparelho WhatsApp nesta validação.
+Para testar, abra uma conversa nova, diga `renegociar`, informe qualquer código
+numérico e peça as opções do contrato 002. Não reutilize o contrato 001 para
+formalizar outro acordo.
+
+O nome reservado do parâmetro de autenticação dos conectores é `api_key`;
+`apiKey` pode resultar em conexão marcada `Connected` que não autentica a
+chamada real. Status de conexão não substitui o teste de uma operação.
+Respostas 2xx do conector não devem ser tratadas como erro apenas porque
+o campo de status HTTP está preenchido; a conclusão ainda exige o envelope,
+o estado e o protocolo validados.
+
+Antes de exportar, inclua todos os componentes do agente na solution com
+`--ensure-solution-backup-dir` no gerador. Ele descobre o tipo nativo pela
+associação existente; o tipo desta instalação é `10270`, não um código fixo
+presumido. Confirme no pacote que os tópicos novos e autenticados estão presentes.
+O empacotador PAC 2.5.1 emite um aviso de root `ECConnector` para os dois
+conectores, mesmo incluindo suas definições e arquivos no pacote; essa presença
+foi verificada no ZIP. Importação em outro ambiente permanece não verificada.
+
+### Fluxo autenticado anterior
+
 Os tópicos determinísticos `Renegociar` e `Andamento` usam exclusivamente `POST`
 para a API compartilhada `https://fsi-reneg-88957f9a.azurewebsites.net/api/renegociacao/`.
 
@@ -57,13 +119,13 @@ para a API compartilhada `https://fsi-reneg-88957f9a.azurewebsites.net/api/reneg
    repetição automática de confirmação.
 
 A conclusão acontece no chat, sem exigir confirmação em uma página. Todos os
-resultados são identificados como demonstração fictícia. Não há conectores com
-credenciais do maker, pesquisa generativa, fluxo externo, bot público por CPF,
+resultados são identificados como demonstração fictícia. Nesse fluxo autenticado
+não há conectores com credenciais do maker, pesquisa generativa, fluxo externo, bot público por CPF,
 tokens em eventos fornecidos pelo usuário nem envio de `contactId` pelo cliente.
 
 ## Autenticação federada configurada
 
-O rascunho tem autenticação Entra personalizada (`authenticationmode: 3`),
+O aceite original usou autenticação Entra personalizada (`authenticationmode: 3`),
 login obrigatório (`authenticationtrigger: 1`) e público autenticado sem exigir
 associação ao grupo de autores (`accesscontrolpolicy: 0`).
 Em 2026-10-26, após a aprovação MFA pelo usuário, foi configurado no portal

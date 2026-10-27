@@ -1,5 +1,9 @@
 {
   "version": "2.0",
+  "extensionBundle": {
+    "id": "Microsoft.Azure.Functions.ExtensionBundle",
+    "version": "[4.0.0, 5.0.0)"
+  },
   "logging": {
     "logLevel": {
       "default": "Warning",
@@ -11,5 +15,14 @@
       "enableDependencyTracking": false
     }
   },
-  "extensions": {"http": {"routePrefix": "api", "maxOutstandingRequests": 100, "maxConcurrentRequests": 20}}
+  "extensions": {
+    "http": {"routePrefix": "api", "maxOutstandingRequests": 100, "maxConcurrentRequests": 20},
+    "mcp": {
+      "serverName": "FSI Renegociacao Demonstrativa",
+      "serverVersion": "1.0.0",
+      "instructions": "Somente dados ficticios fixos. Consulte contratos e ofertas sem inventar valores. Estas ferramentas nao confirmam acordos nem autenticam clientes.",
+      "encryptClientState": true,
+      "system": {"webhookAuthorizationLevel": "System"}
+    }
+  }
 }

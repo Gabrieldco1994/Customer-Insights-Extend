@@ -3,10 +3,26 @@ beginDialog:
   kind: OnConversationStart
   id: main
   actions:
+    - kind: SetVariable
+      id: initialize_mock_access
+      variable: init:Global.AcessoSimulado
+      value: false
+    - kind: SetVariable
+      id: initialize_mock_write
+      variable: init:Global.DemoWriteAttempted
+      value: false
+    - kind: SetVariable
+      id: initialize_mock_request
+      variable: init:Global.DemoRequestId
+      value: ''
+    - kind: SetVariable
+      id: initialize_mock_contract
+      variable: init:Global.DemoContractId
+      value: ''
     - kind: SendActivity
       id: welcome
       activity:
         text:
-          - DEMONSTRAÇÃO FICTÍCIA — assistente de renegociação. Diga renegociar para entrar com segurança, consultar seus contratos e concluir a simulação inteiramente neste chat. CPF não autentica.
+          - Olá! Posso consultar e explicar as opções de renegociação fictícia por aqui, sem botões. Diga renegociar para começar a simulação. Se quiser usar seu cadastro vinculado, diga renegociar autenticado; esse modo exige login real.
 inputType: {}
 outputType: {}

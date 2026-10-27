@@ -10,7 +10,7 @@ import azure.functions as func
 from azure.core.exceptions import AzureError
 import pytds
 
-from renegociacao import bootstrap, odata
+from renegociacao import bootstrap, odata, whatsapp_demo
 from renegociacao.core import ApiError, Service
 from renegociacao.dataverse import NativeProjection
 from renegociacao.directline_token import DirectLineTokenError, issue_token
@@ -110,6 +110,92 @@ def customer(request: func.HttpRequest) -> func.HttpResponse:
         # Boundary only: do not log exception objects, stack locals, tokens, CPF or request bodies.
         logging.error("REN_DEMO_UNEXPECTED_CUSTOMER_FAILURE")
         return failure(ApiError("INTERNAL_ERROR", "The request could not be processed. Check status before retrying.", 500))
+
+
+@app.function_name(name="WhatsAppDemoRenegotiation")
+@app.route(route="whatsapp-demo/{action}", methods=["POST"], auth_level=func.AuthLevel.FUNCTION,
+           trigger_arg_name="request")
+def whatsapp_simulation(request: func.HttpRequest) -> func.HttpResponse:
+    if os.environ.get("WHATSAPP_DEMO_ENABLED") != "1":
+        return failure(ApiError("DEMO_DISABLED", "The isolated WhatsApp simulation is disabled.", 403))
+    try:
+        payload, status = whatsapp_demo.execute(
+            service(), request.route_params["action"], body_json(request),
+        )
+        return reply(payload, status)
+    except ApiError as error:
+        return failure(error)
+    except (pytds.Error, AzureError) as error:
+        source_diagnostic(error)
+        return failure(ApiError("DEMO_SOURCE_UNAVAILABLE", "The synthetic source is unavailable.", 503))
+    except (ValueError, TypeError, KeyError, RuntimeError, OSError):
+        logging.error("REN_WHATSAPP_DEMO_UNEXPECTED_FAILURE")
+        return failure(ApiError("DEMO_INTERNAL_ERROR", "The simulation could not be processed.", 500))
+
+
+def mcp_read(action: str, context: str) -> str:
+    try:
+        if os.environ.get("WHATSAPP_DEMO_ENABLED") != "1":
+            raise ApiError("DEMO_DISABLED", "The isolated simulation is disabled.", 403)
+        if action not in {"contracts", "offers", "status"}:
+            raise ApiError("MCP_READ_ONLY", "MCP tools cannot create or confirm agreements.", 403)
+        try:
+            invocation = json.loads(context)
+        except ValueError:
+            raise ApiError("INVALID_JSON", "MCP arguments must contain valid JSON.") from None
+        if not isinstance(invocation, dict) or not isinstance(invocation.get("arguments", {}), dict):
+            raise ApiError("INVALID_BODY", "MCP arguments must be a JSON object.")
+        payload, _ = whatsapp_demo.execute(service(), action, {
+            "payload": json.dumps(invocation.get("arguments", {})),
+        })
+        if action == "offers":
+            for offer in payload["data"]["offers"]:
+                offer["resumo"] = whatsapp_demo.offer_summary(offer)
+        return json.dumps(payload, ensure_ascii=False)
+    except ApiError as error:
+        logging.warning("REN_MCP_FAILURE %s", error.code)
+        return json.dumps({"error": {"code": error.code, "message": error.message},
+                           "demonstration": True, "simulationOnly": True})
+    except (pytds.Error, AzureError) as error:
+        source_diagnostic(error)
+        return json.dumps({"error": {"code": "DEMO_SOURCE_UNAVAILABLE",
+                                    "message": "The synthetic source is unavailable."}})
+    except (ValueError, TypeError, KeyError, RuntimeError, OSError):
+        logging.error("REN_MCP_UNEXPECTED_FAILURE")
+        return json.dumps({"error": {"code": "DEMO_INTERNAL_ERROR",
+                                    "message": "The simulation could not be queried."}})
+
+
+@app.function_name(name="ListDemoContractsMcp")
+@app.mcp_tool_trigger(arg_name="context", tool_name="listar_contratos_demo",
+                      description="Lista somente os contratos ficticios WHATS-DEMO e sua elegibilidade. Nao consulta clientes reais, nao autentica e nao grava acordos.",
+                      tool_properties="[]")
+def list_demo_contracts_mcp(context: str) -> str:
+    return mcp_read("contracts", context)
+
+
+@app.function_name(name="ListDemoOffersMcp")
+@app.mcp_tool_trigger(arg_name="context", tool_name="consultar_ofertas_demo",
+                      description="Consulta ofertas reais da fonte ficticia para um contractId retornado por listar_contratos_demo. Apresente resumo, valores, parcelas, total, validade, id e versao sem calcular ou inventar descontos. Nao confirma acordos.",
+                      tool_properties=json.dumps([{
+                          "propertyName": "contractId", "propertyType": "string",
+                          "description": "ID de contrato WHATS-DEMO retornado pela ferramenta de contratos.",
+                          "isRequired": True,
+                      }]))
+def list_demo_offers_mcp(context: str) -> str:
+    return mcp_read("offers", context)
+
+
+@app.function_name(name="GetDemoStatusMcp")
+@app.mcp_tool_trigger(arg_name="context", tool_name="consultar_andamento_demo",
+                      description="Consulta andamento de um contrato ficticio WHATS-DEMO. Somente completed com protocolo confirma conclusao; processing nao e sucesso.",
+                      tool_properties=json.dumps([{
+                          "propertyName": "contractId", "propertyType": "string",
+                          "description": "ID de contrato WHATS-DEMO retornado pela ferramenta de contratos.",
+                          "isRequired": True,
+                      }]))
+def get_demo_status_mcp(context: str) -> str:
+    return mcp_read("status", context)
 
 
 @app.function_name(name="ExternalSourceOData")

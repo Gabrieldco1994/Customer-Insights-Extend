@@ -1,0 +1,11 @@
+{
+  "connectorId": "shared_new-5ffsi-20whatsapp-20demo-5fa3c7d3a820ae6f10",
+  "connectionId": "fsi-whatsapp-demo-2de30d894de0452cb190fd3d133d905c",
+  "resourceId": "/providers/Microsoft.PowerApps/apis/shared_new-5ffsi-20whatsapp-20demo-5fa3c7d3a820ae6f10/connections/fsi-whatsapp-demo-2de30d894de0452cb190fd3d133d905c",
+  "environment": "b3638821-b73d-e1f4-93d0-798d3720e915",
+  "statuses": [
+    {
+      "status": "Connected"
+    }
+  ]
+}

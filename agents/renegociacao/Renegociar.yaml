@@ -5,12 +5,9 @@ beginDialog:
   intent:
     displayName: Renegociar financiamento
     triggerQueries:
-      - quero renegociar meu financiamento
-      - renegociar
-      - negociar dívida
-      - consultar meus contratos
-      - ofertas de renegociação
-      - simular acordo
+      - renegociar autenticado
+      - renegociar com minha conta
+      - usar meu cadastro vinculado
   actions:
     - kind: SendActivity
       id: demo
@@ -835,3 +832,4 @@ beginDialog:
                   - '{"Demonstração fictícia. Não há conclusão confirmada para a solicitação " & Global.RenegRequestId & ". O serviço retornou falha ou resposta não reconhecida. Diga consultar andamento. Não vou repetir uma escrita de resultado incerto."}'
 inputType: {}
 outputType: {}
+modelDescription: Somente para pedido explícito de renegociação AUTENTICADA com a própria conta. Exige login real. Não usar para simulação fictícia WHATS-DEMO de WhatsApp.

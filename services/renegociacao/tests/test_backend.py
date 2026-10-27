@@ -94,11 +94,13 @@ class IdentityTests(unittest.TestCase):
     def test_host_anonymous_actions_are_separate_from_function_key_source(self):
         definitions = {}
         for function in function_app.app.get_functions():
-            trigger = next(b for b in function.get_dict_repr()["bindings"] if b["type"] == "httpTrigger")
-            definitions[function.get_function_name()] = trigger["authLevel"]
+            trigger = next((b for b in function.get_dict_repr()["bindings"] if b["type"] == "httpTrigger"), None)
+            if trigger is not None:
+                definitions[function.get_function_name()] = trigger["authLevel"]
         self.assertEqual(definitions["CustomerRenegotiation"], func.AuthLevel.ANONYMOUS)
         self.assertEqual(definitions["ExternalSourceOData"], func.AuthLevel.FUNCTION)
         self.assertEqual(definitions["BootstrapDemoSource"], func.AuthLevel.FUNCTION)
+        self.assertEqual(definitions["WhatsAppDemoRenegotiation"], func.AuthLevel.FUNCTION)
 
     def test_local_cli_requires_explicit_opt_in_and_is_forbidden_in_cloud(self):
         with patch.dict(os.environ, {"AZURE_CREDENTIAL_MODE": "azure_cli"}), self.assertRaises(ApiError):

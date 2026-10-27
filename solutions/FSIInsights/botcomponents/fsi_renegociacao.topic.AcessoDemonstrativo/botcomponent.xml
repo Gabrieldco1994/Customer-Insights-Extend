@@ -1,0 +1,11 @@
+<botcomponent schemaname="fsi_renegociacao.topic.AcessoDemonstrativo">
+  <componenttype>9</componenttype>
+  <description>Primeiro passo obrigatório para a simulação de WhatsApp. Pergunta um código simulado, aceita somente dígitos e libera apenas o cliente fictício. Chame antes dos tools MCP quando Global.AcessoSimulado ainda não for true.</description>
+  <iscustomizable>1</iscustomizable>
+  <name>AcessoDemonstrativo</name>
+  <parentbotid>
+    <schemaname>fsi_renegociacao</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

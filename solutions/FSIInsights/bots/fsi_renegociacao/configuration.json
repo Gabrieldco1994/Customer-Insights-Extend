@@ -1,7 +1,34 @@
 {
   "$kind": "BotConfiguration",
+  "channels": [
+    {
+      "$kind": "ChannelDefinition",
+      "id": "Omnichannel",
+      "channelId": "Omnichannel"
+    },
+    {
+      "$kind": "ChannelDefinition",
+      "id": "MsTeams",
+      "channelId": "MsTeams"
+    }
+  ],
   "settings": {
-    "GenerativeActionsEnabled": false
+    "GenerativeActionsEnabled": true
   },
-  "publishOnImport": false
+  "publishOnImport": false,
+  "gPTSettings": {
+    "$kind": "GPTSettings",
+    "defaultSchemaName": "fsi_renegociacao.gpt.default"
+  },
+  "aISettings": {
+    "$kind": "AISettings",
+    "useModelKnowledge": false,
+    "isFileAnalysisEnabled": false,
+    "isSemanticSearchEnabled": false,
+    "contentModeration": "High",
+    "optInUseLatestModels": false
+  },
+  "recognizer": {
+    "$kind": "GenerativeAIRecognizer"
+  }
 }

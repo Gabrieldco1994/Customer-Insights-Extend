@@ -1,0 +1,12 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnUnknownIntent
+  id: main
+  actions:
+    - kind: SendActivity
+      id: fallback
+      activity:
+        text:
+          - Demonstração fictícia. Posso renegociar seu financiamento ou consultar andamento. Não invento valores nem acesso contratos por CPF. Diga renegociar ou consultar andamento.
+inputType: {}
+outputType: {}

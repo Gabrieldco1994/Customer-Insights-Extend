@@ -1,0 +1,10 @@
+<botcomponent schemaname="fsi_renegociacao.topic.Renegociar">
+  <componenttype>9</componenttype>
+  <iscustomizable>1</iscustomizable>
+  <name>Renegociar</name>
+  <parentbotid>
+    <schemaname>fsi_renegociacao</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

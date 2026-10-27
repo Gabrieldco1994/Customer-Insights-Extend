@@ -72,6 +72,8 @@
       <RootComponent type="29" id="{c430da15-188d-50f7-8cf7-090741e8eb5b}" behavior="0" />
       <RootComponent type="29" id="{dac8a78e-81c0-5d07-ba99-b9ed19c0726e}" behavior="0" />
       <RootComponent type="29" id="{e7bb8edd-4ecb-f111-a05c-000d3a343a55}" behavior="0" />
+      <RootComponent type="372" id="{687b1ad4-21d2-f111-a059-000d3a343a55}" schemaName="new_fsi-20renegociacao-20mcp" behavior="0" />
+      <RootComponent type="372" id="{84e65b32-1ed2-f111-a05b-000d3a343144}" schemaName="new_fsi-20whatsapp-20demo" behavior="0" />
       <RootComponent type="61" schemaName="fsi_/js/servicotransacional.js" behavior="0" />
       <RootComponent type="62" schemaName="fsi_FSICustomerInsights" behavior="0" />
       <RootComponent type="63" id="{02ef6abb-adc8-f111-aaaf-000d3a343828}" behavior="0" />

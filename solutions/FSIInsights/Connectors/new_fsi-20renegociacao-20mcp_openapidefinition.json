@@ -1,0 +1,25 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "FSI Renegociacao MCP",
+    "description": "Consulta isolada de contratos, ofertas e andamento ficticios. Nao confirma acordos.",
+    "version": "1.0.0"
+  },
+  "host": "fsi-reneg-88957f9a.azurewebsites.net",
+  "basePath": "/",
+  "schemes": ["https"],
+  "securityDefinitions": {
+    "api_key": {"type": "apiKey", "name": "x-functions-key", "in": "header"}
+  },
+  "security": [{"api_key": []}],
+  "paths": {
+    "/runtime/webhooks/mcp": {
+      "post": {
+        "summary": "FSI Renegociacao MCP",
+        "operationId": "InvokeMCP",
+        "x-ms-agentic-protocol": "mcp-streamable-1.0",
+        "responses": {"200": {"description": "MCP protocol response"}}
+      }
+    }
+  }
+}

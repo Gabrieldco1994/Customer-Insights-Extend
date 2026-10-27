@@ -1,0 +1,10 @@
+<botcomponent schemaname="fsi_renegociacao.action.FSIRenegociacaoMCP-FSIRenegociacaoMCP">
+  <componenttype>9</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <name>FSI Renegociacao MCP - FSI Renegociacao MCP</name>
+  <parentbotid>
+    <schemaname>fsi_renegociacao</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

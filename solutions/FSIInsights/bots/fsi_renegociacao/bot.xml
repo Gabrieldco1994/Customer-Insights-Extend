@@ -4,7 +4,7 @@
   "connectionName": "2b56bd71-4ef1-42c4-9468-11c3106dd54c"
 }</authenticationconfiguration>
   <authenticationmode>3</authenticationmode>
-  <authenticationtrigger>1</authenticationtrigger>
+  <authenticationtrigger>0</authenticationtrigger>
   <iscustomizable>0</iscustomizable>
   <language>1046</language>
   <name>FSI Renegociação Demonstrativa</name>
@@ -15,8 +15,8 @@
   "lastFinishedPublishOperation": {
     "$kind": "PublishResultDetails",
     "userId": "4e9974ab-2251-4cfa-a98a-4be41612f6e8",
-    "operationStart": "2026-10-26T16:16:03.6848181Z",
-    "operationEnd": "2026-10-26T16:16:17.4702033Z",
+    "operationStart": "2026-10-27T17:03:13.1614382Z",
+    "operationEnd": "2026-10-27T17:03:19.2609724Z",
     "status": "Succeeded"
   },
   "lastPublishedDetails": {
@@ -24,7 +24,7 @@
     "authenticationMode": "CustomAzureActiveDirectory"
   },
   "lastPublishedUserId": "4e9974ab-2251-4cfa-a98a-4be41612f6e8",
-  "lastPublishedOnUtc": "2026-10-26T16:16:16.7450311",
+  "lastPublishedOnUtc": "2026-10-27T17:03:17.7094792",
   "currentSynchronizationState": {
     "$kind": "SynchronizationState",
     "botRegistration": {
@@ -34,9 +34,19 @@
       "isAppAvailableInTenant": true
     },
     "provisioningStatus": "Provisioned",
-    "state": "Synchronized"
+    "state": "Synchronized",
+    "channels": [
+      {
+        "$kind": "SynchronizedChannel",
+        "channelName": "Omnichannel"
+      },
+      {
+        "$kind": "SynchronizedChannel",
+        "channelName": "MsTeams"
+      }
+    ]
   },
-  "lastSynchronizedOnUtc": "2026-10-26T16:16:35.2206267Z"
+  "lastSynchronizedOnUtc": "2026-10-27T17:03:39.566212Z"
 }</synchronizationstatus>
   <template>kickStartTemplate-1.0.0</template>
   <timezoneruleversionnumber>4</timezoneruleversionnumber>

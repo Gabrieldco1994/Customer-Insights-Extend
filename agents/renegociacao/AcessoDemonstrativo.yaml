@@ -1,0 +1,69 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Acesso à simulação fictícia de renegociação
+    triggerQueries:
+      - renegociar
+      - oi
+      - olá
+      - iniciar
+      - simular renegociacao
+      - ver propostas
+  actions:
+    - kind: ConditionGroup
+      id: already_simulated
+      conditions:
+        - id: already_simulated_case
+          condition: =Global.AcessoSimulado = true
+          actions:
+            - kind: SendActivity
+              id: access_exists
+              activity:
+                text:
+                  - O acesso simulado já está liberado apenas para o cliente fictício.
+            - kind: EndDialog
+              id: already_end
+    - kind: SendActivity
+      id: simulation_boundary
+      activity:
+        text:
+          - Vamos simular o envio de um código para esta demonstração. Nenhum SMS será enviado e isso não autentica uma pessoa. Não informe CPF, telefone ou senha.
+    - kind: Question
+      id: mock_code
+      interruptionPolicy:
+        allowInterruption: false
+      repeatCount: 2
+      alwaysPrompt: true
+      variable: init:Topic.CodigoSimulado
+      prompt:
+        text:
+          - Digite qualquer sequência de números para liberar o cenário fictício.
+      defaultValue: =Blank()
+      entity: StringPrebuiltEntity
+    - kind: ConditionGroup
+      id: invalid_code
+      conditions:
+        - id: invalid_code_case
+          condition: =IsBlank(Topic.CodigoSimulado) || !IsMatch(Topic.CodigoSimulado, "[0-9]+", MatchOptions.Complete)
+          actions:
+            - kind: SendActivity
+              id: invalid_code_stop_message
+              activity:
+                text:
+                  - O acesso simulado não foi liberado. Digite somente números ao iniciar novamente.
+            - kind: EndDialog
+              id: invalid_code_stop_end
+    - kind: SetVariable
+      id: grant_mock_only
+      variable: Global.AcessoSimulado
+      value: true
+    - kind: SendActivity
+      id: access_ready
+      activity:
+        text:
+          - Acesso simulado liberado. Vou usar somente os contratos fictícios WHATS-DEMO; você pode pedir as opções, comparar propostas e consultar o andamento.
+inputType: {}
+outputType: {}
+modelDescription: Primeiro passo obrigatório para a simulação de WhatsApp. Pergunta um código simulado, aceita somente dígitos e libera apenas o cliente fictício. Chame antes dos tools MCP quando Global.AcessoSimulado ainda não for true.

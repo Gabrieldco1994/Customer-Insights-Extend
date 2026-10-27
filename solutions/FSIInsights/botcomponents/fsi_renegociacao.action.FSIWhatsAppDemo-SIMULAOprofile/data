@@ -1,0 +1,17 @@
+kind: TaskDialog
+modelDisplayName: Perfil ficticio - auxiliar interno
+modelDescription: Referencia tecnica; nao disponivel para selecao da IA.
+triggerCondition: false
+inputs:
+  - kind: ManualTaskInput
+    propertyName: payload
+    value: '{}'
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: fsi_renegociacao.shared_new-5ffsi-20whatsapp-20demo-5fa3c7d3a820ae6f10.fsi-whatsapp-demo-2de30d894de0452cb190fd3d133d905c
+  connectionProperties:
+    mode: Maker
+  operationId: profile
+  dynamicInputSchema:
+    properties:
+      payload: String

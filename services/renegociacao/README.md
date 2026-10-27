@@ -56,6 +56,49 @@ The secret never reaches page code, source files or logs. This token authorizes
 the transport only: the agent's financial tools still require the customer's
 delegated API token and never authorize by Direct Line user ID or CPF.
 
+### Isolated WhatsApp simulation
+
+`POST /api/whatsapp-demo/{action}` is a separate, function-key-protected demo
+surface. It requires `WHATSAPP_DEMO_ENABLED=1`; the default is disabled.
+The Copilot Studio companion uses a maker-owned managed connector connection,
+not an end-customer token. Its key must stay in that encrypted connection.
+The exact request wrapper is `{"payload":"<JSON action input>"}`.
+
+This route fixes the customer server-side to the dedicated fictitious
+`whatsapp-demo@renegociacao.invalid` contact and permits only `WHATS-DEMO-001`
+and `WHATS-DEMO-002`, with checked source IDs and product anchors. It refuses
+an active identity binding, a changed contact marker, customer selection,
+phone numbers, access tokens, and contracts or requests outside that set.
+Responses additionally contain `simulationOnly:true`.
+
+The companion's numeric-code question is a **simulation**, not authentication:
+no SMS is sent, and no Microsoft/phone identity is established. It must state
+that distinction explicitly. The existing portal, authenticated agent, delegated
+JWT route, original customer mappings and prior agreements remain unchanged.
+Native Cases and BPFs are recorded against only the dedicated synthetic customer.
+Use `scripts/renegociacao_whatsapp_seed.py` to prepare its native fixtures and
+the guarded bootstrap launcher to append its source contracts; never reopen
+completed demo agreements.
+
+### Native MCP tools
+
+The same Function app also exposes the native Azure Functions MCP extension at
+`/runtime/webhooks/mcp` (Streamable HTTP). The extension requires its dedicated
+`mcp_extension` **system key**; anonymous webhook authorization is not enabled.
+The key belongs only in the encrypted Power Platform connection.
+
+The discoverable tools are exactly `listar_contratos_demo`,
+`consultar_ofertas_demo`, and `consultar_andamento_demo`. All reuse the fixed
+synthetic-customer guard and refuse arbitrary customer/contract selectors.
+MCP dispatch explicitly disallows writes, even for an authenticated service.
+Returned offers include an exact BRL `resumo` formatted from integer cents,
+without asking the language model to calculate amounts.
+
+`scripts/renegociacao_mcp.py probe` verifies unauthorized access fails closed,
+performs a real MCP initialization/discovery and queries the protected dataset.
+It never displays the system key. The regular delegated JWT API and the
+function-key-only transactional demo connector remain distinct trust boundaries.
+
 `OFFER` has exactly:
 
 ```json

@@ -1,0 +1,12 @@
+kind: TaskDialog
+modelDisplayName: Consultar renegociacoes ficticias por MCP
+modelDescription: Consulta contratos WHATS-DEMO, ofertas e andamento na fonte financeira ficticia. Use a ferramenta consultar_ofertas_demo para explicar e comparar propostas; nunca invente valores. Nao grava acordos.
+triggerCondition: =Global.AcessoSimulado = true
+action:
+  kind: InvokeExternalAgentTaskAction
+  connectionReference: fsi_renegociacao.shared_new-5ffsi-20renegociacao-20mcp-5fa3c7d3a820ae6f10.fsi-reneg-mcp-00e6c1dc99d84d24a2a3d0a8f6e8e7d8
+  connectionProperties:
+    mode: Maker
+  operationDetails:
+    kind: ModelContextProtocolMetadata
+    operationId: InvokeMCP

@@ -19,6 +19,7 @@ FILES = (
     "renegociacao/odata.py",
     "renegociacao/security.py",
     "renegociacao/sql.py",
+    "renegociacao/whatsapp_demo.py",
 )
 
 

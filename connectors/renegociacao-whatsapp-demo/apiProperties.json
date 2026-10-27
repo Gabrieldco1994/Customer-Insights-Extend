@@ -1,0 +1,23 @@
+{
+  "properties": {
+    "connectionParameters": {
+      "api_key": {
+        "type": "securestring",
+        "uiDefinition": {
+          "displayName": "Dedicated synthetic-only function key",
+          "description": "Stored only in the managed connection; never in a topic.",
+          "tooltip": "WhatsAppDemoRenegotiation function key",
+          "constraints": {
+            "tabIndex": 2,
+            "clearText": false,
+            "required": "true"
+          }
+        }
+      }
+    },
+    "iconBrandColor": "#165a72",
+    "capabilities": [],
+    "publisher": "FSIInsights",
+    "stackOwner": "FSIInsights"
+  }
+}

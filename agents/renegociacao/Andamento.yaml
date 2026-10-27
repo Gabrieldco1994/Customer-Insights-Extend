@@ -5,10 +5,9 @@ beginDialog:
   intent:
     displayName: Consultar andamento
     triggerQueries:
-      - consultar andamento
-      - status do acordo
-      - minha solicitação
-      - já concluiu
+      - consultar andamento autenticado
+      - andamento com minha conta
+      - status da minha conta vinculada
   actions:
     - kind: OAuthInput
       id: status_login
@@ -115,3 +114,4 @@ beginDialog:
                   - '{"Demonstração fictícia. Não há conclusão confirmada para a solicitação " & Global.RenegRequestId & ". O serviço retornou falha ou resposta não reconhecida. Diga consultar andamento. Não vou repetir uma escrita de resultado incerto."}'
 inputType: {}
 outputType: {}
+modelDescription: Somente andamento AUTENTICADO de solicitação da própria conta vinculada. Não usar para WHATS-DEMO; para a simulação use consultar_andamento_demo do MCP.

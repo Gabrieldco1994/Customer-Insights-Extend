@@ -34,13 +34,23 @@ bindings = {}
 for function in function_app.app.get_functions():
     handler = function.get_user_function()
     signature = inspect.signature(handler, eval_str=False)
+    metadata = json.loads(function.get_function_json())
+    mcp = next((b for b in metadata["bindings"] if b["type"] == "mcpToolTrigger"), None)
+    if mcp:
+        assert handler.__annotations__ == {"context": str, "return": str}
+        assert set(signature.parameters) == {"context"}
+        properties = json.loads(mcp["toolProperties"])
+        assert all(p["propertyName"] == "contractId" for p in properties)
+        bindings[function.get_function_name()] = {
+            "toolName": mcp["toolName"], "argument": mcp["name"],
+        }
+        continue
     assert not handler.__code__.co_flags & __future__.annotations.compiler_flag
     assert handler.__annotations__ == {
         "request": func.HttpRequest, "return": func.HttpResponse,
     }, "HTTP annotations must be real SDK classes, not strings"
     assert signature.parameters["request"].annotation is func.HttpRequest
     assert signature.return_annotation is func.HttpResponse
-    metadata = json.loads(function.get_function_json())
     assert metadata["scriptFile"] == "function_app.py"
     argument_names = {binding["name"] for binding in metadata["bindings"]
                       if binding["name"] != "$return"}
@@ -72,8 +82,14 @@ class RealStartupTests(unittest.TestCase):
         self.assertEqual(completed.returncode, 0, completed.stderr)
         result = json.loads(completed.stdout)
         self.assertEqual(result["bindings"], {
+            "ListDemoContractsMcp": {"toolName": "listar_contratos_demo", "argument": "context"},
+            "ListDemoOffersMcp": {"toolName": "consultar_ofertas_demo", "argument": "context"},
+            "GetDemoStatusMcp": {"toolName": "consultar_andamento_demo", "argument": "context"},
             "CustomerRenegotiation": {
                 "route": "renegociacao/{action}", "authLevel": "anonymous", "methods": ["POST"],
+                "argument": "request"},
+            "WhatsAppDemoRenegotiation": {
+                "route": "whatsapp-demo/{action}", "authLevel": "function", "methods": ["POST"],
                 "argument": "request"},
             "ExternalSourceOData": {
                 "route": "odata/{*path}", "authLevel": "function", "methods": ["GET"],

@@ -1,0 +1,335 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Revisar e confirmar uma oferta fictícia
+    triggerQueries:
+      - aceitar proposta
+      - quero fechar o acordo
+      - confirmar esta oferta
+  actions:
+    - kind: ConditionGroup
+      id: require_mock_access
+      conditions:
+        - id: require_mock_access_case
+          condition: =Global.AcessoSimulado <> true
+          actions:
+            - kind: BeginDialog
+              id: request_mock_access
+              dialog: fsi_renegociacao.topic.AcessoDemonstrativo
+            - kind: ConditionGroup
+              id: mock_not_granted
+              conditions:
+                - id: mock_not_granted_case
+                  condition: =Global.AcessoSimulado <> true
+                  actions:
+                    - kind: SendActivity
+                      id: mock_required_stop_message
+                      activity:
+                        text:
+                          - O acesso à simulação não foi liberado.
+                    - kind: EndDialog
+                      id: mock_required_stop_end
+    - kind: ConditionGroup
+      id: existing_demo_request
+      conditions:
+        - id: existing_demo_request_case
+          condition: =!IsBlank(Global.DemoRequestId) || Global.DemoWriteAttempted = true
+          actions:
+            - kind: SendActivity
+              id: existing_demo_stop_message
+              activity:
+                text:
+                  - Já existe uma solicitação neste chat. Peça o andamento do contrato; não repetirei início nem confirmação.
+            - kind: EndDialog
+              id: existing_demo_stop_end
+    - kind: SetVariable
+      id: demo_start_reset_error
+      variable: init:Topic.demo_startError
+      value: =Blank()
+    - kind: InvokeConnectorAction
+      id: demo_start
+      input:
+        binding:
+          payload: '=JSON({contractId: Topic.ContratoId, channel: "chat"}, JSONFormat.Compact)'
+      output:
+        kind: SingleVariableOutputBinding
+        variable: init:Topic.demo_start
+      connectionReference: fsi_renegociacao.shared_new-5ffsi-20whatsapp-20demo-5fa3c7d3a820ae6f10.fsi-whatsapp-demo-2de30d894de0452cb190fd3d133d905c
+      connectionProperties:
+        mode: Maker
+      operationId: start
+      dynamicOutputSchema:
+        kind: Record
+        properties:
+          status: String
+          demonstration: Boolean
+          data:
+            type:
+              kind: Record
+              properties:
+                requestId: String
+                status: String
+      errorHandling:
+        kind: ContinueOnErrorBehavior
+        statusCode: Topic.demo_startError
+        errorResponseBody: init:Topic.demo_startErrorBody
+      requestTimeoutInMilliseconds: 30000
+    - kind: ConditionGroup
+      id: demo_start_error
+      conditions:
+        - id: demo_start_error_case
+          condition: =!IsBlank(Topic.demo_startError) && (Topic.demo_startError < 200 || Topic.demo_startError >= 300)
+          actions:
+            - kind: SendActivity
+              id: demo_start_unavailable_message
+              activity:
+                text:
+                  - SIMULAÇÃO. O serviço não confirmou a operação. Não vou repetir escritas nem afirmar conclusão. Diga consultar andamento.
+            - kind: EndDialog
+              id: demo_start_unavailable_end
+    - kind: ConditionGroup
+      id: demo_start_wrapper
+      conditions:
+        - id: demo_start_wrapper_case
+          condition: =Topic.demo_start.demonstration <> true || (Topic.demo_start.status <> "ok" && Topic.demo_start.status <> "processing")
+          actions:
+            - kind: SendActivity
+              id: demo_start_invalid_message
+              activity:
+                text:
+                  - SIMULAÇÃO. Resposta inválida ou pendente; nenhuma conclusão foi confirmada.
+            - kind: EndDialog
+              id: demo_start_invalid_end
+    - kind: SetVariable
+      id: remember_demo_request
+      variable: Global.DemoRequestId
+      value: =Topic.demo_start.data.requestId
+    - kind: SetVariable
+      id: remember_demo_contract
+      variable: Global.DemoContractId
+      value: =Topic.ContratoId
+    - kind: SetVariable
+      id: demo_review_reset_error
+      variable: init:Topic.demo_reviewError
+      value: =Blank()
+    - kind: InvokeConnectorAction
+      id: demo_review
+      input:
+        binding:
+          payload: '=JSON({requestId: Global.DemoRequestId, offerId: Topic.OfertaId, version: Topic.Versao}, JSONFormat.Compact)'
+      output:
+        kind: SingleVariableOutputBinding
+        variable: init:Topic.demo_review
+      connectionReference: fsi_renegociacao.shared_new-5ffsi-20whatsapp-20demo-5fa3c7d3a820ae6f10.fsi-whatsapp-demo-2de30d894de0452cb190fd3d133d905c
+      connectionProperties:
+        mode: Maker
+      operationId: review
+      dynamicOutputSchema:
+        kind: Record
+        properties:
+          status: String
+          demonstration: Boolean
+          data:
+            type:
+              kind: Record
+              properties:
+                requestId: String
+                reviewHash: String
+                offer:
+                  type:
+                    kind: Record
+                    properties:
+                      id:
+                        type: String
+                      version: Number
+                      entryCents: Number
+                      installments: Number
+                      paymentCents: Number
+                      totalCents: Number
+                      validUntil: String
+      errorHandling:
+        kind: ContinueOnErrorBehavior
+        statusCode: Topic.demo_reviewError
+        errorResponseBody: init:Topic.demo_reviewErrorBody
+      requestTimeoutInMilliseconds: 30000
+    - kind: ConditionGroup
+      id: demo_review_error
+      conditions:
+        - id: demo_review_error_case
+          condition: =!IsBlank(Topic.demo_reviewError) && (Topic.demo_reviewError < 200 || Topic.demo_reviewError >= 300)
+          actions:
+            - kind: SendActivity
+              id: demo_review_unavailable_message
+              activity:
+                text:
+                  - SIMULAÇÃO. O serviço não confirmou a operação. Não vou repetir escritas nem afirmar conclusão. Diga consultar andamento.
+            - kind: EndDialog
+              id: demo_review_unavailable_end
+    - kind: ConditionGroup
+      id: demo_review_wrapper
+      conditions:
+        - id: demo_review_wrapper_case
+          condition: =Topic.demo_review.demonstration <> true || Topic.demo_review.status <> "ok"
+          actions:
+            - kind: SendActivity
+              id: demo_review_invalid_message
+              activity:
+                text:
+                  - SIMULAÇÃO. Resposta inválida ou pendente; nenhuma conclusão foi confirmada.
+            - kind: EndDialog
+              id: demo_review_invalid_end
+    - kind: Question
+      id: explicit_demo_acceptance
+      interruptionPolicy:
+        allowInterruption: false
+      repeatCount: 2
+      alwaysPrompt: true
+      variable: init:Topic.AceiteExplicito
+      prompt:
+        text:
+          - '{"Confirma esta oferta fictícia? " & "Oferta " & Topic.demo_review.data.offer.id & ", versão " & Text(Topic.demo_review.data.offer.version) & ". Entrada: " & "R$ " & Text((Topic.demo_review.data.offer.entryCents) / 100, "#,##0.00", "pt-BR") & ". Parcelas: " & Text(Topic.demo_review.data.offer.installments) & " de " & "R$ " & Text((Topic.demo_review.data.offer.paymentCents) / 100, "#,##0.00", "pt-BR") & ". Total: " & "R$ " & Text((Topic.demo_review.data.offer.totalCents) / 100, "#,##0.00", "pt-BR") & ". Validade (informada pelo serviço): " & Topic.demo_review.data.offer.validUntil & ". Responda sim ou não."}'
+      defaultValue: =Blank()
+      entity: BooleanPrebuiltEntity
+    - kind: ConditionGroup
+      id: demo_not_accepted
+      conditions:
+        - id: demo_not_accepted_case
+          condition: =Topic.AceiteExplicito <> true
+          actions:
+            - kind: SendActivity
+              id: demo_declined_message
+              activity:
+                text:
+                  - Você não confirmou. Nenhum acordo foi formalizado.
+            - kind: EndDialog
+              id: demo_declined_end
+    - kind: SetVariable
+      id: guard_ambiguous_demo_write
+      variable: Global.DemoWriteAttempted
+      value: true
+    - kind: SetVariable
+      id: demo_confirm_reset_error
+      variable: init:Topic.demo_confirmError
+      value: =Blank()
+    - kind: InvokeConnectorAction
+      id: demo_confirm
+      input:
+        binding:
+          payload: '=JSON({requestId: Global.DemoRequestId, reviewHash: Topic.demo_review.data.reviewHash, confirmed: true}, JSONFormat.Compact)'
+      output:
+        kind: SingleVariableOutputBinding
+        variable: init:Topic.demo_confirm
+      connectionReference: fsi_renegociacao.shared_new-5ffsi-20whatsapp-20demo-5fa3c7d3a820ae6f10.fsi-whatsapp-demo-2de30d894de0452cb190fd3d133d905c
+      connectionProperties:
+        mode: Maker
+      operationId: confirm
+      dynamicOutputSchema:
+        kind: Record
+        properties:
+          status: String
+          demonstration: Boolean
+          data:
+            type:
+              kind: Record
+              properties:
+                requestId: String
+                status: String
+                protocol: String
+                offer:
+                  type:
+                    kind: Record
+                    properties:
+                      id:
+                        type: String
+                      version: Number
+                      entryCents: Number
+                      installments: Number
+                      paymentCents: Number
+                      totalCents: Number
+                      validUntil: String
+      errorHandling:
+        kind: ContinueOnErrorBehavior
+        statusCode: Topic.demo_confirmError
+        errorResponseBody: init:Topic.demo_confirmErrorBody
+      requestTimeoutInMilliseconds: 30000
+    - kind: SetVariable
+      id: demo_final_reset_error
+      variable: init:Topic.demo_finalError
+      value: =Blank()
+    - kind: InvokeConnectorAction
+      id: demo_final
+      input:
+        binding:
+          payload: '=JSON({requestId: Global.DemoRequestId}, JSONFormat.Compact)'
+      output:
+        kind: SingleVariableOutputBinding
+        variable: init:Topic.demo_final
+      connectionReference: fsi_renegociacao.shared_new-5ffsi-20whatsapp-20demo-5fa3c7d3a820ae6f10.fsi-whatsapp-demo-2de30d894de0452cb190fd3d133d905c
+      connectionProperties:
+        mode: Maker
+      operationId: status
+      dynamicOutputSchema:
+        kind: Record
+        properties:
+          status: String
+          demonstration: Boolean
+          data:
+            type:
+              kind: Record
+              properties:
+                requestId: String
+                status: String
+                protocol: String
+                offer:
+                  type:
+                    kind: Record
+                    properties:
+                      id:
+                        type: String
+                      version: Number
+                      entryCents: Number
+                      installments: Number
+                      paymentCents: Number
+                      totalCents: Number
+                      validUntil: String
+      errorHandling:
+        kind: ContinueOnErrorBehavior
+        statusCode: Topic.demo_finalError
+        errorResponseBody: init:Topic.demo_finalErrorBody
+      requestTimeoutInMilliseconds: 30000
+    - kind: ConditionGroup
+      id: completed_demo
+      conditions:
+        - id: completed_demo_case
+          condition: =Topic.demo_final.demonstration = true && Topic.demo_final.status = "ok" && Topic.demo_final.data.requestId = Global.DemoRequestId && Topic.demo_final.data.status = "completed" && !IsBlank(Topic.demo_final.data.protocol)
+          actions:
+            - kind: SendActivity
+              id: demo_protocol
+              activity:
+                text:
+                  - '{"Renegociação fictícia concluída. Protocolo: " & Topic.demo_final.data.protocol & ". " & "Oferta " & Topic.demo_final.data.offer.id & ", versão " & Text(Topic.demo_final.data.offer.version) & ". Entrada: " & "R$ " & Text((Topic.demo_final.data.offer.entryCents) / 100, "#,##0.00", "pt-BR") & ". Parcelas: " & Text(Topic.demo_final.data.offer.installments) & " de " & "R$ " & Text((Topic.demo_final.data.offer.paymentCents) / 100, "#,##0.00", "pt-BR") & ". Total: " & "R$ " & Text((Topic.demo_final.data.offer.totalCents) / 100, "#,##0.00", "pt-BR") & ". Validade (informada pelo serviço): " & Topic.demo_final.data.offer.validUntil}'
+      elseActions:
+        - kind: SendActivity
+          id: demo_pending
+          activity:
+            text:
+              - '{"Não há conclusão confirmada. Solicitação: " & Global.DemoRequestId & ". Peça consultar andamento. Não repetirei a confirmação."}'
+inputType:
+  properties:
+    ContratoId: String
+    OfertaId: String
+    Versao: Number
+outputType: {}
+modelDescription: Use somente quando o usuário escolheu contratar uma oferta retornada pelo MCP. Recebe os IDs e versão exatos da fonte, revisa os termos e pergunta a confirmação real ao usuário antes de gravar. Não substitui autenticação real.
+inputs:
+  - kind: AutomaticTaskInput
+    propertyName: ContratoId
+    description: contractId exato de um contrato WHATS-DEMO retornado pelo MCP.
+  - kind: AutomaticTaskInput
+    propertyName: OfertaId
+    description: id exato da oferta retornada por consultar_ofertas_demo e escolhida pelo usuário.
+  - kind: AutomaticTaskInput
+    propertyName: Versao
+    description: version exata dessa oferta retornada pelo serviço.

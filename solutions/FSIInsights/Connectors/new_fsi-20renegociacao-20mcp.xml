@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Connector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <connectorid>687b1ad4-21d2-f111-a059-000d3a343a55</connectorid>
+  <description></description>
+  <displayname>FSI Renegociacao MCP</displayname>
+  <iconbrandcolor>#165a72</iconbrandcolor>
+  <name>new_fsi-20renegociacao-20mcp</name>
+  <connectortype>1</connectortype>
+  <openapidefinition>/Connector/new_fsi-20renegociacao-20mcp_openapidefinition.json</openapidefinition>
+  <connectionparameters>/Connector/new_fsi-20renegociacao-20mcp_connectionparameters.json</connectionparameters>
+  <policytemplateinstances>/Connector/new_fsi-20renegociacao-20mcp_policytemplateinstances.json</policytemplateinstances>
+</Connector>

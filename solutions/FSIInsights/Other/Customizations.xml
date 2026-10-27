@@ -15,6 +15,31 @@
   <AppModuleSiteMaps />
   <AppModules />
   <EntityDataProviders />
+  <Connectors />
+  <connectionreferences>
+    <connectionreference connectionreferencelogicalname="fsi_renegociacao.shared_new-5ffsi-20renegociacao-20mcp-5fa3c7d3a820ae6f10.fsi-reneg-mcp-00e6c1dc99d84d24a2a3d0a8f6e8e7d8">
+      <connectionreferencedisplayname>fsi_renegociacao.shared_new-5ffsi-20renegociacao-20mcp-5fa3c7d3a820ae6f10.fsi-reneg-mcp-00e6c1dc99d84d24a2a3d0a8f6e8e7d8</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_new-5ffsi-20renegociacao-20mcp-5fa3c7d3a820ae6f10</connectorid>
+      <customconnectorid>
+        <connectorid>687b1ad4-21d2-f111-a059-000d3a343a55</connectorid>
+      </customconnectorid>
+      <iscustomizable>0</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="fsi_renegociacao.shared_new-5ffsi-20whatsapp-20demo-5fa3c7d3a820ae6f10.fsi-whatsapp-demo-2de30d894de0452cb190fd3d133d905c">
+      <connectionreferencedisplayname>fsi_renegociacao.shared_new-5ffsi-20whatsapp-20demo-5fa3c7d3a820ae6f10.fsi-whatsapp-demo-2de30d894de0452cb190fd3d133d905c</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_new-5ffsi-20whatsapp-20demo-5fa3c7d3a820ae6f10</connectorid>
+      <customconnectorid>
+        <connectorid>84e65b32-1ed2-f111-a05b-000d3a343144</connectorid>
+      </customconnectorid>
+      <iscustomizable>0</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+  </connectionreferences>
   <Languages>
     <Language>1046</Language>
   </Languages>

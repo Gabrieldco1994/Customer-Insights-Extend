@@ -1,0 +1,1362 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "FSI WhatsApp Demo",
+    "description": "Synthetic-only, no SMS or bank transaction.",
+    "version": "1.0"
+  },
+  "host": "fsi-reneg-88957f9a.azurewebsites.net",
+  "basePath": "/api/whatsapp-demo",
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "x-functions-key",
+      "in": "header"
+    }
+  },
+  "security": [
+    {
+      "api_key": []
+    }
+  ],
+  "paths": {
+    "/profile": {
+      "post": {
+        "operationId": "profile",
+        "summary": "SIMULAÇÃO — profile",
+        "description": "Somente cliente fictício fixo; não autentica pessoas nem envia SMS.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "payload"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "payload": {
+                  "type": "string",
+                  "description": "Serialized JSON business object; use {} for empty input."
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Synthetic result; check data.status and protocol.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "data",
+                "demonstration"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "ok",
+                    "processing"
+                  ]
+                },
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "contactId": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "cpfVerified": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "contactId",
+                    "name",
+                    "cpfVerified"
+                  ]
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Pending is not completion.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "data",
+                "demonstration"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "ok",
+                    "processing"
+                  ]
+                },
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "contactId": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "cpfVerified": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "contactId",
+                    "name",
+                    "cpfVerified"
+                  ]
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Failure: never treat as completed.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "error",
+                "demonstration"
+              ],
+              "properties": {
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "error": {
+                  "type": "object",
+                  "required": [
+                    "code",
+                    "message"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/contracts": {
+      "post": {
+        "operationId": "contracts",
+        "summary": "SIMULAÇÃO — contracts",
+        "description": "Somente cliente fictício fixo; não autentica pessoas nem envia SMS.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "payload"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "payload": {
+                  "type": "string",
+                  "description": "Serialized JSON business object; use {} for empty input."
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Synthetic result; check data.status and protocol.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "data",
+                "demonstration"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "ok",
+                    "processing"
+                  ]
+                },
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "contracts": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "number": {
+                            "type": "string"
+                          },
+                          "vehicle": {
+                            "type": "string"
+                          },
+                          "debtCents": {
+                            "type": "integer"
+                          },
+                          "eligible": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "number",
+                          "vehicle",
+                          "debtCents",
+                          "eligible"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "contracts"
+                  ]
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Pending is not completion.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "data",
+                "demonstration"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "ok",
+                    "processing"
+                  ]
+                },
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "contracts": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "number": {
+                            "type": "string"
+                          },
+                          "vehicle": {
+                            "type": "string"
+                          },
+                          "debtCents": {
+                            "type": "integer"
+                          },
+                          "eligible": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "number",
+                          "vehicle",
+                          "debtCents",
+                          "eligible"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "contracts"
+                  ]
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Failure: never treat as completed.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "error",
+                "demonstration"
+              ],
+              "properties": {
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "error": {
+                  "type": "object",
+                  "required": [
+                    "code",
+                    "message"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/offers": {
+      "post": {
+        "operationId": "offers",
+        "summary": "SIMULAÇÃO — offers",
+        "description": "Somente cliente fictício fixo; não autentica pessoas nem envia SMS.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "payload"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "payload": {
+                  "type": "string",
+                  "description": "Serialized JSON business object; use {} for empty input."
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Synthetic result; check data.status and protocol.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "data",
+                "demonstration"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "ok",
+                    "processing"
+                  ]
+                },
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "offers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "version": {
+                            "type": "integer"
+                          },
+                          "entryCents": {
+                            "type": "integer"
+                          },
+                          "installments": {
+                            "type": "integer"
+                          },
+                          "paymentCents": {
+                            "type": "integer"
+                          },
+                          "totalCents": {
+                            "type": "integer"
+                          },
+                          "validUntil": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "version",
+                          "entryCents",
+                          "installments",
+                          "paymentCents",
+                          "totalCents",
+                          "validUntil"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "offers"
+                  ]
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Pending is not completion.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "data",
+                "demonstration"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "ok",
+                    "processing"
+                  ]
+                },
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "offers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "version": {
+                            "type": "integer"
+                          },
+                          "entryCents": {
+                            "type": "integer"
+                          },
+                          "installments": {
+                            "type": "integer"
+                          },
+                          "paymentCents": {
+                            "type": "integer"
+                          },
+                          "totalCents": {
+                            "type": "integer"
+                          },
+                          "validUntil": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "version",
+                          "entryCents",
+                          "installments",
+                          "paymentCents",
+                          "totalCents",
+                          "validUntil"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "offers"
+                  ]
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Failure: never treat as completed.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "error",
+                "demonstration"
+              ],
+              "properties": {
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "error": {
+                  "type": "object",
+                  "required": [
+                    "code",
+                    "message"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/start": {
+      "post": {
+        "operationId": "start",
+        "summary": "SIMULAÇÃO — start",
+        "description": "Somente cliente fictício fixo; não autentica pessoas nem envia SMS.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "payload"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "payload": {
+                  "type": "string",
+                  "description": "Serialized JSON business object; use {} for empty input."
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Synthetic result; check data.status and protocol.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "data",
+                "demonstration"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "ok",
+                    "processing"
+                  ]
+                },
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "requestId": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "requestId",
+                    "status"
+                  ]
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Pending is not completion.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "data",
+                "demonstration"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "ok",
+                    "processing"
+                  ]
+                },
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "requestId": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "requestId",
+                    "status"
+                  ]
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Failure: never treat as completed.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "error",
+                "demonstration"
+              ],
+              "properties": {
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "error": {
+                  "type": "object",
+                  "required": [
+                    "code",
+                    "message"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/review": {
+      "post": {
+        "operationId": "review",
+        "summary": "SIMULAÇÃO — review",
+        "description": "Somente cliente fictício fixo; não autentica pessoas nem envia SMS.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "payload"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "payload": {
+                  "type": "string",
+                  "description": "Serialized JSON business object; use {} for empty input."
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Synthetic result; check data.status and protocol.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "data",
+                "demonstration"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "ok",
+                    "processing"
+                  ]
+                },
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "requestId": {
+                      "type": "string"
+                    },
+                    "reviewHash": {
+                      "type": "string"
+                    },
+                    "offer": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "version": {
+                          "type": "integer"
+                        },
+                        "entryCents": {
+                          "type": "integer"
+                        },
+                        "installments": {
+                          "type": "integer"
+                        },
+                        "paymentCents": {
+                          "type": "integer"
+                        },
+                        "totalCents": {
+                          "type": "integer"
+                        },
+                        "validUntil": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "version",
+                        "entryCents",
+                        "installments",
+                        "paymentCents",
+                        "totalCents",
+                        "validUntil"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "requestId",
+                    "reviewHash",
+                    "offer"
+                  ]
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Pending is not completion.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "data",
+                "demonstration"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "ok",
+                    "processing"
+                  ]
+                },
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "requestId": {
+                      "type": "string"
+                    },
+                    "reviewHash": {
+                      "type": "string"
+                    },
+                    "offer": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "version": {
+                          "type": "integer"
+                        },
+                        "entryCents": {
+                          "type": "integer"
+                        },
+                        "installments": {
+                          "type": "integer"
+                        },
+                        "paymentCents": {
+                          "type": "integer"
+                        },
+                        "totalCents": {
+                          "type": "integer"
+                        },
+                        "validUntil": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "version",
+                        "entryCents",
+                        "installments",
+                        "paymentCents",
+                        "totalCents",
+                        "validUntil"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "requestId",
+                    "reviewHash",
+                    "offer"
+                  ]
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Failure: never treat as completed.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "error",
+                "demonstration"
+              ],
+              "properties": {
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "error": {
+                  "type": "object",
+                  "required": [
+                    "code",
+                    "message"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/confirm": {
+      "post": {
+        "operationId": "confirm",
+        "summary": "SIMULAÇÃO — confirm",
+        "description": "Somente cliente fictício fixo; não autentica pessoas nem envia SMS.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "payload"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "payload": {
+                  "type": "string",
+                  "description": "Serialized JSON business object; use {} for empty input."
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Synthetic result; check data.status and protocol.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "data",
+                "demonstration"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "ok",
+                    "processing"
+                  ]
+                },
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "requestId": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "protocol": {
+                      "type": "string"
+                    },
+                    "offer": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "version": {
+                          "type": "integer"
+                        },
+                        "entryCents": {
+                          "type": "integer"
+                        },
+                        "installments": {
+                          "type": "integer"
+                        },
+                        "paymentCents": {
+                          "type": "integer"
+                        },
+                        "totalCents": {
+                          "type": "integer"
+                        },
+                        "validUntil": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "version",
+                        "entryCents",
+                        "installments",
+                        "paymentCents",
+                        "totalCents",
+                        "validUntil"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "requestId",
+                    "status",
+                    "protocol",
+                    "offer"
+                  ]
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Pending is not completion.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "data",
+                "demonstration"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "ok",
+                    "processing"
+                  ]
+                },
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "requestId": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "protocol": {
+                      "type": "string"
+                    },
+                    "offer": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "version": {
+                          "type": "integer"
+                        },
+                        "entryCents": {
+                          "type": "integer"
+                        },
+                        "installments": {
+                          "type": "integer"
+                        },
+                        "paymentCents": {
+                          "type": "integer"
+                        },
+                        "totalCents": {
+                          "type": "integer"
+                        },
+                        "validUntil": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "version",
+                        "entryCents",
+                        "installments",
+                        "paymentCents",
+                        "totalCents",
+                        "validUntil"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "requestId",
+                    "status",
+                    "protocol",
+                    "offer"
+                  ]
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Failure: never treat as completed.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "error",
+                "demonstration"
+              ],
+              "properties": {
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "error": {
+                  "type": "object",
+                  "required": [
+                    "code",
+                    "message"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/status": {
+      "post": {
+        "operationId": "status",
+        "summary": "SIMULAÇÃO — status",
+        "description": "Somente cliente fictício fixo; não autentica pessoas nem envia SMS.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "payload"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "payload": {
+                  "type": "string",
+                  "description": "Serialized JSON business object; use {} for empty input."
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Synthetic result; check data.status and protocol.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "data",
+                "demonstration"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "ok",
+                    "processing"
+                  ]
+                },
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "requestId": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "protocol": {
+                      "type": "string"
+                    },
+                    "offer": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "version": {
+                          "type": "integer"
+                        },
+                        "entryCents": {
+                          "type": "integer"
+                        },
+                        "installments": {
+                          "type": "integer"
+                        },
+                        "paymentCents": {
+                          "type": "integer"
+                        },
+                        "totalCents": {
+                          "type": "integer"
+                        },
+                        "validUntil": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "version",
+                        "entryCents",
+                        "installments",
+                        "paymentCents",
+                        "totalCents",
+                        "validUntil"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "requestId",
+                    "status",
+                    "protocol",
+                    "offer"
+                  ]
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Pending is not completion.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "data",
+                "demonstration"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "ok",
+                    "processing"
+                  ]
+                },
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "requestId": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "protocol": {
+                      "type": "string"
+                    },
+                    "offer": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "version": {
+                          "type": "integer"
+                        },
+                        "entryCents": {
+                          "type": "integer"
+                        },
+                        "installments": {
+                          "type": "integer"
+                        },
+                        "paymentCents": {
+                          "type": "integer"
+                        },
+                        "totalCents": {
+                          "type": "integer"
+                        },
+                        "validUntil": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "version",
+                        "entryCents",
+                        "installments",
+                        "paymentCents",
+                        "totalCents",
+                        "validUntil"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "requestId",
+                    "status",
+                    "protocol",
+                    "offer"
+                  ]
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Failure: never treat as completed.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "error",
+                "demonstration"
+              ],
+              "properties": {
+                "demonstration": {
+                  "type": "boolean"
+                },
+                "error": {
+                  "type": "object",
+                  "required": [
+                    "code",
+                    "message"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

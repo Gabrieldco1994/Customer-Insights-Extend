@@ -2,6 +2,7 @@
 import argparse
 import json
 import subprocess
+import time
 
 import requests
 
@@ -17,6 +18,21 @@ def az(*args):
         ["az", *args, "-o", "json"], check=True, capture_output=True, text=True,
     )
     return json.loads(result.stdout) if result.stdout.strip() else None
+
+
+def initialize_source(fixtures, key):
+    for attempt in range(25):
+        response = requests.post(
+            f"https://{APP}.azurewebsites.net/api/bootstrap",
+            json=fixtures, headers={"x-functions-key": key}, timeout=240,
+        )
+        if response.status_code != 403:
+            return response
+        if response.json().get("error", {}).get("code") != "BOOTSTRAP_DISABLED" or attempt == 24:
+            return response
+        print("Waiting for the bootstrap setting to reach the Function host.", flush=True)
+        time.sleep(5)
+    raise RuntimeError("Bootstrap setting propagation was not confirmed")
 
 
 def main():
@@ -43,10 +59,7 @@ def main():
         key = az("functionapp", "function", "keys", "list", *key_args).get(KEY)
         if not key:
             raise RuntimeError("The bootstrap key was not stored")
-        response = requests.post(
-            f"https://{APP}.azurewebsites.net/api/bootstrap",
-            json=fixtures, headers={"x-functions-key": key}, timeout=240,
-        )
+        response = initialize_source(fixtures, key)
         print("Bootstrap HTTP:", response.status_code, flush=True)
         if not response.ok:
             raise RuntimeError(f"Source bootstrap failed: {response.text[:1000]}")

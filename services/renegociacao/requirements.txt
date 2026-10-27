@@ -1,4 +1,4 @@
-azure-functions>=1.21,<2
+azure-functions>=1.24,<2
 azure-identity>=1.19,<2
 python-tds>=1.16,<2
 pyOpenSSL>=24.3,<26

@@ -1,0 +1,11 @@
+<botcomponent schemaname="fsi_renegociacao.topic.ConfirmarDemonstrativo">
+  <componenttype>9</componenttype>
+  <description>Use somente quando o usuário escolheu contratar uma oferta retornada pelo MCP. Recebe os IDs e versão exatos da fonte, revisa os termos e pergunta a confirmação real ao usuário antes de gravar. Não substitui autenticação real.</description>
+  <iscustomizable>1</iscustomizable>
+  <name>ConfirmarDemonstrativo</name>
+  <parentbotid>
+    <schemaname>fsi_renegociacao</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

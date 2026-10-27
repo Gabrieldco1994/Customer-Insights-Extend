@@ -121,6 +121,33 @@ def money(expression):
     return '"R$ " & Text((' + expression + ') / 100, "#,##0.00", "pt-BR")'
 
 
+def connector_call(reference, id, action, business, properties, recover=False, processing=False):
+    variable = "Topic." + id
+    actions = [
+        setvar(id + "_reset_error", variable + "Error", "=Blank()"),
+        node("InvokeConnectorAction", id,
+             input={"binding": {"payload": "=" + business}},
+             output={"kind": "SingleVariableOutputBinding", "variable": "init:" + variable},
+             connectionReference=reference, connectionProperties={"mode": "Maker"},
+             operationId=action, dynamicOutputSchema=response_schema(properties),
+             errorHandling={"kind": "ContinueOnErrorBehavior",
+                            "statusCode": variable + "Error",
+                            "errorResponseBody": "init:" + variable + "ErrorBody"},
+             requestTimeoutInMilliseconds=30000),
+    ]
+    if not recover:
+        actions.append(branch(id + "_error", "=!IsBlank(" + variable + "Error) && (" +
+                              variable + "Error < 200 || " + variable + "Error >= 300)",
+                              stop(id + "_unavailable", "SIMULAÇÃO. O serviço não confirmou a operação. Não vou repetir escritas nem afirmar conclusão. Diga consultar andamento.")))
+        status = variable + '.status <> "ok"'
+        if processing:
+            status = "(" + status + " && " + variable + '.status <> "processing")'
+        actions.append(branch(id + "_wrapper",
+                              "=" + variable + ".demonstration <> true || " + status,
+                              stop(id + "_invalid", "SIMULAÇÃO. Resposta inválida ou pendente; nenhuma conclusão foi confirmada.")))
+    return actions
+
+
 def summary(offer):
     return ('"Oferta " & ' + offer + '.id & ", versão " & Text(' + offer +
             '.version) & ". Entrada: " & ' + money(offer + ".entryCents") +

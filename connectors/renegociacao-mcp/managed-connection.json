@@ -1,0 +1,11 @@
+{
+  "connectorId": "shared_new-5ffsi-20renegociacao-20mcp-5fa3c7d3a820ae6f10",
+  "connectionId": "fsi-reneg-mcp-00e6c1dc99d84d24a2a3d0a8f6e8e7d8",
+  "resourceId": "/providers/Microsoft.PowerApps/apis/shared_new-5ffsi-20renegociacao-20mcp-5fa3c7d3a820ae6f10/connections/fsi-reneg-mcp-00e6c1dc99d84d24a2a3d0a8f6e8e7d8",
+  "environment": "b3638821-b73d-e1f4-93d0-798d3720e915",
+  "statuses": [
+    {
+      "status": "Connected"
+    }
+  ]
+}

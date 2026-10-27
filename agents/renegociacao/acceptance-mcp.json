@@ -1,0 +1,91 @@
+{
+  "verifiedAt": "2026-10-27",
+  "environment": "https://org88957f9a.crm.dynamics.com",
+  "solution": "FSIInsights",
+  "existingBotId": "b23c421e-e534-4acf-8d21-4e4c41d0ed62",
+  "existingBotSchema": "fsi_renegociacao",
+  "workstream": {
+    "id": "6a45b431-9d2d-4fb9-4c05-8e947922cad1",
+    "name": "Renegociação",
+    "botUserId": "def0edc2-17d2-f111-a059-000d3a343a55",
+    "bindingChanged": false
+  },
+  "authentication": {
+    "mode": 3,
+    "trigger": 0,
+    "manualEntraPreserved": true,
+    "realFinancialApiRejectsMissingJwt": 401,
+    "simulationApiRejectsMissingFunctionKey": 401,
+    "numericCodeIsAuthentication": false,
+    "smsSent": false,
+    "nativeCodeTests": {
+      "abc": "rejected",
+      "0": "accepted",
+      "0007": "accepted",
+      "12": "accepted",
+      "1": "accepted in published channel"
+    }
+  },
+  "mcp": {
+    "endpoint": "https://fsi-reneg-88957f9a.azurewebsites.net/runtime/webhooks/mcp",
+    "transport": "Streamable HTTP",
+    "anonymousAccess": false,
+    "credentialStorage": "encrypted maker connection",
+    "tools": [
+      "listar_contratos_demo",
+      "consultar_ofertas_demo",
+      "consultar_andamento_demo"
+    ],
+    "writesExposed": false,
+    "realCustomerContractRejected": true
+  },
+  "draftAcceptance": {
+    "channel": "Copilot Studio test chat",
+    "customerId": "5ffbdb6c-10a0-5fa8-bc3e-266c675b59ad",
+    "contract": "WHATS-DEMO-001",
+    "requestId": "b12301f8-1547-48d5-b634-c16fd3c2b622",
+    "offerId": "c60b8b18-2e5a-5202-8bd0-1b9005f87471",
+    "version": 1,
+    "entryCents": 0,
+    "installments": 6,
+    "paymentCents": 250020,
+    "totalCents": 1500120,
+    "naturalLanguageSelection": true,
+    "explicitConfirmation": "sim",
+    "protocolDisplayed": "DEMO-b12301f8-1547-48d5-b634-c16fd3c2b622",
+    "nativeStatus": "Concluido",
+    "nativeStage": "formalizacao",
+    "integrationError": null,
+    "bpfInstanceId": "73d7558b-26d2-f111-a059-000d3a3437e2",
+    "bpfCount": 1,
+    "bpfTraversedStages": 5,
+    "bpfStateCode": 1,
+    "bpfStatusCode": 2
+  },
+  "publication": {
+    "startedAt": "2026-10-27T17:03:13.1614382Z",
+    "finishedAt": "2026-10-27T17:03:19.2609724Z",
+    "status": "Succeeded",
+    "state": "Synchronized"
+  },
+  "publishedAcceptance": {
+    "channel": "authenticated Direct Line transport to published bot",
+    "oauthCardRequiredForSimulation": false,
+    "numericCodeAccepted": true,
+    "mcpReturnedCurrentOffers": true,
+    "mcpReturnedCompletedProtocol": true,
+    "reservedContract": "WHATS-DEMO-002",
+    "reservedContractStillEligible": true,
+    "reservedContractConsumed": false
+  },
+  "regression": {
+    "backendTests": 77,
+    "agentAndBrokerTests": 15,
+    "originalAgreementsPreserved": true,
+    "portalSourceChanged": false
+  },
+  "notVerified": [
+    "Message sent from a physical WhatsApp device through the provider and Contact Center workstream",
+    "Solution import into a different environment"
+  ]
+}

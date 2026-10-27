@@ -1,7 +1,6 @@
 <style>
   .fsi-reneg { max-width: 960px; margin: 2rem auto; padding: 0 1rem; color: #243344; }
   .fsi-reneg h1 { font-size: 2rem; }
-  .fsi-reneg .notice { border-left: 4px solid #b45200; padding: 1rem; background: #fff6e8; }
   .fsi-reneg .cards { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 1rem; margin: 1rem 0; }
   .fsi-reneg .card { border: 1px solid #b5c2ce; border-radius: .5rem; padding: 1.25rem; }
   .fsi-reneg button { padding: .7rem 1.1rem; margin: .25rem .5rem .25rem 0; border-radius: .3rem; border: 1px solid #174d7d; background: #174d7d; color: white; font: inherit; cursor: pointer; }
@@ -24,7 +23,6 @@
   data-audience="{{ settings['FSI/Renegociacao/Audience'] | escape }}"
   data-tenant="{{ settings['FSI/Renegociacao/TenantId'] | escape }}">
   <h1>Renegociação de financiamento</h1>
-  <p class="notice"><strong>Demonstração com dados fictícios.</strong> Nenhuma operação bancária real será realizada.</p>
   {% if user %}
   <p>Consulte as opções disponíveis, escolha uma alternativa e confirme os termos para concluir o autosserviço.</p>
   <p>Você pode usar somente esta página. O chatbot não é necessário para concluir.</p>

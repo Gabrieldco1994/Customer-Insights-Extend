@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { test } from "node:test";
-import { cents, customerCpf, WIDGET } from "../src/assisted-utils.js";
+import { cents, customerCpf, displayName, WIDGET } from "../src/assisted-utils.js";
 
 test("assisted input preserves cents and rejects ambiguous or overprecise money", () => {
   for (const [text, expected] of [["0", 0], ["0,05", 5], ["1234,56", 123456], ["12.3", 1230]]) {
@@ -17,6 +17,19 @@ test("Omnichannel uses exactly the widget provided by the user, not Direct Line"
   assert.equal(WIDGET.org, "3fbb46bf-29c7-f111-a04e-6045bd00313d");
   assert.match(WIDGET.primary, /^https:\/\/oc-cdn-ocprod\.azureedge\.net\//);
   assert.match(WIDGET.fallback, /^https:\/\/ocprodocprodnamgs\.blob\.core\.windows\.net\//);
+});
+
+test("visible names omit demo qualifiers while source identifiers and values stay intact", () => {
+  const contract = { number: "ASSIST-DEMO-002", vehicle: "Veiculo ficticio assistido 2", debtCents: 2000120 };
+  const before = { ...contract };
+  assert.equal(displayName(contract.number), "Financiamento 002");
+  assert.equal(displayName(contract.vehicle), "Veiculo assistido 2");
+  assert.equal(displayName("Cliente Ficticio Portal Assistido"), "Cliente Portal Assistido");
+  assert.equal(displayName("Carteira demonstrativa"), "Carteira");
+  assert.equal(displayName("Cliente Fictício"), "Cliente");
+  assert.equal(displayName("Operação e Alçada"), "Operação e Alçada");
+  assert.deepEqual(contract, before);
+  assert.throws(() => displayName(null));
 });
 
 test("CPF is the initial customer lookup, with exact digits and checksum validation", () => {

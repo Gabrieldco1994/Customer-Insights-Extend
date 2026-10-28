@@ -80,6 +80,10 @@ Fluxo:
    o CPF somente no contato fictício fixo, sem busca livre em clientes reais.
    Só então apresenta os contratos `ASSIST-DEMO`. Trocar o CPF limpa a tela
    do cliente e exige nova consulta; o CPF não é armazenado no navegador.
+   Na apresentação, os nomes não usam os qualificadores "fictício" ou
+   "demonstrativo": por exemplo, `ASSIST-DEMO-002` aparece como
+   **Financiamento 002**. Os nomes, marcadores de isolamento e IDs da fonte
+   permanecem intactos; somente os rótulos do portal são ajustados.
 2. Seleciona uma oferta vigente da fonte SQL e solicita desconto ou parcelas.
 3. O serviço calcula em centavos e apresenta qualquer ajuste na entrada antes
    de enviar. Não há política de alçadas ativa no Dataverse; nenhuma condição

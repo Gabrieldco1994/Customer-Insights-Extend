@@ -1,6 +1,6 @@
 import { createIdentity, SignInRedirect } from "./identity.js";
 import { money } from "./format.js";
-import { cents, customerCpf, initializeOmnichannel } from "./assisted-utils.js";
+import { cents, customerCpf, displayName, initializeOmnichannel } from "./assisted-utils.js";
 
 const root = document.getElementById("fsi-assisted");
 const content = document.getElementById("assisted-content");
@@ -94,15 +94,15 @@ async function load() {
   const cpf = customerCpf(cpfInput.value);
   const result = await api("contracts", { cpf });
   selectedCpf = cpf;
-  screen("Financiamentos do cliente fictício");
-  customer.textContent = `Cliente localizado: ${result.customer.name}`;
+  screen("Financiamentos do cliente");
+  customer.textContent = `Cliente localizado: ${displayName(result.customer.name)}`;
   customer.hidden = false;
   const cards = node("div");
   cards.className = "cards";
   for (const contract of result.contracts) {
     const card = node("article");
     card.className = "card";
-    card.append(node("h3", contract.number), node("p", contract.vehicle),
+    card.append(node("h3", displayName(contract.number)), node("p", displayName(contract.vehicle)),
       node("p", `Saldo: ${money(contract.debtCents)}`));
     if (contract.assistedRequestId) {
       card.append(button("Acompanhar solicitação existente", async () => {
@@ -125,7 +125,7 @@ async function load() {
 async function offers(contract) {
   status.textContent = "Consultando condições vigentes na fonte.";
   const result = await api("offers", { contractId: contract.id });
-  screen(`Condições — ${contract.number}`);
+  screen(`Condições — ${displayName(contract.number)}`);
   for (const offer of result.offers) {
     const card = node("article");
     card.className = "card";
@@ -151,7 +151,7 @@ function input(form, id, label, value, type = "text") {
 }
 
 function edit(contract, offer) {
-  screen(`Solicitação de alçada — ${contract.number}`);
+  screen(`Solicitação de alçada — ${displayName(contract.number)}`);
   const form = node("form");
   form.append(node("p", "Informe os termos desejados. A solicitação pode manter a oferta ou pedir desconto e novas parcelas; nenhuma opção é aprovada automaticamente."));
   const discount = input(form, "assisted-discount", "Desconto solicitado (R$)", "0,00");

@@ -26,6 +26,15 @@ export function customerCpf(value) {
   return digits;
 }
 
+export function displayName(value) {
+  if (typeof value !== "string") throw new Error("O nome retornado pelo serviço não é válido.");
+  return value
+    .replace(/\bASSIST-DEMO-([0-9]+)\b/g, "Financiamento $1")
+    .replace(/\b(?:fict[ií]ci[oa]s?|demonstrativ[oa]s?)\b/gi, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 export const WIDGET = Object.freeze({
   id: "Microsoft_Omnichannel_LCWidget",
   primary: "https://oc-cdn-ocprod.azureedge.net/livechatwidget/scripts/LiveChatBootstrapper.js",

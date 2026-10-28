@@ -88,6 +88,15 @@ class RealStartupTests(unittest.TestCase):
             "CustomerRenegotiation": {
                 "route": "renegociacao/{action}", "authLevel": "anonymous", "methods": ["POST"],
                 "argument": "request"},
+            "AssistedPortal": {
+                "route": "assisted/{action}", "authLevel": "anonymous", "methods": ["POST"],
+                "argument": "request"},
+            "AssistedAutomation": {
+                "route": "assisted-automation/prepare-mail", "authLevel": "function", "methods": ["POST"],
+                "argument": "request"},
+            "AssistedCustomerAcceptance": {
+                "route": "assisted-acceptance/{action}", "authLevel": "anonymous", "methods": ["POST"],
+                "argument": "request"},
             "WhatsAppDemoRenegotiation": {
                 "route": "whatsapp-demo/{action}", "authLevel": "function", "methods": ["POST"],
                 "argument": "request"},

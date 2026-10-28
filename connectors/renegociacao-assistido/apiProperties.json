@@ -1,0 +1,21 @@
+{
+  "properties": {
+    "connectionParameters": {
+      "api_key": {
+        "type": "securestring",
+        "uiDefinition": {
+          "displayName": "Chave exclusiva da automacao assistida",
+          "description": "Somente na conexao criptografada. Nunca no portal ou no fluxo.",
+          "tooltip": "AssistedAutomation function key",
+          "constraints": {
+            "required": "true",
+            "clearText": false
+          }
+        }
+      }
+    },
+    "iconBrandColor": "#9e1732",
+    "publisher": "FSIInsights",
+    "stackOwner": "FSIInsights"
+  }
+}

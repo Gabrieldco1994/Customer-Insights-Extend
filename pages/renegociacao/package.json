@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "esbuild src/chat-frame.js --bundle --minify --target=es2022 --alias:botframework-webchat=./node_modules/botframework-webchat/dist/webchat.js --outfile=dist/chat.js && esbuild src/main.js --bundle --minify --target=es2022 --outfile=dist/renegociacao.js",
+    "build": "esbuild src/chat-frame.js --bundle --minify --target=es2022 --alias:botframework-webchat=./node_modules/botframework-webchat/dist/webchat.js --outfile=dist/chat.js && esbuild src/main.js --bundle --minify --target=es2022 --outfile=dist/renegociacao.js && esbuild src/assisted.js src/acceptance.js --bundle --minify --target=es2022 --outdir=dist",
     "test": "node --test test/*.test.js"
   },
   "dependencies": {

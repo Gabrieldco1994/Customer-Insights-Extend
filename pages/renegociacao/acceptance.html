@@ -1,0 +1,23 @@
+<style>
+  .fsi-acceptance { max-width: 760px; margin: 2rem auto; padding: 1rem; color: #233344; }
+  .fsi-acceptance dl { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+  .fsi-acceptance dd { margin: 0; }
+  .fsi-acceptance button { background: #9e1732; color: white; border: 1px solid #9e1732; border-radius: .3rem; padding: .8rem 1.2rem; margin: 1rem 0; font: inherit; cursor: pointer; }
+  .fsi-acceptance button:disabled { opacity: .6; cursor: not-allowed; }
+  .fsi-acceptance input:focus-visible, .fsi-acceptance button:focus-visible { outline: 3px solid #006caa; outline-offset: 3px; }
+  .fsi-acceptance label { display: block; margin-top: 1.5rem; }
+  .fsi-acceptance [role=alert]:not(:empty) { padding: 1rem; border: 1px solid #9e1732; background: #fff2f2; }
+</style>
+<section class="fsi-acceptance" id="fsi-acceptance" data-api="{{ settings['FSI/Renegociacao/ApiUrl'] | escape }}">
+  <h1>Revisão e aceite da renegociação</h1>
+  <p>Confira os termos aprovados pela operação. Abrir o email ou esta página não confirma o acordo.</p>
+  <div id="acceptance-error" role="alert" tabindex="-1"></div>
+  <div id="acceptance-status" role="status" aria-live="polite">Validando o link de revisão.</div>
+  <section id="acceptance-terms" aria-label="Condições da proposta aprovada"></section>
+  <form id="acceptance-form" hidden>
+    <label><input id="acceptance-check" type="checkbox" required> Li os valores, a quantidade de parcelas e a validade. Quero aceitar esta proposta fictícia.</label>
+    <p>Esta demonstração não realiza operação bancária real.</p>
+    <button id="acceptance-confirm" type="submit" disabled>Confirmar meu aceite</button>
+  </form>
+</section>
+<script src="/aceite-renegociacao/acceptance.js" defer></script>

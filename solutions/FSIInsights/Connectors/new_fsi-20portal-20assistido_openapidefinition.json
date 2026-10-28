@@ -1,0 +1,86 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "FSI Portal Assistido",
+    "version": "1.0",
+    "description": "Preparar email somente apos aprovacao humana CRM."
+  },
+  "host": "fsi-reneg-88957f9a.azurewebsites.net",
+  "basePath": "/api/assisted-automation",
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "x-functions-key",
+      "in": "header"
+    }
+  },
+  "security": [
+    {
+      "api_key": []
+    }
+  ],
+  "paths": {
+    "/prepare-mail": {
+      "post": {
+        "operationId": "PrepareAcceptanceMail",
+        "summary": "Preparar aceite aprovado",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "requestId"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "requestId": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Email aprovado; manter entradas e saidas protegidas.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "emailId": {
+                  "type": "string"
+                },
+                "recipient": {
+                  "type": "string"
+                },
+                "subject": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                },
+                "requestId": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Falha explicita; nao enviar email."
+          }
+        }
+      }
+    }
+  }
+}

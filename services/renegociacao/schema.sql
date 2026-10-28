@@ -92,6 +92,19 @@ BEGIN
 END;
 GO
 -- Formalized source evidence is append-only, including for the runtime principal.
+IF OBJECT_ID(N'demo.AssistedRequests', N'U') IS NULL
+BEGIN
+    CREATE TABLE demo.AssistedRequests (
+        RequestId uniqueidentifier NOT NULL CONSTRAINT PK_DemoAssistedRequests PRIMARY KEY
+            REFERENCES demo.Requests(Id),
+        OperatorContactId uniqueidentifier NOT NULL,
+        Proposal nvarchar(max) NOT NULL CHECK (LEN(Proposal) <= 10000),
+        Nonce varchar(36) NOT NULL,
+        ApprovedAt datetimeoffset(0) NULL,
+        ApproverId uniqueidentifier NULL
+    );
+END;
+GO
 CREATE OR ALTER TRIGGER demo.Agreements_Immutable ON demo.Agreements
 INSTEAD OF UPDATE, DELETE AS
 BEGIN

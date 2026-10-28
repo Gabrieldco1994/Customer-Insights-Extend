@@ -70,3 +70,39 @@ test("unexpected token and callback failures propagate without an alternate trus
   const callback = setup({ async handleRedirectPromise() { throw original; } });
   await assert.rejects(() => callback.identity.initialize(), (failure) => failure === original);
 });
+
+test("aborting a stalled identity request ends the wait without starting a late login redirect", async () => {
+  let rejectSilent;
+  let started;
+  const silentStarted = new Promise((resolve) => { started = resolve; });
+  const fixture = setup({
+    getActiveAccount() { return { homeAccountId: "test" }; },
+    acquireTokenSilent() {
+      started();
+      return new Promise((resolve, reject) => { rejectSilent = reject; });
+    },
+  });
+  const controller = new AbortController();
+  const reason = new DOMException("Identity deadline", "TimeoutError");
+  const result = fixture.identity.token({ signal: controller.signal });
+  const rejected = assert.rejects(result, (failure) => failure === reason);
+  await silentStarted;
+  controller.abort(reason);
+  await rejected;
+  rejectSilent(new InteractionRequiredAuthError("interaction_required"));
+  await new Promise((resolve) => setTimeout(resolve, 0));
+  assert.equal(fixture.calls.some((call) => Array.isArray(call) && call[0].includes("Redirect")), false);
+});
+
+test("a cancelled identity request cannot start login after initialization eventually completes", async () => {
+  let initializeDone;
+  const fixture = setup({ initialize() { return new Promise((resolve) => { initializeDone = resolve; }); } });
+  const controller = new AbortController();
+  const result = fixture.identity.token({ signal: controller.signal });
+  const rejected = assert.rejects(result, { name: "TimeoutError" });
+  controller.abort(new DOMException("Identity deadline", "TimeoutError"));
+  await rejected;
+  initializeDone();
+  await new Promise((resolve) => setTimeout(resolve, 0));
+  assert.equal(fixture.calls.some((call) => Array.isArray(call) && call[0].includes("Redirect")), false);
+});

@@ -1,0 +1,103 @@
+{
+  "verifiedAt": "2026-10-28",
+  "environment": "https://org88957f9a.crm.dynamics.com",
+  "solution": "FSIInsights",
+  "portal": "https://portalatendimento01.powerappsportals.com/portal-assistido/",
+  "acceptancePage": "https://portalatendimento01.powerappsportals.com/aceite-renegociacao/",
+  "customer": {
+    "id": "f0e4d7de-c5cf-5b6c-b1d2-c19376c9fedc",
+    "synthetic": true,
+    "realIdentityBinding": false
+  },
+  "contract": "ASSIST-DEMO-001",
+  "requestId": "f84bda89-8f98-4d40-a1c2-b41dc616dd9b",
+  "terms": {
+    "discountCents": 10000,
+    "entryCents": 100000,
+    "installments": 10,
+    "paymentCents": 179012,
+    "totalCents": 1890120
+  },
+  "crmApproval": {
+    "decision": "Aprovado",
+    "savedThroughCrmForm": true,
+    "protocolBeforeCustomerAcceptance": null,
+    "stateBeforeCustomerAcceptance": "Revisao"
+  },
+  "email": {
+    "powerAutomateFlowId": "8bd6ca29-5cf8-5eaf-9465-6a9be0108f51",
+    "runId": "08584084138819534710926130833CU01",
+    "runStatus": "Succeeded",
+    "emailActivityId": "b7cd424d-eab3-53cf-8461-402c36f08e42",
+    "nativeStatus": "Sent",
+    "sentAt": "2026-10-28T13:32:58Z",
+    "recipient": "authorized admin test mailbox",
+    "mailboxTest": "Success",
+    "mailboxApprovalExplicitlyAuthorized": true,
+    "additionalRuntimePrivilege": {
+      "name": "prvReadUser",
+      "depth": "Local",
+      "explicitlyAuthorized": true
+    },
+    "inboxReadReceiptVerified": false
+  },
+  "customerAcceptance": {
+    "actualEmailedLinkOpened": true,
+    "openingLinkDidNotConfirm": true,
+    "checkboxInitiallyChecked": false,
+    "confirmInitiallyDisabled": true,
+    "tokenRemovedFromAddress": true,
+    "explicitConfirmationThroughPage": true,
+    "acceptedAt": "2026-10-28T13:35:10Z",
+    "protocol": "DEMO-f84bda89-8f98-4d40-a1c2-b41dc616dd9b",
+    "protocolDisplayedOnCustomerPage": true,
+    "protocolDisplayedOnOperatorPage": true
+  },
+  "nativeReadback": {
+    "status": "Concluido",
+    "stage": "formalizacao",
+    "integrationError": null,
+    "bpfId": "3c7af69c-cfd2-f111-a05b-000d3a343828",
+    "bpfCount": 1,
+    "traversedStages": 5,
+    "bpfStateCode": 1,
+    "bpfStatusCode": 2,
+    "caseAutomaticallyResolved": false
+  },
+  "regression": {
+    "assisted002StillEligible": true,
+    "whatsapp002StillEligible": true,
+    "existingAgreementsPreserved": true,
+    "existingSelfServicePagePreserved": true,
+    "existingChatWorkstreamHasNoAgent": true
+  },
+  "csp": {
+    "initialWidgetScriptBlocked": true,
+    "exactScriptOriginsSubsequentlyAuthorized": true,
+    "actualEnforcementHeaderReadBack": true,
+    "addedOrigins": [
+      "https://oc-cdn-ocprod.azureedge.net",
+      "https://ocprodocprodnamgs.blob.core.windows.net"
+    ],
+    "newWildcards": false,
+    "newUnsafePermissions": false,
+    "protectionDisabled": false
+  },
+  "cpfFirst": {
+    "published": true,
+    "operatorAuthenticationStillRequired": true,
+    "arbitraryRealCustomerSearch": false,
+    "userConfirmedCustomerAndContractsLoaded": true,
+    "singleSqlPortfolioQueryTested": true,
+    "identityWaitLimitSeconds": 20,
+    "readApiWaitLimitSeconds": 30,
+    "requestApiWaitLimitSeconds": 60,
+    "comparativeBrowserLatencyMeasured": false
+  },
+  "notVerified": [
+    "Widget loading and real human conversation after the authorized CSP adjustment",
+    "Real-world comparative end-to-end latency after the additional optimization",
+    "Import of the solution into another environment",
+    "Distinct non-admin operator and approver security roles"
+  ]
+}

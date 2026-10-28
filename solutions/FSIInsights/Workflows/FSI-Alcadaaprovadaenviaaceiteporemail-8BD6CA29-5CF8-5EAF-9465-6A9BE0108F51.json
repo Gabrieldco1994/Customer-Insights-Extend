@@ -1,0 +1,172 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "fsi_assisted_dataverse"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_new-5ffsi-20portal-20assistido-5fa3c7d3a820ae6f10": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "fsi_assisted_automation"
+        },
+        "api": {
+          "name": "shared_new-5ffsi-20portal-20assistido-5fa3c7d3a820ae6f10",
+          "logicalName": "new_fsi-20portal-20assistido"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Decisao_aprovada_no_CRM": {
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 3,
+              "subscriptionRequest/entityname": "fsi_renegociacao",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filteringattributes": "fsi_decisaoalcada",
+              "subscriptionRequest/filterexpression": "fsi_decisaoalcada eq 712400001 and fsi_pedidoalcada ne null"
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "runtimeConfiguration": {
+            "concurrency": {
+              "runs": 1
+            }
+          }
+        }
+      },
+      "actions": {
+        "Preparar_aceite": {
+          "runAfter": {},
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_new-5ffsi-20portal-20assistido-5fa3c7d3a820ae6f10",
+              "operationId": "PrepareAcceptanceMail",
+              "apiId": ""
+            },
+            "parameters": {
+              "body/requestId": "@triggerOutputs()?['body/fsi_renegociacaoid']"
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "runtimeConfiguration": {
+            "secureData": {
+              "properties": [
+                "inputs",
+                "outputs"
+              ]
+            }
+          }
+        },
+        "Consultar_email": {
+          "runAfter": {
+            "Preparar_aceite": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "emails",
+              "recordId": "@body('Preparar_aceite')?['emailId']",
+              "$select": "activityid,statuscode"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Enviar_somente_rascunho": {
+          "actions": {
+            "Enviar_email": {
+              "runAfter": {},
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "PerformBoundAction",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "emails",
+                  "recordId": "@body('Preparar_aceite')?['emailId']",
+                  "actionName": "Microsoft.Dynamics.CRM.SendEmail",
+                  "item/IssueSend": true,
+                  "item/TrackingToken": ""
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {
+            "Consultar_email": [
+              "Succeeded"
+            ]
+          },
+          "else": {
+            "actions": {}
+          },
+          "expression": {
+            "equals": [
+              "@body('Consultar_email')?['statuscode']",
+              1
+            ]
+          },
+          "type": "If"
+        },
+        "Registrar_envio": {
+          "runAfter": {
+            "Enviar_somente_rascunho": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "UpdateRecord",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "fsi_renegociacaos",
+              "recordId": "@triggerOutputs()?['body/fsi_renegociacaoid']",
+              "item/fsi_emailaceitestatus": "Solicitado pelo Power Automate - consultar atividade de email"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{4a370ec3-c8d2-f111-a059-000d3a3437e2}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="fsi_alcada" verticallayout="true" id="{8258fb4f-d7fe-51d3-b499-cc40bfd4cbff}" IsUserDefined="0" expanded="true" showlabel="true">
+          <labels>
+            <label description="Portal Assistido - Alcada" languagecode="1046" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="contexto" showlabel="true" showbar="false" columns="11" IsUserDefined="0" id="{092720f9-0ec7-58df-8136-da3e9530e31b}">
+                  <labels>
+                    <label description="Ocorrencia e cliente ficticio" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{721380a1-3fef-5e2b-814b-bbfc915bd8a7}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Nome" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_name" disabled="true" />
+                      </cell>
+                      <cell id="{a5773bc4-8f84-5149-9e72-7875b1fb30ee}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Cliente" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_clienteid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_clienteid" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{039a22b3-e543-58a6-9937-aa12969899e9}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Caso" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_casoid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_casoid" disabled="true" />
+                      </cell>
+                      <cell id="{14c13099-bb06-5064-b684-c2f26a878e15}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Financiamento" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_produtoclienteid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="fsi_produtoclienteid" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="pedido" showlabel="true" showbar="false" columns="1" IsUserDefined="0" id="{70d8beec-bcb1-5f84-959e-a2c406f9cd40}">
+                  <labels>
+                    <label description="Pedido do operador - termos imutaveis" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{8450c68b-b5b8-5a77-9647-435d8dd3b37d}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Condicoes solicitadas (somente leitura)" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_pedidoalcada" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="fsi_pedidoalcada" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="decisao" showlabel="true" showbar="false" columns="1" IsUserDefined="0" id="{0ebe2dda-46d1-5e45-a041-4123d3bf7b8d}">
+                  <labels>
+                    <label description="Decisao humana - nao representa aceite do cliente" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{21ad214b-9fd7-50ae-ade4-8377fe63b19b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Decisao de alcada" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_decisaoalcada" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_decisaoalcada" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b07ef276-48bf-5795-b285-66b91fcbbf28}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Justificativa da decisao" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_justificativaalcada" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="fsi_justificativaalcada" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="aceite" showlabel="true" showbar="false" columns="1" IsUserDefined="0" id="{f920f7d0-3f0c-5973-b347-85f19a4dc915}">
+                  <labels>
+                    <label description="Email e aceite final do cliente" languagecode="1046" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{ef07c4c2-cac3-5dc1-a523-091234fb7b22}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Email de aceite" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_emailaceitestatus" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_emailaceitestatus" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{591fb764-cd45-5fe6-aa2a-88868ae7d226}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Situação" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_status" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_status" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4b8a26e2-fd77-5991-afb6-5ded2722e224}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Protocolo demonstrativo" languagecode="1046" />
+                        </labels>
+                        <control id="fsi_protocoloexterno" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_protocoloexterno" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{fc50814e-80e5-5eaf-964e-7b3bb8aafd59}" columns="11" celllabelposition="Top" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{bde577bc-0e34-59b9-adb0-54f6e1130d27}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Decisao de alcada" languagecode="1046" />
+              </labels>
+              <control id="fsi_decisaoalcada" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="fsi_decisaoalcada" disabled="false" />
+            </cell>
+            <cell id="{43bbc5b5-cd93-56e3-890d-f2bb4cdca23b}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Situação" languagecode="1046" />
+              </labels>
+              <control id="fsi_status" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="fsi_status" disabled="true" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="FSI - Alcada do Portal Assistido" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Aprovacao humana de desconto e parcelas; aceite final somente pelo link enviado ao cliente." languagecode="1046" />
+    </Descriptions>
+  </systemform>
+</forms>

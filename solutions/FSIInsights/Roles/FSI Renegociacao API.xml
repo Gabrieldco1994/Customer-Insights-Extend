@@ -42,6 +42,7 @@
     <RolePrivilege name="prvReadSdkMessageProcessingStepImage" level="Global" />
     <RolePrivilege name="prvReadSharePointData" level="Global" />
     <RolePrivilege name="prvReadSharePointDocument" level="Global" />
+    <RolePrivilege name="prvReadUser" level="Local" />
     <RolePrivilege name="prvReadWorkflow" level="Global" />
     <RolePrivilege name="prvWriteActivity" level="Global" />
     <RolePrivilege name="prvWritefsi_processorenegociacao" level="Global" />

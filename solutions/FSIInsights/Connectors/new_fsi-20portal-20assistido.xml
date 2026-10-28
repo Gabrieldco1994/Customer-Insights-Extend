@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Connector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <connectorid>4eb25db8-c9d2-f111-a05b-000d3a343144</connectorid>
+  <description></description>
+  <displayname>FSI Portal Assistido</displayname>
+  <iconbrandcolor>#9e1732</iconbrandcolor>
+  <name>new_fsi-20portal-20assistido</name>
+  <connectortype>1</connectortype>
+  <openapidefinition>/Connector/new_fsi-20portal-20assistido_openapidefinition.json</openapidefinition>
+  <connectionparameters>/Connector/new_fsi-20portal-20assistido_connectionparameters.json</connectionparameters>
+  <policytemplateinstances>/Connector/new_fsi-20portal-20assistido_policytemplateinstances.json</policytemplateinstances>
+</Connector>

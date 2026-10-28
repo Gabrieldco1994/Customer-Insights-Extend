@@ -4,15 +4,17 @@ import json
 import logging
 import os
 import threading
+import time
 from urllib.parse import parse_qsl, urlsplit
 
 import azure.functions as func
 from azure.core.exceptions import AzureError
 import pytds
+from PowerPlatform.Dataverse.core.errors import HttpError
 
-from renegociacao import bootstrap, odata, whatsapp_demo
+from renegociacao import assisted, bootstrap, odata, whatsapp_demo
 from renegociacao.core import ApiError, Service
-from renegociacao.dataverse import NativeProjection
+from renegociacao.dataverse import NativeProjection, log_integration_error
 from renegociacao.directline_token import DirectLineTokenError, issue_token
 from renegociacao.security import authenticate, credential, required
 from renegociacao.sql import SqlRepository
@@ -65,6 +67,8 @@ def body_json(request: func.HttpRequest) -> object:
 
 
 def source_diagnostic(error: Exception) -> str:
+    if isinstance(error, HttpError):
+        log_integration_error("source", error)
     numbers = [
         str(value) if isinstance(value, int) else "0"
         for value in (getattr(error, "number", 0), getattr(error, "state", 0),
@@ -131,6 +135,76 @@ def whatsapp_simulation(request: func.HttpRequest) -> func.HttpResponse:
     except (ValueError, TypeError, KeyError, RuntimeError, OSError):
         logging.error("REN_WHATSAPP_DEMO_UNEXPECTED_FAILURE")
         return failure(ApiError("DEMO_INTERNAL_ERROR", "The simulation could not be processed.", 500))
+
+
+@app.function_name(name="AssistedPortal")
+@app.route(route="assisted/{action}", methods=["POST"], auth_level=func.AuthLevel.ANONYMOUS,
+           trigger_arg_name="request")
+def assisted_portal(request: func.HttpRequest) -> func.HttpResponse:
+    started = time.perf_counter()
+    phases = {}
+    action = request.route_params.get("action", "")
+    try:
+        identity = authenticate(request.headers)
+        phases["jwt"] = round((time.perf_counter() - started) * 1000)
+        backend = service()
+        phases["service"] = round((time.perf_counter() - started) * 1000)
+        contact = assisted.operator(backend, identity)
+        phases["operator"] = round((time.perf_counter() - started) * 1000)
+        data = assisted.execute(backend, contact, action, body_json(request))
+        response = reply({"status": "ok", "data": data, "demonstration": True})
+        response.headers["Server-Timing"] = f"assisted;dur={(time.perf_counter() - started) * 1000:.0f}"
+        return response
+    except ApiError as error:
+        return failure(error)
+    except (pytds.Error, AzureError, HttpError) as error:
+        source_diagnostic(error)
+        return failure(ApiError("ASSISTED_UNAVAILABLE", "O servico assistido nao confirmou a operacao.", 503))
+    except (ValueError, TypeError, KeyError, RuntimeError, OSError):
+        logging.error("REN_ASSISTED_UNEXPECTED_FAILURE")
+        return failure(ApiError("ASSISTED_ERROR", "Consulte a ocorrencia antes de repetir a solicitacao.", 500))
+    finally:
+        if action in {"contracts", "offers", "preview", "request", "status"}:
+            logging.warning(
+                "REN_ASSISTED_TIMING action=%s elapsed_ms=%d phases=%s",
+                action, round((time.perf_counter() - started) * 1000), json.dumps(phases),
+            )
+
+
+@app.function_name(name="AssistedAutomation")
+@app.route(route="assisted-automation/prepare-mail", methods=["POST"], auth_level=func.AuthLevel.FUNCTION,
+           trigger_arg_name="request")
+def assisted_automation(request: func.HttpRequest) -> func.HttpResponse:
+    try:
+        data = assisted.prepare_mail(service(), body_json(request))
+        return reply(data)
+    except ApiError as error:
+        return failure(error)
+    except (pytds.Error, AzureError, HttpError) as error:
+        source_diagnostic(error)
+        return failure(ApiError("ASSISTED_UNAVAILABLE", "O email de aceite nao foi preparado.", 503))
+    except (ValueError, TypeError, KeyError, RuntimeError, OSError):
+        logging.error("REN_ASSISTED_MAIL_UNEXPECTED_FAILURE")
+        return failure(ApiError("ASSISTED_ERROR", "O email de aceite nao foi preparado.", 500))
+
+
+@app.function_name(name="AssistedCustomerAcceptance")
+@app.route(route="assisted-acceptance/{action}", methods=["POST"], auth_level=func.AuthLevel.ANONYMOUS,
+           trigger_arg_name="request")
+def assisted_customer_acceptance(request: func.HttpRequest) -> func.HttpResponse:
+    try:
+        data = assisted.acceptance(service(), request.route_params["action"], body_json(request))
+        return reply({"status": "processing" if data.get("integrationPending") else "ok",
+                      "data": data, "demonstration": True},
+                     202 if data.get("integrationPending") else 200)
+    except ApiError as error:
+        return failure(error)
+    except (pytds.Error, AzureError, HttpError) as error:
+        source_diagnostic(error)
+        return failure(ApiError("ASSISTED_UNAVAILABLE", "O aceite nao foi confirmado. Consulte novamente.", 503))
+    except (ValueError, TypeError, KeyError, RuntimeError, OSError):
+        logging.error("REN_ASSISTED_ACCEPTANCE_UNEXPECTED_FAILURE")
+        return failure(ApiError("ASSISTED_ERROR", "O aceite nao foi confirmado.", 500))
 
 
 def mcp_read(action: str, context: str) -> str:

@@ -39,6 +39,25 @@
       <statecode>0</statecode>
       <statuscode>1</statuscode>
     </connectionreference>
+    <connectionreference connectionreferencelogicalname="fsi_assisted_automation">
+      <connectionreferencedisplayname>FSI Portal Assistido - email</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_new-5ffsi-20portal-20assistido-5fa3c7d3a820ae6f10</connectorid>
+      <customconnectorid>
+        <connectorid>4eb25db8-c9d2-f111-a05b-000d3a343144</connectorid>
+      </customconnectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="fsi_assisted_dataverse">
+      <connectionreferencedisplayname>FSI Portal Assistido - CRM e email</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
   </connectionreferences>
   <Languages>
     <Language>1046</Language>

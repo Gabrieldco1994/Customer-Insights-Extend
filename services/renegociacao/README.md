@@ -80,6 +80,48 @@ Use `scripts/renegociacao_whatsapp_seed.py` to prepare its native fixtures and
 the guarded bootstrap launcher to append its source contracts; never reopen
 completed demo agreements.
 
+### Assisted portal
+
+`POST /api/assisted/{action}` uses delegated Entra authentication plus an explicit
+operator OID allowlist (`ASSISTED_OPERATOR_OIDS`). It never authorizes by CPF or
+accepts arbitrary customers. `ASSISTED_DEMO_ENABLED=1` enables only the dedicated
+ASSIST-DEMO customer/contracts, separate from WhatsApp and self-service.
+
+The initial `contracts` action requires exactly `{"cpf":"<synthetic CPF>"}`.
+The server reads only the fixed synthetic contact and compares its CPF; it does
+not perform a general CPF search. The response includes the customer name,
+allowed contracts and this operator's existing assisted-request references.
+One SQL JOIN replaces separate portfolio/request transactions.
+
+Other actions are `offers`, `preview`, `request`, and `status`. A discount or
+installment change is a request for human CRM approval, not an offer generated
+by the language model. Exact integer cents and the preview hash are checked
+before creating the Case/request. The operator surface has **no confirm action**.
+
+`POST /api/assisted-automation/prepare-mail` requires a function-specific key
+stored in the encrypted Power Automate connection. It verifies the human CRM
+decision, creates the authoritative approved offer/review, and prepares one
+deterministically identified email draft. Power Automate sends it through the
+existing admin Dataverse connection. The runtime does not send emails itself.
+
+`POST /api/assisted-acceptance/{review|confirm}` requires a dedicated signed
+48-hour capability from that email, not an operator token. The key
+`ASSISTED_ACCEPTANCE_SECRET` stays server-side. The token binds the purpose,
+request, nonce and exact original proposal. Reading the link never confirms;
+confirmation requires `reviewHash` and literal `confirmed:true`. CRM revocation
+blocks acceptance. The existing immutable source agreement and BPF reconciliation
+remain authoritative.
+
+`ASSISTED_APPROVAL_FORM_ID` pins the native CRM approval form. The only added
+runtime role grant is user read at business-unit scope, explicitly approved to
+validate the decision maker and sender. No new System Administrator or email-send
+privilege is assigned to the runtime.
+
+Successful operator API requests return `Server-Timing`; sanitized
+`REN_ASSISTED_TIMING` logs record elapsed times and authentication stages only.
+They must never include CPF, token, acceptance link, email body or proposal text.
+See the [portal walkthrough and live acceptance](../../pages/renegociacao/README.md#portal-assistido-e-operação--alçada).
+
 ### Native MCP tools
 
 The same Function app also exposes the native Azure Functions MCP extension at

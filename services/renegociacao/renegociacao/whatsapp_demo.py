@@ -14,16 +14,17 @@ CONTRACTS = {
 ACTIONS = frozenset({"profile", "contracts", "offers", "start", "review", "confirm", "status"})
 
 
-def offer_summary(offer):
-    def brl(cents):
-        if type(cents) is not int or cents < 0:
-            raise ApiError("INVALID_OFFER", "The source offer contains invalid amounts.", 503)
-        whole, fraction = divmod(cents, 100)
-        return "R$ " + f"{whole:,}".replace(",", ".") + f",{fraction:02d}"
+def money_brl(cents):
+    if type(cents) is not int or cents < 0:
+        raise ApiError("INVALID_OFFER", "The source offer contains invalid amounts.", 503)
+    whole, fraction = divmod(cents, 100)
+    return "R$ " + f"{whole:,}".replace(",", ".") + f",{fraction:02d}"
 
-    return (f"Entrada: {brl(offer['entryCents'])}; "
-            f"{offer['installments']} parcelas de {brl(offer['paymentCents'])}; "
-            f"total: {brl(offer['totalCents'])}; validade: {offer['validUntil']}; "
+
+def offer_summary(offer):
+    return (f"Entrada: {money_brl(offer['entryCents'])}; "
+            f"{offer['installments']} parcelas de {money_brl(offer['paymentCents'])}; "
+            f"total: {money_brl(offer['totalCents'])}; validade: {offer['validUntil']}; "
             f"oferta: {offer['id']}; versao: {offer['version']}.")
 
 

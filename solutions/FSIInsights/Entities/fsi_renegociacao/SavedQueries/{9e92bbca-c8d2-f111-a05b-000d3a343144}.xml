@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{9e92bbca-c8d2-f111-a05b-000d3a343144}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="fsi_name" select="1" icon="1" preview="1">
+        <row name="result" id="fsi_renegociacaoid">
+          <cell name="fsi_name" width="220" />
+          <cell name="fsi_clienteid" width="200" />
+          <cell name="fsi_decisaoalcada" width="150" />
+          <cell name="fsi_emailaceitestatus" width="240" />
+          <cell name="createdon" width="160" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical" output-format="xml-platform">
+        <entity name="fsi_renegociacao">
+          <attribute name="fsi_name" />
+          <attribute name="fsi_clienteid" />
+          <attribute name="fsi_decisaoalcada" />
+          <attribute name="fsi_emailaceitestatus" />
+          <attribute name="createdon" />
+          <attribute name="fsi_renegociacaoid" />
+          <order attribute="createdon" descending="true" />
+          <filter type="and">
+            <condition attribute="fsi_pedidoalcada" operator="not-null" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="FSI - Alcada do Portal Assistido" languagecode="1046" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

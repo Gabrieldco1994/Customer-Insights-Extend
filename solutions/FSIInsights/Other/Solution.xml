@@ -102,6 +102,8 @@
       <RootComponent type="9" schemaName="fsi_tipomovimento" behavior="0" />
       <RootComponent type="9" schemaName="fsi_tipoproduto" behavior="0" />
       <RootComponent type="9" schemaName="fsi_tipotela" behavior="0" />
+      <RootComponent type="29" id="{8bd6ca29-5cf8-5eaf-9465-6a9be0108f51}" behavior="0" />
+      <RootComponent type="372" id="{4eb25db8-c9d2-f111-a05b-000d3a343144}" schemaName="new_fsi-20portal-20assistido" behavior="0" />
     </RootComponents>
     <MissingDependencies>
       <MissingDependency>

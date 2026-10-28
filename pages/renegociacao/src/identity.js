@@ -2,6 +2,16 @@ import { PublicClientApplication, InteractionRequiredAuthError } from "@azure/ms
 
 export class SignInRedirect extends Error {}
 
+function waitForIdentity(promise, signal) {
+  if (!signal) return promise;
+  return new Promise((resolve, reject) => {
+    const abort = () => reject(signal.reason);
+    signal.addEventListener("abort", abort, { once: true });
+    promise.then(resolve, reject).finally(() => signal.removeEventListener("abort", abort));
+    if (signal.aborted) abort();
+  });
+}
+
 export function createIdentity(configuration, createClient = (config) => new PublicClientApplication(config)) {
   let client;
   let initialization;
@@ -13,7 +23,7 @@ export function createIdentity(configuration, createClient = (config) => new Pub
         auth: {
           clientId: config.client,
           authority: `https://login.microsoftonline.com/${config.tenant}`,
-          redirectUri: `${location.origin}/renegociacao-financiamento/`,
+          redirectUri: `${location.origin}${config.redirectPath || "/renegociacao-financiamento/"}`,
         },
         cache: { cacheLocation: "sessionStorage" },
       });
@@ -29,8 +39,9 @@ export function createIdentity(configuration, createClient = (config) => new Pub
 
   return {
     initialize,
-    async token() {
-      await initialize();
+    async token({ signal } = {}) {
+      await waitForIdentity(initialize(), signal);
+      signal?.throwIfAborted();
       const scopes = [`api://${configuration().audience}/Renegotiate`];
       const account = client.getActiveAccount();
       if (!account) {
@@ -38,9 +49,10 @@ export function createIdentity(configuration, createClient = (config) => new Pub
         throw new SignInRedirect();
       }
       try {
-        return (await client.acquireTokenSilent({ scopes, account })).accessToken;
+        return (await waitForIdentity(client.acquireTokenSilent({ scopes, account }), signal)).accessToken;
       } catch (failure) {
         if (!(failure instanceof InteractionRequiredAuthError)) throw failure;
+        signal?.throwIfAborted();
         await client.acquireTokenRedirect({ scopes, account });
         throw new SignInRedirect();
       }

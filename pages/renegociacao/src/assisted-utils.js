@@ -44,33 +44,26 @@ export const WIDGET = Object.freeze({
   url: "https://m-3fbb46bf-29c7-f111-a04e-6045bd00313d.us.omnichannelengagementhub.com",
 });
 
-export function initializeOmnichannel(open, status) {
+export function initializeOmnichannel(error) {
   let ready = false;
   const timeout = setTimeout(() => {
     if (!ready) {
-      status.textContent = "O chat Omnichannel não ficou disponível. Você pode continuar o atendimento pelo portal e consultar a operação no CRM.";
+      error.textContent = "O chat Omnichannel não ficou disponível. Você pode continuar o atendimento pelo portal e consultar a operação no CRM.";
     }
   }, 45000);
   window.addEventListener("lcw:ready", () => {
     ready = true;
     clearTimeout(timeout);
-    open.disabled = false;
-    status.textContent = "Chat Omnichannel disponível.";
+    error.textContent = "";
   });
   window.addEventListener("lcw:error", () => {
-    status.textContent = "O Omnichannel informou uma falha. O restante do Portal Assistido continua disponível.";
-  });
-  open.addEventListener("click", async () => {
-    try {
-      if (!window.Microsoft?.Omnichannel?.LiveChatWidget?.SDK) throw new Error("O chat ainda não está disponível.");
-      await window.Microsoft.Omnichannel.LiveChatWidget.SDK.startChat();
-    } catch (failure) {
-      status.textContent = failure instanceof Error ? failure.message : "Não foi possível iniciar o atendimento Omnichannel.";
-    }
+    clearTimeout(timeout);
+    error.textContent = "O Omnichannel informou uma falha. O restante do Portal Assistido continua disponível.";
   });
   const existing = document.getElementById(WIDGET.id);
   if (existing) {
-    if (existing.getAttribute("data-app-id") !== WIDGET.app) status.textContent = "Já existe outro widget no portal. Ele foi preservado; confira a configuração do canal.";
+    clearTimeout(timeout);
+    if (existing.getAttribute("data-app-id") !== WIDGET.app) error.textContent = "Já existe outro widget no portal. Ele foi preservado; confira a configuração do canal.";
     return;
   }
   function load(url, fallback) {
@@ -87,7 +80,7 @@ export function initializeOmnichannel(open, status) {
       if (!fallback) load(WIDGET.fallback, true);
       else {
         clearTimeout(timeout);
-        status.textContent = "Não foi possível carregar o chat Omnichannel. O atendimento pelo portal não foi interrompido.";
+        error.textContent = "Não foi possível carregar o chat Omnichannel. O atendimento pelo portal não foi interrompido.";
       }
     };
     document.body.append(script);

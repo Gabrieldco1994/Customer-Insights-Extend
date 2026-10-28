@@ -237,4 +237,4 @@ cpfInput.addEventListener("input", () => {
     status.textContent = "Informe o CPF e busque o cliente novamente.";
   }
 });
-initializeOmnichannel(document.getElementById("assisted-chat-open"), document.getElementById("assisted-chat-status"));
+initializeOmnichannel(document.getElementById("assisted-chat-error"));

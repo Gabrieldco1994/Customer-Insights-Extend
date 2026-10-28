@@ -4,11 +4,9 @@
   .fsi-assisted .eyebrow { color: #a41630; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
   .fsi-assisted .steps { display: flex; flex-wrap: wrap; gap: .75rem; padding-left: 1.5rem; margin: 1.5rem 0; }
   .fsi-assisted .steps li { padding: .5rem .75rem; border-bottom: 3px solid #d5dce2; }
-  .fsi-assisted .columns { display: grid; grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr); gap: 1.25rem; }
   .fsi-assisted .card { padding: 1.25rem; border: 1px solid #c8d0d8; border-radius: .6rem; margin-bottom: 1rem; background: white; }
   .fsi-assisted .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
   .fsi-assisted button, .fsi-assisted .button { display: inline-block; padding: .7rem 1rem; margin: .4rem .4rem .4rem 0; background: #9e1732; color: white; border: 1px solid #9e1732; border-radius: .3rem; font: inherit; cursor: pointer; }
-  .fsi-assisted button.secondary { color: #9e1732; background: white; }
   .fsi-assisted button:disabled { opacity: .6; cursor: wait; }
   .fsi-assisted button:focus-visible, .fsi-assisted a:focus-visible, .fsi-assisted input:focus-visible, .fsi-assisted textarea:focus-visible { outline: 3px solid #006caa; outline-offset: 3px; }
   .fsi-assisted label { display: block; font-weight: 600; margin: .75rem 0 .25rem; }
@@ -18,7 +16,6 @@
   .fsi-assisted [role=alert]:not(:empty) { padding: 1rem; background: #fff2f2; border: 1px solid #9e1732; }
   .fsi-assisted [role=status] { padding: .5rem 0; }
   .fsi-assisted .muted { color: #4b5c6e; }
-  @media(max-width: 760px) { .fsi-assisted .columns { grid-template-columns: 1fr; } }
 </style>
 <section class="fsi-assisted" id="fsi-assisted"
  data-api="{{ settings['FSI/Renegociacao/ApiUrl'] | escape }}"
@@ -37,8 +34,7 @@
   {% if user %}
   <div id="assisted-error" role="alert" tabindex="-1"></div>
   <div id="assisted-status" role="status" aria-live="polite"></div>
-  <div class="columns">
-    <div class="assisted-workspace">
+  <div class="assisted-workspace">
       <section class="card" aria-labelledby="assisted-heading">
         <h2 id="assisted-heading" tabindex="-1">Identifique o cliente</h2>
         <p>Informe o CPF para localizar o cliente na carteira autorizada. Seu login de operador continua obrigatório; CPF não é autenticação.</p>
@@ -51,22 +47,8 @@
         <p id="assisted-customer" hidden></p>
         <div id="assisted-content"></div>
       </section>
-    </div>
-    <aside aria-label="Operação e suporte">
-      <section class="card">
-        <h2>Operação + Alçada</h2>
-        <p>Solicite desconto ou alteração de parcelas a partir das condições da fonte.</p>
-        <p>Não há política de aprovação automática cadastrada. A equipe decide na ocorrência do CRM e o Power Automate envia o email de revisão ao cliente.</p>
-        <p class="muted">Aprovação interna não é aceite do cliente. Nenhum operador pode formalizar pela tela.</p>
-      </section>
-      <section class="card">
-        <h2>Atendimento Omnichannel</h2>
-        <p>Use o chat desta página para falar com a operação. O widget é o canal Omnichannel existente, sem substituição por Web Chat direto do bot.</p>
-        <button id="assisted-chat-open" class="secondary" type="button" disabled>Abrir atendimento</button>
-        <div id="assisted-chat-status" role="status" aria-live="polite">Carregando o chat Omnichannel.</div>
-      </section>
-    </aside>
   </div>
+  <div id="assisted-chat-error" role="alert"></div>
   <script src="/portal-assistido/assisted.js" defer></script>
   {% else %}
   <section class="card"><h2>Acesso do operador</h2><p>Entre no portal para iniciar o atendimento assistido. O serviço também valida a autorização da sua conta.</p><a class="button" href="/SignIn?returnUrl=%2Fportal-assistido%2F">Entrar no Portal Assistido</a></section>

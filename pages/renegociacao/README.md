@@ -108,6 +108,12 @@ app `313fd382-e266-42b1-b030-59947f59de40`, na organização CCaaS. Ele não usa
 broker Direct Line do autosserviço. O vínculo do workstream **Chat** é
 preservado **sem agente**, conforme solicitado. A disponibilidade/transferência
 humana depende da operação e das filas existentes, não é simulada pelo portal.
+Os cartões laterais explicativos de **Operação + Alçada** e **Atendimento
+Omnichannel** foram removidos da página por solicitação do usuário. O espaço
+principal ocupa a largura disponível; a operação e o aceite não mudam. O chat
+continua pelo lançador do próprio widget, sem botão duplicado "Abrir atendimento"
+nem mensagem permanente de disponibilidade. Falhas de carregamento continuam
+sendo exibidas explicitamente, sem bloquear a jornada financeira.
 **CSP:** o bloqueio inicial foi confirmado no navegador. Após esclarecimento
 e autorização explícita, foram acrescentadas somente as origens
 `https://oc-cdn-ocprod.azureedge.net` e
